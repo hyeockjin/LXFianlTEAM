@@ -1,8 +1,6 @@
 package com.lx.project5
 
 import android.Manifest
-import android.Manifest.permission.ACCESS_COARSE_LOCATION
-import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.content.Context
 import android.graphics.Bitmap
 import android.location.Location
@@ -10,9 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.view.View
-import android.widget.TextView
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -164,7 +160,7 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction().replace(R.id.container, SecondFragment()).commit()
             }
             ScreenItem.ITEM3 -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, ThirdFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, CareMainFragment()).commit()
             }
             ScreenItem.ITEMmyPage -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MyPageFragment()).commit()
