@@ -57,8 +57,9 @@ class Join2Fragment : Fragment() {
         initView()
 
         binding.nextButton2.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             checkPw()
+            val curActivity = activity as MainActivity
+            curActivity.onFragmentChanged(MainActivity.ScreenItem.ITEMlogin)
         }
 
         binding.idCheckButton.setOnClickListener {
@@ -152,11 +153,11 @@ class Join2Fragment : Fragment() {
 
         ).enqueue(object:Callback<MemberListResponse>{
             override fun onResponse(call: Call<MemberListResponse>,response: Response<MemberListResponse>){
-                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)
+                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             }
 
             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
-                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)
+                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             }
 
         })

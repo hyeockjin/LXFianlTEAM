@@ -50,9 +50,7 @@ interface BasicApi {
         @Field("requestCode") requestCode: String,
         @Field("memberId") memberId: String,
         @Field("memberName") memberName: String,
-        @Field("memberPw") memberPw: String,
-        @Field("memberAddress") memberAddress: String,
-        @Field("memberImage") memberImage: String
+        @Field("memberPw") memberPw: String
     ): Call<MemberListResponse>
 
     /**
@@ -79,6 +77,18 @@ interface BasicApi {
     ): Call<MemberListResponse>
 
     /**
+     * POST 방식으로 멤버 정보수정 요청
+     */
+
+    @FormUrlEncoded
+    @POST("care/memberUpdate")
+    fun postMemberUpdate(
+        @Field("requestCode") requestCode: String,
+        @Field("memberId") memberId: String,
+        @Field("memberPw") memberPw: String
+    ): Call<MemberListResponse>
+
+    /**
      * GET 방식으로 주변 펫시터 요청 / 사용가능
      */
 
@@ -102,7 +112,7 @@ interface BasicApi {
         @Part(value="params", encoding="UTF-8") params: HashMap<String,String> = hashMapOf()
     ): Call<FileUploadResponse>
 
-    abstract fun postMemberAdd(requestCode: String, memberId: String, memberPw: String, memberName: String): Call<MemberListResponse>
+
 
 }
 
@@ -129,7 +139,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://172.168.10.15:8001/"
+        private const val BASE_URL = "http://192.168.0.19:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""

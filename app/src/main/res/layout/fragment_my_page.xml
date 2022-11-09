@@ -95,7 +95,7 @@
                     android:padding="10dp">
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/updateButton"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_gravity="center"
@@ -110,10 +110,9 @@
                     <Button
                         android:id="@+id/goDogList"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_height="40dp"
                         android:layout_weight="1"
+                        android:background="@drawable/bold1"
                         android:text="반려견목록" />
 
                     <Button
