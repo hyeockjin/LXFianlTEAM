@@ -55,7 +55,8 @@ class MainActivity : AppCompatActivity() {
         ITEMpay,
         ITEMreservation,
         ITEMwrite,
-        ITEMwriteList
+        ITEMwriteList,
+        ITEMend
 
     }
 
@@ -79,10 +80,10 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM1)
                 }
                 R.id.tab2 -> {
-                    onFragmentChanged(ScreenItem.ITEM2)
+                    onFragmentChanged(ScreenItem.ITEM3)
                 }
                 R.id.tab3 -> {
-                    onFragmentChanged(ScreenItem.ITEM3)
+                    onFragmentChanged(ScreenItem.ITEM2)
                 }
                 R.id.tab4 -> {
                     if(AppData.loginData?.memberId == null){
@@ -206,6 +207,9 @@ class MainActivity : AppCompatActivity() {
             }
             ScreenItem.ITEMwriteList -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, WriteListFragment()).commit()
+            }
+            ScreenItem.ITEMend -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, EndFragment()).commit()
             }
         }
 

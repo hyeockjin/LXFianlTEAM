@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#000000"
+    android:backgroundTint="#FFFFFF"
     tools:context=".Join1Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFFFFF"
         android:orientation="vertical">
 
         <TextView
@@ -17,6 +18,7 @@
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginTop="20dp"
+            android:background="#FFFFFF"
             android:gravity="center_horizontal|center_vertical"
             android:text="회원가입(1/2)"
             android:textAlignment="center"
@@ -25,7 +27,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="665dp"
             android:background="#F6F6F6"
             android:orientation="vertical"
             android:padding="10dp">
@@ -38,6 +40,13 @@
                 android:text="아래 항목에 전체 동의합니다."
                 android:textSize="16sp"
                 tools:ignore="TouchTargetSizeCheck" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/checkBox"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/black" />
 
             <CheckBox
                 android:id="@+id/checkBox2"
@@ -88,26 +97,29 @@
                 android:text="이벤트 및 마케팅 정보 수신 동의 (선택)"
                 android:textSize="16sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/nextButton1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:background="#573E8B28"
-                    android:backgroundTint="#573E8B28"
-                    android:text="다음"
-                    android:textColor="#FFFFFF"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    tools:ignore="TextContrastCheck,TextContrastCheck" />
-            </LinearLayout>
-
         </LinearLayout>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/nextButton1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="30dp"
+            android:background="#573E8B28"
+            android:backgroundTint="#573E8B28"
+            android:text="다음"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
     </LinearLayout>
 </FrameLayout>
