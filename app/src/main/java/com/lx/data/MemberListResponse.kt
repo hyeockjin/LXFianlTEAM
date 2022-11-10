@@ -22,6 +22,8 @@ data class MemberListResponse(
         val memberImage: String,
         @SerializedName("memberName")
         val memberName: String,
+        @SerializedName("member_no")
+        val memberNo: Int,
         @SerializedName("memberPw")
         val memberPw: String
     )

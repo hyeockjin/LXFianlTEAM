@@ -21,7 +21,7 @@ class MyPageFragment : Fragment() {
         }
 
         binding.goDogList.setOnClickListener {
-
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMaddDog)
         }
         return binding.root
     }
