@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="#B89696"
+    android:background="#FFFFFFFF"
+    android:backgroundTint="#FFFFFFFF"
     tools:context=".WriteFragment">
 
     <ScrollView
