@@ -119,12 +119,13 @@ interface BasicApi {
     @POST("care/petAdd")
     fun petAdd(
         @Field("requestCode") requestCode: String,
-        @Field("memberNo") memberNo: Int,
+        @Field("memberNo") memberNo: String?,
         @Field("dogName") dogName: String,
         @Field("dogGender") dogGender: String,
         @Field("dogAge") dogAge: String,
         @Field("dogCharacter") dogCharacter: String,
         @Field("dogImage") dogImage: String,
+        @Field("dogEducation") dogEducation: String,
         @Field("dogBreed") dogBreed: String
         ): Call<DogListResponse>
 
