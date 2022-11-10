@@ -15,6 +15,20 @@ class AddDogFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentAddDogBinding.inflate(inflater, container, false)
 
+
+
+        binding.addButton.setOnClickListener {
+            val dogName = binding.nameInput.text.toString()
+            val dogAge = binding.ageInput.text.toString()
+            val dogGender = binding.genderInput.text.toString()
+            val dogEducation = binding.input1.text.toString()
+            val dogCharacter = binding.input2.text.toString()
+            val dogImage = "1"
+
+
+
+        }
+
         return binding.root
     }
 

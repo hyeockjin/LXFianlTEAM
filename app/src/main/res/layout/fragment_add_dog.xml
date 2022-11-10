@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
-                app:cardBackgroundColor="#F6F6F6"
+                app:cardBackgroundColor="#FAFAFA"
                 app:cardCornerRadius="8dp"
                 app:contentPadding="10dp">
 
@@ -80,7 +80,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
                                 android:layout_weight="1"
-                                android:background="#FFFFFF"
+                                android:background="#eeeeee"
                                 android:gravity="center_vertical"
                                 android:hint="반려동물 이름을 입력하세요."
                                 android:padding="10dp"
@@ -107,7 +107,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
                                 android:layout_weight="1"
-                                android:background="#FFFFFF"
+                                android:background="#eeeeee"
                                 android:gravity="center_vertical"
                                 android:hint="성별을 입력하세요."
                                 android:padding="10dp"
@@ -132,7 +132,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
                                 android:layout_weight="1"
-                                android:background="#FFFFFF"
+                                android:background="#eeeeee"
                                 android:gravity="center_vertical"
                                 android:hint="나이를 입력하세요."
                                 android:padding="10dp"
@@ -158,7 +158,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
                                 android:layout_weight="1"
-                                android:background="#FFFFFF"
+                                android:background="#eeeeee"
                                 android:gravity="center_vertical"
                                 android:hint="견종을 입력하세요."
                                 android:padding="10dp"
@@ -177,7 +177,7 @@
                                 android:id="@+id/textView1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="만지면 물거나 예민하게 반응하는 부위가 있나요? (ex. 얼굴, 가슴, 발)"
+                                android:text="교육정도"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
@@ -187,7 +187,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
                                 android:layout_weight="1"
-                                android:background="#FFFFFF"
+                                android:background="#eeeeee"
                                 android:gravity="center_vertical"
                                 android:padding="10dp"
                                 android:textSize="14sp"
@@ -205,7 +205,7 @@
                                 android:id="@+id/textView2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="사람을 물거나 다른 강아지를 공격한 적이 있나요?"
+                                android:text="특이사항"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
@@ -215,7 +215,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
                                 android:layout_weight="1"
-                                android:background="#FFFFFF"
+                                android:background="#eeeeee"
                                 android:gravity="center_vertical"
                                 android:padding="10dp"
                                 android:textSize="14sp"
@@ -223,34 +223,6 @@
 
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="10dp"
-                            android:orientation="vertical"
-                            android:padding="5dp">
-
-                            <TextView
-                                android:id="@+id/register"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="예방접종을 완료 하셨나요?"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/input3"
-                                android:layout_width="367dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="20dp"
-                                android:layout_weight="1"
-                                android:background="#FFFFFF"
-                                android:gravity="center_vertical"
-                                android:padding="10dp"
-                                android:textSize="14sp"
-                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-                        </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>
