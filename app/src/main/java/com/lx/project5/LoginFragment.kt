@@ -74,7 +74,6 @@ class LoginFragment : Fragment() {
                     binding.loginPassword.setText("")
                 }
 
-
             }
             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
                 (activity as MainActivity).showToast("qkqh")

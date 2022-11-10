@@ -1,12 +1,15 @@
 package com.lx.project5
 
 import android.Manifest
+import android.app.AlertDialog
 import android.content.Context
+import android.content.DialogInterface
 import android.graphics.Bitmap
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.google.android.gms.location.*
@@ -15,7 +18,9 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.lx.api.BasicClient
+import com.lx.data.CareListResponse
 import com.lx.data.FileUploadResponse
+import com.lx.data.MemberListResponse
 import com.lx.project5.databinding.ActivityMainBinding
 import com.permissionx.guolindev.PermissionX
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -64,8 +69,6 @@ class MainActivity : AppCompatActivity() {
 
     val dateFormat1 = SimpleDateFormat("yyyyMMddHHmmss")
     var filename: String? = null
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -131,7 +134,6 @@ class MainActivity : AppCompatActivity() {
                 // 필요시 다른 화면으로 이동 (tag 정보를 이용해서 구분함)
                 binding.cardView.visibility = View.VISIBLE
 
-
                 true
             }
 
@@ -151,6 +153,8 @@ class MainActivity : AppCompatActivity() {
                 println("zoomLevel : ${zoomLevel}")
             }
 
+            // 근처 지도 마커 활성화
+            showNearLocationMarker(map)
         }
 
     }
@@ -202,7 +206,7 @@ class MainActivity : AppCompatActivity() {
             ScreenItem.ITEMupdate -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MemberInfoUpdateFragment()).commit()
             }
-            
+
             ScreenItem.ITEMpay -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
             }
@@ -250,7 +254,7 @@ class MainActivity : AppCompatActivity() {
                     super.onLocationResult(result)
 
                     for ((index, location) in result.locations.withIndex()) {
-
+                        Log.v("lastkingdom","${location.latitude},${location.longitude}")
                         showCurrentLocation(location)
                     }
                 }
@@ -271,6 +275,35 @@ class MainActivity : AppCompatActivity() {
 
         showMarker(curPoint)
 
+    }
+
+    // 근처 마커 표시
+    fun showNearLocationMarker(map: GoogleMap) {
+        BasicClient.api.getCareListTest(
+            requestCode = "1001"
+        ).enqueue(object : Callback<CareListResponse> {
+            override fun onResponse(call: Call<CareListResponse>, response: Response<CareListResponse>) {
+                Log.v("lastkingdom","근처 마커 활성화 요청 성공")
+                //for (idx in 0..2) {
+                    Log.v("lastkingdom","근처 마커 for문 진입")
+                    var latitude = response.body()?.data?.get(0)?.careX
+                    var longitude = response.body()?.data?.get(0)?.careY
+
+                    Log.v("lastkingdom","2")
+                    // 1. 마커 옵션 설정 (만드는 과정)
+                    var makerOptions = MarkerOptions()
+                    makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
+                        .position(LatLng(latitude!!, longitude!!))
+                        .title("마커"+0) // 타이틀.
+
+                    // 2. 마커 생성 (마커를 나타냄)
+                    map.addMarker(makerOptions)
+                //}
+            }
+            override fun onFailure(call: Call<CareListResponse>, t: Throwable) {
+                Log.v("lastkingdom","근처 마커 활성화 요청 실패")
+            }
+        })
     }
 
     fun showMarker(curPoint: LatLng) {
@@ -322,15 +355,9 @@ class MainActivity : AppCompatActivity() {
                 response.body()?.output?.filename?.apply{
                     AppData.filepath = this
                 }
-
-
             }
-
             override fun onFailure(call: Call<FileUploadResponse>, t: Throwable) {
-
             }
-
-
         })
     }
 

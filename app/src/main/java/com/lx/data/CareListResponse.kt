@@ -11,8 +11,6 @@ data class CareListResponse(
     @SerializedName("message")
     val message: String
 ) {
-
-
     data class Data(
         @SerializedName("careAddress")
         val careAddress: String,
@@ -26,8 +24,8 @@ data class CareListResponse(
         val careId: String,
         @SerializedName("careImage")
         val careImage: Any?,
-        @SerializedName("careN")
-        val careN: String,
+        @SerializedName("careName")
+        val careName: String,
         @SerializedName("careNickname")
         val careNickname: String,
         @SerializedName("careNo")
@@ -39,5 +37,4 @@ data class CareListResponse(
         @SerializedName("careY")
         val careY: Double
     )
-
 }

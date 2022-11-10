@@ -105,6 +105,15 @@ interface BasicApi {
     ): Call<CareListResponse>
 
     /**
+     * GET 방식으로 주변 펫시터 요청 테스트@@ / 사용가능
+     */
+
+    @GET("/care/listTest")
+    fun getCareListTest(
+        @Query("requestCode") requestCode: String
+    ): Call<CareListResponse>
+
+    /**
      * GET 방식으로 개목록 요청
      */
     @GET("care/petList")
@@ -170,7 +179,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://172.168.10.15:8001/"
+        private const val BASE_URL = "http://192.168.0.252:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""
