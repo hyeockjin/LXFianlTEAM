@@ -30,8 +30,7 @@ class LoginFragment : Fragment() {
         }
 
         binding.loginButton.setOnClickListener {
-            val curActivity = activity as MainActivity
-            curActivity.onFragmentChanged(MainActivity.ScreenItem.ITEM1)
+
             readMember()
         }
 
@@ -71,7 +70,7 @@ class LoginFragment : Fragment() {
 
             }
             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
-
+                (activity as MainActivity).showToast("qkqh")
             }
 
         })
