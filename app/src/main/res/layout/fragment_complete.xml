@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".CompleteFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -43,14 +44,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="210dp"
                         android:checked="true"
-                        android:text="네" />
+                        android:text="네"
+                        tools:ignore="TouchTargetSizeCheck" />
 
                     <CheckBox
                         android:id="@+id/noCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:text="아니오" />
+                        android:text="아니오"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
                 <TextView
@@ -72,14 +75,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="210dp"
                         android:checked="true"
-                        android:text="네" />
+                        android:text="네"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                     <CheckBox
                         android:id="@+id/noCheckBox1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:text="아니오" />
+                        android:text="아니오"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
                 <TextView
@@ -101,14 +106,16 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="210dp"
                         android:checked="true"
-                        android:text="네" />
+                        android:text="네"
+                        tools:ignore="TouchTargetSizeCheck" />
 
                     <CheckBox
                         android:id="@+id/noCheckBox2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="30dp"
-                        android:text="아니오" />
+                        android:text="아니오"
+                        tools:ignore="TouchTargetSizeCheck" />
                 </LinearLayout>
 
                 <TextView

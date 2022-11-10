@@ -3,9 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    android:backgroundTint="#FFFFFF"
-    tools:context=".WriteListFragment">
+    tools:context=".DogListFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +17,7 @@
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginTop="20dp"
             android:gravity="center_horizontal|center_vertical"
-            android:text="내가 쓴 맡김글"
+            android:text="반려동물"
             android:textSize="20sp"
             android:textStyle="normal" />
 
@@ -31,7 +29,7 @@
             android:layout_marginRight="10dp"
             android:background="@drawable/bold"
             android:backgroundTint="#170101"
-            android:text="+ 작성하기"
+            android:text="+ 등록하기"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <androidx.recyclerview.widget.RecyclerView
