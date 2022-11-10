@@ -102,7 +102,7 @@
                                 android:padding="16dp"
                                 android:text="성별" />
 
-                            <TextView
+                            <EditText
                                 android:id="@+id/genderInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -112,6 +112,7 @@
                                 android:gravity="center_vertical"
                                 android:hint="성별을 입력하세요."
                                 android:padding="10dp"
+                                android:textSize="14sp"
                                 tools:ignore="TouchTargetSizeCheck" />
                         </LinearLayout>
 
@@ -127,7 +128,7 @@
                                 android:padding="16dp"
                                 android:text="나이" />
 
-                            <TextView
+                            <EditText
                                 android:id="@+id/ageInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -137,6 +138,7 @@
                                 android:gravity="center_vertical"
                                 android:hint="나이를 입력하세요."
                                 android:padding="10dp"
+                                android:textSize="14sp"
                                 tools:ignore="TouchTargetSizeCheck" />
 
                         </LinearLayout>
@@ -153,7 +155,7 @@
                                 android:padding="16dp"
                                 android:text="견종" />
 
-                            <TextView
+                            <EditText
                                 android:id="@+id/typeInput"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -163,6 +165,7 @@
                                 android:gravity="center_vertical"
                                 android:hint="견종을 입력하세요."
                                 android:padding="10dp"
+                                android:textSize="14sp"
                                 tools:ignore="TouchTargetSizeCheck" />
 
                         </LinearLayout>
@@ -180,7 +183,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="교육정도"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="normal" />
 
                             <EditText
                                 android:id="@+id/input1"
@@ -208,7 +211,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="특이사항"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="normal" />
 
                             <EditText
                                 android:id="@+id/input2"
