@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.lx.api.BasicClient
 import com.lx.data.DogListResponse
+import com.lx.project5.AppData.Companion.loginData
 import com.lx.project5.databinding.FragmentAddDogBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -22,38 +23,8 @@ class AddDogFragment : Fragment() {
 
 
         binding.addButton.setOnClickListener {
-            val dogName = binding.nameInput.text.toString()
-            val dogAge = binding.ageInput.text.toString()
-            val dogGender = binding.genderInput.text.toString()
-            val dogEducation = binding.input1.text.toString()
-            val dogCharacter = binding.input2.text.toString()
-            val dogBreed = binding.typeInput.text.toString()
-            val dogImage = "1"
-            val memberNo = AppData.loginData?.memberNo
+            addPet()
 
-            BasicClient.api.petAdd(
-                requestCode = "1001",
-                memberNo = memberNo,
-                dogImage = dogImage,
-                dogBreed = dogBreed,
-                dogCharacter = dogCharacter,
-                dogEducation = dogEducation,
-                dogGender = dogGender,
-                dogAge = dogAge,
-                dogName = dogName
-            ).enqueue(object: Callback<DogListResponse> {
-                override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
-
-
-
-                }
-
-                override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
-
-
-                    (activity as MainActivity).showToast("등록 완료")
-                }
-            })
 
 
 
@@ -61,6 +32,44 @@ class AddDogFragment : Fragment() {
         }
 
         return binding.root
+    }
+
+    fun addPet() {
+        val dogName = binding.nameInput.text.toString()
+        val dogAge = binding.ageInput.text.toString()
+        val dogGender = binding.genderInput.text.toString()
+        val dogEducation = binding.input1.text.toString()
+        val dogCharacter = binding.input2.text.toString()
+        val dogBreed = binding.typeInput.text.toString()
+        val dogImage = "1"
+        val memberNo = loginData?.memberNo.toString()
+
+
+
+        BasicClient.api.petAdd(
+            requestCode = "1001",
+            memberNo = memberNo,
+            dogImage = dogImage,
+            dogBreed = dogBreed,
+            dogCharacter = dogCharacter,
+            dogEducation = dogEducation,
+            dogGender = dogGender,
+            dogAge = dogAge,
+            dogName = dogName
+        ).enqueue(object: Callback<DogListResponse> {
+            override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
+                (activity as MainActivity).showToast("등록 완료1")
+
+
+            }
+
+            override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
+                binding.input1.setText(t.message)
+
+                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdogList)
+            }
+        })
+
     }
 
 }

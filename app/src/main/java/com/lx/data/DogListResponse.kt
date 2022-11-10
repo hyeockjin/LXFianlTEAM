@@ -25,9 +25,9 @@ data class DogListResponse(
         @SerializedName("dogName")
         val dogName: String,
         @SerializedName("dogNo")
-        val dogNo: Int,
+        val dogNo: String,
         @SerializedName("memberNo")
-        val memberNo: Int
+        val memberNo: String
     )
 
     data class Header(

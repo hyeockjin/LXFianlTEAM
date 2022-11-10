@@ -115,13 +115,13 @@ interface BasicApi {
 
 
     /**
-     * GET 방식으로 개목록 요청
+     * GET 방식으로 개읃록 요청
      */
     @FormUrlEncoded
     @POST("care/petAdd")
     fun petAdd(
         @Field("requestCode") requestCode: String,
-        @Field("memberNo") memberNo: String?,
+        @Field("memberNo") memberNo: String,
         @Field("dogName") dogName: String,
         @Field("dogGender") dogGender: String,
         @Field("dogAge") dogAge: String,

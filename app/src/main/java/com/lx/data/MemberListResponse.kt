@@ -14,17 +14,17 @@ data class MemberListResponse(
     val message: String
 ) {
     data class Data(
-        @SerializedName("memberAddress")
+        @SerializedName("member_address")
         val memberAddress: String,
-        @SerializedName("memberId")
+        @SerializedName("member_id")
         val memberId: String,
-        @SerializedName("memberImage")
+        @SerializedName("member_image")
         val memberImage: String,
-        @SerializedName("memberName")
+        @SerializedName("member_name")
         val memberName: String,
         @SerializedName("member_no")
-        val memberNo: Int,
-        @SerializedName("memberPw")
+        val memberNo: String,
+        @SerializedName("member_pw")
         val memberPw: String
     )
 

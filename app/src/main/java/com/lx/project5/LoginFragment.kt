@@ -1,5 +1,6 @@
 package com.lx.project5
 
+import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
@@ -20,6 +21,7 @@ import retrofit2.Response
 class LoginFragment : Fragment() {
     var _binding: FragmentLoginBinding? = null
     val binding get() = _binding!!
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
@@ -50,9 +52,15 @@ class LoginFragment : Fragment() {
                 println(checkMember)
 
                 if(checkMember == "1"){
+                    AppData.userdata="${response.body()?.data.toString()}"
+                    (activity as MainActivity).showToast("로그인 성공")
+                    AppData.loginData = LoginData()
                     AppData.loginData?.memberId = memberId
                     AppData.loginData?.memberPw = memberPw
                     AppData.loginData?.memberName = response.body()?.data?.get(0)?.memberName.toString()
+                    AppData.loginData?.memberNo = response.body()?.data?.get(0)?.memberNo.toString()
+                    AppData.loginData?.memberAddress = response.body()?.data?.get(0)?.memberAddress.toString()
+                    AppData.loginData?.memberImage = response.body()?.data?.get(0)?.memberImage.toString()
                     (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
                 } else if(checkMember == "0"){
                     val builder = AlertDialog.Builder(activity)
