@@ -15,6 +15,11 @@ class MyPageFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentMyPageBinding.inflate(inflater, container, false)
 
+
+        binding.memberName.text = AppData.loginData?.memberName
+        binding.address.text = AppData.loginData?.memberAddress
+
+
         binding.updateButton.setOnClickListener {
             val curActivity = activity as MainActivity
             curActivity.onFragmentChanged(MainActivity.ScreenItem.ITEMupdate)
