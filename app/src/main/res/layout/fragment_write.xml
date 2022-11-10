@@ -124,7 +124,8 @@
                             android:layout_width="34dp"
                             android:layout_height="wrap_content"
                             android:minWidth="48dp"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            tools:ignore="TouchTargetSizeCheck" />
 
                         <ImageView
                             android:id="@+id/imageView1"
@@ -156,7 +157,8 @@
                             android:layout_width="34dp"
                             android:layout_height="wrap_content"
                             android:minWidth="48dp"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            tools:ignore="TouchTargetSizeCheck" />
 
                         <ImageView
                             android:id="@+id/imageView2"
