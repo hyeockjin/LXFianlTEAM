@@ -1,7 +1,5 @@
 package com.lx.project5
 
-import android.service.autofill.UserData
-
 
 class AppData {
     companion object {
@@ -9,6 +7,7 @@ class AppData {
         var filepath: String?=null
         var loginData: LoginData?=null
         var point: Int? = 0
+        var selectedItem: PetData? =null
     }
     //유진바보
 }

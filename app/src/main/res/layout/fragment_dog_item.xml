@@ -92,7 +92,7 @@
                         android:textStyle="normal" />
 
                     <TextView
-                        android:id="@+id/DogTypeOutput"
+                        android:id="@+id/dogTypeOutput"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_gravity="center"

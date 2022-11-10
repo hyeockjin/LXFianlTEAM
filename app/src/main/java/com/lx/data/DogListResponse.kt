@@ -22,6 +22,10 @@ data class DogListResponse(
         val dogEducation: String,
         @SerializedName("dogGender")
         val dogGender: String,
+        @SerializedName("dogType")
+        val dogType: String,
+        @SerializedName("dogImage")
+        val dogImage: String,
         @SerializedName("dogName")
         val dogName: String,
         @SerializedName("dogNo")

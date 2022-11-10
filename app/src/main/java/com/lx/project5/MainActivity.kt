@@ -67,6 +67,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    var petIndex: String? = null
     val dateFormat1 = SimpleDateFormat("yyyyMMddHHmmss")
     var filename: String? = null
 

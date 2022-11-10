@@ -121,7 +121,15 @@ interface BasicApi {
         @Query("requestCode") requestCode: String
     ): Call<DogListResponse>
 
+    /**
+     * GET 방식으로 필터 요청
+     */
 
+    @GET("farm/petFilter")
+    fun getPetFilter(
+        @Query("requestCode") requestCode: String,
+        @Query("petTheme") petTheme: String
+    ): Call<DogListResponse>
 
     /**
      * GET 방식으로 개읃록 요청
@@ -179,7 +187,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://192.168.0.252:8001/"
+        private const val BASE_URL = "http://172.168.10.24:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""
