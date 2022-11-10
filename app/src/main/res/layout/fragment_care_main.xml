@@ -205,18 +205,6 @@
             android:padding="20dp">
 
             <Button
-                android:id="@+id/button17"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginLeft="2dp"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="1"
-                android:background="#573E8B28"
-                android:backgroundTint="#573E8B28"
-                android:text="채팅하기" />
-
-            <Button
                 android:id="@+id/button18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
