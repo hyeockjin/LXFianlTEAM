@@ -116,7 +116,7 @@
                         android:textSize="11sp" />
                 </LinearLayout>
 
-                <TextView
+                <EditText
                     android:id="@+id/reviewContent"
                     android:layout_width="305dp"
                     android:layout_height="wrap_content"
