@@ -58,8 +58,7 @@ class Join2Fragment : Fragment() {
 
         binding.nextButton2.setOnClickListener {
             checkPw()
-            val curActivity = activity as MainActivity
-            curActivity.onFragmentChanged(MainActivity.ScreenItem.ITEMlogin)
+
         }
 
         binding.idCheckButton.setOnClickListener {
