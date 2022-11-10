@@ -143,13 +143,14 @@ class Join2Fragment : Fragment() {
         var registerId = binding.registerId.text.toString()
         var registerName = binding.registerName.text.toString()
         var registerPw = binding.registerPw.text.toString()
-
+        var registerAddress = binding.registerAddress.text.toString()
 
         BasicClient.api.postMemberAdd(
             requestCode = "1001",
             memberId = registerId,
             memberPw =registerPw,
-            memberName =registerName
+            memberName =registerName,
+            memberAddress =registerAddress
 
         ).enqueue(object:Callback<MemberListResponse>{
             override fun onResponse(call: Call<MemberListResponse>,response: Response<MemberListResponse>){

@@ -35,11 +35,13 @@ class MemberInfoUpdateFragment : Fragment() {
     fun updateMember() {
         val memberId = binding.inputId.text.toString()
         val memberPw = binding.inputPw.text.toString()
+        val memberImage = binding.inputImageView.textAlignment.toString()
 
         BasicClient.api.postMemberUpdate(
             requestCode = "1001",
             memberId = memberId,
-            memberPw = memberPw
+            memberPw = memberPw,
+            memberImage = memberImage
         ).enqueue(object : Callback<MemberListResponse> {
             override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
 
@@ -49,6 +51,7 @@ class MemberInfoUpdateFragment : Fragment() {
                 showToast("수정 성공")
                 loginData?.memberId = ""
                 loginData?.memberName = ""
+                loginData?.memberImage = ""
             }
 
         })

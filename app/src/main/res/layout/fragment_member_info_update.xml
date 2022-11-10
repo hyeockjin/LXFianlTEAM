@@ -36,10 +36,18 @@
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/inputImageView"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginLeft="115dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@mipmap/ic_launcher" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="208dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -71,6 +79,7 @@
                             android:layout_marginTop="50dp"
                             android:text="비밀번호:"
                             android:textSize="20sp" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -113,7 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="135dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="80dp"
                     android:background="#573E8B28"
                     android:backgroundTint="#573E8B28"
                     android:text="수정하기" />

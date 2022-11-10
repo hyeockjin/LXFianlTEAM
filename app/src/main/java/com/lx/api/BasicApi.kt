@@ -51,7 +51,8 @@ interface BasicApi {
         @Field("requestCode") requestCode: String,
         @Field("memberId") memberId: String,
         @Field("memberName") memberName: String,
-        @Field("memberPw") memberPw: String
+        @Field("memberPw") memberPw: String,
+        @Field("memberAddress") memberAddress: String
     ): Call<MemberListResponse>
 
     /**
@@ -86,7 +87,8 @@ interface BasicApi {
     fun postMemberUpdate(
         @Field("requestCode") requestCode: String,
         @Field("memberId") memberId: String,
-        @Field("memberPw") memberPw: String
+        @Field("memberPw") memberPw: String,
+        @Field("memberImage") memberImage: String
     ): Call<MemberListResponse>
 
     /**

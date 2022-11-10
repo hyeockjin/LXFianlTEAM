@@ -129,6 +129,17 @@
                     android:inputType="textPersonName"
                     android:minHeight="48dp" />
 
+                <EditText
+                    android:id="@+id/registerAddress"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:ems="10"
+                    android:hint="주소"
+                    android:inputType="textPersonName"
+                    tools:ignore="TouchTargetSizeCheck" />
+
             </LinearLayout>
 
         </LinearLayout>
