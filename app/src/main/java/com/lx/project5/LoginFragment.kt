@@ -53,7 +53,6 @@ class LoginFragment : Fragment() {
                     AppData.loginData?.memberId = memberId
                     AppData.loginData?.memberPw = memberPw
                     AppData.loginData?.memberName = response.body()?.data?.get(0)?.memberName.toString()
-                    AppData.loginData?.memberAddress = response.body()?.data?.get(0)?.memberAddress.toString()
                     (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
                 } else if(checkMember == "0"){
                     val builder = AlertDialog.Builder(activity)
