@@ -197,9 +197,11 @@ class MainActivity : AppCompatActivity() {
             ScreenItem.ITEMlogin -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
             }
+
             ScreenItem.ITEMupdate -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MemberInfoUpdateFragment()).commit()
             }
+            
             ScreenItem.ITEMpay -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
             }
