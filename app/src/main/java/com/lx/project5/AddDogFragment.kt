@@ -23,7 +23,9 @@ class AddDogFragment : Fragment() {
             val dogGender = binding.genderInput.text.toString()
             val dogEducation = binding.input1.text.toString()
             val dogCharacter = binding.input2.text.toString()
+            val dogType = binding.typeInput.text.toString()
             val dogImage = "1"
+            val memberNo = AppData.loginData?.memberNo
 
 
 
