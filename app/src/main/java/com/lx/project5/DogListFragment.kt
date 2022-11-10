@@ -28,7 +28,7 @@ class DogListFragment : Fragment() {
         _binding = FragmentDogListBinding.inflate(inflater, container, false)
 
         binding.addDogButton.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdogList)
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMaddDog)
         }
 
         initView()

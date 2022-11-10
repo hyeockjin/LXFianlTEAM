@@ -16,7 +16,21 @@ class WriteFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteBinding.inflate(inflater, container, false)
 
+
+
+        binding.editButton2.setOnClickListener {
+
+        sendRequest()
+
+        }
         return binding.root
+
+
+    }
+
+    fun sendRequest() {
+        //받아야하는거거 로그인 한거 넘버 돌봄이 버 체크한거
+
     }
 
 }

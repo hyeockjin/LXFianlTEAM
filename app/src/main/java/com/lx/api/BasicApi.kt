@@ -187,7 +187,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://172.168.10.24:8001/"
+        private const val BASE_URL = "http://172.168.10.15:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""

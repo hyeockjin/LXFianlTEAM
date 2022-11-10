@@ -155,7 +155,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             // 근처 지도 마커 활성화
-            showNearLocationMarker(map)
+            //showNearLocationMarker(map)
         }
 
     }
