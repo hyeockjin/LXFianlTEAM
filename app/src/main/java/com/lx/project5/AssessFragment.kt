@@ -16,6 +16,14 @@ class AssessFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentAssessBinding.inflate(inflater, container, false)
 
+        binding.completeButton3.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)
+        }
+
+        binding.completeButton4.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)
+        }
+
         return binding.root
     }
 

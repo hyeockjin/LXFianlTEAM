@@ -17,7 +17,12 @@ class CareTodolistFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentCareTodolistBinding.inflate(inflater, container, false)
 
+        binding.backButton2.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareMain)
+        }
+
         return binding.root
     }
+
 
 }

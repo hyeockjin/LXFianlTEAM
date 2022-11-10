@@ -8,6 +8,7 @@ class AppData {
         var userdata: String?=null
         var filepath: String?=null
         var loginData: LoginData?=null
+        var point: Int? = 0
     }
     //유진바보
 }
