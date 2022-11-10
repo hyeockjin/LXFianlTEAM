@@ -30,7 +30,6 @@ class LoginFragment : Fragment() {
         }
 
         binding.loginButton.setOnClickListener {
-
             readMember()
         }
 

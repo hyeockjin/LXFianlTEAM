@@ -83,7 +83,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:ems="10"
-                            android:inputType="textPersonName" />
+                            android:inputType="textPersonName"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
                         <EditText
                             android:id="@+id/inputId"
@@ -91,7 +92,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="30dp"
                             android:ems="10"
-                            android:inputType="textPersonName" />
+                            android:inputType="textPersonName"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
                         <EditText
                             android:id="@+id/inputPw"
@@ -99,7 +101,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="30dp"
                             android:ems="10"
-                            android:inputType="textPersonName" />
+                            android:inputType="textPersonName"
+                            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                     </LinearLayout>
                 </LinearLayout>

@@ -25,8 +25,6 @@ class MemberInfoUpdateFragment : Fragment() {
 
         binding.infoUpdateButton.setOnClickListener {
             updateMember()
-            val curActivity = activity as MainActivity
-            curActivity.onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
 
         }
 
