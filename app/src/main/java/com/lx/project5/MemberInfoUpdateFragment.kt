@@ -47,11 +47,11 @@ class MemberInfoUpdateFragment : Fragment() {
 
             }
             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
-                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
                 showToast("수정 성공")
                 loginData?.memberId = ""
                 loginData?.memberName = ""
                 loginData?.memberImage = ""
+                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             }
 
         })

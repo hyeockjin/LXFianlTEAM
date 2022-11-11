@@ -77,6 +77,7 @@ class LoginFragment : Fragment() {
             }
             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
                 (activity as MainActivity).showToast("qkqh")
+                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             }
 
         })

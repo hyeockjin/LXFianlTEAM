@@ -58,7 +58,6 @@ class Join2Fragment : Fragment() {
 
         binding.nextButton2.setOnClickListener {
             checkPw()
-
         }
 
         binding.idCheckButton.setOnClickListener {

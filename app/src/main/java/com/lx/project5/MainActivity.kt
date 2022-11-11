@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
         ITEMjoin2,
         ITEMlogin,
         ITEMupdate,
+        ITEMpetInfo,
         ITEMpay,
         ITEMreservation,
         ITEMwrite,
@@ -190,6 +191,9 @@ class MainActivity : AppCompatActivity() {
             }
             ScreenItem.ITEMcomplete -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, CompleteFragment()).commit()
+            }
+            ScreenItem.ITEMpetInfo -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, PetInfoFragment()).commit()
             }
             ScreenItem.ITEMeditDog -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, EditDogFragment()).commit()
