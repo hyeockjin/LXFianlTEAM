@@ -64,7 +64,8 @@ class MainActivity : AppCompatActivity() {
         ITEMwrite,
         ITEMwriteList,
         ITEMend,
-        ITEMdogList
+        ITEMdogList,
+        ITEMwrite2
 
     }
 
@@ -80,6 +81,11 @@ class MainActivity : AppCompatActivity() {
         binding.cardView.setOnClickListener{
             onFragmentChanged(ScreenItem.ITEMcareInfo)
         }
+        // 주변에 돌봄요청 버튼 눌렀을 때
+        binding.writeButton.setOnClickListener {
+            onFragmentChanged(ScreenItem.ITEMwrite2)
+        }
+
         //하단 탭의 버튼을 눌렀을때
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId) {
@@ -229,6 +235,9 @@ class MainActivity : AppCompatActivity() {
             }
             ScreenItem.ITEMdogList -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, DogListFragment()).commit()
+            }
+            ScreenItem.ITEMwrite2 -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, Write2Fragment()).commit()
             }
         }
 

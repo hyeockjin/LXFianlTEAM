@@ -8,6 +8,8 @@ class AppData {
         var loginData: LoginData?=null
         var point: Int? = 0
         var selectedItem: PetData? =null
+        var lat: String? = null
+        var lng: String? = null
     }
     //유진바보
 }
