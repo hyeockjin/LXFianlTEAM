@@ -30,6 +30,7 @@ class WriteFragment : Fragment() {
 
     fun sendRequest() {
         //받아야하는거거 로그인 한거 넘버 돌봄이 버 체크한거
+        // 달력 이거 데이트 폼이랑 정보 받아오는거 모르겠어요 알려주세요 ~
 
     }
 
