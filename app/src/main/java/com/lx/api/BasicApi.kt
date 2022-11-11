@@ -169,11 +169,10 @@ interface BasicApi {
         @Field("endTime") endTime: String,
         @Field("assignTitle") assignTitle: String,
         @Field("writeTime") writeTime: String,
-        @Field("awrn") awrn: Int,
         @Field("lat") lat: Double,
         @Field("lng") lng: Double
 
-    ): Call<acrListResponse>
+    ): Call<awrListResponse>
 
 
     /**

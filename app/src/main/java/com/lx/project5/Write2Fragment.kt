@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.lx.api.BasicClient
 import com.lx.data.acrListResponse
+import com.lx.data.awrListResponse
 import com.lx.project5.databinding.FragmentWrite2Binding
 import retrofit2.Call
 import retrofit2.Callback
@@ -42,27 +43,27 @@ class Write2Fragment : Fragment() {
     fun awrAdd() {
         //받아야하는거거 로그인 한거 넘버 돌봄이 버 체크한거
         // 달력 이거 데이트 폼이랑 정보 받아오는거 모르겠어요 알려주세요 ~
-        val memberId = binding
-        val memberPw = binding
-        val lat = AppData.lat
-        val lng = AppData.lng
+        val lat = AppData.lat?.toDouble()
+        val lng = AppData.lng?.toDouble()
 
-        BasicClient.api.acrAdd(
+        BasicClient.api.awrAdd(
             requestCode = "1001",
             memberNo = "3",
-            careNo = "3",
             startTime = "2022-11-11 00:00:00",
             endTime = "2022-11-11 00:00:00",
+            writeTime = "2022-11-11 00:00:00",
             assignTitle = "123123",
-            assignContent = "123123123"
+            assignContent = "123123123",
+            lat = lat!!,
+            lng = lng!!
 
-        ).enqueue(object : Callback<acrListResponse> {
-            override fun onResponse(call: Call<acrListResponse>, response: Response<acrListResponse>) {
+        ).enqueue(object : Callback<awrListResponse> {
+            override fun onResponse(call: Call<awrListResponse>, response: Response<awrListResponse>) {
                 (activity as MainActivity).showToast("1")
 
 
             }
-            override fun onFailure(call: Call<acrListResponse>, t: Throwable) {
+            override fun onFailure(call: Call<awrListResponse>, t: Throwable) {
                 (activity as MainActivity).showToast("2")
             }
 
