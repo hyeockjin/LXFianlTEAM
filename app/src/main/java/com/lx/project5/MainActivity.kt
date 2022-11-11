@@ -90,7 +90,8 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM3)
                 }
                 R.id.tab3 -> {
-                    onFragmentChanged(ScreenItem.ITEM2)
+                    onFragmentChanged(ScreenItem.ITEMwrite)
+
                 }
                 R.id.tab4 -> {
                     if(AppData.loginData?.memberId == null){
