@@ -11,8 +11,10 @@ import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
+import com.google.android.gms.maps.model.MarkerOptions
 import com.lx.project5.databinding.ActivityLocalBinding
 import com.permissionx.guolindev.PermissionX
 
@@ -61,6 +63,7 @@ class LocalActivity : AppCompatActivity() {
 
                 binding.outputLat.text = "${it.latitude}"
                 binding.outputLng.text = "${it.longitude}"
+                showMarker(LatLng(it.latitude, it.longitude))
             }
 
             //보고있는 지도 영역 구분
@@ -129,18 +132,18 @@ class LocalActivity : AppCompatActivity() {
         // showMarker(curPoint)
     }
 
-//    fun showMarker(curPoint:LatLng) {
-//        myMarker?.remove()
-//
-//        MarkerOptions().also {
-//            it.position(curPoint)
-//            it.title("내 위치")
-//            it.icon(BitmapDescriptorFactory.fromResource(R.drawable.location))
-//
-//            myMarker = map.addMarker(it)
-//            myMarker?.tag = "현재위치"
-//        }
-//    }
+    fun showMarker(curPoint:LatLng) {
+        myMarker?.remove()
+
+        MarkerOptions().also {
+            it.position(curPoint)
+            it.title("내 위치")
+            it.icon(BitmapDescriptorFactory.fromResource(R.drawable.cancel))
+
+            myMarker = map.addMarker(it)
+            myMarker?.tag = "현재위치"
+        }
+    }
 
     fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
