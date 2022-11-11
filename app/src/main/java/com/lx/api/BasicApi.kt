@@ -2,10 +2,7 @@ package com.lx.api
 
 import android.util.Log
 import com.google.android.gms.common.internal.safeparcel.SafeParcelable
-import com.lx.data.CareListResponse
-import com.lx.data.DogListResponse
-import com.lx.data.FileUploadResponse
-import com.lx.data.MemberListResponse
+import com.lx.data.*
 import okhttp3.Interceptor
 import okhttp3.MultipartBody
 import okhttp3.OkHttpClient
@@ -147,6 +144,22 @@ interface BasicApi {
         @Field("dogEducation") dogEducation: String,
         @Field("dogBreed") dogBreed: String
         ): Call<DogListResponse>
+
+    /**
+     * POST 방식으로 멤버 정보수정 요청
+     */
+
+    @FormUrlEncoded
+    @POST("care/acrAdd")
+    fun acrAdd(
+        @Field("requestCode") requestCode: String,
+        @Field("memberNo") memberNo: String,
+        @Field("careNo") careNo: String,
+        @Field("startTime") startTime: String,
+        @Field("endTime") endTime: String,
+        @Field("assignTitle") assignTitle: String,
+        @Field("assignContent") assignContent: String
+    ): Call<acrListResponse>
 
 
     /**
