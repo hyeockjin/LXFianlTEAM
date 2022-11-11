@@ -35,6 +35,7 @@
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/writeList"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
