@@ -140,7 +140,7 @@ interface BasicApi {
         ): Call<DogListResponse>
 
     /**
-     * POST 방식으로 멤버 정보수정 요청
+     * POST 방식으로 시부레  개좀 맡아달라고
      */
 
     @FormUrlEncoded
@@ -153,6 +153,26 @@ interface BasicApi {
         @Field("endTime") endTime: String,
         @Field("assignTitle") assignTitle: String,
         @Field("assignContent") assignContent: String
+    ): Call<acrListResponse>
+
+    /**
+     * POST 방식으로 돌봄 주변신청 보내기
+     */
+
+    @FormUrlEncoded
+    @POST("care/awrAdd")
+    fun awrAdd(
+        @Field("requestCode") requestCode: String,
+        @Field("assignContent") assignContent: String,
+        @Field("memberNo") memberNo: String,
+        @Field("startTime") startTime: String,
+        @Field("endTime") endTime: String,
+        @Field("assignTitle") assignTitle: String,
+        @Field("writeTime") writeTime: String,
+        @Field("awrn") awrn: Int,
+        @Field("lat") lat: Double,
+        @Field("lng") lng: Double
+
     ): Call<acrListResponse>
 
 

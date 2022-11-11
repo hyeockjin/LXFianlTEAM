@@ -21,10 +21,17 @@ class Write2Fragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWrite2Binding.inflate(inflater, container, false)
 
+        //지도로 가기
         binding.locationButton1.setOnClickListener {
             val locationIntent= Intent(activity,LocalActivity::class.java)
             startActivity(locationIntent)
         }
+        //등록하기 버튼
+        binding.editButton2.setOnClickListener {
+            awrAdd()
+        }
+
+
 
 
         return binding.root
@@ -32,11 +39,13 @@ class Write2Fragment : Fragment() {
 
     }
 
-    fun acrAdd2() {
+    fun awrAdd() {
         //받아야하는거거 로그인 한거 넘버 돌봄이 버 체크한거
         // 달력 이거 데이트 폼이랑 정보 받아오는거 모르겠어요 알려주세요 ~
         val memberId = binding
         val memberPw = binding
+        val lat = AppData.lat
+        val lng = AppData.lng
 
         BasicClient.api.acrAdd(
             requestCode = "1001",
