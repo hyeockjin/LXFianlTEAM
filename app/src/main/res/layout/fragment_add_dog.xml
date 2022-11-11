@@ -61,6 +61,7 @@
                                 android:layout_height="wrap_content"
                                 android:src="@drawable/dogicon"
                                 app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -238,7 +239,7 @@
                             <EditText
                                 android:id="@+id/input2"
                                 android:layout_width="367dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="103dp"
                                 android:layout_marginRight="20dp"
                                 android:layout_weight="1"
                                 android:background="#eeeeee"
