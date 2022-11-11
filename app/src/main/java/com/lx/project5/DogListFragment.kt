@@ -28,10 +28,10 @@ class DogListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentDogListBinding.inflate(inflater, container, false)
 
+        initView()
         petView()
 
         binding.addDogButton.setOnClickListener {
-            initView()
 
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMaddDog)
         }
