@@ -28,11 +28,10 @@ class DogListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentDogListBinding.inflate(inflater, container, false)
 
-        initView()
         petView()
+        initList()
 
         binding.addDogButton.setOnClickListener {
-
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMaddDog)
         }
 
@@ -42,7 +41,7 @@ class DogListFragment : Fragment() {
     }
 
     // 리스트 초기화
-    fun initView() {
+    fun initList() {
 
         // 1. 리스트의 모양을 담당하는 것
         // (LinearLayoutManager : 아래쪽으로 아이템들이 보이는 것, GridLayoutManager : 격자 형태로 보이는 것)
