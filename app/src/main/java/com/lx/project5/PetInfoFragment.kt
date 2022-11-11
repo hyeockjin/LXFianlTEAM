@@ -24,11 +24,11 @@ class PetInfoFragment : Fragment() {
         binding.petCharacter.text = "${selectedItem?.dogCharacter}"
 
         binding.editInfoButton2.setOnClickListener {
-
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMeditDog)
         }
 
         binding.backButton3.setOnClickListener {
-
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdogList)
         }
 
         return binding.root

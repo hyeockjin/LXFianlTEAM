@@ -167,7 +167,7 @@
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
                                 android:padding="16dp"
-                                android:text="교육사항" />
+                                android:text="교육정도" />
 
                             <TextView
                                 android:id="@+id/petEducation"

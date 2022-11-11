@@ -175,16 +175,16 @@
                             android:padding="5dp">
 
                             <TextView
-                                android:id="@+id/textView1"
-                                android:layout_width="match_parent"
+                                android:id="@+id/textView38"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="만지면 물거나 예민하게 반응하는 부위가 있나요? (ex. 얼굴, 가슴, 발)"
+                                android:text="교육정도"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="normal" />
 
                             <EditText
-                                android:id="@+id/output21"
-                                android:layout_width="367dp"
+                                android:id="@+id/educationInput2"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="20dp"
                                 android:layout_weight="1"
@@ -203,17 +203,17 @@
                             android:padding="5dp">
 
                             <TextView
-                                android:id="@+id/textView2"
-                                android:layout_width="match_parent"
+                                android:id="@+id/textView37"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="사람을 물거나 다른 강아지를 공격한 적이 있나요?"
+                                android:text="특이사항"
                                 android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:textStyle="normal" />
 
                             <EditText
-                                android:id="@+id/output22"
-                                android:layout_width="367dp"
-                                android:layout_height="wrap_content"
+                                android:id="@+id/characterInput2"
+                                android:layout_width="match_parent"
+                                android:layout_height="103dp"
                                 android:layout_marginRight="20dp"
                                 android:layout_weight="1"
                                 android:background="#eeeeee"
@@ -221,37 +221,8 @@
                                 android:padding="10dp"
                                 android:textSize="14sp"
                                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="10dp"
-                            android:orientation="vertical"
-                            android:padding="5dp">
-
-                            <TextView
-                                android:id="@+id/register"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="예방접종을 완료 하셨나요?"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <EditText
-                                android:id="@+id/output23"
-                                android:layout_width="367dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginRight="20dp"
-                                android:layout_weight="1"
-                                android:background="#eeeeee"
-                                android:gravity="center_vertical"
-                                android:padding="10dp"
-                                android:textSize="14sp"
-                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-                        </LinearLayout>
                     </LinearLayout>
 
                 </LinearLayout>
