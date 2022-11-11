@@ -1,5 +1,6 @@
 package com.lx.project5
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -28,11 +29,12 @@ class DogListFragment : Fragment() {
         _binding = FragmentDogListBinding.inflate(inflater, container, false)
 
         binding.addDogButton.setOnClickListener {
+            initView()
+            petView()
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMaddDog)
         }
 
-        initView()
-        petView()
+
 
         return binding.root
     }
@@ -58,8 +60,8 @@ class DogListFragment : Fragment() {
 
                     AppData.selectedItem = item
 
-                    // 두번째 부분화면 띄워주기
-                    (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMeditDog)
+                    val petInfoIntent = Intent(context, PetInfoFragment::class.java)
+                    petInfoLauncher.launch(petInfoIntent)
 
                 }
             }
@@ -78,7 +80,7 @@ class DogListFragment : Fragment() {
             ).enqueue(object: Callback<DogListResponse> {
                 override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
 
-                    showPetList(response)
+                    addPetList(response)
                 }
 
                 override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
@@ -92,7 +94,7 @@ class DogListFragment : Fragment() {
             ).enqueue(object: Callback<DogListResponse> {
                 override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
 
-                    showPetList(response)
+                    addPetList(response)
                 }
 
                 override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
@@ -104,7 +106,7 @@ class DogListFragment : Fragment() {
 
     }
 
-    fun showPetList(response: Response<DogListResponse>){
+    fun addPetList(response: Response<DogListResponse>){
 
         petAdapter?.apply{
             response.body()?.data?.let {
@@ -113,8 +115,10 @@ class DogListFragment : Fragment() {
                         item.dogName,
                         item.dogAge,
                         item.dogGender,
-                        item.dogType,
-                        item.dogImage
+                        item.dogBreed,
+                        item.dogImage,
+                        item.dogEducation,
+                        item.dogCharacter
                         )
                     )
                 }

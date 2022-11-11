@@ -20,16 +20,8 @@ class AddDogFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentAddDogBinding.inflate(inflater, container, false)
 
-
-
-
-
         binding.addButton.setOnClickListener {
             addPet()
-
-
-
-
 
         }
 
@@ -40,9 +32,9 @@ class AddDogFragment : Fragment() {
         val dogName = binding.nameInput.text.toString()
         val dogAge = binding.ageInput.text.toString()
         val dogGender = binding.genderInput.text.toString()
-        val dogEducation = binding.input1.text.toString()
-        val dogCharacter = binding.input2.text.toString()
-        val dogBreed = binding.typeInput.text.toString()
+        val dogBreed = binding.breedInput.text.toString()
+        val dogEducation = binding.educationInput.text.toString()
+        val dogCharacter = binding.characterInput.text.toString()
         val dogImage = "1"
         val memberNo = loginData?.memberNo.toString()
 
@@ -66,7 +58,7 @@ class AddDogFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
-                binding.input1.setText(t.message)
+                binding.nameInput.setText(t.message)
 
                 (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdogList)
             }

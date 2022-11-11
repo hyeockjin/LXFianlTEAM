@@ -44,7 +44,7 @@ class PetAdapter : RecyclerView.Adapter<PetAdapter.ViewHolder>(){
             //강아지 성별
             binding.dogGenderOutput.text = item.dogGender
             //견종
-            binding.dogTypeOutput.text = item.dogType
+            binding.dogTypeOutput.text = item.dogBreed
 
         }
         init {

@@ -14,6 +14,7 @@ data class DogListResponse(
     val message: String
 ) {
     data class Data(
+        val dogVaccination: String,
         @SerializedName("dogAge")
         val dogAge: Int,
         @SerializedName("dogCharacter")
@@ -21,9 +22,9 @@ data class DogListResponse(
         @SerializedName("dogEducation")
         val dogEducation: String,
         @SerializedName("dogGender")
+        val dogBreed: String,
+        @SerializedName("dogBreed")
         val dogGender: String,
-        @SerializedName("dogType")
-        val dogType: String,
         @SerializedName("dogImage")
         val dogImage: String,
         @SerializedName("dogName")
