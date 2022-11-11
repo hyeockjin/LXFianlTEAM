@@ -1,7 +1,6 @@
 package com.lx.api
 
 import android.util.Log
-import com.google.android.gms.common.internal.safeparcel.SafeParcelable
 import com.lx.data.*
 import okhttp3.Interceptor
 import okhttp3.MultipartBody
@@ -153,7 +152,7 @@ interface BasicApi {
         @Field("endTime") endTime: String,
         @Field("assignTitle") assignTitle: String,
         @Field("assignContent") assignContent: String
-    ): Call<acrListResponse>
+    ): Call<AcrListResponse>
 
     /**
      * POST 방식으로 돌봄 주변신청 보내기
@@ -171,8 +170,14 @@ interface BasicApi {
         @Field("writeTime") writeTime: String,
         @Field("lat") lat: Double,
         @Field("lng") lng: Double
+    ): Call<AwrListResponse>
 
-    ): Call<awrListResponse>
+    // 맡김이가 쓴 글 리스트트
+   @GET("care/awrList")
+    fun getawrFilter(
+        @Query("requestCode") requestCode: String,
+        @Query("memberNo") memberNo: String
+    ): Call<AwrListResponse>
 
 
     /**

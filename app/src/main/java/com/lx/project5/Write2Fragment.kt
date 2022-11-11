@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lx.api.BasicClient
-import com.lx.data.acrListResponse
-import com.lx.data.awrListResponse
+import com.lx.data.AwrListResponse
 import com.lx.project5.databinding.FragmentWrite2Binding
 import retrofit2.Call
 import retrofit2.Callback
@@ -55,14 +54,14 @@ class Write2Fragment : Fragment() {
             lat = lat!!,
             lng = lng!!
 
-        ).enqueue(object : Callback<awrListResponse> {
-            override fun onResponse(call: Call<awrListResponse>, response: Response<awrListResponse>) {
+        ).enqueue(object : Callback<AwrListResponse> {
+            override fun onResponse(call: Call<AwrListResponse>, response: Response<AwrListResponse>) {
                 (activity as MainActivity).showToast("${lat}, ${lng}")
                 (activity as MainActivity).showToast("1")
 
 
             }
-            override fun onFailure(call: Call<awrListResponse>, t: Throwable) {
+            override fun onFailure(call: Call<AwrListResponse>, t: Throwable) {
                 (activity as MainActivity).showToast("2")
             }
 

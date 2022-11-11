@@ -1,16 +1,12 @@
 package com.lx.project5
 
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lx.api.BasicClient
-import com.lx.data.MemberListResponse
-import com.lx.data.acrListResponse
-import com.lx.project5.databinding.FragmentAddDogBinding
+import com.lx.data.AcrListResponse
 import com.lx.project5.databinding.FragmentWriteBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -51,13 +47,13 @@ class WriteFragment : Fragment() {
             assignTitle = "123123",
             assignContent = "123123123"
 
-        ).enqueue(object : Callback<acrListResponse> {
-            override fun onResponse(call: Call<acrListResponse>, response: Response<acrListResponse>) {
+        ).enqueue(object : Callback<AcrListResponse> {
+            override fun onResponse(call: Call<AcrListResponse>, response: Response<AcrListResponse>) {
                 (activity as MainActivity).showToast("1")
 
 
             }
-            override fun onFailure(call: Call<acrListResponse>, t: Throwable) {
+            override fun onFailure(call: Call<AcrListResponse>, t: Throwable) {
                 (activity as MainActivity).showToast("2")
             }
 

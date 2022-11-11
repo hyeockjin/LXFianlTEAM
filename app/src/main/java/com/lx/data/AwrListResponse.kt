@@ -3,7 +3,7 @@ package com.lx.data
 
 import com.google.gson.annotations.SerializedName
 
-data class awrListResponse(
+data class AwrListResponse(
     @SerializedName("code")
     val code: Int,
     @SerializedName("data")
