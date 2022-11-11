@@ -17,4 +17,5 @@ class WriteListFragment : Fragment() {
         return binding.root
     }
 
+
 }
