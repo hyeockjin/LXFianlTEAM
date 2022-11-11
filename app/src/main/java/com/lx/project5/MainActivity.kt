@@ -90,7 +90,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.tab3 -> {
                     onFragmentChanged(ScreenItem.ITEMwrite)
-
                 }
                 R.id.tab4 -> {
                     if(AppData.loginData?.memberId == null){
