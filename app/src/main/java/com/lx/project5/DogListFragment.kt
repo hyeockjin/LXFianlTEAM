@@ -74,34 +74,19 @@ class DogListFragment : Fragment() {
     fun petView() {
 
         var petIndex =  (activity as MainActivity).petIndex
-        if(petIndex.equals("0")){
-            BasicClient.api.getPetList(
-                requestCode = "1001"
-            ).enqueue(object: Callback<DogListResponse> {
-                override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
+        BasicClient.api.getPetFilter(
+            requestCode = "1001",
+            petTheme = petIndex.toString()
+        ).enqueue(object: Callback<DogListResponse> {
+            override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
 
-                    addPetList(response)
-                }
+                addPetList(response)
+            }
 
-                override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
-                }
+            override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
+            }
 
-            })
-        } else {
-            BasicClient.api.getPetFilter(
-                requestCode = "1001",
-                petTheme = petIndex.toString()
-            ).enqueue(object: Callback<DogListResponse> {
-                override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
-
-                    addPetList(response)
-                }
-
-                override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
-                }
-
-            })
-        }
+        })
 
 
     }

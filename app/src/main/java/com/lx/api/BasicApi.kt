@@ -142,7 +142,7 @@ interface BasicApi {
         @Field("dogCharacter") dogCharacter: String,
         @Field("dogImage") dogImage: String,
         @Field("dogEducation") dogEducation: String,
-        @Field("dogBreed") dogBreed: String,
+        @Field("dogBreed") dogBreed: String
         ): Call<DogListResponse>
 
     /**
@@ -200,7 +200,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://192.168.105.41:8001/"
+        private const val BASE_URL = "http://192.168.105.173:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""
