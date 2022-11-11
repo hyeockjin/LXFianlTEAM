@@ -73,10 +73,10 @@ class DogListFragment : Fragment() {
 
     fun petView() {
 
-        var petIndex =  (activity as MainActivity).petIndex
+        var memberNo = AppData.loginData?.memberNo
         BasicClient.api.getPetFilter(
             requestCode = "1001",
-            petTheme = petIndex.toString()
+            memberNo = memberNo.toString()
         ).enqueue(object: Callback<DogListResponse> {
             override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
 

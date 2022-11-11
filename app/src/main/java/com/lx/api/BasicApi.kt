@@ -110,22 +110,16 @@ interface BasicApi {
         @Query("requestCode") requestCode: String
     ): Call<CareListResponse>
 
-    /**
-     * GET 방식으로 개목록 요청
-     */
-    @GET("care/petList")
-    fun getPetList(
-        @Query("requestCode") requestCode: String
-    ): Call<DogListResponse>
+
 
     /**
-     * GET 방식으로 필터 요청
+     * GET 방식으로  개리스트 요청
      */
 
-    @GET("farm/petFilter")
+    @GET("farm/petList")
     fun getPetFilter(
         @Query("requestCode") requestCode: String,
-        @Query("petTheme") petTheme: String
+        @Query("memberNo") memberNo: String
     ): Call<DogListResponse>
 
     /**

@@ -36,7 +36,7 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
 
-    var locationClient: FusedLocationProviderClient? = null
+    var locationClient: FusedLocationProviderClient? = null;
 
     lateinit var map: GoogleMap
 
