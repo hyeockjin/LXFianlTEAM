@@ -116,7 +116,7 @@ interface BasicApi {
      * GET 방식으로  개리스트 요청
      */
 
-    @GET("farm/petList")
+    @GET("care/petList")
     fun getPetFilter(
         @Query("requestCode") requestCode: String,
         @Query("memberNo") memberNo: String
@@ -194,7 +194,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://192.168.105.173:8001/"
+        private const val BASE_URL = "http://192.168.0.12:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""

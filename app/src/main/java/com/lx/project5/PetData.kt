@@ -1,12 +1,13 @@
 package com.lx.project5
 
 data class PetData (
-
+    var dogNo: String,
+    var memberNo: String,
     var dogName: String,
-    var dogAge: Int,
     var dogGender: String,
+    var dogAge: String,
+    var dogEducation: String,
     var dogCharacter: String,
-    var dogImage: String,
-    var dogBreed: String,
-    var dogEducation: String
+    var dogBreed: String
+
 )

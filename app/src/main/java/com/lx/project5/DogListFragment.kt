@@ -10,7 +10,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lx.api.BasicClient
 import com.lx.data.DogListResponse
-import com.lx.drawer.OnPetItemClickListener
 import com.lx.project5.databinding.FragmentDogListBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,8 +27,10 @@ class DogListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentDogListBinding.inflate(inflater, container, false)
 
-        petView()
+
         initList()
+        petView()
+
 
         binding.addDogButton.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMaddDog)
@@ -98,22 +99,21 @@ class DogListFragment : Fragment() {
             response.body()?.data?.let {
                 for(item in it) {
                     this.items.add(PetData(
+                        item.dogNo,
+                        item.memberNo,
                         item.dogName,
-                        item.dogAge,
                         item.dogGender,
-                        item.dogBreed,
-                        item.dogImage,
+                        item.dogAge,
                         item.dogEducation,
-                        item.dogCharacter
+                        item.dogCharacter,
+                        item.dogBreed
                         )
                     )
                 }
             }
             this.notifyDataSetChanged()
 
-
         }
-
 
     }
 
