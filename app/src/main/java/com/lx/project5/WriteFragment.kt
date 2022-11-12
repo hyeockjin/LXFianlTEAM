@@ -3,6 +3,7 @@ package com.lx.project5
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -32,7 +33,7 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
     var savedMonth = 0
     var savedYear =0
     var savedHour = 0
-    var savedMinute = 0
+    private var savedMinute = 0
 
     var cIndex = 0
 
@@ -82,7 +83,9 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
     }
 
-    //달력
+    /**
+     * 사용자가 입력한 데이터를 변수에 넣어주는 함수
+     *  */
     private fun getDateTimeCalendar(){
         val cal: Calendar = Calendar.getInstance()
         day = cal.get(Calendar.DAY_OF_MONTH)
@@ -90,20 +93,23 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
         year = cal.get(Calendar.YEAR)
         hour = cal.get(Calendar.HOUR)
         minute = cal.get(Calendar.MINUTE)
+        Log.v("you1","${year},${month},${day}, 분 확인!!!!!!${hour},${minute}")
 
     }
-    //달력
+    //달력@@@@@@@@@@@@
     private fun pickDate() {
         binding.editTextTime1.setOnClickListener {
             cIndex = 1
             getDateTimeCalendar()
 
+            Log.v("you1","${year},${month},${day}")
             context?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
-
         }
         binding.editTextTime2.setOnClickListener {
             cIndex = 2
             getDateTimeCalendar()
+
+            Log.v("you2","${year},${month},${day}")
             context?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
 
         }
@@ -116,8 +122,8 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
         savedMonth = month
         savedYear = year
 
-        getDateTimeCalendar()
         TimePickerDialog(context,this,hour,minute,true).show()
+        getDateTimeCalendar()
     }
 
     //달력
@@ -125,13 +131,16 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
         if (cIndex == 1){
             savedHour = hourOfDay
-            savedMinute = minute
+            savedMinute = Minute
 
+            Log.v("@@","${hour},@@${minute}")
             binding.editTextTime1.text = "$savedYear-$savedMonth-$savedDay $savedHour:$savedMinute"
+
         } else if(cIndex == 2){
             savedHour = hourOfDay
-            savedMinute = minute
+            savedMinute = Minute
 
+            Log.v("@@","${hour},@@${minute}")
             binding.editTextTime2.text = "$savedYear-$savedMonth-$savedDay $savedHour:$savedMinute"
         }
 
