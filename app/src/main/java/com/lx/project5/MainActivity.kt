@@ -26,6 +26,7 @@ import com.permissionx.guolindev.PermissionX
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
+import org.json.JSONArray
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -163,7 +164,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             // 근처 지도 마커 활성화
-            //showNearLocationMarker(map)
+            showNearLocationMarker(map)
         }
 
     }
@@ -302,21 +303,25 @@ class MainActivity : AppCompatActivity() {
         ).enqueue(object : Callback<CareListResponse> {
             override fun onResponse(call: Call<CareListResponse>, response: Response<CareListResponse>) {
                 Log.v("lastkingdom","근처 마커 활성화 요청 성공")
-                //for (idx in 0..2) {
+                val jsonArray = JSONArray(response.body()?.data)
+                for (i in 0 until jsonArray.length()) {
                     Log.v("lastkingdom","근처 마커 for문 진입")
-                    var latitude = response.body()?.data?.get(0)?.careX
-                    var longitude = response.body()?.data?.get(0)?.careY
+                    var latitude = response.body()?.data?.get(i)?.careX
+                    var longitude = response.body()?.data?.get(i)?.careY
+
+                    Log.v("lastkingdom","마커 위도 ${latitude.toString()}")
+                    Log.v("lastkingdom","마커 위도 ${longitude.toString()}")
 
                     Log.v("lastkingdom","2")
                     // 1. 마커 옵션 설정 (만드는 과정)
                     var makerOptions = MarkerOptions()
                     makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
                         .position(LatLng(latitude!!, longitude!!))
-                        .title("마커"+0) // 타이틀.
+                        .title("마커"+i) // 타이틀.
 
                     // 2. 마커 생성 (마커를 나타냄)
                     map.addMarker(makerOptions)
-                //}
+                }
             }
             override fun onFailure(call: Call<CareListResponse>, t: Throwable) {
                 Log.v("lastkingdom","근처 마커 활성화 요청 실패")

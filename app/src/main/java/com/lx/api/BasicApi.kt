@@ -171,7 +171,8 @@ interface BasicApi {
         @Field("assignTitle") assignTitle: String,
         @Field("writeTime") writeTime: String,
         @Field("lat") lat: Double,
-        @Field("lng") lng: Double
+        @Field("lng") lng: Double,
+        @Field("dogNo") dogNo: String
     ): Call<AwrListResponse>
 
     // 맡김이가 쓴 글 리스트트
