@@ -181,6 +181,24 @@ interface BasicApi {
         @Query("memberNo") memberNo: String
     ): Call<AwrListResponse>
 
+    /**
+     * POST 방식으로 개수정 보내기
+     */
+    @FormUrlEncoded
+    @POST("care/dogUpdate")
+    fun postDogUpdate(
+        @Field("requestCode") requestCode: String,
+        @Field("dogAge") dogAge: String,
+        @Field("dogCharacter") dogCharacter: String,
+        @Field("dogEducation") dogEducation: String,
+        @Field("dogBreed") dogBreed: String,
+        @Field("dogGender") dogGender: String,
+        @Field("dogImage") dogImage: String,
+        @Field("dogName") dogName: String,
+        @Field("dogNo") dogNo: String,
+        @Field("memberNo") memberNo: String
+    ): Call<DogListResponse>
+
 
     /**
      * 파일 업로드 요청 / 사용하자
