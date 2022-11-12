@@ -31,7 +31,9 @@ data class AwrListResponse(
         @SerializedName("startTime")
         val startTime: String,
         @SerializedName("write_time")
-        val writeTime: String
+        val writeTime: String,
+        @SerializedName("dogNo")
+        val dogNo: String
     )
 
     data class Header(

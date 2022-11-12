@@ -9,7 +9,8 @@ data class WriteData (
     var endTime: String,
     var startTime: String,
     var memberNo: String,
-    var assignContent: String
+    var assignContent: String,
+    var dogNo: String
 
 
 )

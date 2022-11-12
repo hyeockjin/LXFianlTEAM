@@ -96,11 +96,11 @@ class WriteListFragment : Fragment() {
                         item.lat,
                         item.awrn,
                         item.assignTitle,
-                        item.dogNo,
                         item.endTime,
                         item.startTime,
                         item.memberNo,
-                        item.assignContent
+                        item.assignContent,
+                        item.dogNo
                         )
                     )
                 }
