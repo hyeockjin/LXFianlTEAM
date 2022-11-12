@@ -161,7 +161,7 @@
                             android:layout_height="50dp"
                             android:ems="10"
                             android:inputType="textPersonName"
-                            android:text="제목" />
+                            android:hint="제목" />
 
                         <TextView
                             android:id="@+id/detail1"
