@@ -34,13 +34,15 @@ class MemberInfoUpdateFragment : Fragment() {
     //회원 정보 수정 요청하기
     fun updateMember() {
         val memberId = binding.inputId.text.toString()
-        val memberPw = binding.inputPw.text.toString()
+        val memberPw = AppData.memberdata?.memberPw.toString()
+        val memberName = binding.inputName.text.toString()
         val memberImage = binding.inputImageView.textAlignment.toString()
 
         BasicClient.api.postMemberUpdate(
             requestCode = "1001",
             memberId = memberId,
             memberPw = memberPw,
+            memberName = memberName,
             memberImage = memberImage
         ).enqueue(object : Callback<MemberListResponse> {
             override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {
