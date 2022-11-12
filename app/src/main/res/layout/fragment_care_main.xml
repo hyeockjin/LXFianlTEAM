@@ -190,8 +190,7 @@
                 android:layout_width="60dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="16dp"
-                android:background="#573E8B28"
-                android:backgroundTint="#573E8B28"
+                android:background="@drawable/pink_round_button"
                 android:text="할 일"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
@@ -211,8 +210,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="20dp"
                 android:layout_weight="1"
-                android:background="#573E8B28"
-                android:backgroundTint="#573E8B28"
+                android:background="@drawable/pink_round_button"
                 android:text="위치확인" />
 
             <Button
@@ -223,8 +221,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="20dp"
                 android:layout_weight="1"
-                android:background="#573E8B28"
-                android:backgroundTint="#573E8B28"
+                android:background="@drawable/pink_round_button"
                 android:text="경로확인" />
 
             <Button
@@ -235,8 +232,7 @@
                 android:layout_marginLeft="5dp"
                 android:layout_marginBottom="20dp"
                 android:layout_weight="1"
-                android:background="#573E8B28"
-                android:backgroundTint="#573E8B28"
+                android:background="@drawable/pink_round_button"
                 android:text="맡김완료" />
         </LinearLayout>
 

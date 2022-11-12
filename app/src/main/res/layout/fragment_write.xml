@@ -336,8 +336,7 @@
                     android:id="@+id/editButton2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#573E8B28"
-                    android:backgroundTint="#573E8B28"
+                    android:background="@drawable/pink_round_button"
                     android:text="작성하기" />
             </LinearLayout>
 

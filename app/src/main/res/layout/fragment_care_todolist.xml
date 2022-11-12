@@ -59,11 +59,10 @@
 
                 <Button
                     android:id="@+id/button12"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="120dp"
-                    android:background="#573E8B28"
-                    android:backgroundTint="#573E8B28"
+                    android:background="@drawable/pink_round_button"
                     android:text="확인하기" />
 
             </LinearLayout>
@@ -101,12 +100,11 @@
 
                 <Button
                     android:id="@+id/button13"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="120dp"
-                    android:background="#573E8B28"
-                    android:backgroundTint="#573E8B28"
-                    android:text="완료" />
+                    android:background="@drawable/pink_round_button"
+                    android:text="완 료" />
 
             </LinearLayout>
 
@@ -143,11 +141,10 @@
 
                 <Button
                     android:id="@+id/button14"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="120dp"
-                    android:background="#573E8B28"
-                    android:backgroundTint="#573E8B28"
+                    android:background="@drawable/pink_round_button"
                     android:text="미완료" />
 
             </LinearLayout>
@@ -185,11 +182,10 @@
 
                 <Button
                     android:id="@+id/button15"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="120dp"
-                    android:background="#573E8B28"
-                    android:backgroundTint="#573E8B28"
+                    android:background="@drawable/pink_round_button"
                     android:text="미완료" />
 
             </LinearLayout>
@@ -225,8 +221,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
-            android:background="#573E8B28"
-            android:backgroundTint="#573E8B28"
+            android:background="@drawable/pink_round_button"
             android:text="돌아가기" />
     </LinearLayout>
 

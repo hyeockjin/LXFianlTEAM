@@ -135,7 +135,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="60dp"
                         android:layout_marginTop="70dp"
-                        android:backgroundTint="#573E8B28"
+                        android:background="@drawable/pink_round_button"
                         android:text="신청하기" />
 
                     <Button
@@ -144,7 +144,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="40dp"
                         android:layout_marginTop="70dp"
-                        android:backgroundTint="#573E8B28"
+                        android:background="@drawable/pink_round_button"
                         android:text="예약취소" />
                 </LinearLayout>
             </LinearLayout>

@@ -142,7 +142,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="140dp"
                     android:layout_marginTop="20dp"
-                    android:backgroundTint="#573E8B28"
+                    android:background="@drawable/pink_round_button"
                     android:text="리뷰작성" />
 
                 <TextView
@@ -167,7 +167,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="140dp"
                     android:layout_marginTop="20dp"
-                    android:backgroundTint="#573E8B28"
+                    android:background="@drawable/pink_round_button"
                     android:text="맡김완료" />
             </LinearLayout>
 

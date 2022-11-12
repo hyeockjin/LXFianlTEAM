@@ -216,18 +216,18 @@
                     android:id="@+id/backButton3"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="2dp"
-                    android:background="#573E8B28"
-                    android:backgroundTint="#573E8B28"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/round_button"
                     android:text="뒤로가기" />
 
                 <Button
                     android:id="@+id/editInfoButton2"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:background="#573E8B28"
-                    android:backgroundTint="#573E8B28"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/pink_round_button"
                     android:text="수정하기" />
 
             </LinearLayout>
