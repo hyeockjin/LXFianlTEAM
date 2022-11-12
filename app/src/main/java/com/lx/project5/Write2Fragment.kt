@@ -74,6 +74,7 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
         BasicClient.api.awrAdd(
             requestCode = "1001",
             memberNo = "3",
+            dogNo = "1",
             startTime = "2022-11-11 00:00:00",
             endTime = "2022-11-11 00:00:00",
             writeTime = "2022-11-11 00:00:00",
@@ -86,6 +87,7 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
             override fun onResponse(call: Call<AwrListResponse>, response: Response<AwrListResponse>) {
                 (activity as MainActivity).showToast("${lat}, ${lng}")
                 (activity as MainActivity).showToast("1")
+                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteList)
 
 
             }
