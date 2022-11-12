@@ -65,8 +65,9 @@ class DogListFragment : Fragment() {
 
                     AppData.selectedItem = item
 
-                    val petInfoIntent = Intent(context, PetInfoFragment::class.java)
-                    petInfoLauncher.launch(petInfoIntent)
+//                    val petInfoIntent = Intent(context, PetInfoFragment::class.java)
+//                    petInfoLauncher.launch(petInfoIntent)
+                    (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMpetInfo)
 
                 }
             }
