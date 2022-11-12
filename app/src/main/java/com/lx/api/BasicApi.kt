@@ -48,7 +48,8 @@ interface BasicApi {
         @Field("memberId") memberId: String,
         @Field("memberName") memberName: String,
         @Field("memberPw") memberPw: String,
-        @Field("memberAddress") memberAddress: String
+        @Field("memberAddress") memberAddress: String,
+        @Field("memberImage") memberImage: String
     ): Call<MemberListResponse>
 
     /**

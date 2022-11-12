@@ -1,4 +1,5 @@
 plugins {
+    id 'com.google.gms.google-services'
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
@@ -71,5 +72,13 @@ dependencies {
 
     //이미지뷰 원형으로 보이기
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //파이어베이스 채팅
+    implementation platform('com.google.firebase:firebase-bom:31.0.2')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
+    implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-storage:20.1.0'
+    implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
 
 }

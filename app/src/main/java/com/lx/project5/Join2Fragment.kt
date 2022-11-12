@@ -27,6 +27,7 @@ class Join2Fragment : Fragment() {
 
     var bitmap: Bitmap? = null
     var saveBitmap: Bitmap? = null
+    var memberImage: String? = "1"
 
     //앨범에서 가져오기위한 런처
     val albumLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
@@ -58,6 +59,7 @@ class Join2Fragment : Fragment() {
 
         binding.nextButton2.setOnClickListener {
             checkPw()
+
         }
 
         binding.idCheckButton.setOnClickListener {
@@ -148,7 +150,8 @@ class Join2Fragment : Fragment() {
             memberId = registerId,
             memberPw =registerPw,
             memberName =registerName,
-            memberAddress =registerAddress
+            memberAddress =registerAddress,
+            memberImage = memberImage!!
 
         ).enqueue(object:Callback<MemberListResponse>{
             override fun onResponse(call: Call<MemberListResponse>,response: Response<MemberListResponse>){
