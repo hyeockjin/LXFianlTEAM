@@ -83,9 +83,10 @@ interface BasicApi {
     @POST("care/memberUpdate")
     fun postMemberUpdate(
         @Field("requestCode") requestCode: String,
-        @Field("memberId") memberId: String,
-        @Field("memberPw") memberPw: String,
-        @Field("memberImage") memberImage: String
+        @Field("memberNo") memberNo: String,
+        @Field("memberAddress") memberAddress: String,
+        @Field("memberImage") memberImage: String,
+        @Field("memberName") memberName: String
     ): Call<MemberListResponse>
 
     /**
@@ -239,7 +240,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://172.30.1.5:8001/"
+        private const val BASE_URL = "http://192.168.0.12:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""
