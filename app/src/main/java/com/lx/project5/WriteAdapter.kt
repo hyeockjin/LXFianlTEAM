@@ -11,7 +11,7 @@ import com.lx.project5.databinding.WriteItemBinding
 
 class WriteAdapter : RecyclerView.Adapter<WriteAdapter.ViewHolder>(){
     //각 아이템에 보여질 데이터를 담고 있는것
-    var items = ArrayList<RequiresPermission.Write>()
+    var items = ArrayList<WriteData>()
     var context: Context? = null
 
     var listener: OnWriteItemClickListener? = null
@@ -38,13 +38,13 @@ class WriteAdapter : RecyclerView.Adapter<WriteAdapter.ViewHolder>(){
 //                Glide.with(binding.gridPictureView).load(uri).into(binding.gridPictureView)
 //            }
 
-            binding.
+            binding.careMan
 
         }
-        init {
-            binding.root.setOnClickListener{
-                listener?.onItemClick(this,binding.root,adapterPosition)
-            }
-        }
+//        init {
+//            binding.root.setOnClickListener{
+//                listener?.onItemClick(this,binding.root,adapterPosition)
+//            }
+//        }
     }
 }

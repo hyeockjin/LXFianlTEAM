@@ -6,5 +6,5 @@ import java.text.FieldPosition
 
 interface OnWriteItemClickListener {
 
-    fun onItemClick(holder: PetAdapter.ViewHolder?,view: View?, position: Int)
+    fun onItemClick(holder: WriteAdapter.ViewHolder?,view: View?, position: Int)
 }

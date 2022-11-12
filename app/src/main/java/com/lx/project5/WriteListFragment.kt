@@ -15,7 +15,7 @@ import com.lx.project5.databinding.*
 class WriteListFragment : Fragment() {
     var _binding: FragmentWriteListBinding? = null
     val binding get() = _binding!!
-    var writeAdapter: PetAdapter? = null
+    var writeAdapter: WriteAdapter? = null
     val writeInfoLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
 
 
@@ -38,23 +38,23 @@ class WriteListFragment : Fragment() {
         // 2. 어댑터를 설정하는 것
         // 실제 데이터를 관리하고 각 아이템의 모양을 만들어주는 것
         writeAdapter = WriteAdapter()
-        binding.dogList.adapter = writeAdapter
+        binding.writeList.adapter = writeAdapter
 
         // 4. 아이템을 클릭했을 때 동작할 코드 넣어주기
-        petAdapter?.listener = object: OnPetItemClickListener {
-            override fun onItemClick(holder: PetAdapter.ViewHolder?, view: View?, position: Int) {
-                petAdapter?.apply {
-                    val item = items.get(position)
-
-                    AppData.selectedItem = item
-
-                    val petInfoIntent = Intent(context, PetInfoFragment::class.java)
-                    petInfoLauncher.launch(petInfoIntent)
-
-                }
-            }
-
-        }
+//        writeAdapter?.listener = object: OnWriteItemClickListener {
+//            override fun onItemClick(holder: PetAdapter.ViewHolder?, view: View?, position: Int) {
+//                writeAdapter?.apply {
+//                    val item = items.get(position)
+//
+//                    AppData.selectedWriteItem = item
+//
+//                    val petInfoIntent = Intent(context, PetInfoFragment::class.java)
+//                    petInfoLauncher.launch(petInfoIntent)
+//
+//                }
+//            }
+//
+//        }
 
     }
 
