@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lx.api.BasicClient
+import com.lx.data.AwrListResponse
 import com.lx.data.DogListResponse
 import com.lx.project5.databinding.*
 
@@ -23,7 +24,7 @@ class WriteListFragment : Fragment() {
         _binding = FragmentWriteListBinding.inflate(inflater, container, false)
 
         initList()
-        petView()
+        writeView()
 
         return binding.root
     }
@@ -59,19 +60,19 @@ class WriteListFragment : Fragment() {
     }
 
 
-    fun petView() {
+    fun writeView() {
 
         var memberNo = AppData.loginData?.memberNo
-        BasicClient.api.getPetFilter(
+        BasicClient.api.getawrFilter(
             requestCode = "1001",
             memberNo = memberNo.toString()
-        ).enqueue(object: Callback<DogListResponse> {
-            override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
+        ).enqueue(object: Callback<AwrListResponse> {
+            override fun onResponse(call: Call<AwrListResponse>, response: Response<AwrListResponse>) {
 
-                addPetList(response)
+                addWriteList(response)
             }
 
-            override fun onFailure(call: Call<DogListResponse>, t: Throwable) {
+            override fun onFailure(call: Call<AwrListResponse>, t: Throwable) {
             }
 
         })
@@ -79,21 +80,22 @@ class WriteListFragment : Fragment() {
 
     }
 
-    fun addPetList(response: Response<DogListResponse>){
+    fun addWriteList(response: Response<AwrListResponse>){
 
-        petAdapter?.apply{
+        writeAdapter?.apply{
             response.body()?.data?.let {
                 for(item in it) {
-                    this.items.add(PetData(
-                        item.dogNo,
+                    this.items.add(WriteData(
+                        item.assignContent,
+                        item.assignTitle,
+                        item.awrn,
+                        item.endTime,
+                        item.lat,
+                        item.lng,
                         item.memberNo,
-                        item.dogName,
-                        item.dogGender,
-                        item.dogAge,
-                        item.dogEducation,
-                        item.dogCharacter,
-                        item.dogBreed
-                    )
+                        item.startTime,
+                        item.writeTime
+                        )
                     )
                 }
             }
