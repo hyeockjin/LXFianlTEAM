@@ -77,7 +77,7 @@
                     android:orientation="horizontal">
 
                     <ImageButton
-                        android:id="@+id/timeButton2"
+                        android:id="@+id/timeButton"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:backgroundTint="#FFFFFF"
@@ -275,7 +275,8 @@
                             android:layout_width="34dp"
                             android:layout_height="wrap_content"
                             android:minWidth="48dp"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                         <ImageView
                             android:id="@+id/imageView7"
@@ -306,7 +307,8 @@
                             android:layout_width="34dp"
                             android:layout_height="wrap_content"
                             android:minWidth="48dp"
-                            android:minHeight="48dp" />
+                            android:minHeight="48dp"
+                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                         <ImageView
                             android:id="@+id/imageView6"
