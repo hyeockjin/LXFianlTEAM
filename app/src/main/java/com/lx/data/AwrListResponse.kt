@@ -19,7 +19,7 @@ data class AwrListResponse(
         @SerializedName("assignTitle")
         val assignTitle: String,
         @SerializedName("awrn")
-        val awrn: Int,
+        val awrn: String,
         @SerializedName("endTime")
         val endTime: String,
         @SerializedName("lat")
@@ -27,7 +27,7 @@ data class AwrListResponse(
         @SerializedName("lng")
         val lng: Double,
         @SerializedName("memberNo")
-        val memberNo: Int,
+        val memberNo: String,
         @SerializedName("startTime")
         val startTime: String,
         @SerializedName("write_time")

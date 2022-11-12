@@ -12,13 +12,16 @@ import com.lx.api.BasicClient
 import com.lx.data.AwrListResponse
 import com.lx.data.DogListResponse
 import com.lx.project5.databinding.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class WriteListFragment : Fragment() {
     var _binding: FragmentWriteListBinding? = null
     val binding get() = _binding!!
     var writeAdapter: WriteAdapter? = null
     val writeInfoLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteListBinding.inflate(inflater, container, false)
@@ -86,15 +89,15 @@ class WriteListFragment : Fragment() {
             response.body()?.data?.let {
                 for(item in it) {
                     this.items.add(WriteData(
-                        item.assignContent,
-                        item.assignTitle,
-                        item.awrn,
-                        item.endTime,
-                        item.lat,
+                        item.writeTime,
                         item.lng,
-                        item.memberNo,
+                        item.lat,
+                        item.awrn,
+                        item.assignTitle,
+                        item.endTime,
                         item.startTime,
-                        item.writeTime
+                        item.memberNo,
+                        item.assignContent
                         )
                     )
                 }
@@ -106,3 +109,5 @@ class WriteListFragment : Fragment() {
     }
 
 }
+
+
