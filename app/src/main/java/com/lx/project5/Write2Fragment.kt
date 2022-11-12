@@ -5,12 +5,13 @@ import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
+import android.widget.Spinner
 import android.widget.TimePicker
+import androidx.fragment.app.Fragment
 import com.lx.api.BasicClient
 import com.lx.data.AwrListResponse
 import com.lx.project5.databinding.FragmentWrite2Binding
@@ -23,6 +24,8 @@ import java.util.*
 class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     var _binding: FragmentWrite2Binding? = null
     val binding get() = _binding!!
+
+
 
     //달력
     var day = 0
@@ -41,6 +44,8 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWrite2Binding.inflate(inflater, container, false)
+
+
 
         pickDate() //달력
 
@@ -69,6 +74,7 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
         BasicClient.api.awrAdd(
             requestCode = "1001",
             memberNo = "3",
+            dogNo = "1",
             startTime = "2022-11-11 00:00:00",
             endTime = "2022-11-11 00:00:00",
             writeTime = "2022-11-11 00:00:00",
@@ -81,6 +87,7 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
             override fun onResponse(call: Call<AwrListResponse>, response: Response<AwrListResponse>) {
                 (activity as MainActivity).showToast("${lat}, ${lng}")
                 (activity as MainActivity).showToast("1")
+                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteList)
 
 
             }
@@ -156,5 +163,6 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
 
 
     }
+
 
 }
