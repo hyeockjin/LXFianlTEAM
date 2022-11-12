@@ -25,6 +25,10 @@ class MyPageFragment : Fragment() {
             curActivity.onFragmentChanged(MainActivity.ScreenItem.ITEMupdate)
         }
 
+        binding.myWriteButton.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteList)
+        }
+
         binding.goDogList.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdogList)
         }

@@ -12,17 +12,34 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginTop="20dp"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="내가 쓴 맡김글"
-            android:textSize="20sp"
-            android:textStyle="normal" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/backButton4"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="43dp"
+                android:background="@drawable/pink_round_button"
+                android:text="뒤로가기"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="내가 쓴 맡김글"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
         <Button
             android:id="@+id/addDogButton"
             android:layout_width="wrap_content"
@@ -37,7 +54,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/writeList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp" />
 
     </LinearLayout>
 

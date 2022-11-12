@@ -36,6 +36,9 @@ class DogListFragment : Fragment() {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMaddDog)
         }
 
+        binding.backButton5.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
+        }
 
 
         return binding.root

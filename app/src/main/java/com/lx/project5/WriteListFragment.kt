@@ -1,6 +1,5 @@
 package com.lx.project5
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,7 +9,6 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lx.api.BasicClient
 import com.lx.data.AwrListResponse
-import com.lx.data.DogListResponse
 import com.lx.project5.databinding.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -28,6 +26,10 @@ class WriteListFragment : Fragment() {
 
         initList()
         writeView()
+        
+        binding.backButton4.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
+        }
 
         return binding.root
     }
@@ -94,6 +96,7 @@ class WriteListFragment : Fragment() {
                         item.lat,
                         item.awrn,
                         item.assignTitle,
+                        item.dogNo,
                         item.endTime,
                         item.startTime,
                         item.memberNo,
