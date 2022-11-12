@@ -27,7 +27,7 @@ class Write2Fragment : Fragment() {
             startActivity(locationIntent)
         }
         //등록하기 버튼
-        binding.editButton2.setOnClickListener {
+        binding.editButton5.setOnClickListener {
             awrAdd()
         }
 

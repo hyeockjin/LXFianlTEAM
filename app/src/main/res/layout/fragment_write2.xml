@@ -335,7 +335,7 @@
                 android:padding="10dp">
 
                 <Button
-                    android:id="@+id/addButton5"
+                    android:id="@+id/editButton5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/pink_round_button"
