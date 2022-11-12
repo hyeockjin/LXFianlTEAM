@@ -34,6 +34,7 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
     var savedHour = 0
     var savedMinute = 0
 
+    var cIndex = 0
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -93,9 +94,16 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
     }
     //달력
     private fun pickDate() {
-        binding.timeButton1.setOnClickListener {
+        binding.editTextTime1.setOnClickListener {
+            cIndex = 1
             getDateTimeCalendar()
 
+            context?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
+
+        }
+        binding.editTextTime2.setOnClickListener {
+            cIndex = 2
+            getDateTimeCalendar()
             context?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
 
         }
@@ -114,13 +122,21 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
     //달력
      override fun onTimeSet(view: TimePicker?, hourOfDay: Int, Minute: Int) {
-        savedHour = hourOfDay
-        savedMinute = minute
 
-        binding.editTextTime1.text = "$savedDay-$savedMonth-$savedYear\n Hour: $savedHour Minute: $savedMinute"
+        if (cIndex == 1){
+            savedHour = hourOfDay
+            savedMinute = minute
+
+            binding.editTextTime1.text = "$savedYear-$savedMonth-$savedDay $savedHour:$savedMinute"
+        } else if(cIndex == 2){
+            savedHour = hourOfDay
+            savedMinute = minute
+
+            binding.editTextTime2.text = "$savedYear-$savedMonth-$savedDay $savedHour:$savedMinute"
+        }
+
 
 
     }
-
 
 }

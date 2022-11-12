@@ -37,70 +37,63 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="3dp"
                     android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/timeButton1"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:backgroundTint="#FFFFFF"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/calendar"
-                        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
                     <TextView
                         android:id="@+id/textView435"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="시작시간" />
+                        android:layout_marginRight="10dp"
+                        android:text="시작시간"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/editTextTime1"
-                        android:layout_width="22dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="TextView"
-                        android:textSize="18sp" />
+                        android:background="@drawable/bold1"
+                        android:drawableEnd="@drawable/calendar"
+                        android:gravity="center_vertical"
+                        android:hint="YYYY-MM-DD HH-MM"
+                        android:padding="7dp"
+                        android:textSize="16sp" />
+
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:orientation="horizontal">
 
-                    <ImageButton
-                        android:id="@+id/timeButton"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:backgroundTint="#FFFFFF"
-                        android:scaleType="fitCenter"
-                        android:src="@drawable/calendar"
-                        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
                     <TextView
-                        android:id="@+id/textView436"
+                        android:id="@+id/textView437"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="종료시간" />
+                        android:layout_marginRight="10dp"
+                        android:text="종료시간"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/editTextTime2"
-                        android:layout_width="22dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:text="TextView"
-                        android:textSize="18sp" />
+                        android:background="@drawable/bold1"
+                        android:drawableEnd="@drawable/calendar"
+                        android:gravity="center_vertical"
+                        android:hint="YYYY-MM-DD HH-MM"
+                        android:padding="7dp"
+                        android:textSize="16sp" />
+
 
                 </LinearLayout>
 
