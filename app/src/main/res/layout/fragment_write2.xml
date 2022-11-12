@@ -66,7 +66,7 @@
                         android:text="시작시간 :" />
 
                     <EditText
-                        android:id="@+id/editTextTime"
+                        android:id="@+id/editTextTime3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -87,7 +87,7 @@
                         android:text="종료 :" />
 
                     <EditText
-                        android:id="@+id/editTextTime2"
+                        android:id="@+id/editTextTime4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

@@ -1,26 +1,45 @@
 package com.lx.project5
 
+import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.DatePicker
+import android.widget.TimePicker
 import com.lx.api.BasicClient
 import com.lx.data.AcrListResponse
 import com.lx.project5.databinding.FragmentWriteBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 
-class WriteFragment : Fragment() {
+class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
+
     var _binding: FragmentWriteBinding? = null
     val binding get() = _binding!!
+    var day = 0
+    var month = 0
+    var year =0
+    var hour = 0
+    var minute = 0
+
+    var savedDay = 0
+    var savedMonth = 0
+    var savedYear =0
+    var savedHour = 0
+    var savedMinute = 0
+
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteBinding.inflate(inflater, container, false)
 
-
+        pickDate() //달력
 
         binding.editButton2.setOnClickListener {
 
@@ -61,5 +80,47 @@ class WriteFragment : Fragment() {
         })
 
     }
+
+    //달력
+    private fun getDateTimeCalendar(){
+        val cal: Calendar = Calendar.getInstance()
+        day = cal.get(Calendar.DAY_OF_MONTH)
+        month = cal.get(Calendar.MONTH)
+        year = cal.get(Calendar.YEAR)
+        hour = cal.get(Calendar.HOUR)
+        minute = cal.get(Calendar.MINUTE)
+
+    }
+    //달력
+    private fun pickDate() {
+        binding.timeButton1.setOnClickListener {
+            getDateTimeCalendar()
+
+            context?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
+
+        }
+
+
+    }
+    //달력
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        savedDay = dayOfMonth
+        savedMonth = month
+        savedYear = year
+
+        getDateTimeCalendar()
+        TimePickerDialog(context,this,hour,minute,true).show()
+    }
+
+    //달력
+     override fun onTimeSet(view: TimePicker?, hourOfDay: Int, Minute: Int) {
+        savedHour = hourOfDay
+        savedMinute = minute
+
+        binding.editTextTime1.text = "$savedDay-$savedMonth-$savedYear\n Hour: $savedHour Minute: $savedMinute"
+
+
+    }
+
 
 }
