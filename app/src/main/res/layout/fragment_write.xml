@@ -56,7 +56,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@drawable/bold1"
+                        android:background="@drawable/graybutton"
                         android:drawableEnd="@drawable/calendar"
                         android:gravity="center_vertical"
                         android:hint="YYYY-MM-DD HH-MM"
@@ -87,7 +87,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:background="@drawable/bold1"
+                        android:background="@drawable/graybutton"
                         android:drawableEnd="@drawable/calendar"
                         android:gravity="center_vertical"
                         android:hint="YYYY-MM-DD HH-MM"
@@ -336,7 +336,7 @@
                     android:id="@+id/editButton2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/pink_round_button"
+                    android:background="@drawable/pinkbutton"
                     android:text="작성하기" />
             </LinearLayout>
 
