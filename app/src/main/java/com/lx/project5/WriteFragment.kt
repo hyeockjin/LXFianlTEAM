@@ -23,6 +23,7 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
     var _binding: FragmentWriteBinding? = null
     val binding get() = _binding!!
+    //달력
     var day = 0
     var month = 0
     var year =0
@@ -85,7 +86,7 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
     /**
      * 사용자가 입력한 데이터를 변수에 넣어주는 함수
-     *  */
+     *  *///달력
     private fun getDateTimeCalendar(){
         val cal: Calendar = Calendar.getInstance()
         day = cal.get(Calendar.DAY_OF_MONTH)
