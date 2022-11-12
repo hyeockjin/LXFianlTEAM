@@ -84,7 +84,7 @@ class MainActivity : AppCompatActivity() {
             onFragmentChanged(ScreenItem.ITEMcareInfo)
         }
         // 주변에 돌봄요청 버튼 눌렀을 때
-        binding.writeButton.setOnClickListener {
+        binding.writeButton2.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEMwrite2)
         }
 
