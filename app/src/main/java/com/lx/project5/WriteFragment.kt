@@ -42,6 +42,7 @@ class WriteFragment : Fragment() {
             requestCode = "1001",
             memberNo = "3",
             careNo = "3",
+            dogNo = "3",
             startTime = "2022-11-11 00:00:00",
             endTime = "2022-11-11 00:00:00",
             assignTitle = "123123",

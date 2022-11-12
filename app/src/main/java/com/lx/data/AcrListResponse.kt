@@ -22,6 +22,8 @@ data class AcrListResponse(
         val assignTitle: String,
         @SerializedName("careNo")
         val careNo: Int,
+        @SerializedName("dogNo")
+        val dogNo: Int,
         @SerializedName("endTime")
         val endTime: String,
         @SerializedName("memberNo")
