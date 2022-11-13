@@ -110,7 +110,8 @@ class DogListFragment : Fragment() {
                         item.dogAge,
                         item.dogEducation,
                         item.dogCharacter,
-                        item.dogBreed
+                        item.dogBreed,
+                        item.dogImage
                         )
                     )
                 }

@@ -8,6 +8,7 @@ data class PetData (
     var dogAge: String,
     var dogEducation: String,
     var dogCharacter: String,
-    var dogBreed: String
+    var dogBreed: String,
+    var dogImage: String
 
 )

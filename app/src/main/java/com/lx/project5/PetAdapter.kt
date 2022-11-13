@@ -32,10 +32,10 @@ class PetAdapter : RecyclerView.Adapter<PetAdapter.ViewHolder>(){
         //하나의 아이템을 위한 데이터가 전달되었을 때 화면에 어떻게 표시할 지 설정
         fun setItem(item: PetData){
             //이미지 표시하기
-//            item.dogImage?.apply{
-//                val uri = Uri.parse("http://192.168.43.52:8001${this}")
-//                Glide.with(binding.gridPictureView).load(uri).into(binding.gridPictureView)
-//            }
+            item.dogImage?.apply{
+                val uri = Uri.parse("http://192.168.0.12:8001${this}")
+                Glide.with(binding.gridPictureView).load(uri).into(binding.gridPictureView)
+            }
 
             //강아지 이름
             binding.dogNameOutput.text = item.dogName
