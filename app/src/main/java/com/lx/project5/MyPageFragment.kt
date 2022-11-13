@@ -1,10 +1,12 @@
 package com.lx.project5
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import com.lx.project5.databinding.FragmentFirstBinding
 import com.lx.project5.databinding.FragmentMyPageBinding
 
@@ -14,10 +16,10 @@ class MyPageFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentMyPageBinding.inflate(inflater, container, false)
+        initView()
 
 
-        binding.memberName.text = AppData.loginData?.memberName
-        binding.address.text = AppData.loginData?.memberAddress
+
 
 
         binding.updateButton.setOnClickListener {
@@ -34,6 +36,18 @@ class MyPageFragment : Fragment() {
         }
         binding.textView9.text=AppData.userdata.toString()
         return binding.root
+    }
+    fun initView(){
+        AppData.loginData?.apply{
+            this.memberImage?.let{
+                val uri = Uri.parse("http://192.168.0.12:8001${AppData.filepath}")
+                Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
+            }
+            binding.memberName.text = AppData.loginData?.memberId
+            binding.address.text = AppData.loginData?.memberName
+            binding.textView9.text = AppData.loginData?.memberAddress
+
+        }
     }
 
 }

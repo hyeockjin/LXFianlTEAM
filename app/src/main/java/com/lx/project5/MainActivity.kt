@@ -35,6 +35,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
+    // 주소 바꿔야 하는곳 / BasicApi, myPage
     lateinit var binding: ActivityMainBinding
 
     var locationClient: FusedLocationProviderClient? = null;
@@ -71,7 +72,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    var petIndex: String? = null
+
     val dateFormat1 = SimpleDateFormat("yyyyMMddHHmmss")
     var filename: String? = null
 
