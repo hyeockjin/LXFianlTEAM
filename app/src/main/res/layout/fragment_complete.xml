@@ -138,12 +138,13 @@
 
                 <Button
                     android:id="@+id/reviewButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="140dp"
+                    android:layout_width="187dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/pink_round_button"
-                    android:text="리뷰작성" />
+                    android:background="@drawable/pinkbutton"
+                    android:text="리뷰작성"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                 <TextView
                     android:id="@+id/textView22"
@@ -163,12 +164,13 @@
 
                 <Button
                     android:id="@+id/completeButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="140dp"
+                    android:layout_width="187dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/pink_round_button"
-                    android:text="맡김완료" />
+                    android:background="@drawable/pinkbutton"
+                    android:text="맡김완료"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
