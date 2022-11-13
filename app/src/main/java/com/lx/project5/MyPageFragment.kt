@@ -34,7 +34,6 @@ class MyPageFragment : Fragment() {
         binding.goDogList.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdogList)
         }
-        binding.textView9.text=AppData.userdata.toString()
         return binding.root
     }
     fun initView(){

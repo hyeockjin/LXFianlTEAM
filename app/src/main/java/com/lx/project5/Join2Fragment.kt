@@ -157,10 +157,13 @@ class Join2Fragment : Fragment() {
 
         ).enqueue(object:Callback<MemberListResponse>{
             override fun onResponse(call: Call<MemberListResponse>,response: Response<MemberListResponse>){
+                (activity as MainActivity).showToast("1")
                 (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             }
 
             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
+
+                (activity as MainActivity).showToast("2")
                 (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             }
 
