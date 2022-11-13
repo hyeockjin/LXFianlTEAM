@@ -137,14 +137,14 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
             savedMinute = Minute
 
 
-            binding.editTextTime1.text = "$savedYear-$savedMonth-$savedDay $savedHour"
+            binding.editTextTime1.text = "$savedYear-$savedMonth-$savedDay $savedHour 시"
 
         } else if(cIndex == 2){
             savedHour = hourOfDay
             savedMinute = Minute
 
 
-            binding.editTextTime2.text = "$savedYear-$savedMonth-$savedDay $savedHour"
+            binding.editTextTime2.text = "$savedYear-$savedMonth-$savedDay $savedHour 시"
         }
 
 
