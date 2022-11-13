@@ -20,7 +20,6 @@ import com.google.android.gms.maps.model.*
 import com.lx.api.BasicClient
 import com.lx.data.CareListResponse
 import com.lx.data.FileUploadResponse
-import com.lx.data.MemberListResponse
 import com.lx.project5.databinding.ActivityMainBinding
 import com.permissionx.guolindev.PermissionX
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -68,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         ITEMend,
         ITEMdogList,
         ITEMwrite2,
-        ITEMdogInfo
+
 
     }
 
@@ -242,9 +241,7 @@ class MainActivity : AppCompatActivity() {
             ScreenItem.ITEMwrite2 -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, Write2Fragment()).commit()
             }
-            ScreenItem.ITEMdogInfo -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, DogInfoFragment()).commit()
-            }
+
         }
 
 
