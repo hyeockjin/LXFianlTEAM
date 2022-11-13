@@ -17,7 +17,7 @@
             android:id="@+id/imageView4"
             android:layout_width="match_parent"
             android:layout_height="352dp"
-            android:background="#EAEAEA"
+            android:background="#FFF6F6F6"
             android:scaleType="center"
             android:src="@drawable/foot" />
     </LinearLayout>
