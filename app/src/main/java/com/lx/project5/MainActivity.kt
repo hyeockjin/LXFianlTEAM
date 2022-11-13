@@ -31,6 +31,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -384,5 +386,12 @@ class MainActivity : AppCompatActivity() {
 
     fun showToast(message:String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    }
+
+    // 데이트폼
+    fun nowDate():String{
+        val now =  System.currentTimeMillis()
+        val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREAN).format(now)
+        return simpleDateFormat
     }
 }

@@ -18,12 +18,16 @@ import com.lx.project5.databinding.FragmentWrite2Binding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 
 class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     var _binding: FragmentWrite2Binding? = null
     val binding get() = _binding!!
+
+
 
 
 
@@ -73,11 +77,11 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
 
         BasicClient.api.awrAdd(
             requestCode = "1001",
-            memberNo = "3",
+            memberNo = AppData.loginData?.memberNo.toString(),
             dogNo = "1",
             startTime = "2022-11-11 00:00:00",
             endTime = "2022-11-11 00:00:00",
-            writeTime = "2022-11-11 00:00:00",
+            writeTime = (activity as MainActivity).nowDate(),
             assignTitle = "123123",
             assignContent = "123123123",
             lat = lat!!,
