@@ -131,8 +131,11 @@
                             android:backgroundTint="#FFFFFF"
                             app:cardBackgroundColor="#FAFAFA"
                             app:cardCornerRadius="8dp"
-                            app:contentPadding="10dp" />
+                            app:contentPadding="10dp" >
+
+                        </androidx.cardview.widget.CardView>
                     </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
@@ -141,18 +144,17 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
             android:orientation="horizontal"
             android:padding="10dp">
 
             <Button
                 android:id="@+id/button11"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:layout_marginRight="8dp"
-                android:layout_weight="1"
-                android:background="@drawable/round_button"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bold"
                 android:text="돌아가기" />
 
             <Button
@@ -161,8 +163,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"
-                android:background="@drawable/pink_round_button"
+                android:background="@drawable/pinkbutton"
                 android:text="신청하기" />
+
         </LinearLayout>
 
     </LinearLayout>

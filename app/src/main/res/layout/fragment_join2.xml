@@ -10,6 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFF6F6F6"
         android:orientation="vertical">
 
         <TextView
@@ -18,7 +19,7 @@
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
             android:layout_marginTop="20dp"
-            android:background="#FFFFFF"
+            android:background="#FFF6F6F6"
             android:gravity="center"
             android:text="회원가입(2/2)"
             android:textAlignment="center"
@@ -28,7 +29,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#F6F6F6"
+            android:background="#FFF6F6F6"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -63,81 +64,120 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:padding="30dp">
 
-                <EditText
-                    android:id="@+id/registerId"
-                    android:layout_width="218dp"
-                    android:layout_height="48dp"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="44dp"
-                    android:ems="10"
-                    android:hint="아이디"
-                    android:inputType="textPersonName"
-                    tools:ignore="TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/idCheckButton"
-                    android:layout_width="75dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="7dp"
-                    android:background="@drawable/pink_round_button"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="중복확인"
-                    android:textSize="12sp" />
-            </LinearLayout>
+                    android:layout_marginBottom="20dp"
+                    android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:orientation="vertical">
+                    <EditText
+                        android:id="@+id/registerId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/bold4"
+                        android:hint="아이디"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        tools:ignore="TouchTargetSizeCheck" />
 
-                <EditText
-                    android:id="@+id/registerName"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
+                    <Button
+                        android:id="@+id/idCheckButton"
+                        android:layout_width="75dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="7dp"
+                        android:backgroundTint="#CDDABD"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="중복확인"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:hint="이름"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp" />
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/registerPw"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:hint="비밀번호"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp" />
+                    <EditText
+                        android:id="@+id/registerName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/bold4"
+                        android:hint="이름"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
 
-                <EditText
-                    android:id="@+id/pwCheck"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:hint="비밀번호 확인"
-                    android:inputType="textPersonName"
-                    android:minHeight="48dp" />
+                    android:layout_marginBottom="20dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/registerAddress"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="20dp"
-                    android:ems="10"
-                    android:hint="주소"
-                    android:inputType="textPersonName"
-                    tools:ignore="TouchTargetSizeCheck" />
+                    <EditText
+                        android:id="@+id/registerPw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/bold4"
+                        android:hint="비밀번호"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/pwCheck"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="20dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bold4"
+                        android:hint="비밀번호확인"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/registerAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:background="@drawable/bold4"
+                        android:hint="주소"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -157,7 +197,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:background="@drawable/pink_round_button"
+            android:background="@drawable/pinkbutton"
             android:text="다음"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
