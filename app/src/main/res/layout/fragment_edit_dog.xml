@@ -61,6 +61,18 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
+                        <Button
+                            android:id="@+id/photoButton2"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="72dp"
+                            android:background="@android:drawable/ic_menu_add"
+                            app:layout_constraintEnd_toEndOf="@+id/profileImageView2"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="@+id/profileImageView2"
+                            app:layout_constraintTop_toTopOf="@+id/profileImageView2"
+                            tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </LinearLayout>
