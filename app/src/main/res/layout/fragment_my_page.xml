@@ -153,8 +153,6 @@
                         android:layout_width="357dp"
                         android:layout_height="314dp"
                         android:layout_margin="10dp"
-                        android:background="#EAE9E9"
-                        android:backgroundTint="#EAE9E9"
                         app:cardBackgroundColor="#FAFAFA"
                         app:cardCornerRadius="8dp"
                         app:contentPadding="10dp" />
