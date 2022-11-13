@@ -15,7 +15,7 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="match_parent"
+            android:layout_width="415dp"
             android:layout_height="352dp"
             android:background="#FFF6F6F6"
             android:scaleType="center"
@@ -42,7 +42,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="455dp"
+        android:layout_height="500dp"
         android:layout_gravity="bottom"
         android:background="@drawable/bold3">
 
@@ -58,7 +58,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="20dp">
 
