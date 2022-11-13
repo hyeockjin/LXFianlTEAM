@@ -57,6 +57,7 @@ class Join2Fragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentJoin2Binding.inflate(inflater, container, false)
+        AppData.filepath = "1"
         initView()
 
         binding.nextButton2.setOnClickListener {
@@ -157,12 +158,19 @@ class Join2Fragment : Fragment() {
 
         ).enqueue(object:Callback<MemberListResponse>{
             override fun onResponse(call: Call<MemberListResponse>,response: Response<MemberListResponse>){
+                AppData.loginData?.memberName = registerName
+                AppData.loginData?.memberId = registerId
+                AppData.loginData?.memberAddress = registerAddress
+                AppData.loginData?.memberImage = AppData.filepath!!
                 (activity as MainActivity).showToast("1")
                 (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             }
 
             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
-
+                AppData.loginData?.memberName = registerName
+                AppData.loginData?.memberId = registerId
+                AppData.loginData?.memberAddress = registerAddress
+                AppData.loginData?.memberImage = AppData.filepath!!
                 (activity as MainActivity).showToast("2")
                 (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             }
