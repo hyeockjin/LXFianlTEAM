@@ -124,7 +124,7 @@
                             android:background="@drawable/graybutton"
                             android:drawableEnd="@drawable/calendar"
                             android:gravity="center_vertical"
-                            android:hint="YYYY-MM-DD HH-MM"
+                            android:hint="YYYY-MM-DD HH"
                             android:padding="7dp"
                             android:textSize="16sp" />
 
@@ -156,7 +156,7 @@
                             android:background="@drawable/graybutton"
                             android:drawableEnd="@drawable/calendar"
                             android:gravity="center_vertical"
-                            android:hint="YYYY-MM-DD HH-MM"
+                            android:hint="YYYY-MM-DD HH"
                             android:padding="7dp"
                             android:textSize="16sp" />
 

@@ -21,6 +21,7 @@ import java.util.*
 
 class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
+
     var _binding: FragmentWriteBinding? = null
     val binding get() = _binding!!
     //달력
@@ -41,6 +42,7 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteBinding.inflate(inflater, container, false)
+
 
         pickDate() //달력
 
@@ -94,7 +96,7 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
         year = cal.get(Calendar.YEAR)
         hour = cal.get(Calendar.HOUR)
         minute = cal.get(Calendar.MINUTE)
-        Log.v("you1","${year},${month},${day}, 분 확인!!!!!!${hour},${minute}")
+
 
     }
     //달력@@@@@@@@@@@@
@@ -103,14 +105,14 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
             cIndex = 1
             getDateTimeCalendar()
 
-            Log.v("you1","${year},${month},${day}")
+
             context?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
         }
         binding.editTextTime2.setOnClickListener {
             cIndex = 2
             getDateTimeCalendar()
 
-            Log.v("you2","${year},${month},${day}")
+
             context?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
 
         }
@@ -134,15 +136,15 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
             savedHour = hourOfDay
             savedMinute = Minute
 
-            Log.v("@@","${hour},@@${minute}")
-            binding.editTextTime1.text = "$savedYear-$savedMonth-$savedDay $savedHour:$savedMinute"
+
+            binding.editTextTime1.text = "$savedYear-$savedMonth-$savedDay $savedHour"
 
         } else if(cIndex == 2){
             savedHour = hourOfDay
             savedMinute = Minute
 
-            Log.v("@@","${hour},@@${minute}")
-            binding.editTextTime2.text = "$savedYear-$savedMonth-$savedDay $savedHour:$savedMinute"
+
+            binding.editTextTime2.text = "$savedYear-$savedMonth-$savedDay $savedHour"
         }
 
 
