@@ -178,7 +178,7 @@
                             android:textStyle="normal" />
 
                         <EditText
-                            android:id="@+id/educationInput2"
+                            android:id="@+id/educationInput"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -204,7 +204,7 @@
                             android:textStyle="normal" />
 
                         <EditText
-                            android:id="@+id/characterInput2"
+                            android:id="@+id/characterInput"
                             android:layout_width="match_parent"
                             android:layout_height="103dp"
                             android:layout_weight="1"
