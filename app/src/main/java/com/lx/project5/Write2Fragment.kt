@@ -49,6 +49,7 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWrite2Binding.inflate(inflater, container, false)
 
+        writeSave()
 
 
         pickDate() //달력
@@ -60,6 +61,7 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
         }
         //등록하기 버튼
         binding.editButton5.setOnClickListener {
+
             awrAdd()
         }
 
@@ -71,19 +73,32 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
 
     }
 
+    fun writeSave() {
+        binding.myDog.text = Write2SaveData.savedogName
+        binding.locationView.text = "${Write2SaveData.savelat}, ${Write2SaveData.savelng}"
+        binding.editTextTime3.text = Write2SaveData.savestartTime
+        binding.editTextTime4.text = Write2SaveData.saveendTime
+        binding.editTextTextPersonName.setText(Write2SaveData.saveassignTitle)
+        binding.detail1.setText(Write2SaveData.saveassignContent)
+    }
+
     fun awrAdd() {
         val lat = AppData.lat?.toDouble()
         val lng = AppData.lng?.toDouble()
+        val assignTitle = binding.editTextTextPersonName.toString()
+        val assignContent = binding.detail1.toString()
+        val startTime = binding.editTextTime3.toString()
+        val endTime = binding.editTextTime4.toString()
 
         BasicClient.api.awrAdd(
             requestCode = "1001",
             memberNo = AppData.loginData?.memberNo.toString(),
             dogNo = "1",
-            startTime = "2022-11-11 00:00:00",
-            endTime = "2022-11-11 00:00:00",
+            startTime = startTime,
+            endTime = endTime,
             writeTime = (activity as MainActivity).nowDate(),
-            assignTitle = "123123",
-            assignContent = "123123123",
+            assignTitle = assignTitle,
+            assignContent = assignContent,
             lat = lat!!,
             lng = lng!!
 
