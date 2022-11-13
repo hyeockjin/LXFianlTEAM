@@ -65,6 +65,11 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
             awrAdd()
         }
 
+        //강아지 선택
+        binding.setDogButton.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteSelect)
+        }
+
 
 
 

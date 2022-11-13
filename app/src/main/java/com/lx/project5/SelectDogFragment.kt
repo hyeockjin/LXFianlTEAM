@@ -1,46 +1,29 @@
 package com.lx.project5
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lx.api.BasicClient
 import com.lx.data.DogListResponse
-import com.lx.project5.databinding.FragmentDogListBinding
+import com.lx.project5.databinding.FragmentSelectDogBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class DogListFragment : Fragment() {
-    var _binding: FragmentDogListBinding? = null
+class SelectDogFragment : Fragment() {
+    var _binding: FragmentSelectDogBinding? = null
     val binding get() = _binding!!
 
     var petAdapter: PetAdapter? = null
-    val petInfoLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentDogListBinding.inflate(inflater, container, false)
-
+        _binding = FragmentSelectDogBinding.inflate(inflater, container, false)
 
         initList()
         petView()
-
-
-        binding.addDogButton.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMaddDog)
-        }
-
-        binding.backButton.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
-        }
-
-
         return binding.root
     }
 
@@ -67,7 +50,8 @@ class DogListFragment : Fragment() {
 
 //                    val petInfoIntent = Intent(context, PetInfoFragment::class.java)
 //                    petInfoLauncher.launch(petInfoIntent)
-                    (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMpetInfo)
+                    Write2SaveData.savedogName = item.dogName
+                    (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwrite2)
 
                 }
             }
@@ -75,8 +59,6 @@ class DogListFragment : Fragment() {
         }
 
     }
-
-
     fun petView() {
 
         var memberNo = AppData.loginData?.memberNo
@@ -112,7 +94,7 @@ class DogListFragment : Fragment() {
                         item.dogCharacter,
                         item.dogBreed,
                         item.dogImage
-                        )
+                    )
                     )
                 }
             }
@@ -121,6 +103,5 @@ class DogListFragment : Fragment() {
         }
 
     }
-
 
 }

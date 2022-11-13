@@ -67,6 +67,13 @@
                             android:layout_weight="1"
                             android:text="TextView" />
 
+                        <Button
+                            android:id="@+id/setDogButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="강아지 선택" />
+
                     </LinearLayout>
 
                     <LinearLayout

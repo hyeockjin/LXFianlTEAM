@@ -3,8 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
-    tools:context=".DogListFragment">
+    tools:context=".SelectDogFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,11 +16,14 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/backButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Button" />
+                android:id="@+id/backButton55"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="43dp"
+                android:background="@drawable/pink_round_button"
+                android:text="뒤로가기"
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -36,22 +38,11 @@
                 android:textStyle="normal" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/addDogButton"
-            android:layout_width="wrap_content"
-            android:layout_height="30dp"
-            android:layout_gravity="end"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/pink_round_button"
-            android:text="+ 등록하기"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/dogList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp" />
 
     </LinearLayout>
-
 </FrameLayout>
