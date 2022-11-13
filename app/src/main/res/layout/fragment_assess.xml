@@ -142,7 +142,7 @@
                 android:layout_gravity="bottom"
                 android:layout_marginRight="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/round_button"
+                android:background="@drawable/bold"
                 android:text="돌아가기" />
 
             <Button
@@ -151,7 +151,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"
-                android:background="@drawable/pink_round_button"
+                android:background="@drawable/pinkbutton"
                 android:text="작성완료" />
 
         </LinearLayout>
