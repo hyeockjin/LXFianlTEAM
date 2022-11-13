@@ -14,8 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.lx.api.BasicClient
 import com.lx.data.DogListResponse
 import com.lx.project5.AppData.Companion.loginData
-import com.lx.project5.DogSaveData.Companion.dogBitmap
-import com.lx.project5.DogSaveData.Companion.dogImage
 import com.lx.project5.databinding.FragmentAddDogBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -33,7 +31,6 @@ class AddDogFragment : Fragment() {
         when(it.resultCode) {
             AppCompatActivity.RESULT_OK -> {
                 bitmap = it.data?.extras?.get("data") as Bitmap
-                dogBitmap = bitmap
                 binding.profileImageView2.setImageBitmap(bitmap)
                 val saveCapture = activity as MainActivity
                 saveCapture.saveFile(bitmap!!)
@@ -57,7 +54,6 @@ class AddDogFragment : Fragment() {
                     imageUri?.let {
                         val cr = requireActivity().contentResolver
                         bitmap = MediaStore.Images.Media.getBitmap(cr, it)
-                        dogBitmap = bitmap
                         binding.profileImageView2.setImageBitmap(bitmap)
                         val saveCapture = activity as MainActivity
                         saveCapture.saveFile(bitmap!!)

@@ -16,10 +16,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.lx.api.BasicClient
 import com.lx.data.DogListResponse
-import com.lx.data.MemberListResponse
-import com.lx.project5.databinding.FragmentAddDogBinding
 import com.lx.project5.databinding.FragmentEditDogBinding
-import com.lx.project5.databinding.FragmentFirstBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,7 +33,6 @@ class EditDogFragment : Fragment() {
         when(it.resultCode) {
             AppCompatActivity.RESULT_OK -> {
                 bitmap = it.data?.extras?.get("data") as Bitmap
-                DogSaveData.dogBitmap = bitmap
                 binding.imageView30.setImageBitmap(bitmap)
                 val saveCapture = activity as MainActivity
                 saveCapture.saveFile(bitmap!!)
@@ -60,7 +56,6 @@ class EditDogFragment : Fragment() {
                     imageUri?.let {
                         val cr = requireActivity().contentResolver
                         bitmap = MediaStore.Images.Media.getBitmap(cr, it)
-                        DogSaveData.dogBitmap = bitmap
                         binding.imageView30.setImageBitmap(bitmap)
                         val saveCapture = activity as MainActivity
                         saveCapture.saveFile(bitmap!!)
