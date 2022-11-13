@@ -55,13 +55,15 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="0dp"
-                android:layout_marginEnd="0dp">
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="30dp">
 
-                <FrameLayout
-                    android:id="@+id/CardView"
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bold3">
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#ffffff"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -236,7 +238,7 @@
 
 
                     </LinearLayout>
-                </FrameLayout>
+                </androidx.cardview.widget.CardView>
 
             </LinearLayout>
 

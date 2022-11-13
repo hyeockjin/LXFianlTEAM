@@ -68,7 +68,7 @@
                             android:layout_width="65dp"
                             android:layout_height="25dp"
                             android:layout_gravity="end"
-                            android:background="@drawable/pink_round_button"
+                            android:background="@drawable/pinkbutton"
                             android:text="자세히보기"
                             android:textSize="10sp"
                             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
