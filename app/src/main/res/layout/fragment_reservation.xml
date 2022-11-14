@@ -308,7 +308,7 @@
                         android:layout_gravity="bottom"
                         android:layout_weight="1"
                         android:background="@drawable/bold4"
-                        android:backgroundTint="#FF4A7C27"
+                        android:backgroundTint="#FFA726"
                         android:text="결제하기"
                         android:textColor="#FFFFFF" />
                 </LinearLayout>
