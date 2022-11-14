@@ -117,7 +117,7 @@
             android:text="다음"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            android:textStyle="bold"
+            android:textStyle="normal"
             tools:ignore="TextContrastCheck,TextContrastCheck" />
     </LinearLayout>
 </FrameLayout>

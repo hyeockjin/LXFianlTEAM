@@ -144,6 +144,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/pinkbutton"
                     android:text="리뷰작성"
+                    android:textColor="#FFFFFF"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                 <TextView
@@ -170,6 +171,7 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/pinkbutton"
                     android:text="맡김완료"
+                    android:textColor="#FFFFFF"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
             </LinearLayout>
 

@@ -70,6 +70,7 @@
                             android:layout_gravity="end"
                             android:background="@drawable/pinkbutton"
                             android:text="자세히보기"
+                            android:textColor="#FFFFFF"
                             android:textSize="10sp"
                             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
                     </LinearLayout>

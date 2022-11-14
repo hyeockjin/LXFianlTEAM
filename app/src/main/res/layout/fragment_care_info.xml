@@ -164,7 +164,8 @@
                 android:layout_gravity="bottom"
                 android:layout_weight="1"
                 android:background="@drawable/pinkbutton"
-                android:text="신청하기" />
+                android:text="신청하기"
+                android:textColor="#FFFFFF" />
 
         </LinearLayout>
 

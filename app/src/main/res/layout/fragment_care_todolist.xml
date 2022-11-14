@@ -225,6 +225,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/pinkbutton"
         android:text="돌아가기"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

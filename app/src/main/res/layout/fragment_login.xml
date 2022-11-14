@@ -13,7 +13,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FAD7EC"
+        android:background="#F4F1ED"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +89,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/pink_round_button"
-                android:backgroundTint="#F48FB1"
+                android:backgroundTint="#699E44"
                 android:text="로그인"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"
