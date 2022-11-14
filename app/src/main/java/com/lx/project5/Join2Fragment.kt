@@ -158,19 +158,11 @@ class Join2Fragment : Fragment() {
 
         ).enqueue(object:Callback<MemberListResponse>{
             override fun onResponse(call: Call<MemberListResponse>,response: Response<MemberListResponse>){
-                AppData.loginData?.memberName = registerName
-                AppData.loginData?.memberId = registerId
-                AppData.loginData?.memberAddress = registerAddress
-                AppData.loginData?.memberImage = AppData.filepath!!
                 (activity as MainActivity).showToast("1")
                 (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             }
 
             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
-                AppData.loginData?.memberName = registerName
-                AppData.loginData?.memberId = registerId
-                AppData.loginData?.memberAddress = registerAddress
-                AppData.loginData?.memberImage = AppData.filepath!!
                 (activity as MainActivity).showToast("2")
                 (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             }

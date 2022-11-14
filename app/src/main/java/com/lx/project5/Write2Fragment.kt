@@ -51,7 +51,7 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWrite2Binding.inflate(inflater, container, false)
 
-        writeSave()
+        writeShow()
 
 
         pickDate() //달력
@@ -63,12 +63,13 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
         }
         //등록하기 버튼
         binding.editButton5.setOnClickListener {
-
+            writeSave()
             awrAdd()
         }
 
         //강아지 선택
         binding.setDogButton.setOnClickListener {
+            writeSave()
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteSelect)
         }
 
@@ -80,14 +81,23 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
 
     }
 
-    fun writeSave() {
+    fun writeShow() {
         binding.myDog.text = Write2SaveData.savedogName
-        binding.locationView.text = "${AppData.lat.toString()}, ${AppData.lng.toString()}"
+        binding.locationView.text = "${Write2SaveData.savelat.toString()}, ${Write2SaveData.savelng.toString()}"
         binding.editTextTime3.text = Write2SaveData.savestartTime
         binding.editTextTime4.text = Write2SaveData.saveendTime
         binding.editTextTextPersonName.setText(Write2SaveData.saveassignTitle)
         binding.detail1.setText(Write2SaveData.saveassignContent)
         (activity as MainActivity).showToast(AppData.lat.toString())
+    }
+    fun writeSave(){
+        Write2SaveData.savedogName = binding.myDog.text.toString()
+        Write2SaveData.savestartTime = binding.editTextTime3.text.toString()
+        Write2SaveData.saveendTime = binding.editTextTime4.text.toString()
+        Write2SaveData.saveassignTitle = binding.editTextTextPersonName.text.toString()
+        Write2SaveData.saveassignContent = binding.detail1.text.toString()
+        Write2SaveData.savelng = AppData.lng
+        Write2SaveData.savelat = AppData.lat
     }
 
     fun awrAdd() {
@@ -112,10 +122,8 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
 
         ).enqueue(object : Callback<AwrListResponse> {
             override fun onResponse(call: Call<AwrListResponse>, response: Response<AwrListResponse>) {
-                (activity as MainActivity).showToast("${lat}, ${lng}")
                 (activity as MainActivity).showToast("1")
                 (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteList)
-
 
             }
             override fun onFailure(call: Call<AwrListResponse>, t: Throwable) {
