@@ -33,7 +33,7 @@ class PetInfoFragment : Fragment() {
     fun initView(){
         AppData.selectedItem?.apply{
             this.dogImage .let{
-                val uri = Uri.parse("http://192.168.0.12:8001${dogImage}")
+                val uri = Uri.parse("http://172.168.10.27:8001${dogImage}")
                 Glide.with(binding.imageView4).load(uri).into(binding.imageView4)
             }
             binding.petName.text = "${selectedItem?.dogName}"
