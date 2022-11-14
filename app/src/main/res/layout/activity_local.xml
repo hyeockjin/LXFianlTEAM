@@ -126,6 +126,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/pinkbutton"
                     android:text="저장하기"
+                    android:textColor="#FFFFFF"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
         </LinearLayout>

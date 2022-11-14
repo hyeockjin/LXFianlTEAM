@@ -137,7 +137,8 @@
             android:layout_gravity="bottom"
             android:layout_weight="1"
             android:background="@drawable/pinkbutton"
-            android:text="작성완료" />
+            android:text="작성완료"
+            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 

@@ -7,8 +7,10 @@
     tools:context=".CareMainFragment">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FFFFFF"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,8 +38,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
+                android:layout_marginRight="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/bold1"
+                android:background="#E7ECE4"
+                android:backgroundTint="#FFF6F6F6"
                 android:text="위치확인"
                 android:textColor="#000000"
                 android:textCursorDrawable="@drawable/bold1" />
@@ -48,14 +52,16 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"
-                android:background="@drawable/bold1"
-                android:text="경로확인" />
+                android:background="#FFF6F6F6"
+                android:backgroundTint="#FFF6F6F6"
+                android:text="경로확인"
+                android:textColor="#000000" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
@@ -236,22 +242,32 @@
 
             </LinearLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/completeButton0"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="bottom"
-                android:background="@drawable/bold4"
-                android:backgroundTint="#699E44"
-                android:text="맡김완료"
-                android:textColor="#FFFFFF" />
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="93dp"
+                    android:orientation="vertical"></LinearLayout>
+
+                <Button
+                    android:id="@+id/completeButton0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/pinkbutton"
+                    android:text="맡김완료"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    tools:ignore="TextContrastCheck,TextContrastCheck" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
