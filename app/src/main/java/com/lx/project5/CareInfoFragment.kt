@@ -1,5 +1,6 @@
 package com.lx.project5
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +17,15 @@ class CareInfoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentCareInfoBinding.inflate(inflater, container, false)
+
+        binding.button10.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwrite)
+        }
+        binding.button11.setOnClickListener {
+            val intent = Intent(getActivity(), MainActivity::class.java)
+            startActivity(intent)
+
+        }
 
         return binding.root
     }

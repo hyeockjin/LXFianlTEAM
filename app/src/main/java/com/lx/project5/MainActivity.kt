@@ -70,10 +70,7 @@ class MainActivity : AppCompatActivity() {
         ITEMdogList,
         ITEMwrite2,
         ITEMwriteSelect
-
-
     }
-
 
     val dateFormat1 = SimpleDateFormat("yyyyMMddHHmmss")
     var filename: String? = null
