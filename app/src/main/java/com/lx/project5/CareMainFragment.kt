@@ -31,7 +31,7 @@ class CareMainFragment : Fragment() {
             AppData.point = AppData.point!! + 50
             binding.time.text = "${AppData.point} 분 남음"
         }
-        binding.todoButton.setOnClickListener {
+        binding.output4.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareTodolist)
         }
         binding.completeButton0.setOnClickListener {
