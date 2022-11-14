@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3F0EB"
+    android:background="#F4F1ED"
     tools:context=".MyPageFragment">
 
     <LinearLayout
@@ -25,7 +25,6 @@
                 android:id="@+id/imageView2"
                 android:layout_width="105dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/person2" />
 
@@ -41,7 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="18dp"
+                    android:layout_marginTop="23dp"
                     android:text="김용현"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -97,7 +96,6 @@
                         android:layout_marginEnd="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/pinkbutton"
-                        android:backgroundTint="#B6A49E"
                         android:gravity="center"
                         android:text="회원정보수정"
                         android:textColor="#FFFFFF"
@@ -112,7 +110,6 @@
 
                         android:layout_weight="1"
                         android:background="@drawable/pinkbutton"
-                        android:backgroundTint="#B6A49E"
                         android:gravity="center"
                         android:text="내 신청글"
                         android:textColor="#FFFFFF"
@@ -127,7 +124,6 @@
                         android:layout_marginEnd="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/pinkbutton"
-                        android:backgroundTint="#B6A49E"
                         android:text="반려견등록"
                         android:textColor="#FFFFFF"
                         android:textStyle="bold"

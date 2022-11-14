@@ -69,9 +69,10 @@
 
                         <Button
                             android:id="@+id/setDogButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
+                            android:layout_width="90dp"
+                            android:layout_height="30dp"
+                            android:background="@drawable/bold4"
+                            android:backgroundTint="#C5B8A6"
                             android:text="강아지 선택" />
 
                     </LinearLayout>
