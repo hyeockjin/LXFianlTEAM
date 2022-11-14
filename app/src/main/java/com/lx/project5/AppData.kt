@@ -12,6 +12,7 @@ class AppData {
         var selectedWriteItem: WriteData? = null
         var lat: String? = null
         var lng: String? = null
+        var dogListIndex: Int? = null
     }
     //유진바보
 }

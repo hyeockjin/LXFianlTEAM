@@ -51,24 +51,28 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
             acrAdd()
 
         }
+
+        binding.selectDogButton1.setOnClickListener {
+            AppData.dogListIndex = 1
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteSelect)
+
+        }
+
         return binding.root
 
 
     }
 
     fun acrAdd() {
-        //받아야하는거거 로그인 한거 넘버 돌봄이 버 체크한거
-        // 달력 이거 데이트 폼이랑 정보 받아오는거 모르겠어요 알려주세요 ~
-        val memberId = binding
-        val memberPw = binding
+
 
         BasicClient.api.acrAdd(
             requestCode = "1001",
-            memberNo = "3",
-            careNo = "3",
-            dogNo = "3",
-            startTime = "2022-11-11 00:00:00",
-            endTime = "2022-11-11 00:00:00",
+            memberNo = AppData.loginData?.memberNo.toString(),
+            careNo = WriteSaveData.savecareNo.toString(),
+            dogNo = WriteSaveData.savedogNo.toString(),
+            startTime = WriteSaveData.savestartTime.toString(),
+            endTime = WriteSaveData.savestartTime.toString(),
             assignTitle = "123123",
             assignContent = "123123123"
 
@@ -138,6 +142,7 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
 
             binding.editTextTime1.text = "$savedYear-$savedMonth-$savedDay $savedHour 시"
+            WriteSaveData.savestartTime = "$savedYear-$savedMonth-$savedDay $savedHour"
 
         } else if(cIndex == 2){
             savedHour = hourOfDay
@@ -145,6 +150,7 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
 
             binding.editTextTime2.text = "$savedYear-$savedMonth-$savedDay $savedHour 시"
+            WriteSaveData.saveendTime = "$savedYear-$savedMonth-$savedDay $savedHour"
         }
 
 

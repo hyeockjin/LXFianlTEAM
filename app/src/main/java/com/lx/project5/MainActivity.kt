@@ -330,6 +330,7 @@ class MainActivity : AppCompatActivity() {
                         binding.className.text = response.body()?.data?.get(i)?.careName.toString()
                         binding.classAddress.text = response.body()?.data?.get(i)?.careAddress.toString()
                         binding.classSelf.text = response.body()?.data?.get(i)?.careExperience.toString()
+                        WriteSaveData.savecareNo = response.body()?.data?.get(i)?.careNo.toString()
                         binding.cardView.visibility = View.VISIBLE
 
                         true

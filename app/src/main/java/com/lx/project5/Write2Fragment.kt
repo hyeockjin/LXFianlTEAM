@@ -70,6 +70,7 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
 
         //강아지 선택
         binding.setDogButton.setOnClickListener {
+            AppData.dogListIndex = 2
             writeSave()
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteSelect)
         }

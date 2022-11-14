@@ -52,7 +52,14 @@ class SelectDogFragment : Fragment() {
 //                    petInfoLauncher.launch(petInfoIntent)
                     Write2SaveData.savedogName = item.dogName
                     Write2SaveData.savedogNo = item.dogNo
-                    (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwrite2)
+                    WriteSaveData.savedogName = item.dogName
+                    WriteSaveData.savedogNo = item.dogNo
+                    if(AppData.dogListIndex == 1){
+                        (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwrite)
+                    } else if(AppData.dogListIndex == 2){
+                        (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwrite2)
+                    }
+
 
                 }
             }
