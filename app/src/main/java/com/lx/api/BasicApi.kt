@@ -171,8 +171,8 @@ interface BasicApi {
         @Field("endTime") endTime: String,
         @Field("assignTitle") assignTitle: String,
         @Field("writeTime") writeTime: String,
-        @Field("lat") lat: Double,
-        @Field("lng") lng: Double,
+        @Field("lat") lat: String,
+        @Field("lng") lng: String,
         @Field("dogNo") dogNo: String
     ): Call<AwrListResponse>
 

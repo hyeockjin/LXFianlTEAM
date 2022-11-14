@@ -91,8 +91,8 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
     }
 
     fun awrAdd() {
-        val lat = AppData.lat?.toDouble()
-        val lng = AppData.lng?.toDouble()
+        val lat = AppData.lat?.toString()
+        val lng = AppData.lng?.toString()
         val assignTitle = binding.editTextTextPersonName.toString()
         val assignContent = binding.detail1.toString()
         val startTime = binding.editTextTime3.toString()
