@@ -66,9 +66,10 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/dogicon" />
 
             <LinearLayout
@@ -251,7 +252,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="93dp"
+                    android:layout_height="118dp"
                     android:orientation="vertical"></LinearLayout>
 
                 <Button
@@ -259,7 +260,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:layout_marginTop="30dp"
                     android:background="@drawable/pinkbutton"
                     android:text="맡김완료"
                     android:textColor="#FFFFFF"

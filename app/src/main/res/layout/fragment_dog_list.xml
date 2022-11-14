@@ -42,7 +42,7 @@
             android:layout_height="30dp"
             android:layout_gravity="end"
             android:layout_marginRight="10dp"
-            android:background="@drawable/pink_round_button"
+            android:background="@drawable/pinkbutton"
             android:text="+ 등록하기"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 

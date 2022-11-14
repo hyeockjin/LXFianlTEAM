@@ -23,7 +23,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="43dp"
-                android:background="@drawable/pink_round_button"
+                android:background="@drawable/pinkbutton"
                 android:text="뒤로가기"
                 android:textSize="12sp" />
 
@@ -40,13 +40,14 @@
                 android:textStyle="normal" />
 
         </LinearLayout>
+
         <Button
             android:id="@+id/addDogButton"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_gravity="end"
             android:layout_marginRight="10dp"
-            android:background="@drawable/pink_round_button"
+            android:background="@drawable/pinkbutton"
             android:elevation="40dp"
             android:text="+ 작성하기"
             tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
