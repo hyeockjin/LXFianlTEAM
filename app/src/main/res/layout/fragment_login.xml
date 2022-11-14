@@ -89,7 +89,7 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/pink_round_button"
-                android:backgroundTint="#699E44"
+                android:backgroundTint="#8BC34A"
                 android:text="로그인"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"

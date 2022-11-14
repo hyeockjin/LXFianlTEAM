@@ -23,7 +23,7 @@ class MemberInfoUpdateFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, asavedInstanceState: Bundle?): View? {
         _binding = FragmentMemberInfoUpdateBinding.inflate(inflater, container, false)
 
-        binding.showMemberId.text = AppData.loginData?.memberId
+        binding.showMemberId.text = AppData.loginData?.memberId.toString()
 
         binding.infoUpdateButton.setOnClickListener {
             updateMember()
