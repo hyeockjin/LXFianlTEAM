@@ -51,6 +51,7 @@ class SelectDogFragment : Fragment() {
 //                    val petInfoIntent = Intent(context, PetInfoFragment::class.java)
 //                    petInfoLauncher.launch(petInfoIntent)
                     Write2SaveData.savedogName = item.dogName
+                    Write2SaveData.savedogNo = item.dogNo
                     (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwrite2)
 
                 }

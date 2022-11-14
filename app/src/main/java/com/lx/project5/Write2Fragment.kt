@@ -58,12 +58,13 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
 
         //지도로 가기
         binding.locationButton1.setOnClickListener {
+            writeSave()
             val locationIntent= Intent(activity,LocalActivity::class.java)
             startActivity(locationIntent)
         }
         //등록하기 버튼
         binding.editButton5.setOnClickListener {
-            writeSave()
+
             awrAdd()
         }
 
@@ -84,36 +85,30 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
     fun writeShow() {
         binding.myDog.text = Write2SaveData.savedogName
         binding.locationView.text = "${Write2SaveData.savelat.toString()}, ${Write2SaveData.savelng.toString()}"
-        binding.editTextTime3.text = Write2SaveData.savestartTime
-        binding.editTextTime4.text = Write2SaveData.saveendTime
+        binding.editTextTime3.text = "${Write2SaveData.savestartTime} 시"
+        binding.editTextTime4.text = "${Write2SaveData.saveendTime} 시"
         binding.editTextTextPersonName.setText(Write2SaveData.saveassignTitle)
         binding.detail1.setText(Write2SaveData.saveassignContent)
         (activity as MainActivity).showToast(AppData.lat.toString())
     }
     fun writeSave(){
         Write2SaveData.savedogName = binding.myDog.text.toString()
-        Write2SaveData.savestartTime = binding.editTextTime3.text.toString()
-        Write2SaveData.saveendTime = binding.editTextTime4.text.toString()
         Write2SaveData.saveassignTitle = binding.editTextTextPersonName.text.toString()
         Write2SaveData.saveassignContent = binding.detail1.text.toString()
-        Write2SaveData.savelng = AppData.lng
-        Write2SaveData.savelat = AppData.lat
     }
 
     fun awrAdd() {
-        val lat = AppData.lat?.toString()
-        val lng = AppData.lng?.toString()
-        val assignTitle = binding.editTextTextPersonName.toString()
-        val assignContent = binding.detail1.toString()
-        val startTime = binding.editTextTime3.toString()
-        val endTime = binding.editTextTime4.toString()
+        val lat = Write2SaveData.savelat.toString()
+        val lng = Write2SaveData.savelng.toString()
+        val assignTitle = binding.editTextTextPersonName.text.toString()
+        val assignContent = binding.detail1.text.toString()
 
         BasicClient.api.awrAdd(
             requestCode = "1001",
             memberNo = AppData.loginData?.memberNo.toString(),
-            dogNo = "1",
-            startTime = startTime,
-            endTime = endTime,
+            dogNo = Write2SaveData.savedogNo.toString(),
+            startTime = Write2SaveData.savestartTime.toString(),
+            endTime = Write2SaveData.saveendTime.toString(),
             writeTime = (activity as MainActivity).nowDate(),
             assignTitle = assignTitle,
             assignContent = assignContent,
@@ -128,6 +123,7 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
             }
             override fun onFailure(call: Call<AwrListResponse>, t: Throwable) {
                 (activity as MainActivity).showToast("2")
+                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteList)
             }
 
         })
@@ -186,6 +182,7 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
 
             Log.v("@@","${hour},@@${minute}")
             binding.editTextTime3.text = "$savedYear-$savedMonth-$savedDay $savedHour 시"
+            Write2SaveData.savestartTime = "$savedYear-$savedMonth-$savedDay $savedHour"
 
         } else if(cIndex == 2){
             savedHour = hourOfDay
@@ -193,6 +190,7 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
 
             Log.v("@@","${hour},@@${minute}")
             binding.editTextTime4.text = "$savedYear-$savedMonth-$savedDay $savedHour 시"
+            Write2SaveData.saveendTime = "$savedYear-$savedMonth-$savedDay $savedHour"
         }
 
 
