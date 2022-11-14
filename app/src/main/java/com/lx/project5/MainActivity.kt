@@ -138,14 +138,15 @@ class MainActivity : AppCompatActivity() {
             requestLocation()
 
             // 마커 클릭 시 처리
-            map.setOnMarkerClickListener {
-                // showToast("마커 클릭됨 : ${it.tag}, ${it.title}")
-
-                // 필요시 다른 화면으로 이동 (tag 정보를 이용해서 구분함)
-                binding.cardView.visibility = View.VISIBLE
-
-                true
-            }
+//            map.setOnMarkerClickListener {
+//                // showToast("마커 클릭됨 : ${it.tag}, ${it.title}")
+//
+//                // 필요시 다른 화면으로 이동 (tag 정보를 이용해서 구분함)
+//
+//                binding.cardView.visibility = View.VISIBLE
+//
+//                true
+//            }
 
             // 지도 클릭 시 처리
             map.setOnMapClickListener {
@@ -318,10 +319,21 @@ class MainActivity : AppCompatActivity() {
                     var makerOptions = MarkerOptions()
                     makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
                         .position(LatLng(latitude!!, longitude!!))
-                        .title("마커"+i) // 타이틀.
+                        .title(response.body()?.data?.get(i)?.careNo.toString()) // 타이틀.
 
                     // 2. 마커 생성 (마커를 나타냄)
                     map.addMarker(makerOptions)
+
+                    // 마커클릭
+                    map.setOnMarkerClickListener {
+
+                        binding.className.text = response.body()?.data?.get(i)?.careName.toString()
+                        binding.classAddress.text = response.body()?.data?.get(i)?.careAddress.toString()
+                        binding.classSelf.text = response.body()?.data?.get(i)?.careExperience.toString()
+                        binding.cardView.visibility = View.VISIBLE
+
+                        true
+                    }
                 }
             }
             override fun onFailure(call: Call<CareListResponse>, t: Throwable) {

@@ -78,7 +78,7 @@
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="8dp"
                             android:gravity="center|left"
-                            android:text="상세 정보"
+                            android:text="돌봄이 정보"
                             android:textColor="#000000"
                             android:textSize="9pt"
                             android:textStyle="bold" />
@@ -93,7 +93,7 @@
                                 android:layout_height="20dp"
                                 android:layout_marginLeft="16dp"
                                 android:layout_marginTop="5dp"
-                                android:text="닉네임 : "
+                                android:text="이름 : "
                                 android:textColor="#000000"
                                 android:textSize="14dp"
                                 android:textStyle="bold" />
