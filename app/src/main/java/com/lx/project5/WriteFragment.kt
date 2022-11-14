@@ -43,16 +43,18 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteBinding.inflate(inflater, container, false)
 
+        writeShow()
 
         pickDate() //달력
 
         binding.editButton2.setOnClickListener {
-
+            writeSave()
             acrAdd()
 
         }
 
         binding.selectDogButton1.setOnClickListener {
+            writeSave()
             AppData.dogListIndex = 1
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteSelect)
 
@@ -61,6 +63,17 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
         return binding.root
 
 
+    }
+    fun writeShow() {
+        binding.editTextTime1.text = "${WriteSaveData.savestartTime} 시"
+        binding.editTextTime2.text = "${WriteSaveData.saveendTime} 시"
+        binding.editTextTextPersonName.setText(WriteSaveData.saveassignTitle.toString())
+        binding.content.setText(WriteSaveData.saveassignContent.toString())
+    }
+    fun writeSave(){
+        Write2SaveData.savedogName = binding.dogNameShow.text.toString()
+        Write2SaveData.saveassignTitle = binding.editTextTextPersonName.text.toString()
+        Write2SaveData.saveassignContent = binding.content.text.toString()
     }
 
     fun acrAdd() {
@@ -73,8 +86,8 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
             dogNo = WriteSaveData.savedogNo.toString(),
             startTime = WriteSaveData.savestartTime.toString(),
             endTime = WriteSaveData.savestartTime.toString(),
-            assignTitle = "123123",
-            assignContent = "123123123"
+            assignTitle = WriteSaveData.saveassignTitle.toString(),
+            assignContent = WriteSaveData.saveassignContent.toString()
 
         ).enqueue(object : Callback<AcrListResponse> {
             override fun onResponse(call: Call<AcrListResponse>, response: Response<AcrListResponse>) {

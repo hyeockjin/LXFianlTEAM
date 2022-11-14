@@ -14,8 +14,6 @@ import android.widget.TimePicker
 import androidx.fragment.app.Fragment
 import com.lx.api.BasicClient
 import com.lx.data.AwrListResponse
-import com.lx.project5.Write2SaveData.Companion.savelat
-import com.lx.project5.Write2SaveData.Companion.savelng
 import com.lx.project5.databinding.FragmentWrite2Binding
 import retrofit2.Call
 import retrofit2.Callback
@@ -90,7 +88,6 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
         binding.editTextTime4.text = "${Write2SaveData.saveendTime} 시"
         binding.editTextTextPersonName.setText(Write2SaveData.saveassignTitle)
         binding.detail1.setText(Write2SaveData.saveassignContent)
-        (activity as MainActivity).showToast(AppData.lat.toString())
     }
     fun writeSave(){
         Write2SaveData.savedogName = binding.myDog.text.toString()

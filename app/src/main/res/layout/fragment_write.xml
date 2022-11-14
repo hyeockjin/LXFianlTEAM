@@ -198,11 +198,14 @@
                                 android:hint="제목"
                                 android:inputType="textPersonName" />
 
-                            <TextView
-                                android:id="@+id/detail1"
+                            <EditText
+                                android:id="@+id/content"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:hint="내용을 기입해주세요" />
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:inputType="textPersonName"
+                                android:text="Name" />
+
                         </LinearLayout>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
