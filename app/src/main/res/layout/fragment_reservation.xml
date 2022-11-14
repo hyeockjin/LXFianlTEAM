@@ -281,7 +281,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="* 신청하기 버튼을 클릭해야 신청이 완료됩니다. " />
+                    android:text="* 결제하기 버튼을 클릭해야 신청이 완료됩니다. " />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -309,7 +309,7 @@
                         android:layout_weight="1"
                         android:background="@drawable/bold4"
                         android:backgroundTint="#FF4A7C27"
-                        android:text="신청하기"
+                        android:text="결제하기"
                         android:textColor="#FFFFFF" />
                 </LinearLayout>
             </LinearLayout>
