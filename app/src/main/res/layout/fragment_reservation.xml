@@ -4,25 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFFFF"
+    android:background="#FFF6F6F6"
     tools:context=".ReservationFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="211dp"
+        android:background="#C0D3B2">
+
+    </FrameLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="370dp"
-            android:layout_height="550dp"
-            android:layout_marginTop="100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.487"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/bold4"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -30,12 +37,18 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/dogProfile"
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/floatingActionButton2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:src="@drawable/dog1" />
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="50dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginRight="50dp"
+                        android:layout_marginBottom="30dp"
+                        android:clickable="true"
+                        android:src="@drawable/checkmark"
+                        app:backgroundTint="#FF4A7C27" />
 
                     <TextView
                         android:id="@+id/textView5"
@@ -50,14 +63,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
+                        android:layout_marginBottom="20dp"
                         android:gravity="center_horizontal"
                         android:text="안전한 동행 부탁드립니다." />
                 </LinearLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/name_text"
+                    android:layout_marginTop="5dp"
+                    android:background="#9A9A9A"/>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="65dp"
-                    android:layout_marginTop="20dp"
                     android:orientation="horizontal">
 
                     <TextView
@@ -67,7 +87,8 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
                         android:text="날짜"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
+
 
                     <TextView
                         android:id="@+id/rDay3"
@@ -77,6 +98,14 @@
                         android:layout_marginTop="18dp"
                         android:text="TextView" />
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/name_text"
+                    android:layout_marginTop="5dp"
+                    android:background="#9A9A9A"/>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -90,7 +119,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
                         android:text="시간"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/rTime3"
@@ -100,6 +129,13 @@
                         android:layout_marginTop="18dp"
                         android:text="TextView" />
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/name_text"
+                    android:layout_marginTop="5dp"
+                    android:background="#9A9A9A"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -113,7 +149,7 @@
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="20dp"
                         android:text="특이사항"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/payInfo1"
@@ -124,31 +160,59 @@
                         android:text="TextView" />
                 </LinearLayout>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView37"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="* 신청하기 버튼을 클릭해야 신청이 완료됩니다. " />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/applyButton"
-                        android:layout_width="103dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="60dp"
-                        android:layout_marginTop="70dp"
-                        android:background="@drawable/pink_round_button"
-                        android:text="신청하기" />
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp">
 
                     <Button
                         android:id="@+id/cancelButton"
-                        android:layout_width="103dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:layout_marginTop="70dp"
-                        android:background="@drawable/pink_round_button"
-                        android:text="예약취소" />
+                        android:layout_gravity="bottom"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/bold"
+                        android:text="예약취소"
+                        android:textColor="#000000" />
+
+                    <Button
+                        android:id="@+id/applyButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1"
+                        android:background="@drawable/bold4"
+                        android:backgroundTint="#FF4A7C27"
+                        android:text="신청하기"
+                        android:textColor="#FFFFFF" />
                 </LinearLayout>
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
