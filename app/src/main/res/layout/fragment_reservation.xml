@@ -10,7 +10,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="211dp"
-        android:background="#C0D3B2">
+        android:background="#D9E4D1">
 
     </FrameLayout>
 
@@ -96,7 +96,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="53dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <View
@@ -126,7 +127,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="53dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <View
@@ -155,7 +157,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="22dp"
-                        android:text="TextView" />
+                        android:text="TextView"
+                        android:textSize="16sp" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -204,7 +207,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="22dp"
                             android:text="기본요금(시간) = 20000원(2시간)"
-                            android:textSize="13sp" />
+                            android:textSize="16sp" />
 
                         <TextView
                             android:id="@+id/textView38"
@@ -212,7 +215,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="22dp"
                             android:text="추가요금"
-                            android:textSize="13sp" />
+                            android:textSize="16sp" />
 
                     </LinearLayout>
 
@@ -241,7 +244,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="75dp"
-                            android:text="GPS 목걸이를 같이 맡겨주세요" />
+                            android:gravity="center|left"
+                            android:text="GPS 목걸이를 같이 맡겨주세요"
+                            android:textSize="16sp" />
 
                         <CheckBox
                             android:id="@+id/gpsCheckBox"
@@ -308,7 +313,7 @@
                         android:layout_gravity="bottom"
                         android:layout_weight="1"
                         android:background="@drawable/bold4"
-                        android:backgroundTint="#FFA726"
+                        android:backgroundTint="#8BC34A"
                         android:text="결제하기"
                         android:textColor="#FFFFFF" />
                 </LinearLayout>
