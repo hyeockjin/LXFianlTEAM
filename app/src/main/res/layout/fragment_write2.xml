@@ -228,143 +228,47 @@
                             android:text="할 일"
                             android:textSize="16sp" />
 
-                        <LinearLayout
+                        <CheckBox
+                            android:id="@+id/checkBox201"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:padding="10dp">
+                            android:layout_height="wrap_content"
+                            android:text="산책하기" />
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:background="#FFFFFF"
-                                android:orientation="horizontal">
+                        <CheckBox
+                            android:id="@+id/checkBox202"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="밥먹이기" />
 
-                                <CheckBox
-                                    android:id="@+id/checkBox1"
-                                    android:layout_width="34dp"
-                                    android:layout_height="wrap_content"
-                                    android:minWidth="48dp"
-                                    android:minHeight="48dp"
-                                    tools:ignore="TouchTargetSizeCheck" />
+                        <CheckBox
+                            android:id="@+id/checkBox203"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="놀아주기" />
 
-                                <ImageView
-                                    android:id="@+id/imageView1"
-                                    android:layout_width="46dp"
-                                    android:layout_height="48dp"
-                                    android:layout_marginLeft="10dp"
-                                    android:background="@drawable/bold2"
-                                    android:src="@drawable/food" />
+                        <CheckBox
+                            android:id="@+id/checkBox204"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="약먹이기" />
 
-                                <TextView
-                                    android:id="@+id/textView1"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginLeft="20dp"
-                                    android:gravity="center_horizontal|center_vertical"
-                                    android:text="밥주기    "
-                                    android:textSize="15sp" />
+                        <CheckBox
+                            android:id="@+id/checkBox205"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="발톱깎기" />
 
-                            </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/checkBox206"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="목욕하기" />
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/checkBox2"
-                                    android:layout_width="34dp"
-                                    android:layout_height="wrap_content"
-                                    android:minWidth="48dp"
-                                    android:minHeight="48dp"
-                                    tools:ignore="TouchTargetSizeCheck" />
-
-                                <ImageView
-                                    android:id="@+id/imageView2"
-                                    android:layout_width="46dp"
-                                    android:layout_height="48dp"
-                                    android:layout_marginLeft="10dp"
-                                    android:src="@drawable/play" />
-
-                                <TextView
-                                    android:id="@+id/register"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginLeft="20dp"
-                                    android:gravity="center_horizontal|center_vertical"
-                                    android:text="놀아주기"
-                                    android:textSize="15sp" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/checkBox3"
-                                    android:layout_width="34dp"
-                                    android:layout_height="wrap_content"
-                                    android:minWidth="48dp"
-                                    android:minHeight="48dp"
-                                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                                <ImageView
-                                    android:id="@+id/imageView7"
-                                    android:layout_width="46dp"
-                                    android:layout_height="48dp"
-                                    android:layout_marginLeft="10dp"
-                                    android:src="@drawable/run" />
-
-                                <TextView
-                                    android:id="@+id/address"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginLeft="20dp"
-                                    android:gravity="center_horizontal|center_vertical"
-                                    android:text="산책하기"
-                                    android:textSize="15sp" />
-
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:orientation="horizontal">
-
-                                <CheckBox
-                                    android:id="@+id/checkBox9"
-                                    android:layout_width="34dp"
-                                    android:layout_height="wrap_content"
-                                    android:minWidth="48dp"
-                                    android:minHeight="48dp"
-                                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                                <ImageView
-                                    android:id="@+id/imageView6"
-                                    android:layout_width="46dp"
-                                    android:layout_height="48dp"
-                                    android:layout_marginLeft="10dp"
-                                    android:src="@drawable/hair" />
-
-                                <TextView
-                                    android:id="@+id/textView9"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_gravity="center_vertical"
-                                    android:layout_marginLeft="20dp"
-                                    android:gravity="center_horizontal|center_vertical"
-                                    android:text="미용하기"
-                                    android:textSize="15sp" />
-
-                            </LinearLayout>
-
-                        </LinearLayout>
+                        <CheckBox
+                            android:id="@+id/checkBox207"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="미용하기" />
 
                     </LinearLayout>
 
