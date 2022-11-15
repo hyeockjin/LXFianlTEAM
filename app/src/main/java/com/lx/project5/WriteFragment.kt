@@ -60,7 +60,6 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
         binding.selectDogButton1.setOnClickListener {
             writeSave()
-            checked()
             AppData.dogListIndex = 1
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteSelect)
 
@@ -130,22 +129,14 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
         })
 
     }
-    fun checked(){
-        Log.v("최고다","1")
-        if(binding.checkBox1.isChecked){
+
+
+    fun acrTodoAdd(lastInsertNo: String) {
+        if(binding.checkBox101.isChecked){
             Log.v("최고다","2")
         }else {
             Log.v("최고다","3")
         }
-    }
-
-    fun acrTodoAdd(lastInsertNo: String) {
-
-
-
-
-
-
 
         BasicClient.api.acrTodoAdd(
             requestCode = "1001",
