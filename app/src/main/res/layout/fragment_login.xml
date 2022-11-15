@@ -92,7 +92,6 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/pinkbutton"
-                android:backgroundTint="#EF4E84"
                 android:text="로그인"
                 android:textColor="#FFFFFF"
                 android:textSize="14sp"

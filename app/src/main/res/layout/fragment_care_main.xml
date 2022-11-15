@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView1111"
+            android:id="@+id/button11"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
@@ -257,9 +257,10 @@
 
     <Button
         android:id="@+id/completeButton0"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/pinkbutton"
         android:text="맡김완료"
         android:textColor="#FFFFFF"

@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView1111"
+            android:id="@+id/button11"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:gravity="center_horizontal|center_vertical"
@@ -47,14 +47,6 @@
                     android:background="@drawable/graybutton"
                     android:orientation="horizontal">
 
-                    <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="46dp"
-                        android:layout_height="48dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/food" />
-
                     <TextView
                         android:id="@+id/textView1"
                         android:layout_width="wrap_content"
@@ -73,7 +65,7 @@
                         android:id="@+id/button12"
                         android:layout_width="80dp"
                         android:layout_height="30dp"
-                        android:layout_gravity="right|center_vertical"
+                        android:layout_gravity="right|center_vertical|end"
                         android:layout_marginRight="40dp"
                         android:background="@drawable/round_button"
                         android:backgroundTint="#FFFFFF"
@@ -90,14 +82,6 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/graybutton"
                     android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="46dp"
-                        android:layout_height="48dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/play" />
 
                     <TextView
                         android:id="@+id/register"
@@ -116,7 +100,7 @@
                         android:id="@+id/button13"
                         android:layout_width="80dp"
                         android:layout_height="30dp"
-                        android:layout_gravity="right|center_vertical"
+                        android:layout_gravity="right|center_vertical|end"
                         android:layout_marginRight="40dp"
                         android:background="@drawable/round_button"
                         android:backgroundTint="#FFFFFF"
@@ -133,14 +117,6 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/graybutton"
                     android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/imageView7"
-                        android:layout_width="46dp"
-                        android:layout_height="48dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/run" />
 
                     <TextView
                         android:id="@+id/address"
@@ -159,7 +135,7 @@
                         android:id="@+id/button14"
                         android:layout_width="80dp"
                         android:layout_height="30dp"
-                        android:layout_gravity="right|center_vertical"
+                        android:layout_gravity="right|center_vertical|end"
                         android:layout_marginRight="40dp"
                         android:background="@drawable/round_button"
                         android:backgroundTint="#FFFFFF"
@@ -176,14 +152,6 @@
                     android:layout_marginTop="20dp"
                     android:background="@drawable/graybutton"
                     android:orientation="horizontal">
-
-                    <ImageView
-                        android:id="@+id/imageView6"
-                        android:layout_width="46dp"
-                        android:layout_height="48dp"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/hair" />
 
                     <TextView
                         android:id="@+id/textView9"
@@ -202,7 +170,7 @@
                         android:id="@+id/button15"
                         android:layout_width="80dp"
                         android:layout_height="30dp"
-                        android:layout_gravity="right|center_vertical"
+                        android:layout_gravity="right|center_vertical|end"
                         android:layout_marginRight="40dp"
                         android:background="@drawable/round_button"
                         android:backgroundTint="#FFFFFF"
@@ -227,8 +195,8 @@
 
     <Button
         android:id="@+id/backButton2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
         android:background="@drawable/pinkbutton"
         android:text="돌아가기"
         android:textColor="#FFFFFF"
