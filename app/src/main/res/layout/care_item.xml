@@ -21,14 +21,15 @@
 
             <ImageView
                 android:id="@+id/imageView8"
-                android:layout_width="70dp"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/person1" />
+                android:layout_margin="5dp"
+                app:srcCompat="@drawable/person4" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -41,7 +42,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:text="김용현"
-                        android:textSize="20sp" />
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textView36"
@@ -83,7 +84,7 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="center_vertical"
                     android:text="강남구도산대로"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>

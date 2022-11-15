@@ -13,34 +13,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/backButton4"
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="43dp"
-                android:background="@drawable/pinkbutton"
-                android:text="뒤로가기"
-                android:textSize="12sp" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="46dp"
-                android:layout_gravity="center_horizontal|center_vertical"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="20dp"
-                android:gravity="center_horizontal|center_vertical"
-                android:text="내가 쓴 맡김글"
-                android:textSize="20sp"
-                android:textStyle="normal" />
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:background="#faf7f4"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="내가 쓴 맡김글"
+            android:textSize="16sp"
+            android:textStyle="normal" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/writeList"
@@ -68,5 +50,12 @@
             android:src="@drawable/pencil"
             app:backgroundTint="#EF4E84" />
     </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/backButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#faf7f4"
+        android:src="@drawable/arrow" />
 
 </FrameLayout>
