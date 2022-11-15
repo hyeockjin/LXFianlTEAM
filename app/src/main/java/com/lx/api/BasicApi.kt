@@ -172,6 +172,17 @@ interface BasicApi {
      */
 
     @FormUrlEncoded
+    @POST("care/awrTodoAdd")
+    fun awrTodoAdd(
+        @Field("requestCode") requestCode: String,
+        @Field("awrn") awrn: String,
+        @Field("todoNo") todoNo: Int
+    ): Call<AwrTodoResponse>
+    /**
+     * GET 방식으로  선택요청 할일 추가
+     */
+
+    @FormUrlEncoded
     @POST("care/acrTodoAdd")
     fun acrTodoAdd(
         @Field("requestCode") requestCode: String,

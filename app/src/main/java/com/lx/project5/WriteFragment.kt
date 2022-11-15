@@ -99,7 +99,6 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
                 (activity as MainActivity).showToast("1")
 
-
             }
             override fun onFailure(call: Call<AcrListResponse>, t: Throwable) {
 

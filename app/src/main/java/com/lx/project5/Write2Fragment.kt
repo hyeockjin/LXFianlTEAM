@@ -9,11 +9,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
-import android.widget.Spinner
 import android.widget.TimePicker
 import androidx.fragment.app.Fragment
 import com.lx.api.BasicClient
 import com.lx.data.AwrListResponse
+import com.lx.data.AwrTodoResponse
+import com.lx.data.LastInsertResponse
 import com.lx.project5.databinding.FragmentWrite2Binding
 import retrofit2.Call
 import retrofit2.Callback
@@ -26,10 +27,6 @@ import java.util.*
 class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     var _binding: FragmentWrite2Binding? = null
     val binding get() = _binding!!
-
-
-
-
 
     //달력
     var day = 0
@@ -62,8 +59,9 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
         }
         //등록하기 버튼
         binding.editButton5.setOnClickListener {
-
+            writeSave()
             awrAdd()
+            lastInsert()
         }
 
         //강아지 선택
@@ -127,6 +125,166 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
         })
 
     }
+    fun lastInsert() {
+
+
+        BasicClient.api.lastInsert(
+            requestCode = "1001"
+        ).enqueue(object : Callback<LastInsertResponse> {
+            override fun onResponse(call: Call<LastInsertResponse>, response: Response<LastInsertResponse>) {
+                val lastInsertNo = response.body()?.data?.get(0)?.lASTINSERTID.toString()
+                awrTodoAdd(lastInsertNo)
+                (activity as MainActivity).showToast("1")
+
+
+            }
+            override fun onFailure(call: Call<LastInsertResponse>, t: Throwable) {
+                (activity as MainActivity).showToast("2")
+            }
+
+        })
+
+    }
+
+    fun awrTodoAdd(lastInsertNo: String) {
+        if(binding.checkBox201.isChecked){
+            BasicClient.api.awrTodoAdd(
+                requestCode = "1001",
+                awrn = lastInsertNo.toString(),
+                todoNo = 3
+            ).enqueue(object : Callback<AwrTodoResponse> {
+                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+        if(binding.checkBox202.isChecked){
+            BasicClient.api.awrTodoAdd(
+                requestCode = "1001",
+                awrn = lastInsertNo.toString(),
+                todoNo = 4
+            ).enqueue(object : Callback<AwrTodoResponse> {
+                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+        if(binding.checkBox203.isChecked){
+            BasicClient.api.awrTodoAdd(
+                requestCode = "1001",
+                awrn = lastInsertNo.toString(),
+                todoNo = 5
+            ).enqueue(object : Callback<AwrTodoResponse> {
+                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+        if(binding.checkBox204.isChecked){
+            BasicClient.api.awrTodoAdd(
+                requestCode = "1001",
+                awrn = lastInsertNo.toString(),
+                todoNo = 6
+            ).enqueue(object : Callback<AwrTodoResponse> {
+                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+        if(binding.checkBox205.isChecked){
+            BasicClient.api.awrTodoAdd(
+                requestCode = "1001",
+                awrn = lastInsertNo.toString(),
+                todoNo = 7
+            ).enqueue(object : Callback<AwrTodoResponse> {
+                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+        if(binding.checkBox206.isChecked){
+            BasicClient.api.awrTodoAdd(
+                requestCode = "1001",
+                awrn = lastInsertNo.toString(),
+                todoNo = 8
+            ).enqueue(object : Callback<AwrTodoResponse> {
+                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+        if(binding.checkBox207.isChecked){
+            BasicClient.api.awrTodoAdd(
+                requestCode = "1001",
+                awrn = lastInsertNo.toString(),
+                todoNo = 9
+            ).enqueue(object : Callback<AwrTodoResponse> {
+                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+
+
+
+    }
+
 
     /**
      * 사용자가 입력한 데이터를 변수에 넣어주는 함수
