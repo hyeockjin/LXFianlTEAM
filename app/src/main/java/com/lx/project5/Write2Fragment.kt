@@ -114,12 +114,12 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
         ).enqueue(object : Callback<AwrListResponse> {
             override fun onResponse(call: Call<AwrListResponse>, response: Response<AwrListResponse>) {
                 (activity as MainActivity).showToast("1")
-                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteList)
+
 
             }
             override fun onFailure(call: Call<AwrListResponse>, t: Throwable) {
                 (activity as MainActivity).showToast("2")
-                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteList)
+
             }
 
         })
