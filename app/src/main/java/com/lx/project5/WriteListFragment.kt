@@ -27,7 +27,7 @@ class WriteListFragment : Fragment() {
         initList()
         writeView()
         
-        binding.backButton4.setOnClickListener {
+        binding.backButton5.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
         }
 

@@ -13,11 +13,11 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView1111"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:background="#FFE0ED"
+            android:background="#faf7f4"
             android:gravity="center_horizontal|center_vertical"
             android:text="돌보미 정보확인"
             android:textSize="16sp"
@@ -170,5 +170,12 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/backButton12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#faf7f4"
+        android:src="@drawable/arrow" />
 
 </FrameLayout>

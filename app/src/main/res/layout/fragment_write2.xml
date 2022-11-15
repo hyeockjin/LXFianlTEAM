@@ -27,11 +27,11 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/textView1111"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:background="#FFE0ED"
+                    android:background="#faf7f4"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="맡김글 작성"
                     android:textSize="16sp"
@@ -41,7 +41,7 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="601dp"
+                android:layout_height="619dp"
                 android:padding="10dp">
 
                 <LinearLayout
@@ -381,6 +381,24 @@
                 </LinearLayout>
             </ScrollView>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <Button
+                    android:id="@+id/editButton5"
+                    android:layout_width="360dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/pinkbutton"
+                    android:text="작성하기"
+                    android:textColor="#FFFFFF" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </LinearLayout>
@@ -402,22 +420,11 @@
             app:backgroundTint="#BAB2B2" />
     </FrameLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <ImageButton
+        android:id="@+id/backButton6"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <Button
-            android:id="@+id/editButton5"
-            android:layout_width="360dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/pinkbutton"
-            android:text="작성하기"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
+        android:backgroundTint="#faf7f4"
+        android:src="@drawable/arrow" />
 
 </FrameLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFE0ED"
+    android:background="#faf7f4"
     tools:context=".MyPageFragment">
 
     <LinearLayout
@@ -12,10 +12,21 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/textView30"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:background="#faf7f4"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="마이페이지"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFE0ED"
+            android:background="#faf7f4"
             android:orientation="horizontal"
             android:paddingLeft="30dp"
             android:paddingTop="30dp"
@@ -160,5 +171,12 @@
         </FrameLayout>
 
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/backButton8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#faf7f4"
+        android:src="@drawable/arrow" />
 
 </FrameLayout>
