@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F4F1ED"
+    android:background="#faf7f4"
     tools:context=".MyPageFragment">
 
     <LinearLayout
@@ -25,6 +25,7 @@
                 android:id="@+id/imageView2"
                 android:layout_width="105dp"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
                 android:src="@drawable/person2" />
 
@@ -40,7 +41,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginTop="23dp"
+                    android:layout_marginTop="18dp"
                     android:text="김용현"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -95,10 +96,10 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginEnd="10dp"
                         android:layout_weight="1"
-                        android:background="@drawable/pinkbutton"
+                        android:background="@drawable/bold1"
                         android:gravity="center"
                         android:text="회원정보수정"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#162267"
                         android:textStyle="bold"
                         tools:ignore="TouchTargetSizeCheck" />
 
@@ -109,10 +110,10 @@
                         android:layout_gravity="center"
 
                         android:layout_weight="1"
-                        android:background="@drawable/pinkbutton"
+                        android:background="@drawable/bold1"
                         android:gravity="center"
                         android:text="내 신청글"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#162267"
                         android:textStyle="bold"
                         tools:ignore="TouchTargetSizeCheck" />
 
@@ -123,9 +124,9 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_weight="1"
-                        android:background="@drawable/pinkbutton"
+                        android:background="@drawable/bold1"
                         android:text="반려견등록"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#162267"
                         android:textStyle="bold"
                         tools:ignore="TouchTargetSizeCheck" />
 

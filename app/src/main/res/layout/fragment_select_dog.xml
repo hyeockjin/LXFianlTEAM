@@ -22,7 +22,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="43dp"
-                android:background="@drawable/pink_round_button"
+                android:background="@drawable/bold4"
                 android:text="뒤로가기"
                 android:textSize="12sp" />
 
