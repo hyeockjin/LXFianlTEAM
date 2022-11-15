@@ -19,12 +19,11 @@
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginTop="20dp"
-            android:background="#FFF6F6F6"
+            android:background="#faf8f4"
             android:gravity="center_horizontal|center_vertical"
             android:text="반려동물 수정"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="normal" />
 
         <ScrollView
@@ -41,7 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:background="#F6F6F6"
+                    android:background="#faf8f4"
                     android:orientation="horizontal">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
