@@ -158,6 +158,19 @@ interface BasicApi {
     ): Call<AcrListResponse>
 
     /**
+     * GET 방식으로  선택요청 할일 추가
+     */
+
+    @FormUrlEncoded
+    @POST("care/acrTodoAdd")
+    fun acrTodoAdd(
+        @Field("requestCode") requestCode: String,
+        @Field("acrn") acrn: Int,
+        @Field("todoNo") todoNo: Int
+    ): Call<AcrTodoResponse>
+
+
+    /**
      * POST 방식으로 돌봄 주변신청 보내기
      */
 

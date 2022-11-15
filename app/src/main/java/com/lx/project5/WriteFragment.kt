@@ -103,6 +103,9 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
         })
 
     }
+    fun acrTodoAdd(acrn: Int){
+
+    }
 
     /**
      * 사용자가 입력한 데이터를 변수에 넣어주는 함수
