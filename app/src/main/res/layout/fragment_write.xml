@@ -243,6 +243,12 @@
                             android:text="할 일"
                             android:textSize="16sp" />
 
+                        <Button
+                            android:id="@+id/button2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button" />
+
                         <CheckBox
                             android:id="@+id/checkBox101"
                             android:layout_width="match_parent"
