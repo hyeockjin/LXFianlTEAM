@@ -14,7 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFE0ED"
-        android:backgroundTint="#FFE0ED"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,9 +91,11 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/pinkbutton"
+                android:backgroundTint="#3949AB"
                 android:text="로그인"
-                android:textColor="#FFFFFF"
-                android:textSize="14sp"
+                android:textColor="#F8BBD0"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 tools:ignore="TouchTargetSizeCheck" />
 
         </LinearLayout>

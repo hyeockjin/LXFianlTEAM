@@ -349,7 +349,7 @@ class MainActivity : AppCompatActivity() {
         MarkerOptions().also {
             it.position(curPoint)
             it.title("내위치")
-            it.icon(BitmapDescriptorFactory.fromResource(R.drawable.dogmarker))
+            it.icon(BitmapDescriptorFactory.fromResource(R.drawable.dogicon))
 
 
             myMarker = map.addMarker(it)
