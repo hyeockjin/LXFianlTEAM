@@ -10,8 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.TimePicker
+import android.widget.Toast
 import com.lx.api.BasicClient
 import com.lx.data.AcrListResponse
+import com.lx.data.AcrTodoResponse
+import com.lx.data.LastInsertResponse
 import com.lx.project5.databinding.FragmentWriteBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -50,11 +53,14 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
         binding.editButton2.setOnClickListener {
             writeSave()
             acrAdd()
+            lastInsert()
+
 
         }
 
         binding.selectDogButton1.setOnClickListener {
             writeSave()
+            checked()
             AppData.dogListIndex = 1
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteSelect)
 
@@ -79,7 +85,6 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
     fun acrAdd() {
 
-
         BasicClient.api.acrAdd(
             requestCode = "1001",
             memberNo = AppData.loginData?.memberNo.toString(),
@@ -92,20 +97,77 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
         ).enqueue(object : Callback<AcrListResponse> {
             override fun onResponse(call: Call<AcrListResponse>, response: Response<AcrListResponse>) {
+
                 (activity as MainActivity).showToast("1")
 
 
             }
             override fun onFailure(call: Call<AcrListResponse>, t: Throwable) {
+
                 (activity as MainActivity).showToast("2")
             }
 
         })
 
     }
-    fun acrTodoAdd(acrn: Int){
+    fun lastInsert() {
+
+
+        BasicClient.api.lastInsert(
+            requestCode = "1001"
+        ).enqueue(object : Callback<LastInsertResponse> {
+            override fun onResponse(call: Call<LastInsertResponse>, response: Response<LastInsertResponse>) {
+                val lastInsertNo = response.body()?.data?.get(0)?.lASTINSERTID.toString()
+                acrTodoAdd(lastInsertNo)
+                (activity as MainActivity).showToast("1")
+
+
+            }
+            override fun onFailure(call: Call<LastInsertResponse>, t: Throwable) {
+                (activity as MainActivity).showToast("2")
+            }
+
+        })
 
     }
+    fun checked(){
+        Log.v("최고다","1")
+        if(binding.checkBox1.isChecked){
+            Log.v("최고다","2")
+        }else {
+            Log.v("최고다","3")
+        }
+    }
+
+    fun acrTodoAdd(lastInsertNo: String) {
+
+
+
+
+
+
+
+        BasicClient.api.acrTodoAdd(
+            requestCode = "1001",
+            acrn = lastInsertNo.toString(),
+            todoNo = 1
+        ).enqueue(object : Callback<AcrTodoResponse> {
+            override fun onResponse(call: Call<AcrTodoResponse>, response: Response<AcrTodoResponse>) {
+                (activity as MainActivity).showToast("1")
+
+
+            }
+            override fun onFailure(call: Call<AcrTodoResponse>, t: Throwable) {
+                (activity as MainActivity).showToast("2")
+            }
+
+        })
+
+    }
+
+
+
+
 
     /**
      * 사용자가 입력한 데이터를 변수에 넣어주는 함수

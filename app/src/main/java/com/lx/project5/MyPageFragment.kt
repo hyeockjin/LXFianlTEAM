@@ -39,7 +39,7 @@ class MyPageFragment : Fragment() {
     fun initView(){
         AppData.loginData?.apply{
             this.memberImage?.let{
-                val uri = Uri.parse("http://192.168.0.12:8001${memberImage}")
+                val uri = Uri.parse("http://192.168.0.7:8001${memberImage}")
                 Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
             }
             binding.memberName.text = AppData.loginData?.memberId

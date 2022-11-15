@@ -162,10 +162,20 @@ interface BasicApi {
      */
 
     @FormUrlEncoded
+    @POST("care/lastInsert")
+    fun lastInsert(
+        @Field("requestCode") requestCode: String
+    ): Call<LastInsertResponse>
+
+    /**
+     * GET 방식으로  선택요청 할일 추가
+     */
+
+    @FormUrlEncoded
     @POST("care/acrTodoAdd")
     fun acrTodoAdd(
         @Field("requestCode") requestCode: String,
-        @Field("acrn") acrn: Int,
+        @Field("acrn") acrn: String,
         @Field("todoNo") todoNo: Int
     ): Call<AcrTodoResponse>
 
@@ -253,7 +263,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://192.168.0.12:8001/"
+        private const val BASE_URL = "http://192.168.0.7:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""
