@@ -273,9 +273,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
                         android:layout_marginRight="10dp"
-                        android:background="@drawable/bold"
+                        android:background="#faf7f4"
+                        android:backgroundTint="#faf7f4"
                         android:text="예약취소"
-                        android:textColor="#000000" />
+                        android:textColor="#8E2929" />
 
                     <Button
                         android:id="@+id/payButton"

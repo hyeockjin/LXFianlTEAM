@@ -143,6 +143,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/pinkbutton"
+                    android:backgroundTint="#B6A9AC"
                     android:text="리뷰작성"
                     android:textColor="#FFFFFF"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
@@ -170,6 +171,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/pinkbutton"
+                    android:backgroundTint="#B6A9AC"
                     android:text="맡김완료"
                     android:textColor="#FFFFFF"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />

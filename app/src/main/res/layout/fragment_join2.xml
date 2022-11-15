@@ -207,7 +207,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
             android:background="@drawable/pinkbutton"
-            android:text="다음"
+            android:text="가입하기"
             android:textColor="#FFFFFF" />
     </LinearLayout>
 

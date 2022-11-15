@@ -188,20 +188,18 @@
                     android:layout_marginTop="10dp"
                     android:text="맡김이와 채팅 후, 확인요청부탁드립니다." />
 
+                <Button
+                    android:id="@+id/backButton2"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/pinkbutton"
+                    android:text="돌아가기"
+                    android:textColor="#FFFFFF" />
+
             </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/backButton2"
-        android:layout_width="360dp"
-        android:layout_height="40dp"
-        android:background="@drawable/pinkbutton"
-        android:text="돌아가기"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

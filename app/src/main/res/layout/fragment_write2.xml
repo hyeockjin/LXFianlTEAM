@@ -41,8 +41,7 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="619dp"
-                android:padding="10dp">
+                android:layout_height="match_parent">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -173,15 +172,6 @@
                             android:padding="7dp"
                             android:textSize="16sp" />
 
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="3dp"
-                        android:orientation="horizontal">
 
                     </LinearLayout>
 
@@ -378,26 +368,29 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:orientation="vertical"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="20dp"
+                        android:paddingBottom="10dp">
+
+                        <Button
+                            android:id="@+id/editButton5"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:layout_marginBottom="5dp"
+                            android:background="@drawable/pinkbutton"
+                            android:text="작성하기"
+                            android:textColor="#FFFFFF" />
+                    </LinearLayout>
+
                 </LinearLayout>
             </ScrollView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <Button
-                    android:id="@+id/editButton5"
-                    android:layout_width="360dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/pinkbutton"
-                    android:text="작성하기"
-                    android:textColor="#FFFFFF" />
-            </LinearLayout>
 
         </LinearLayout>
 
@@ -414,7 +407,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:layout_marginRight="40dp"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="60dp"
             android:clickable="true"
             android:src="@drawable/gps2"
             app:backgroundTint="#BAB2B2" />
