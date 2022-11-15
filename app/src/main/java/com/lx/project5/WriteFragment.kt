@@ -130,33 +130,144 @@ class WriteFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerD
 
     }
 
-
     fun acrTodoAdd(lastInsertNo: String) {
         if(binding.checkBox101.isChecked){
-            Log.v("최고다","2")
+            BasicClient.api.acrTodoAdd(
+                requestCode = "1001",
+                acrn = lastInsertNo.toString(),
+                todoNo = 3
+            ).enqueue(object : Callback<AcrTodoResponse> {
+                override fun onResponse(call: Call<AcrTodoResponse>, response: Response<AcrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AcrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+        if(binding.checkBox102.isChecked){
+            BasicClient.api.acrTodoAdd(
+                requestCode = "1001",
+                acrn = lastInsertNo.toString(),
+                todoNo = 4
+            ).enqueue(object : Callback<AcrTodoResponse> {
+                override fun onResponse(call: Call<AcrTodoResponse>, response: Response<AcrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AcrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+        if(binding.checkBox103.isChecked){
+            BasicClient.api.acrTodoAdd(
+                requestCode = "1001",
+                acrn = lastInsertNo.toString(),
+                todoNo = 5
+            ).enqueue(object : Callback<AcrTodoResponse> {
+                override fun onResponse(call: Call<AcrTodoResponse>, response: Response<AcrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AcrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+        if(binding.checkBox104.isChecked){
+            BasicClient.api.acrTodoAdd(
+                requestCode = "1001",
+                acrn = lastInsertNo.toString(),
+                todoNo = 6
+            ).enqueue(object : Callback<AcrTodoResponse> {
+                override fun onResponse(call: Call<AcrTodoResponse>, response: Response<AcrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AcrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+        if(binding.checkBox105.isChecked){
+            BasicClient.api.acrTodoAdd(
+                requestCode = "1001",
+                acrn = lastInsertNo.toString(),
+                todoNo = 7
+            ).enqueue(object : Callback<AcrTodoResponse> {
+                override fun onResponse(call: Call<AcrTodoResponse>, response: Response<AcrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AcrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+        if(binding.checkBox106.isChecked){
+            BasicClient.api.acrTodoAdd(
+                requestCode = "1001",
+                acrn = lastInsertNo.toString(),
+                todoNo = 8
+            ).enqueue(object : Callback<AcrTodoResponse> {
+                override fun onResponse(call: Call<AcrTodoResponse>, response: Response<AcrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AcrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
+        }else {
+            Log.v("최고다","3")
+        }
+        if(binding.checkBox107.isChecked){
+            BasicClient.api.acrTodoAdd(
+                requestCode = "1001",
+                acrn = lastInsertNo.toString(),
+                todoNo = 9
+            ).enqueue(object : Callback<AcrTodoResponse> {
+                override fun onResponse(call: Call<AcrTodoResponse>, response: Response<AcrTodoResponse>) {
+                    (activity as MainActivity).showToast("1")
+
+
+                }
+                override fun onFailure(call: Call<AcrTodoResponse>, t: Throwable) {
+                    (activity as MainActivity).showToast("2")
+                }
+
+            })
         }else {
             Log.v("최고다","3")
         }
 
-        BasicClient.api.acrTodoAdd(
-            requestCode = "1001",
-            acrn = lastInsertNo.toString(),
-            todoNo = 1
-        ).enqueue(object : Callback<AcrTodoResponse> {
-            override fun onResponse(call: Call<AcrTodoResponse>, response: Response<AcrTodoResponse>) {
-                (activity as MainActivity).showToast("1")
 
-
-            }
-            override fun onFailure(call: Call<AcrTodoResponse>, t: Throwable) {
-                (activity as MainActivity).showToast("2")
-            }
-
-        })
 
     }
-
-
 
 
 
