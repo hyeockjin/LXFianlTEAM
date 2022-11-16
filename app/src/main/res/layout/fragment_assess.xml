@@ -68,14 +68,11 @@
                     android:text="별점"
                     android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/scope"
+                <RatingBar
+                    android:id="@+id/ratingBar2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="75dp"
-                    android:layout_marginTop="30dp"
-                    android:text="★ ★ ★ ★ ★"
-                    android:textSize="16sp" />
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -110,35 +107,6 @@
                 android:text="리뷰내용" />
 
         </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="bottom"
-        android:orientation="horizontal"
-        android:padding="10dp">
-
-        <Button
-            android:id="@+id/completeButton3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_gravity="bottom"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/bold"
-            android:text="돌아가기" />
-
-        <Button
-            android:id="@+id/completeButton4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:layout_weight="1"
-            android:background="@drawable/pinkbutton"
-            android:text="작성완료"
-            android:textColor="#FFFFFF" />
 
     </LinearLayout>
 

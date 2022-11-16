@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/graybutton"
-                android:backgroundTint="#F4F4F4"
+                android:backgroundTint="#FFFFFF"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -92,6 +92,7 @@
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/bold"
+                    android:backgroundTint="#EFEFEF"
                     android:orientation="vertical"
                     android:padding="10dp">
 

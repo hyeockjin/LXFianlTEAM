@@ -137,15 +137,6 @@
                     android:layout_marginTop="5dp"
                     android:text="리뷰를 통해 다음 맡기미 분께 알려주세요" />
 
-                <RatingBar
-                    android:id="@+id/star1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <Button
                     android:id="@+id/reviewButton"
                     android:layout_width="187dp"
