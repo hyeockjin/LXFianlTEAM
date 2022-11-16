@@ -8,10 +8,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
-        android:padding="10dp">
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -24,23 +23,13 @@
                 android:layout_height="match_parent"
                 android:background="#F3F3F3">
 
-                <TextView
-                    android:id="@+id/gridNumberOutput"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp"
-                    android:gravity="center"
-                    android:text="1"
-                    android:textSize="14sp" />
-
 
                 <ImageView
                     android:id="@+id/gridPictureView"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:layout_marginRight="10dp"
-                    app:srcCompat="@mipmap/ic_launcher" />
+                    android:layout_margin="20dp"
+                    app:srcCompat="@drawable/dogicon" />
 
                 <LinearLayout
                     android:id="@+id/LinearLayout"
@@ -64,7 +53,7 @@
                             android:gravity="center_vertical"
                             android:text="강아지 이름"
                             android:textColor="#AA7E7E"
-                            android:textSize="10sp" />
+                            android:textSize="14sp" />
 
                         <TextView
                             android:id="@+id/dogAgeOutput"
@@ -73,7 +62,7 @@
                             android:layout_marginLeft="5dp"
                             android:gravity="center_vertical"
                             android:text="나이"
-                            android:textSize="7sp" />
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
@@ -85,7 +74,7 @@
                         android:gravity="center_vertical"
                         android:text="성별"
                         android:textColor="#0B0B0B"
-                        android:textSize="9sp"
+                        android:textSize="14sp"
                         android:textStyle="normal" />
 
                     <TextView
@@ -97,7 +86,7 @@
                         android:gravity="center_vertical"
                         android:text="견종"
                         android:textColor="#0B0B0B"
-                        android:textSize="9sp"
+                        android:textSize="14sp"
                         android:textStyle="normal" />
 
                 </LinearLayout>
