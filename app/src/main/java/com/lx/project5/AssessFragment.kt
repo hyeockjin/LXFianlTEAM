@@ -1,10 +1,13 @@
 package com.lx.project5
 
+import android.R
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RatingBar
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.lx.api.BasicClient
@@ -19,12 +22,21 @@ class AssessFragment : Fragment() {
     var _binding: FragmentAssessBinding? = null
     val binding get() = _binding!!
 
+
+
+
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentAssessBinding.inflate(inflater, container, false)
         setView()
 
+        //별점 레이팅바
+        binding.rtb.setOnRatingBarChangeListener { ratingBar, fl, b ->
+            binding.tvRating.text = fl.toString()
+        }
 
-        binding.backButton14.setOnClickListener {
+        binding.completeButton4.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)
         }
 
@@ -64,7 +76,7 @@ class AssessFragment : Fragment() {
     fun reviewSave(){
         ReviewSaveData.saveReviewTitle = binding.reviewTitle.text.toString()
         ReviewSaveData.saveReviewContent = binding.reviewContent.text.toString()
-        ReviewSaveData.saveStar = binding.ratingBar2.toString()
+        ReviewSaveData.saveStar = binding.rtb.toString()
         (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)
     }
 
@@ -78,5 +90,7 @@ class AssessFragment : Fragment() {
 
         }
     }
+
+
 
 }
