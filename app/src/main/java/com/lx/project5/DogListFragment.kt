@@ -94,7 +94,6 @@ class DogListFragment : Fragment() {
 
         })
 
-
     }
 
     fun addPetList(response: Response<DogListResponse>){
