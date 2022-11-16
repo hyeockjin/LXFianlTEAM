@@ -218,6 +218,21 @@ interface BasicApi {
     ): Call<AwrListResponse>
 
     /**
+     * POST 방식으로 맡기미 리뷰작성 보내기
+     */
+
+    @FormUrlEncoded
+    @POST("care/memberReview")
+    fun memberReview(
+        @Field("requestCode") requestCode: String,
+        @Field("memberNo") memberNo: String,
+        @Field("careNo") careNo: String,
+        @Field("star") star: String,
+        @Field("reviewTitle") reviewTitle: String,
+        @Field("reviewContent") reviewContent: String
+    ): Call<ReviewListResponse>
+
+    /**
      * POST 방식으로 개수정 보내기
      */
     @FormUrlEncoded
@@ -274,7 +289,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://192.168.0.15:8001/"
+        private const val BASE_URL = "http://192.168.0.7:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""

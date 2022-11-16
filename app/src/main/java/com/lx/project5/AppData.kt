@@ -13,6 +13,7 @@ class AppData {
         var lat: String? = null
         var lng: String? = null
         var dogListIndex: Int? = null
+        var reviewSaveData: ReviewSaveData? = null
     }
     //유진바보
 }
