@@ -75,6 +75,10 @@ class MainActivity : AppCompatActivity() {
         ITEMwriteSelect
     }
 
+
+    val dateFormat1 = SimpleDateFormat("yyyyMMddHHmmss")
+    var filename: String? = null
+
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
@@ -85,9 +89,6 @@ class MainActivity : AppCompatActivity() {
 
         return super.dispatchTouchEvent(ev)
     }
-
-    val dateFormat1 = SimpleDateFormat("yyyyMMddHHmmss")
-    var filename: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

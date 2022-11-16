@@ -1,8 +1,5 @@
 package com.lx.project5
 
-import android.graphics.Bitmap
-
-
 class Write2SaveData {
     companion object{
         var savelng: String? = null

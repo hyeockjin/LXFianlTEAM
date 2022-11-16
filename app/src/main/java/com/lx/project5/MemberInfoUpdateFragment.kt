@@ -62,7 +62,7 @@ class MemberInfoUpdateFragment : Fragment() {
 
             })
         }else {
-            (activity as MainActivity).showToast("비밀번호가 틀립니다.")
+            (activity as MainActivity).showToast("3")
 
         }
 

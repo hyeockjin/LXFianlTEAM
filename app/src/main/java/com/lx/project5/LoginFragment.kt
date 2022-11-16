@@ -62,6 +62,7 @@ class LoginFragment : Fragment() {
                     AppData.loginData?.memberAddress = response.body()?.data?.get(0)?.memberAddress.toString()
                     AppData.loginData?.memberImage = response.body()?.data?.get(0)?.memberImage.toString()
                     (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
+
                 } else if(checkMember == "0"){
                     val builder = AlertDialog.Builder(activity)
                     builder.setTitle("로그인")
@@ -77,7 +78,6 @@ class LoginFragment : Fragment() {
             }
             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
                 (activity as MainActivity).showToast("qkqh")
-                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
             }
 
         })

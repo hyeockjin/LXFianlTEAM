@@ -57,7 +57,6 @@ class Join2Fragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentJoin2Binding.inflate(inflater, container, false)
-        AppData.filepath = "1"
         initView()
 
         binding.nextButton2.setOnClickListener {

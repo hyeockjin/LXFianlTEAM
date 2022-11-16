@@ -12,7 +12,7 @@ package com.lx.project5
     val careNo:String? = null,
     val carePw:String? = null,
     val careX:String? = null,
-    val careY:String? = null,
+    val careY:String? = null
 
 
 )
