@@ -103,7 +103,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/graybutton"
+                            android:background="@drawable/bold4"
+                            android:backgroundTint="#F3F3F3"
                             android:drawableEnd="@drawable/calendar"
                             android:gravity="center_vertical"
                             android:hint="YYYY-MM-DD HH"
@@ -134,7 +135,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:background="@drawable/graybutton"
+                            android:background="@drawable/bold4"
+                            android:backgroundTint="#F3F3F3"
                             android:drawableEnd="@drawable/calendar"
                             android:gravity="center_vertical"
                             android:hint="YYYY-MM-DD HH"
@@ -235,66 +237,63 @@
                         android:paddingLeft="25dp"
                         android:paddingRight="25dp">
 
-                        <TextView
-                            android:id="@+id/textView15"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingLeft="10dp"
-                            android:text="할 일"
-                            android:textSize="16sp" />
-
-                        <Button
-                            android:id="@+id/button2"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Button" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox101"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="산책하기" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox102"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="밥먹이기" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox103"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="놀아주기" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox104"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="약먹이기" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox105"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="발톱깎기" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox106"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="목욕하기" />
-
-                        <CheckBox
-                            android:id="@+id/checkBox107"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="미용하기" />
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"></LinearLayout>
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView15"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:gravity="left"
+                                android:paddingLeft="10dp"
+                                android:text="할 일"
+                                android:textSize="16sp" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox101"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="산책하기" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox102"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="밥먹이기" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox103"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="놀아주기" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox104"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="약먹이기" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox105"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="발톱깎기" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox106"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="목욕하기" />
+
+                            <CheckBox
+                                android:id="@+id/checkBox107"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="미용하기" />
+                        </LinearLayout>
 
                     </LinearLayout>
 

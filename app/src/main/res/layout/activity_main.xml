@@ -66,161 +66,154 @@
                     app:cardElevation="4dp">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="220dp"
-                        android:layout_marginLeft="8.8dp"
-                        android:layout_marginBottom="40dp"
-                        android:orientation="vertical">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="10dp">
 
                         <TextView
                             android:layout_width="375dp"
-                            android:layout_height="45dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="10dp"
                             android:layout_marginTop="8dp"
                             android:gravity="center|left"
                             android:text="돌봄이 정보"
                             android:textColor="#000000"
-                            android:textSize="9pt"
+                            android:textSize="8pt"
                             android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="25dp"
-                            android:orientation="horizontal">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingRight="20dp">
 
-                            <TextView
-                                android:layout_width="70dp"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
-                                android:layout_marginTop="5dp"
-                                android:text="이름 : "
-                                android:textColor="#000000"
-                                android:textSize="14dp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/className"
-                                android:layout_width="290dp"
-                                android:layout_height="20dp"
-                                android:layout_marginTop="5dp"
-                                android:text="용혁문"
-                                android:textColor="#000000"
-                                android:textSize="14dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="25dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="70dp"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
-                                android:layout_marginTop="7dp"
-                                android:text="나이 :  "
-                                android:textColor="#000000"
-                                android:textSize="14dp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/classValue"
-                                android:layout_width="290dp"
-                                android:layout_height="20dp"
-                                android:layout_marginTop="7dp"
-                                android:text="20대후반"
-                                android:textColor="#000000"
-                                android:textSize="14dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="25dp"
-                            android:orientation="horizontal">
-
-                            <TextView
+                            <ImageView
+                                android:id="@+id/imageView6"
                                 android:layout_width="wrap_content"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
-                                android:layout_marginTop="7dp"
-                                android:text="주소:       "
-                                android:textColor="#000000"
-                                android:textSize="14dp"
-                                android:textStyle="bold" />
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="20dp"
+                                android:layout_marginBottom="10dp"
+                                app:srcCompat="@drawable/person4" />
 
-                            <TextView
-                                android:id="@+id/classAddress"
-                                android:layout_width="290dp"
-                                android:layout_height="20dp"
-                                android:layout_marginTop="7dp"
-                                android:text="공간정보아카데미"
-                                android:textColor="#000000"
-                                android:textSize="14dp" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:orientation="horizontal"
+                                    android:paddingRight="10dp">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="10dp"
+                                        android:text="이름"
+                                        android:textColor="#000000"
+                                        android:textSize="14dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/className"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_weight="1"
+                                        android:text="용혁문"
+                                        android:textColor="#000000"
+                                        android:textSize="14dp" />
+
+                                    <TextView
+                                        android:id="@+id/classScope"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="★★★★★"
+                                        android:textColor="#000000"
+                                        android:textSize="14dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="10dp"
+                                        android:text="나이"
+                                        android:textColor="#000000"
+                                        android:textSize="14dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/classValue"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:text="20대후반"
+                                        android:textColor="#000000"
+                                        android:textSize="14dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="5dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginRight="10dp"
+                                        android:text="주소"
+                                        android:textColor="#000000"
+                                        android:textSize="14dp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:id="@+id/classAddress"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="공간정보아카데미"
+                                        android:textColor="#000000"
+                                        android:textSize="14dp" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
                         </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_below="@+id/name_text"
+                            android:layout_marginTop="5dp"
+                            android:background="#C6C6C8" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="25dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
-                                android:layout_marginTop="7dp"
-                                android:text="별점 :       "
-                                android:textColor="#000000"
-                                android:textSize="14dp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/classScope"
-                                android:layout_width="290dp"
-                                android:layout_height="20dp"
-                                android:layout_marginTop="7dp"
-                                android:text="★★★★★"
-                                android:textColor="#000000"
-                                android:textSize="14dp" />
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="25dp"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="70dp"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
-                                android:layout_marginTop="7dp"
-                                android:text="카테고리 : "
-                                android:textColor="#000000"
-                                android:textSize="14dp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/classCategory"
-                                android:layout_width="290dp"
-                                android:layout_height="20dp"
-                                android:layout_marginTop="7dp"
-                                android:text="강아지전문 , 산책가능 , 단독주택"
-                                android:textColor="#000000"
-                                android:textSize="14dp" />
-                        </LinearLayout>
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="25dp"
-                            android:orientation="horizontal">
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:orientation="vertical">
 
                             <TextView
                                 android:id="@+id/TextView"
-                                android:layout_width="70dp"
-                                android:layout_height="20dp"
-                                android:layout_marginLeft="16dp"
-                                android:layout_marginTop="7dp"
-                                android:layout_marginBottom="25dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:text="자기소개"
                                 android:textColor="#000000"
                                 android:textSize="14dp"
@@ -228,12 +221,53 @@
 
                             <TextView
                                 android:id="@+id/classSelf"
-                                android:layout_width="290dp"
-                                android:layout_height="20dp"
-                                android:layout_marginTop="7dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:text="저희집 강아지라고 생각하고 돌봐드려요"
                                 android:textColor="#000000"
                                 android:textSize="14dp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/textView16"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/bold4"
+                                android:backgroundTint="#B6CF9B"
+                                android:padding="5dp"
+                                android:text="강아지전문"
+                                android:textSize="13sp" />
+
+                            <TextView
+                                android:id="@+id/textView35"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/bold4"
+                                android:backgroundTint="#B6CF9B"
+                                android:padding="5dp"
+                                android:text="산책가능"
+                                android:textSize="13sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                            <TextView
+                                android:id="@+id/textView36"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:background="@drawable/bold4"
+                                android:backgroundTint="#B6CF9B"
+                                android:padding="5dp"
+                                android:text="단독주택"
+                                android:textSize="13sp" />
                         </LinearLayout>
 
 
@@ -263,8 +297,20 @@
                 android:layout_marginTop="21dp"
                 android:layout_marginEnd="33dp"
                 android:clickable="true"
-                app:backgroundTint="#3949AB"
+                app:backgroundTint="#B6CF9B"
                 app:srcCompat="@drawable/pencil" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="33dp"
+                android:layout_marginTop="18dp"
+                android:clickable="true"
+                app:backgroundTint="#FFFFFF"
+                app:srcCompat="@drawable/tdolist" />
 
         </RelativeLayout>
 
