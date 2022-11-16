@@ -123,12 +123,18 @@
                 android:layout_marginTop="20dp"
                 android:text="작성하기" />
 
+            <Button
+                android:id="@+id/completeButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
+
         </LinearLayout>
 
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/backButton14"
+        android:id="@+id/completeButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#faf7f4"
