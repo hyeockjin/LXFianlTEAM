@@ -55,6 +55,6 @@
         android:layout_marginBottom="65dp"
         android:clickable="true"
         android:src="@drawable/plus2"
-        app:backgroundTint="#3949AB" />
+        app:backgroundTint="#B6CF9B" />
 
 </FrameLayout>
