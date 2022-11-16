@@ -32,10 +32,10 @@ class CareMainFragment : Fragment() {
             binding.time.text = "${AppData.point} 분 남음"
         }
 
-
-        binding.output4.setOnClickListener {
+        binding.todolist.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareTodolist)
         }
+
         binding.completeButton0.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)
         }

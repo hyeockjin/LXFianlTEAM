@@ -22,7 +22,7 @@
             android:gravity="center_horizontal|center_vertical"
             android:text="진행현황"
             android:textSize="16sp"
-            android:textStyle="normal" />
+            android:textStyle="normal|bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,6 +41,8 @@
                 android:textColor="#000000"
                 android:textCursorDrawable="@drawable/bold1" />
 
+
+
             <Button
                 android:id="@+id/locationButton2"
                 android:layout_width="wrap_content"
@@ -53,6 +55,12 @@
                 android:textColor="#000000" />
 
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/name_text"
+            android:background="#D8D8D8" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,173 +89,180 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="16dp"
-                    android:text="이름" />
-
-                <EditText
-                    android:id="@+id/output1"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bold"
-                    android:gravity="center_vertical"
-                    android:hint="용현문"
-                    android:padding="10dp"
-                    android:textSize="14sp"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="16dp"
-                    android:text="돌보미" />
-
-                <EditText
-                    android:id="@+id/output2"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bold"
-                    android:gravity="center_vertical"
-                    android:hint="김현문"
-                    android:padding="10dp"
-                    android:textSize="14sp"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="110dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="16dp"
-                    android:text="맡김시간" />
+                android:orientation="vertical"
+                android:padding="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
                     android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/output3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:background="#FFFFFF"
-                        android:gravity="center_vertical"
-                        android:hint="12:00 ~ 14:00"
-                        android:padding="10dp"
-                        android:textSize="14sp"
-                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
                     <TextView
-                        android:id="@+id/time"
-                        android:layout_width="match_parent"
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:text="이름" />
+
+                    <EditText
+                        android:id="@+id/output1"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
-                        android:background="#FFFFFF"
+                        android:background="@drawable/bold"
                         android:gravity="center_vertical"
-                        android:hint="2시간 남음"
+                        android:hint="용현문"
                         android:padding="10dp"
                         android:textSize="14sp"
                         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                 </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="10dp">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-                    <Button
-                        android:id="@+id/playButton"
-                        android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="110dp"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="#FFFFFF"
-                        android:text="진행률" />
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:text="돌보미" />
 
-                    <ProgressBar
-                        android:id="@+id/progressBar"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    <EditText
+                        android:id="@+id/output2"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_height="40dp"
                         android:layout_marginRight="20dp"
-                        android:layout_marginBottom="15dp"
-                        android:max="100"
-                        android:progress="0"
-                        android:progressBackgroundTint="#737270"
-                        android:progressTint="#FF9800" />
+                        android:layout_weight="1"
+                        android:background="@drawable/bold"
+                        android:gravity="center_vertical"
+                        android:hint="김현문"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                 </LinearLayout>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="110dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="16dp"
-                    android:text="남은할일" />
+                    android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/output4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/bold"
-                    android:gravity="center_vertical"
-                    android:hint="2개"
-                    android:padding="10dp"
-                    android:textSize="14sp"
-                    tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:text="맡김시간" />
 
-                <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/output3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:hint="12:00 ~ 14:00"
+                            android:padding="10dp"
+                            android:textSize="14sp"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                        <TextView
+                            android:id="@+id/time"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="20dp"
+                            android:layout_weight="1"
+                            android:background="#FFFFFF"
+                            android:gravity="center_vertical"
+                            android:hint="2시간 남음"
+                            android:padding="10dp"
+                            android:textSize="14sp"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="20dp"
-                    android:src="@drawable/tdolist" />
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="10dp">
+
+                        <Button
+                            android:id="@+id/playButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#FFFFFF"
+                            android:text="진행률" />
+
+                        <ProgressBar
+                            android:id="@+id/progressBar"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginRight="20dp"
+                            android:layout_marginBottom="15dp"
+                            android:max="100"
+                            android:progress="0"
+                            android:progressBackgroundTint="#737270"
+                            android:progressTint="#FF9800" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="16dp"
+                        android:text="남은할일" />
+
+                    <EditText
+                        android:id="@+id/textView5888"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bold"
+                        android:gravity="center_vertical"
+                        android:hint="2개"
+                        android:padding="10dp"
+                        android:textSize="14sp"
+                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                    <ImageView
+                        android:id="@+id/todolist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/tdolist" />
+
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
