@@ -131,12 +131,10 @@
                         android:orientation="vertical"
                         android:padding="10dp">
 
-                        <EditText
-                            android:id="@+id/editTextTextPersonName2"
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/reviewList"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="textPersonName"
-                            android:textSize="14sp" />
+                            android:layout_height="match_parent" />
                     </LinearLayout>
 
                 </LinearLayout>

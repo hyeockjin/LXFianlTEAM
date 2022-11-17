@@ -66,14 +66,14 @@
                         android:id="@+id/awrdTitle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="65dp"
+                        android:layout_marginLeft="45dp"
                         android:text="11월 29일 두시간만 용현문이 봐줄사람 구해용~" />
 
                     <TextView
                         android:id="@+id/awrdContent"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="65dp"
+                        android:layout_marginLeft="45dp"
                         android:text="TextView" />
 
                 </LinearLayout>
