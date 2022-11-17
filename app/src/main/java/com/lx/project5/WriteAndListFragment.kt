@@ -95,7 +95,7 @@ class WriteAndListFragment : Fragment() {
                     AppData.selectedCommentItem = item
 
 
-                    (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMpetInfo)
+                    (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareInfo)
 
                 }
             }

@@ -23,7 +23,10 @@ class CareInfoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentCareInfoBinding.inflate(inflater, container, false)
-        initView()
+
+        initView1()
+
+
         initList()
         reviewView()
 
@@ -38,7 +41,7 @@ class CareInfoFragment : Fragment() {
         return binding.root
     }
 
-    fun initView(){
+    fun initView1(){
         AppData.selectedCardItem.apply{
             this?.careImage.let{
                 val uri = Uri.parse("http://192.168.0.12:8001${this?.careImage}")
@@ -50,6 +53,7 @@ class CareInfoFragment : Fragment() {
 
         }
     }
+
 
     // 리스트 초기화
     fun initList() {

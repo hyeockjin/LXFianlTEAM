@@ -117,6 +117,16 @@ interface BasicApi {
      * GET 방식으로  개리스트 요청
      */
 
+    @GET("care/careInfo")
+    fun getcareInfo(
+        @Query("requestCode") requestCode: String,
+        @Query("careNo") careNo: String
+    ): Call<CareListResponse>
+
+    /**
+     * GET 방식으로  개리스트 요청
+     */
+
     @GET("care/petList")
     fun getPetFilter(
         @Query("requestCode") requestCode: String,
