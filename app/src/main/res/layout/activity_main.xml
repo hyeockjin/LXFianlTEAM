@@ -241,22 +241,20 @@
                                 android:id="@+id/textView16"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@drawable/bold4"
-                                android:backgroundTint="#B6CF9B"
+                                android:layout_margin="5dp"
+                                android:backgroundTint="#FFFFFF"
                                 android:padding="5dp"
-                                android:text="강아지전문"
+                                android:text="#강아지전문"
                                 android:textSize="13sp" />
 
                             <TextView
                                 android:id="@+id/textView35"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@drawable/bold4"
-                                android:backgroundTint="#B6CF9B"
+                                android:layout_margin="5dp"
+                                android:backgroundTint="#FFFFFF"
                                 android:padding="5dp"
-                                android:text="산책가능"
+                                android:text="#산책가능"
                                 android:textSize="13sp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent" />
@@ -265,11 +263,10 @@
                                 android:id="@+id/textView36"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_margin="10dp"
-                                android:background="@drawable/bold4"
-                                android:backgroundTint="#B6CF9B"
+                                android:layout_margin="5dp"
+                                android:backgroundTint="#FFFFFF"
                                 android:padding="5dp"
-                                android:text="단독주택"
+                                android:text="#단독주택"
                                 android:textSize="13sp" />
                         </LinearLayout>
 
