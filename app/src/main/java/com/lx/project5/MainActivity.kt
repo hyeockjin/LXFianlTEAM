@@ -345,11 +345,24 @@ class MainActivity : AppCompatActivity() {
 
                     // 마커클릭
                     map.setOnMarkerClickListener {
+                        Log.v("갤럭시1", "${response.body()?.data?.get(i)}")
+                        AppData.selectedCardItem = CardData()
 
                         binding.className.text = response.body()?.data?.get(i)?.careName.toString()
                         binding.classAddress.text = response.body()?.data?.get(i)?.careAddress.toString()
                         binding.classSelf.text = response.body()?.data?.get(i)?.careExperience.toString()
                         WriteSaveData.savecareNo = response.body()?.data?.get(i)?.careNo.toString()
+                        AppData.selectedCardItem?.careAddress = response.body()?.data?.get(i)?.careAddress.toString()
+                        AppData.selectedCardItem?.careApproval = response.body()?.data?.get(i)?.careApproval
+                        AppData.selectedCardItem?.careEducation = response.body()?.data?.get(i)?.careEducation.toString()
+                        AppData.selectedCardItem?.careExperience = response.body()?.data?.get(i)?.careExperience.toString()
+                        AppData.selectedCardItem?.careId = response.body()?.data?.get(i)?.careId.toString()
+                        AppData.selectedCardItem?.careImage = response.body()?.data?.get(i)?.careImage.toString()
+                        AppData.selectedCardItem?.careName = response.body()?.data?.get(i)?.careName.toString()
+                        AppData.selectedCardItem?.careNo = response.body()?.data?.get(i)?.careNo.toString()
+                        AppData.selectedCardItem?.carePw = response.body()?.data?.get(i)?.carePw.toString()
+                        Log.v("갤럭시", "${AppData.selectedCardItem}")
+
                         binding.cardView.visibility = View.VISIBLE
 
                         true
