@@ -61,6 +61,7 @@
                             android:layout_marginLeft="15dp"
                             android:layout_weight="1"
                             android:text="TextView"
+                            android:fontFamily="@font/rokaf_bold"
                             android:textColor="#8C7655"
                             android:textSize="24sp"
                             android:textStyle="bold" />
