@@ -127,7 +127,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="300dp"
-                        android:background="@drawable/bold"
+                        android:background="@drawable/bold1"
                         android:orientation="vertical"
                         android:padding="10dp">
 
