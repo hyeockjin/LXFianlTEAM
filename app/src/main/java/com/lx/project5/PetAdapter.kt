@@ -33,7 +33,7 @@ class PetAdapter : RecyclerView.Adapter<PetAdapter.ViewHolder>(){
         fun setItem(item: PetData){
             //이미지 표시하기
             item.dogImage?.apply{
-                val uri = Uri.parse("http://172.30.1.3:8001${this}")
+                val uri = Uri.parse("http://192.168.0.12:8001${this}")
                 Glide.with(binding.gridPictureView).load(uri).into(binding.gridPictureView)
             }
 

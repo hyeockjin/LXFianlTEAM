@@ -1,8 +1,10 @@
 package com.lx.project5
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.lx.project5.databinding.AwrdItemBinding
 import com.lx.project5.databinding.CareItemBinding
 
@@ -44,24 +46,18 @@ class AwrdCommentAdapter : RecyclerView.Adapter<AwrdCommentAdapter.ViewHolder>()
 //                binding.profileView.setImageResource(this)
 //            }
 
-//            item.profile?.apply {
-////                val uri = Uri.parse("http://172.168.10.58:8001//images/mycarrot1664852393280.jpg")
-//                val uri = Uri.parse("http://172.168.10.58:8001${this}")
-//                Glide.with(binding.profileView)         // 글라이드를 사용하는데,
-//                    .load(uri)                              // 이미지 파일을 읽어와서,
-//                    .into(binding.profileView)                  // 이미지뷰에 넣어주세요
-//            }
+            item.careImage?.apply {
+//                val uri = Uri.parse("http://172.168.10.58:8001//images/mycarrot1664852393280.jpg")
+                val uri = Uri.parse("http://192.168.0.12:8001${this}")
+                Glide.with(binding.awrdItemImage)         // 글라이드를 사용하는데,
+                    .load(uri)                              // 이미지 파일을 읽어와서,
+                    .into(binding.awrdItemImage)                  // 이미지뷰에 넣어주세요
+            }
+            binding.awrdItemName.text = item.careName.toString()
+            binding.awrdItemComment.text = item.comment.toString()
 
 
 
-//            // 이름 표시하기
-//            binding.nameOutput.text = item.name
-//
-//            // 나이 표시하기
-//            binding.ageOutput.text = item.age.toString()
-//
-//            // 전화번호 표시하기
-//            binding.mobileOutput.text = item.mobile
 
         }
 

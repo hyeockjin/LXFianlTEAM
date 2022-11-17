@@ -33,7 +33,7 @@ class ReviewAdapter : RecyclerView.Adapter<ReviewAdapter.ViewHolder>(){
         fun setItem(item: ReviewSaveData){
             //이미지 표시하기
             item.saveImage?.apply{
-                val uri = Uri.parse("http://172.30.1.3:8001${this}")
+                val uri = Uri.parse("http://192.168.0.12:8001${this}")
                 Glide.with(binding.reviewMemImageView).load(uri).into(binding.reviewMemImageView)
             }
 
