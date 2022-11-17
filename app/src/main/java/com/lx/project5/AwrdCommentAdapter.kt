@@ -33,11 +33,7 @@ class AwrdCommentAdapter : RecyclerView.Adapter<AwrdCommentAdapter.ViewHolder>()
     // 각 아이템의 모양을 재사용하기 위해 만들어진 것
     inner class ViewHolder(val binding: AwrdItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        init {
-            binding.root.setOnClickListener {
-                listener?.onItemClick(this, binding.root, adapterPosition)
-            }
-        }
+
 
         // 하나의 아이템을 위한 데이터가 전달되었을 때 화면에 어떻게 표시할 지 설정
         fun setItem(item:AwcData) {
@@ -59,6 +55,11 @@ class AwrdCommentAdapter : RecyclerView.Adapter<AwrdCommentAdapter.ViewHolder>()
 
 
 
+        }
+        init {
+            binding.root.setOnClickListener {
+                listener?.onItemClick(this, binding.root, adapterPosition)
+            }
         }
 
     }

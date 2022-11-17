@@ -92,11 +92,10 @@ class WriteAndListFragment : Fragment() {
                 awrdCommentAdapter?.apply {
                     val item = items.get(position)
 
-//                    AppData.selectedItem = item
+                    AppData.selectedCommentItem = item
 
-//                    val petInfoIntent = Intent(context, PetInfoFragment::class.java)
-//                    petInfoLauncher.launch(petInfoIntent)
-                    //(activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMpetInfo)
+
+                    (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMpetInfo)
 
                 }
             }
