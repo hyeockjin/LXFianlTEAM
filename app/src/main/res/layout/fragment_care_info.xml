@@ -21,7 +21,7 @@
             android:gravity="center_horizontal|center_vertical"
             android:text="돌보미 정보확인"
             android:textSize="16sp"
-            android:textStyle="normal" />
+            android:textStyle="normal|bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,7 +35,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:background="@drawable/bold4"
+                android:background="@drawable/graybutton"
+                android:backgroundTint="#FFFFFF"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -90,8 +91,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/bold4"
-                    android:backgroundTint="#F6F5F5"
+                    android:background="@drawable/bold"
+                    android:backgroundTint="#EFEFEF"
                     android:orientation="vertical"
                     android:padding="10dp">
 
@@ -107,6 +108,13 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="46dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="5dp" />
+
                     <TextView
                         android:id="@+id/textView11"
                         android:layout_width="match_parent"
@@ -116,9 +124,18 @@
                         android:paddingTop="20dp"
                         android:text="후기" />
 
-                    <androidx.recyclerview.widget.RecyclerView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="300dp"
+                        android:background="@drawable/bold1"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/reviewList"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </LinearLayout>
 
                 </LinearLayout>
 

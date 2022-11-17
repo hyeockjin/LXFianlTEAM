@@ -2,6 +2,7 @@ package com.lx.project5
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -50,12 +51,17 @@ class WriteListFragment : Fragment() {
         // 4. 아이템을 클릭했을 때 동작할 코드 넣어주기
         writeAdapter?.listener = object: OnWriteItemClickListener {
             override fun onItemClick(holder: WriteAdapter.ViewHolder?, view: View?, position: Int) {
+                Log.v("멍충", "1111")
+
                 writeAdapter?.apply {
                     val item = items.get(position)
 
                     AppData.selectedWriteItem = item
+                    Log.v("멍충", "${AppData.selectedWriteItem}")
+
 
                     (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteand)
+                    Log.v("멍충", "${MainActivity.ScreenItem.ITEMwriteand}")
 
 
                 }

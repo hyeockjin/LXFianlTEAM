@@ -42,10 +42,10 @@ class WriteAdapter : RecyclerView.Adapter<WriteAdapter.ViewHolder>(){
             binding.awTime.text = item.writeTime
 
         }
-//        init {
-//            binding.root.setOnClickListener{
-//                listener?.onItemClick(this,binding.root,adapterPosition)
-//            }
-//        }
+        init {
+            binding.root.setOnClickListener{
+                listener?.onItemClick(this,binding.root,adapterPosition)
+            }
+        }
     }
 }
