@@ -101,10 +101,4 @@
 
     </LinearLayout>
 
-    <ImageButton
-        android:id="@+id/backButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#faf7f4"
-        android:src="@drawable/arrow" />
 </FrameLayout>
