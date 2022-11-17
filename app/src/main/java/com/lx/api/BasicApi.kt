@@ -233,6 +233,15 @@ interface BasicApi {
     ): Call<ReviewListResponse>
 
     /**
+     * GET 선택신청 개 정보
+     */
+    @GET("care/dogInfo")
+    fun getDogInfo(
+        @Query("requestCode") requestCode: String,
+        @Query("dogNo") dogNo: String,
+    ): Call<DogListResponse>
+
+    /**
      * POST 방식으로 개수정 보내기
      */
     @FormUrlEncoded
