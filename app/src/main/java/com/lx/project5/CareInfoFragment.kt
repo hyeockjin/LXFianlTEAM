@@ -50,7 +50,7 @@ class CareInfoFragment : Fragment() {
     fun reviewView() {
         AppData.careData?.apply{
             this.careImage.let{
-                val uri = Uri.parse("http://172.30.1.3:8001${careImage}")
+                val uri = Uri.parse("http://192.168.0.3:8001${careImage}")
                 Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
             }
             binding.textView7.text = "${AppData.careData?.careName}"
