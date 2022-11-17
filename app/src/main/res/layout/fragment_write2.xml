@@ -207,7 +207,7 @@
                                     android:text="제목" />
 
                                 <EditText
-                                    android:id="@+id/detail1"
+                                    android:id="@+id/awDog"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:hint="내용을 기입해주세요"

@@ -38,7 +38,8 @@ class WriteAdapter : RecyclerView.Adapter<WriteAdapter.ViewHolder>(){
 //                Glide.with(binding.gridPictureView).load(uri).into(binding.gridPictureView)
 //            }
 
-            binding.careMan
+            binding.awTitle.text = item.assignTitle
+            binding.awTime.text = item.writeTime
 
         }
 //        init {
