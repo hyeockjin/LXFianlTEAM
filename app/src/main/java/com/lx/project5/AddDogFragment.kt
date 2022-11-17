@@ -69,6 +69,9 @@ class AddDogFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentAddDogBinding.inflate(inflater, container, false)
 
+        binding.backButton1.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
+        }
 
         binding.addButton.setOnClickListener {
             addPet()
