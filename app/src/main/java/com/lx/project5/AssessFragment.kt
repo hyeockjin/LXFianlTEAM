@@ -64,14 +64,14 @@ class AssessFragment : Fragment() {
     fun reviewSave(){
         ReviewSaveData.saveReviewTitle = binding.reviewTitle.text.toString()
         ReviewSaveData.saveReviewContent = binding.reviewContent.text.toString()
-        ReviewSaveData.saveStar = binding.ratingBar2.toString()
+        ReviewSaveData.saveStar = binding.rtb.toString()
         (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)
     }
 
     fun setView(){
         AppData?.memberdata.apply{
             this?.memberImage?.let {
-                val uri = Uri.parse("http://192.168.0.215:8001${memberImage}")
+                val uri = Uri.parse("http://192.168.0.15:8001${memberImage}")
                 Glide.with(binding.personProfile).load(uri).into(binding.personProfile)
             }
             binding.personName.setText(AppData.loginData?.memberName)
