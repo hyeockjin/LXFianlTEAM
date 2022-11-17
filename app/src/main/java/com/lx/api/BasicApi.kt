@@ -93,13 +93,11 @@ interface BasicApi {
      * GET 방식으로 주변 펫시터 요청 / 사용가능
      */
 
-    @GET("care/memberDelete")
+    @GET("care/list")
     fun getCareList(
         @Query("requestCode") requestCode: String,
-        @Query("carex1") carex1: Int,
-        @Query("carex2") carex2: Int,
-        @Query("carey1") carey1: Int,
-        @Query("carey2") carey2: Int
+        @Query("careImage") careImage: String,
+        @Query("careName") careName: String
     ): Call<CareListResponse>
 
     /**
@@ -178,6 +176,7 @@ interface BasicApi {
         @Field("awrn") awrn: String,
         @Field("todoNo") todoNo: Int
     ): Call<AwrTodoResponse>
+
     /**
      * GET 방식으로  선택요청 할일 추가
      */
@@ -216,6 +215,13 @@ interface BasicApi {
         @Query("requestCode") requestCode: String,
         @Query("memberNo") memberNo: String
     ): Call<AwrListResponse>
+
+    // 맡김이가 쓴 리뷰 리스트
+    @GET("care/reviewList")
+    fun getReviewFilter(
+        @Query("requestCode") requestCode: String,
+        @Query("memberNo") memberNo: String
+    ): Call<ReviewListResponse>
 
     /**
      * POST 방식으로 맡기미 리뷰작성 보내기
@@ -289,7 +295,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://192.168.0.7:8001/"
+        private const val BASE_URL = "http://172.30.1.3:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""

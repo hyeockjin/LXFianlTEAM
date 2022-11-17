@@ -8,7 +8,7 @@
     tools:context=".Join1Fragment">
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/reviewMemImageView"
         android:layout_width="match_parent"
         android:layout_height="154dp"
         android:layout_gravity="center"
