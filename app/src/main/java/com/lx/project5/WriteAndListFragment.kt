@@ -23,8 +23,12 @@ class WriteAndListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentWriteandlistBinding.inflate(inflater, container, false)
 
+        initView1()
+        initView2()
+
         return binding.root
     }
+
 
     fun initView1(){
         BasicClient.api.getDogInfo(
@@ -32,6 +36,19 @@ class WriteAndListFragment : Fragment() {
             dogNo = AppData.selectedWriteItem?.dogNo.toString()
         ).enqueue(object: Callback<DogListResponse> {
             override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {
+
+                AppData.dogInfo = DogData()
+
+                AppData.dogInfo?.dogImage = response.body()?.data?.get(0)?.dogImage
+                AppData.dogInfo?.dogName = response.body()?.data?.get(0)?.dogName
+                AppData.dogInfo?.apply{
+                    this.dogImage?.let{
+                        val uri = Uri.parse("http://192.168.0.15:8001${dogImage}")
+                        Glide.with(binding.awrdImage).load(uri).into(binding.awrdImage)
+                    }
+                    binding.awrdDog.text = AppData.dogInfo?.dogName
+
+                }
 
 
             }
@@ -46,16 +63,10 @@ class WriteAndListFragment : Fragment() {
 
 
     fun initView2(){
-        AppData.selectedWriteItem?.apply{
-            this.memberImage?.let{
-                val uri = Uri.parse("http://192.168.0.15:8001${memberImage}")
-                Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
-            }
-            binding.memberName.text = AppData.loginData?.memberId
-            binding.address.text = AppData.loginData?.memberName
-            binding.textView9.text = AppData.loginData?.memberAddress
+        binding.awrdTitle.text = AppData.selectedWriteItem?.assignTitle
+        binding.awrdContent.text = AppData.selectedWriteItem?.assignContent
 
-        }
+
     }
 
 }
