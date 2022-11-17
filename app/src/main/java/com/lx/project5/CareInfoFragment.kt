@@ -40,10 +40,10 @@ class CareInfoFragment : Fragment() {
     // 리스트 초기화
     fun initList() {
         val layoutManager = LinearLayoutManager(context)
-        binding.reviewList.layoutManager = layoutManager
+//        binding.reviewList.layoutManager = layoutManager
 
         reviewAdapter = ReviewAdapter()
-        binding.reviewList.adapter = reviewAdapter
+//        binding.reviewList.adapter = reviewAdapter
 
     }
 

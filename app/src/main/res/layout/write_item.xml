@@ -28,6 +28,7 @@
                     android:id="@+id/textView13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
                     android:text="제목 :" />
 
@@ -40,7 +41,7 @@
                     android:layout_weight="1"
                     android:text="yyyhhhmmm"
                     android:textColor="#C18686"
-                    android:textSize="20sp" />
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout

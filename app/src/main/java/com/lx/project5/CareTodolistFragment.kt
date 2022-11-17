@@ -21,6 +21,10 @@ class CareTodolistFragment : Fragment() {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareMain)
         }
 
+        binding.backButton18.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcareMain)
+        }
+
         return binding.root
     }
 

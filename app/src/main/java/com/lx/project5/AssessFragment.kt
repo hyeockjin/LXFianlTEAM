@@ -21,10 +21,16 @@ class AssessFragment : Fragment() {
     var _binding: FragmentAssessBinding? = null
     val binding get() = _binding!!
 
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentAssessBinding.inflate(inflater, container, false)
         setView()
 
+        //별점
+        binding.rtb.setOnRatingBarChangeListener { ratingBar, fl, b ->
+            binding.tvRating.text = fl.toString()
+        }
 
         binding.completeButton4.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)
@@ -33,6 +39,9 @@ class AssessFragment : Fragment() {
         binding.button2.setOnClickListener {
             reviewSave()
             reviewAdd()
+        }
+        binding.button11.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)
         }
 
         return binding.root
