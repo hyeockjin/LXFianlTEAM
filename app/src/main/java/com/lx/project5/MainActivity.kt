@@ -72,7 +72,8 @@ class MainActivity : AppCompatActivity() {
         ITEMend,
         ITEMdogList,
         ITEMwrite2,
-        ITEMwriteSelect
+        ITEMwriteSelect,
+        ITEMwriteand
     }
 
 
@@ -259,6 +260,9 @@ class MainActivity : AppCompatActivity() {
             }
             ScreenItem.ITEMwriteSelect -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, SelectDogFragment()).commit()
+            }
+            ScreenItem.ITEMwriteand -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, WriteAndListFragment()).commit()
             }
 
         }

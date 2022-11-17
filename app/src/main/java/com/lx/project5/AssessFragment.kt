@@ -25,10 +25,6 @@ class AssessFragment : Fragment() {
         _binding = FragmentAssessBinding.inflate(inflater, container, false)
         setView()
 
-        //별점 레이팅바
-        binding.rtb.setOnRatingBarChangeListener { ratingBar, fl, b ->
-            binding.tvRating.text = fl.toString()
-        }
 
         binding.completeButton4.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)
@@ -77,14 +73,12 @@ class AssessFragment : Fragment() {
     fun setView(){
         AppData?.memberdata.apply{
             this?.memberImage?.let {
-                val uri = Uri.parse("http://192.168.0.215:8001${memberImage}")
+                val uri = Uri.parse("http://192.168.0.15:8001${memberImage}")
                 Glide.with(binding.personProfile).load(uri).into(binding.personProfile)
             }
             binding.personName.setText(AppData.loginData?.memberName)
 
         }
     }
-
-
 
 }
