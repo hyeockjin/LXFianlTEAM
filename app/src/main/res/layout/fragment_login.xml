@@ -13,7 +13,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFE0ED"
+        android:background="#faf7f4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +43,7 @@
                 android:gravity="center"
                 android:hint="아이디"
                 android:inputType="textEmailAddress"
+                android:textColorHint="#222C18"
                 android:textSize="14sp"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -58,6 +59,7 @@
                 android:gravity="center"
                 android:hint="비밀번호"
                 android:inputType="textPassword"
+                android:textColorHint="#222C18"
                 android:textSize="14sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
@@ -91,9 +93,8 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/pinkbutton"
-                android:backgroundTint="#3949AB"
                 android:text="로그인"
-                android:textColor="#F8BBD0"
+                android:textColor="#3D433D"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 tools:ignore="TouchTargetSizeCheck" />
