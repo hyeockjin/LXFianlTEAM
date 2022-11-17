@@ -34,7 +34,7 @@
                     android:background="#faf7f4"
                     android:gravity="center_horizontal|center_vertical"
                     android:text="맡김글 작성"
-                    android:fontFamily="@font/rokaf_bold"
+                    android:fontFamily="@font/rokaf_bold_medium"
                     android:textSize="16sp"
                     android:textStyle="normal" />
             </LinearLayout>
@@ -180,43 +180,50 @@
 
                     </LinearLayout>
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="300dp"
-                        android:layout_margin="10dp"
-                        android:background="#FFFFFF"
-                        app:cardBackgroundColor="#FAFAFA"
-                        app:cardCornerRadius="8dp"
-                        app:contentPadding="10dp">
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
+                            <EditText
+                                android:id="@+id/editTextTextPersonName2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:background="@drawable/bold1"
+                                android:backgroundTint="#CFCBCB"
+                                android:hint="제목을 입력해주세요."
+                                android:padding="5dp"
+                                android:textSize="16sp" />
+
+                            <EditText
+                                android:id="@+id/detail1"
+                                android:layout_width="match_parent"
+                                android:layout_height="186dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:background="@drawable/bold1"
+                                android:backgroundTint="#CFCBCB"
+                                android:gravity="top"
+                                android:hint="오해의 소지가 있는 내용을 작성 시 검토 후 비공개 조치될 수 있습니다.                                                                                                                                                   "
+                                android:padding="5dp"
+                                android:textSize="16sp" />
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:orientation="vertical">
-
-                                <EditText
-                                    android:id="@+id/editTextTextPersonName"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="50dp"
-                                    android:ems="10"
-                                    android:inputType="textPersonName"
-                                    android:text="제목" />
-
-                                <EditText
-                                    android:id="@+id/detail1"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:hint="내용을 기입해주세요"
-                                    android:textSize="16sp"
-                                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-                            </LinearLayout>
+                                android:orientation="vertical"/>
                         </LinearLayout>
-                    </androidx.cardview.widget.CardView>
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -281,9 +288,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="bottom"
                         android:orientation="vertical"
-                        android:paddingLeft="20dp"
                         android:paddingTop="10dp"
-                        android:paddingRight="20dp"
                         android:paddingBottom="10dp">
 
                         <Button

@@ -19,7 +19,7 @@
             android:background="#faf7f4"
             android:gravity="center_horizontal|center_vertical"
             android:text="강아지 목록"
-            android:fontFamily="@font/rokaf_bold"
+            android:fontFamily="@font/rokaf_bold_medium"
             android:textSize="16sp"
             android:textStyle="normal" />
 

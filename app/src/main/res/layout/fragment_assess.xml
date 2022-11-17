@@ -19,7 +19,7 @@
             android:layout_gravity="center_horizontal|center_vertical"
             android:background="#faf7f4"
             android:gravity="center_horizontal|center_vertical"
-            android:fontFamily="@font/rokaf_bold"
+            android:fontFamily="@font/rokaf_bold_medium"
             android:text="리뷰작성"
             android:textAlignment="center"
             android:textSize="16sp"
