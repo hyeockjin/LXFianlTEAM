@@ -323,7 +323,7 @@ class MainActivity : AppCompatActivity() {
             requestCode = "1001"
         ).enqueue(object : Callback<CareListResponse> {
             override fun onResponse(call: Call<CareListResponse>, response: Response<CareListResponse>) {
-                Log.v("lastkingdom","근처 마커 활성화 요청 성공")
+                Log.v("lastkingdom1","${response.body()?.data}")
                 val jsonArray = JSONArray(response.body()?.data)
                 for (i in 0 until jsonArray.length()) {
                     Log.v("lastkingdom","근처 마커 for문 진입")

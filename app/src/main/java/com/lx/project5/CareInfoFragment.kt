@@ -23,18 +23,32 @@ class CareInfoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentCareInfoBinding.inflate(inflater, container, false)
+        initView()
         initList()
         reviewView()
 
         binding.backButton12.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)
         }
-        binding.button10.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)
+        binding.registerButton.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwrite)
 
         }
 
         return binding.root
+    }
+
+    fun initView(){
+        AppData.selectedCardItem.apply{
+            this?.careImage.let{
+                val uri = Uri.parse("http://192.168.0.12:8001${this?.careImage}")
+                Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
+            }
+            binding.textView7.text = "${AppData.selectedCardItem?.careName}"
+            binding.textView8.text = "${AppData.selectedCardItem?.careId}"
+            binding.textView9.text = "${AppData.selectedCardItem?.careAddress}"
+
+        }
     }
 
     // 리스트 초기화
@@ -48,16 +62,16 @@ class CareInfoFragment : Fragment() {
     }
 
     fun reviewView() {
-        AppData.selectedCardItem.apply{
-            this?.careImage.let{
-                val uri = Uri.parse("http://192.168.0.12:8001${this?.careImage}")
-                Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
-            }
-            binding.textView7.text = "${AppData.selectedCardItem?.careName}"
-            binding.textView8.text = "${AppData.selectedCardItem?.careId}"
-            binding.textView9.text = "${AppData.selectedCardItem?.careAddress}"
-
-        }
+//        AppData.selectedCardItem.apply{
+//            this?.careImage.let{
+//                val uri = Uri.parse("http://192.168.0.12:8001${this?.careImage}")
+//                Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
+//            }
+//            binding.textView7.text = "${AppData.selectedCardItem?.careName}"
+//            binding.textView8.text = "${AppData.selectedCardItem?.careId}"
+//            binding.textView9.text = "${AppData.selectedCardItem?.careAddress}"
+//
+//        }
     }
 
 }
