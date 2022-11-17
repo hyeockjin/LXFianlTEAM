@@ -242,6 +242,15 @@ interface BasicApi {
     ): Call<DogListResponse>
 
     /**
+     * GET 주변신청글에 댓글단 아이템 리스트
+     */
+    @GET("care/awcList")
+    fun getawcList(
+        @Query("requestCode") requestCode: String,
+        @Query("awrn") awrn: String,
+    ): Call<AwcResponse>
+
+    /**
      * POST 방식으로 개수정 보내기
      */
     @FormUrlEncoded
