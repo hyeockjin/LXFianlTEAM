@@ -127,7 +127,7 @@ class EditDogFragment : Fragment() {
     fun initView(){
         AppData.selectedItem?.apply{
             this.dogImage?.let{
-                val uri = Uri.parse("http://192.168.0.215:8001${this.dogImage}")
+                val uri = Uri.parse("http://192.168.0.15:8001${this.dogImage}")
                 Glide.with(binding.imageView30).load(uri).into(binding.imageView30)
             }
             binding.nameOutput2.text = Editable.Factory.getInstance().newEditable("${AppData.selectedItem?.dogName}")

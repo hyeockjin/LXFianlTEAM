@@ -24,7 +24,7 @@ class AssessFragment : Fragment() {
         setView()
 
 
-        binding.backButton14.setOnClickListener {
+        binding.completeButton3.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)
         }
 
@@ -71,7 +71,7 @@ class AssessFragment : Fragment() {
     fun setView(){
         AppData?.memberdata.apply{
             this?.memberImage?.let {
-                val uri = Uri.parse("http://192.168.0.215:8001${memberImage}")
+                val uri = Uri.parse("http://192.168.0.15:8001${memberImage}")
                 Glide.with(binding.personProfile).load(uri).into(binding.personProfile)
             }
             binding.personName.setText(AppData.loginData?.memberName)
