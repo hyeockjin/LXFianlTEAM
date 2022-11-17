@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.lx.api.BasicClient
 import com.lx.data.ReviewListResponse
+import com.lx.project5.AppData.Companion.reviewSaveData
+import com.lx.project5.WriteSaveData.Companion.savecareNo
 import com.lx.project5.databinding.FragmentAssessBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -41,10 +43,10 @@ class AssessFragment : Fragment() {
         BasicClient.api.memberReview(
             requestCode = "1001",
             memberNo = AppData.loginData?.memberNo.toString(),
-            careNo = ReviewSaveData.savecareNo.toString(),
+            careNo = reviewSaveData?.saveCareNo.toString(),
             reviewTitle = binding.reviewTitle.text.toString(),
             reviewContent = binding.reviewContent.text.toString(),
-            star = ReviewSaveData.saveStar.toString()
+            star = reviewSaveData?.saveStar.toString()
 
         ).enqueue(object : Callback<ReviewListResponse> {
             override fun onResponse(call: Call<ReviewListResponse>, response: Response<ReviewListResponse>) {
@@ -62,9 +64,9 @@ class AssessFragment : Fragment() {
     }
 
     fun reviewSave(){
-        ReviewSaveData.saveReviewTitle = binding.reviewTitle.text.toString()
-        ReviewSaveData.saveReviewContent = binding.reviewContent.text.toString()
-        ReviewSaveData.saveStar = binding.rtb.toString()
+        reviewSaveData?.saveReviewTitle = binding.reviewTitle.text.toString()
+        reviewSaveData?.saveReviewContent = binding.reviewContent.text.toString()
+        reviewSaveData?.saveStar = binding.rtb.toString()
         (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)
     }
 

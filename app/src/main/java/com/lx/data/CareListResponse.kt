@@ -14,23 +14,23 @@ data class CareListResponse(
     val message: String
 ) {
     data class Data(
-        @SerializedName("care_address")
+        @SerializedName("careAddress")
         val careAddress: String,
-        @SerializedName("care_approval")
+        @SerializedName("careApproval")
         val careApproval: Int,
-        @SerializedName("care_education")
+        @SerializedName("careEducation")
         val careEducation: Int,
-        @SerializedName("care_experience")
+        @SerializedName("careExperience")
         val careExperience: String,
-        @SerializedName("care_id")
+        @SerializedName("careId")
         val careId: String,
-        @SerializedName("care_image")
+        @SerializedName("careImage")
         val careImage: String,
-        @SerializedName("care_name")
+        @SerializedName("careName")
         val careName: String,
-        @SerializedName("care_no")
+        @SerializedName("careNo")
         val careNo: Int,
-        @SerializedName("care_pw")
+        @SerializedName("carePw")
         val carePw: String,
         @SerializedName("careX")
         val careX: Double,
