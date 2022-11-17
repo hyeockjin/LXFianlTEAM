@@ -171,31 +171,30 @@
 
                                     <ImageView
                                         android:id="@+id/imageView5"
-                                        android:layout_width="43dp"
-                                        android:layout_height="44dp"
+                                        android:layout_width="33dp"
+                                        android:layout_height="34dp"
+                                        android:layout_marginLeft="30dp"
                                         android:src="@drawable/person1" />
 
                                     <TextView
                                         android:id="@+id/careMan"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
+                                        android:layout_gravity="bottom|center"
                                         android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
                                         android:text="yyyhhhmmm"
                                         android:textColor="#C18686"
-                                        android:textSize="20sp" />
+                                        android:textSize="16sp" />
 
                                     <TextView
                                         android:id="@+id/careMan2"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
+                                        android:layout_gravity="bottom"
                                         android:layout_marginLeft="10dp"
-                                        android:layout_weight="1"
                                         android:text="에게 맡김"
                                         android:textColor="#C18686"
-                                        android:textSize="20sp" />
+                                        android:textSize="14sp" />
 
                                 </LinearLayout>
 
@@ -206,7 +205,6 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="30dp"
-                                android:layout_marginTop="20dp"
                                 android:layout_marginRight="30dp"
                                 android:layout_marginBottom="10dp"
                                 android:background="@drawable/bold1"
