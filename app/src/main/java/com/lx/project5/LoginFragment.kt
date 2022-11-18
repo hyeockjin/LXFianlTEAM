@@ -4,12 +4,16 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.lx.api.BasicClient
 import com.lx.data.MemberListResponse
 import com.lx.project5.databinding.FragmentLoginBinding
@@ -21,10 +25,14 @@ import retrofit2.Response
 class LoginFragment : Fragment() {
     var _binding: FragmentLoginBinding? = null
     val binding get() = _binding!!
-
+    //Firebase 채팅 변수선언
+    lateinit var mAuth: FirebaseAuth
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+
+        //### firebase 인증 초기화
+        mAuth = Firebase.auth
 
         binding.register.setOnClickListener {
             val curActivity = activity as MainActivity
@@ -61,6 +69,8 @@ class LoginFragment : Fragment() {
                     AppData.loginData?.memberNo = response.body()?.data?.get(0)?.memberNo.toString()
                     AppData.loginData?.memberAddress = response.body()?.data?.get(0)?.memberAddress.toString()
                     AppData.loginData?.memberImage = response.body()?.data?.get(0)?.memberImage.toString()
+                    //firebaseLogin
+                    firebaseLogin(memberId,memberPw)
                     (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
 
                 } else if(checkMember == "0"){
@@ -82,6 +92,22 @@ class LoginFragment : Fragment() {
 
         })
 
+    }
+
+    // firebaseLogin
+    private fun firebaseLogin(memberId: String, memberPw: String) {
+        mAuth.signInWithEmailAndPassword(memberId, memberPw)
+            .addOnCompleteListener(activity as MainActivity) { task ->
+                if (task.isSuccessful) {
+                    // 성공시
+                    Log.v("시발", "signInWithEmail:success")
+                } else {
+                    // 실패시 에러 발생하여 잠시 막아놓음
+                    Log.v("시발", "@@@@@@signInWithEmail:failure", task.exception)
+//                    Toast.makeText(activity as MainActivity, "Authentication failed.",
+//                        Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 
     fun toast(message:String){

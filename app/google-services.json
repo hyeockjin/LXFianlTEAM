@@ -1,33 +1,34 @@
 {
   "project_info": {
-    "project_number": "565460224132",
-    "project_id": "mychat-d7eb7",
-    "storage_bucket": "mychat-d7eb7.appspot.com"
+    "project_number": "161851402432",
+    "firebase_url": "https://pet2-ac19e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "pet2-ac19e",
+    "storage_bucket": "pet2-ac19e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:565460224132:android:24e77bd3abbea370e31ad1",
+        "mobilesdk_app_id": "1:161851402432:android:4388fcac0c1a0a7d8ba525",
         "android_client_info": {
           "package_name": "com.lx.project5"
         }
       },
       "oauth_client": [
         {
-          "client_id": "565460224132-nqu2vifd27f05u3gojba54bih98at8v5.apps.googleusercontent.com",
+          "client_id": "161851402432-ol17mfk4f3obev98kl2qbpihcfrcnab8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBRqxzrvfm-wdb01Dg3AI4hVuYqDiNxi7w"
+          "current_key": "AIzaSyCzdpcUInYgvFMsMXrGjgMSVqtrV0uvXV8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "565460224132-nqu2vifd27f05u3gojba54bih98at8v5.apps.googleusercontent.com",
+              "client_id": "161851402432-ol17mfk4f3obev98kl2qbpihcfrcnab8.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

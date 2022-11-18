@@ -44,7 +44,7 @@ class AwrdCommentAdapter : RecyclerView.Adapter<AwrdCommentAdapter.ViewHolder>()
 
             item.careImage?.apply {
 //                val uri = Uri.parse("http://172.168.10.58:8001//images/mycarrot1664852393280.jpg")
-                val uri = Uri.parse("http://172.168.10.3:8001${this}")
+                val uri = Uri.parse("http://192.168.0.10:8001${this}")
                 Glide.with(binding.awrdItemImage)         // 글라이드를 사용하는데,
                     .load(uri)                              // 이미지 파일을 읽어와서,
                     .into(binding.awrdItemImage)                  // 이미지뷰에 넣어주세요

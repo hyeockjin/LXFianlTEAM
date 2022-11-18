@@ -42,7 +42,7 @@ class CareInfoFragment : Fragment() {
     fun initView1(){
         AppData.selectedCardItem.apply{
             this?.careImage.let{
-                val uri = Uri.parse("http://172.168.10.3:8001${this?.careImage}")
+                val uri = Uri.parse("http://192.168.0.10:8001${this?.careImage}")
                 Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
             }
             binding.textView7.text = "${AppData.selectedCardItem?.careName}"
@@ -66,7 +66,7 @@ class CareInfoFragment : Fragment() {
     fun reviewView() {
         AppData.careData?.apply{
             this.careImage.let{
-                val uri = Uri.parse("http://192.168.0.3:8001${careImage}")
+                val uri = Uri.parse("http://192.168.0.10:8001${careImage}")
                 Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
             }
             binding.textView7.text = "${AppData.careData?.careName}"

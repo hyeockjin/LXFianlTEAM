@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
         ITEMwrite2,
         ITEMwriteSelect,
         ITEMwriteand,
-        ITEMcommentCareInfo
+        ITEMchat
     }
 
 
@@ -114,7 +114,7 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM3)
                 }
                 R.id.tab3 -> {
-                    onFragmentChanged(ScreenItem.ITEMwrite)
+                    onFragmentChanged(ScreenItem.ITEMchat)
                 }
                 R.id.tab4 -> {
                     if(AppData.loginData?.memberId == null){
@@ -152,17 +152,6 @@ class MainActivity : AppCompatActivity() {
 
             // 내 위치 요청하기
             requestLocation()
-
-            // 마커 클릭 시 처리
-//            map.setOnMarkerClickListener {
-//                // showToast("마커 클릭됨 : ${it.tag}, ${it.title}")
-//
-//                // 필요시 다른 화면으로 이동 (tag 정보를 이용해서 구분함)
-//
-//                binding.cardView.visibility = View.VISIBLE
-//
-//                true
-//            }
 
             // 지도 클릭 시 처리
             map.setOnMapClickListener {
@@ -264,23 +253,18 @@ class MainActivity : AppCompatActivity() {
             ScreenItem.ITEMwriteand -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, WriteAndListFragment()).commit()
             }
-            ScreenItem.ITEMcommentCareInfo -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, CommentCareInfoFragment()).commit()
+            ScreenItem.ITEMchat -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, ChatListFragment()).commit()
             }
-
         }
 
 
     }
     fun requestLocation() {
-
         try {
             // 가장 최근에 확인된 위치 알려주기
             locationClient?.lastLocation?.addOnSuccessListener {
-
             }
-
-
             // 위치클라이언트 만들기
             locationClient = LocationServices.getFusedLocationProviderClient(this)
 
@@ -302,7 +286,6 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-
             // 내 위치 요청
             locationClient?.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper())
 
@@ -326,7 +309,7 @@ class MainActivity : AppCompatActivity() {
             requestCode = "1001"
         ).enqueue(object : Callback<CareListResponse> {
             override fun onResponse(call: Call<CareListResponse>, response: Response<CareListResponse>) {
-                Log.v("lastkingdom1","${response.body()?.data}")
+                Log.v("lastkingdom","근처 마커 활성화 요청 성공")
                 val jsonArray = JSONArray(response.body()?.data)
                 for (i in 0 until jsonArray.length()) {
                     Log.v("lastkingdom","근처 마커 for문 진입")
@@ -348,24 +331,11 @@ class MainActivity : AppCompatActivity() {
 
                     // 마커클릭
                     map.setOnMarkerClickListener {
-                        Log.v("갤럭시1", "${response.body()?.data?.get(i)}")
-                        AppData.selectedCardItem = CardData()
 
                         binding.className.text = response.body()?.data?.get(i)?.careName.toString()
                         binding.classAddress.text = response.body()?.data?.get(i)?.careAddress.toString()
                         binding.classSelf.text = response.body()?.data?.get(i)?.careExperience.toString()
                         WriteSaveData.savecareNo = response.body()?.data?.get(i)?.careNo.toString()
-                        AppData.selectedCardItem?.careAddress = response.body()?.data?.get(i)?.careAddress.toString()
-                        AppData.selectedCardItem?.careApproval = response.body()?.data?.get(i)?.careApproval
-                        AppData.selectedCardItem?.careEducation = response.body()?.data?.get(i)?.careEducation.toString()
-                        AppData.selectedCardItem?.careExperience = response.body()?.data?.get(i)?.careExperience.toString()
-                        AppData.selectedCardItem?.careId = response.body()?.data?.get(i)?.careId.toString()
-                        AppData.selectedCardItem?.careImage = response.body()?.data?.get(i)?.careImage.toString()
-                        AppData.selectedCardItem?.careName = response.body()?.data?.get(i)?.careName.toString()
-                        AppData.selectedCardItem?.careNo = response.body()?.data?.get(i)?.careNo.toString()
-                        AppData.selectedCardItem?.carePw = response.body()?.data?.get(i)?.carePw.toString()
-                        Log.v("갤럭시", "${AppData.selectedCardItem}")
-
                         binding.cardView.visibility = View.VISIBLE
 
                         true

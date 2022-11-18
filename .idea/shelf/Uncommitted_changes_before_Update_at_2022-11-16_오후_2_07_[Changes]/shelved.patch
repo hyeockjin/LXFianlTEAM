@@ -1,0 +1,19 @@
+Index: app/src/main/java/com/lx/project5/PetInfoFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.net.Uri\r\nimport android.os.Bundle\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport com.bumptech.glide.Glide\r\nimport com.lx.project5.AppData.Companion.selectedItem\r\nimport com.lx.project5.databinding.FragmentMemberInfoUpdateBinding\r\nimport com.lx.project5.databinding.FragmentPetInfoBinding\r\n\r\nclass PetInfoFragment : Fragment() {\r\n    var _binding: FragmentPetInfoBinding? = null\r\n    val binding get() = _binding!!\r\n\r\n    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {\r\n        _binding = FragmentPetInfoBinding.inflate(inflater, container, false)\r\n\r\n        initView()\r\n\r\n        binding.editInfoButton2.setOnClickListener {\r\n            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMeditDog)\r\n        }\r\n\r\n        binding.backButton3.setOnClickListener {\r\n            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdogList)\r\n        }\r\n\r\n        return binding.root\r\n    }\r\n    fun initView(){\r\n        AppData.selectedItem?.apply{\r\n            this.dogImage .let{\r\n                val uri = Uri.parse(\"http://192.168.0.7:8001${dogImage}\")\r\n                Glide.with(binding.imageView4).load(uri).into(binding.imageView4)\r\n            }\r\n            binding.petName.text = \"${selectedItem?.dogName}\"\r\n            binding.petAge.text = \"${selectedItem?.dogAge}\"\r\n            binding.petGender.text = \"${selectedItem?.dogGender}\"\r\n            binding.petBreed?.text = \"${selectedItem?.dogBreed}\"\r\n            binding.petEducation.text = \"${selectedItem?.dogEducation}\"\r\n            binding.petCharacter.text = \"${selectedItem?.dogCharacter}\"\r\n\r\n        }\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/PetInfoFragment.kt b/app/src/main/java/com/lx/project5/PetInfoFragment.kt
+--- a/app/src/main/java/com/lx/project5/PetInfoFragment.kt	
++++ b/app/src/main/java/com/lx/project5/PetInfoFragment.kt	
+@@ -33,7 +33,7 @@
+     fun initView(){
+         AppData.selectedItem?.apply{
+             this.dogImage .let{
+-                val uri = Uri.parse("http://192.168.0.7:8001${dogImage}")
++                val uri = Uri.parse("http://192.168.0.9:8001${dogImage}")
+                 Glide.with(binding.imageView4).load(uri).into(binding.imageView4)
+             }
+             binding.petName.text = "${selectedItem?.dogName}"

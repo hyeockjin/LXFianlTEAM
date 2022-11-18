@@ -1,0 +1,652 @@
+Index: app/build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>plugins {\r\n    id 'com.google.gms.google-services'\r\n    id 'com.android.application'\r\n    id 'org.jetbrains.kotlin.android'\r\n}\r\n\r\nandroid {\r\n    compileSdk 32\r\n\r\n    defaultConfig {\r\n        applicationId \"com.lx.project5\"\r\n        minSdk 21\r\n        targetSdk 32\r\n        versionCode 1\r\n        versionName \"1.0\"\r\n\r\n        testInstrumentationRunner \"androidx.test.runner.AndroidJUnitRunner\"\r\n    }\r\n\r\n    buildTypes {\r\n        release {\r\n            minifyEnabled false\r\n            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'\r\n        }\r\n    }\r\n    compileOptions {\r\n        sourceCompatibility JavaVersion.VERSION_1_8\r\n        targetCompatibility JavaVersion.VERSION_1_8\r\n    }\r\n    kotlinOptions {\r\n        jvmTarget = '1.8'\r\n    }\r\n    buildFeatures {\r\n        viewBinding true\r\n    }\r\n}\r\n\r\ndependencies {\r\n\r\n    implementation 'androidx.core:core-ktx:1.7.0'\r\n    implementation 'androidx.appcompat:appcompat:1.5.0'\r\n    implementation 'com.google.android.material:material:1.6.1'\r\n    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'\r\n    implementation 'com.google.android.gms:play-services-maps:18.0.1'\r\n    implementation 'androidx.mediarouter:mediarouter:1.3.1'\r\n    testImplementation 'junit:junit:4.13.2'\r\n    androidTestImplementation 'androidx.test.ext:junit:1.1.3'\r\n    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'\r\n\r\n    // 위험 권한\r\n    implementation('com.guolindev.permissionx:permissionx:1.6.4')\r\n\r\n    // 이미지를 보여주려고 할때\r\n    // 글라이드\r\n    implementation(\"com.github.bumptech.glide:glide:4.13.2\")\r\n    implementation(\"jp.wasabeef:glide-transformations:4.3.0\")\r\n    // 내위치 확인\r\n    implementation(\"com.google.android.gms:play-services-location:20.0.0\")\r\n\r\n    // 지도\r\n    implementation(\"com.google.android.gms:play-services-maps:18.1.0\")\r\n\r\n    // 위험 권한\r\n    implementation(\"com.guolindev.permissionx:permissionx:1.7.1\")\r\n    //카드뷰\r\n    implementation 'com.makeramen:roundedimageview:2.3.0'\r\n    implementation(\"androidx.cardview:cardview:1.0.0\")\r\n    //레트로핏\r\n    implementation(\"com.squareup.okhttp3:okhttp:4.10.0\")\r\n    implementation(\"com.squareup.retrofit2:retrofit:2.9.0\")\r\n    implementation(\"com.squareup.retrofit2:converter-gson:2.9.0\")\r\n    implementation(\"com.squareup.okhttp3:logging-interceptor:4.10.0\")\r\n\r\n    //이미지뷰 원형으로 보이기\r\n    implementation 'de.hdodenhof:circleimageview:3.1.0'\r\n\r\n    //파이어베이스 채팅\r\n    implementation platform('com.google.firebase:firebase-bom:31.0.2')\r\n    implementation 'com.google.firebase:firebase-analytics-ktx'\r\n\r\n    implementation 'com.google.firebase:firebase-auth-ktx'\r\n    implementation 'com.google.firebase:firebase-storage:20.1.0'\r\n    implementation 'com.google.firebase:firebase-database-ktx:20.1.0'\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/build.gradle b/app/build.gradle
+--- a/app/build.gradle	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/build.gradle	(date 1668693694894)
+@@ -42,6 +42,17 @@
+     implementation 'com.google.android.material:material:1.6.1'
+     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+     implementation 'com.google.android.gms:play-services-maps:18.0.1'
++
++    // 파이어베이스 채팅
++    implementation 'com.google.gms.google-services:com.google.gms.google-services.gradle.plugin:4.3.14'
++    implementation 'com.google.firebase:firebase-bom:31.0.3'
++    implementation 'com.google.firebase:firebase-analytics-ktx:21.2.0'
++    implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
++    implementation 'com.google.firebase:firebase-firestore-ktx:24.4.0'
++    implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
++    implementation 'com.google.firebase:firebase-messaging-ktx:23.1.0'
++    implementation 'androidx.work:work-runtime-ktx:2.7.1'
++
+     implementation 'androidx.mediarouter:mediarouter:1.3.1'
+     testImplementation 'junit:junit:4.13.2'
+     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+@@ -74,12 +85,5 @@
+     //이미지뷰 원형으로 보이기
+     implementation 'de.hdodenhof:circleimageview:3.1.0'
+ 
+-    //파이어베이스 채팅
+-    implementation platform('com.google.firebase:firebase-bom:31.0.2')
+-    implementation 'com.google.firebase:firebase-analytics-ktx'
+-
+-    implementation 'com.google.firebase:firebase-auth-ktx'
+-    implementation 'com.google.firebase:firebase-storage:20.1.0'
+-    implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
+ 
+ }
+\ No newline at end of file
+Index: app/src/main/java/com/lx/project5/LoginFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.app.Activity\r\nimport android.app.AlertDialog\r\nimport android.content.DialogInterface\r\nimport android.os.Bundle\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.Button\r\nimport android.widget.Toast\r\nimport com.lx.api.BasicClient\r\nimport com.lx.data.MemberListResponse\r\nimport com.lx.project5.databinding.FragmentLoginBinding\r\nimport com.lx.project5.databinding.FragmentMyPageBinding\r\nimport retrofit2.Call\r\nimport retrofit2.Callback\r\nimport retrofit2.Response\r\n\r\nclass LoginFragment : Fragment() {\r\n    var _binding: FragmentLoginBinding? = null\r\n    val binding get() = _binding!!\r\n\r\n\r\n    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {\r\n        _binding = FragmentLoginBinding.inflate(inflater, container, false)\r\n\r\n        binding.register.setOnClickListener {\r\n            val curActivity = activity as MainActivity\r\n            curActivity.onFragmentChanged(MainActivity.ScreenItem.ITEMjoin1)\r\n        }\r\n\r\n        binding.loginButton.setOnClickListener {\r\n            readMember()\r\n        }\r\n\r\n        return binding.root\r\n    }\r\n\r\n    fun readMember() {\r\n        val memberId = binding.loginId.text.toString()\r\n        val memberPw = binding.loginPassword.text.toString()\r\n\r\n        BasicClient.api.postMemberLogin(\r\n            requestCode = \"1001\",\r\n            memberId = memberId,\r\n            memberPw = memberPw\r\n        ).enqueue(object : Callback<MemberListResponse> {\r\n            override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>) {\r\n                val checkMember = response.body()?.header?.total.toString()\r\n                println(checkMember)\r\n\r\n                if(checkMember == \"1\"){\r\n                    AppData.userdata=\"${response.body()?.data.toString()}\"\r\n                    (activity as MainActivity).showToast(\"로그인 성공\")\r\n                    AppData.loginData = LoginData()\r\n                    AppData.loginData?.memberId = memberId\r\n                    AppData.loginData?.memberPw = memberPw\r\n                    AppData.loginData?.memberName = response.body()?.data?.get(0)?.memberName.toString()\r\n                    AppData.loginData?.memberNo = response.body()?.data?.get(0)?.memberNo.toString()\r\n                    AppData.loginData?.memberAddress = response.body()?.data?.get(0)?.memberAddress.toString()\r\n                    AppData.loginData?.memberImage = response.body()?.data?.get(0)?.memberImage.toString()\r\n                    (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)\r\n\r\n                } else if(checkMember == \"0\"){\r\n                    val builder = AlertDialog.Builder(activity)\r\n                    builder.setTitle(\"로그인\")\r\n                    builder.setMessage(\"아이디/비밀번호를 다시 입력해주세요.\")\r\n                    builder.setPositiveButton(\"확인\") { dialogInterface: DialogInterface, i: Int ->\r\n                        toast(\"Positive\")\r\n                    }\r\n                    builder.show()\r\n                    binding.loginId.setText(\"\")\r\n                    binding.loginPassword.setText(\"\")\r\n                }\r\n\r\n            }\r\n            override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {\r\n                (activity as MainActivity).showToast(\"qkqh\")\r\n            }\r\n\r\n        })\r\n\r\n    }\r\n\r\n    fun toast(message:String){\r\n        Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show()\r\n    }\r\n\r\n    }\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/LoginFragment.kt b/app/src/main/java/com/lx/project5/LoginFragment.kt
+--- a/app/src/main/java/com/lx/project5/LoginFragment.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/project5/LoginFragment.kt	(date 1668705349809)
+@@ -4,12 +4,16 @@
+ import android.app.AlertDialog
+ import android.content.DialogInterface
+ import android.os.Bundle
++import android.util.Log
+ import androidx.fragment.app.Fragment
+ import android.view.LayoutInflater
+ import android.view.View
+ import android.view.ViewGroup
+ import android.widget.Button
+ import android.widget.Toast
++import com.google.firebase.auth.FirebaseAuth
++import com.google.firebase.auth.ktx.auth
++import com.google.firebase.ktx.Firebase
+ import com.lx.api.BasicClient
+ import com.lx.data.MemberListResponse
+ import com.lx.project5.databinding.FragmentLoginBinding
+@@ -21,11 +25,15 @@
+ class LoginFragment : Fragment() {
+     var _binding: FragmentLoginBinding? = null
+     val binding get() = _binding!!
+-
++    //Firebase 채팅 변수선언
++    lateinit var mAuth: FirebaseAuth
+ 
+     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+         _binding = FragmentLoginBinding.inflate(inflater, container, false)
+ 
++        //### firebase 인증 초기화
++        mAuth = Firebase.auth
++
+         binding.register.setOnClickListener {
+             val curActivity = activity as MainActivity
+             curActivity.onFragmentChanged(MainActivity.ScreenItem.ITEMjoin1)
+@@ -61,6 +69,8 @@
+                     AppData.loginData?.memberNo = response.body()?.data?.get(0)?.memberNo.toString()
+                     AppData.loginData?.memberAddress = response.body()?.data?.get(0)?.memberAddress.toString()
+                     AppData.loginData?.memberImage = response.body()?.data?.get(0)?.memberImage.toString()
++                    //firebaseLogin
++                    firebaseLogin(memberId,memberPw)
+                     (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)
+ 
+                 } else if(checkMember == "0"){
+@@ -84,6 +94,22 @@
+ 
+     }
+ 
++    // firebaseLogin
++    private fun firebaseLogin(memberId: String, memberPw: String) {
++        mAuth.signInWithEmailAndPassword(memberId, memberPw)
++            .addOnCompleteListener(activity as MainActivity) { task ->
++                if (task.isSuccessful) {
++                    // 성공시
++                    Log.v("시발", "signInWithEmail:success")
++                } else {
++                    // 실패시 에러 발생하여 잠시 막아놓음
++                    Log.v("시발", "@@@@@@signInWithEmail:failure", task.exception)
++//                    Toast.makeText(activity as MainActivity, "Authentication failed.",
++//                        Toast.LENGTH_SHORT).show()
++                }
++            }
++    }
++
+     fun toast(message:String){
+         Toast.makeText(getActivity(), message, Toast.LENGTH_SHORT).show()
+     }
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>// Top-level build file where you can add configuration options common to all sub-projects/modules.\r\nplugins {\r\n    id 'com.android.application' version '7.2.1' apply false\r\n    id 'com.android.library' version '7.2.1' apply false\r\n    id 'org.jetbrains.kotlin.android' version '1.7.10' apply false\r\n    id 'com.google.gms.google-services' version '4.3.13' apply false\r\n\r\n}\r\n\r\ntask clean(type: Delete) {\r\n    delete rootProject.buildDir\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/build.gradle	(date 1668693731088)
+@@ -1,3 +1,9 @@
++buildscript {
++    dependencies {
++        classpath 'com.google.gms.google-services:com.google.gms.google-services.gradle.plugin:4.3.14'
++    }
++}
++
+ // Top-level build file where you can add configuration options common to all sub-projects/modules.
+ plugins {
+     id 'com.android.application' version '7.2.1' apply false
+Index: app/src/main/java/com/lx/project5/MyPageFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.net.Uri\r\nimport android.os.Bundle\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport com.bumptech.glide.Glide\r\nimport com.lx.project5.databinding.FragmentFirstBinding\r\nimport com.lx.project5.databinding.FragmentMyPageBinding\r\n\r\nclass MyPageFragment : Fragment() {\r\n    var _binding: FragmentMyPageBinding? = null\r\n    val binding get() = _binding!!\r\n\r\n    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {\r\n        _binding = FragmentMyPageBinding.inflate(inflater, container, false)\r\n        initView()\r\n\r\n\r\n\r\n\r\n\r\n        binding.updateButton.setOnClickListener {\r\n            val curActivity = activity as MainActivity\r\n            curActivity.onFragmentChanged(MainActivity.ScreenItem.ITEMupdate)\r\n        }\r\n\r\n        binding.myWriteButton.setOnClickListener {\r\n            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteList)\r\n        }\r\n\r\n        binding.goDogList.setOnClickListener {\r\n            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdogList)\r\n        }\r\n        return binding.root\r\n    }\r\n    fun initView(){\r\n        AppData.loginData?.apply{\r\n            this.memberImage?.let{\r\n                val uri = Uri.parse(\"http://192.168.0.3:8001${memberImage}\")\r\n                Glide.with(binding.imageView2).load(uri).into(binding.imageView2)\r\n            }\r\n            binding.memberName.text = AppData.loginData?.memberId\r\n            binding.address.text = AppData.loginData?.memberName\r\n            binding.textView9.text = AppData.loginData?.memberAddress\r\n\r\n        }\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/MyPageFragment.kt b/app/src/main/java/com/lx/project5/MyPageFragment.kt
+--- a/app/src/main/java/com/lx/project5/MyPageFragment.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/project5/MyPageFragment.kt	(date 1668731812788)
+@@ -39,7 +39,7 @@
+     fun initView(){
+         AppData.loginData?.apply{
+             this.memberImage?.let{
+-                val uri = Uri.parse("http://192.168.0.3:8001${memberImage}")
++                val uri = Uri.parse("http://192.168.0.10:8001${memberImage}")
+                 Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
+             }
+             binding.memberName.text = AppData.loginData?.memberId
+Index: app/src/main/java/com/lx/project5/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.Manifest\r\nimport android.app.AlertDialog\r\nimport android.content.Context\r\nimport android.content.DialogInterface\r\nimport android.graphics.Bitmap\r\nimport android.location.Location\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport android.os.Bundle\r\nimport android.os.Looper\r\nimport android.util.Log\r\nimport android.view.MotionEvent\r\nimport android.view.View\r\nimport android.view.inputmethod.InputMethodManager\r\nimport android.widget.EditText\r\nimport android.widget.Toast\r\nimport com.google.android.gms.location.*\r\nimport com.google.android.gms.maps.CameraUpdateFactory\r\nimport com.google.android.gms.maps.GoogleMap\r\nimport com.google.android.gms.maps.SupportMapFragment\r\nimport com.google.android.gms.maps.model.*\r\nimport com.lx.api.BasicClient\r\nimport com.lx.data.CareListResponse\r\nimport com.lx.data.FileUploadResponse\r\nimport com.lx.project5.databinding.ActivityMainBinding\r\nimport com.permissionx.guolindev.PermissionX\r\nimport okhttp3.MediaType.Companion.toMediaTypeOrNull\r\nimport okhttp3.MultipartBody\r\nimport okhttp3.RequestBody.Companion.asRequestBody\r\nimport org.json.JSONArray\r\nimport retrofit2.Call\r\nimport retrofit2.Callback\r\nimport retrofit2.Response\r\nimport java.io.File\r\nimport java.text.SimpleDateFormat\r\n\r\nimport java.util.*\r\n\r\nclass MainActivity : AppCompatActivity() {\r\n    // 주소 바꿔야 하는곳 / BasicApi, myPage\r\n    lateinit var binding: ActivityMainBinding\r\n\r\n    var locationClient: FusedLocationProviderClient? = null;\r\n\r\n    lateinit var map: GoogleMap\r\n\r\n    var myMarker: Marker? = null\r\n\r\n    enum class ScreenItem {\r\n        ITEM1,\r\n        ITEM2,\r\n        ITEM3,\r\n        ITEMmyPage,\r\n        ITEMcareInfo,\r\n        ITEMaddDog,\r\n        ITEMassess,\r\n        ITEMcareMain,\r\n        ITEMcareTodolist,\r\n        ITEMcomplete,\r\n        ITEMeditDog,\r\n        ITEMjoin1,\r\n        ITEMjoin2,\r\n        ITEMlogin,\r\n        ITEMupdate,\r\n        ITEMpetInfo,\r\n        ITEMpay,\r\n        ITEMreservation,\r\n        ITEMwrite,\r\n        ITEMwriteList,\r\n        ITEMend,\r\n        ITEMdogList,\r\n        ITEMwrite2,\r\n        ITEMwriteSelect,\r\n        ITEMwriteand\r\n    }\r\n\r\n\r\n    val dateFormat1 = SimpleDateFormat(\"yyyyMMddHHmmss\")\r\n    var filename: String? = null\r\n\r\n    override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {\r\n        val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager\r\n        imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)\r\n\r\n        if(currentFocus is EditText) {\r\n            currentFocus!!.clearFocus()\r\n        }\r\n\r\n        return super.dispatchTouchEvent(ev)\r\n    }\r\n\r\n    override fun onCreate(savedInstanceState: Bundle?) {\r\n        super.onCreate(savedInstanceState)\r\n        binding = ActivityMainBinding.inflate(layoutInflater)\r\n        setContentView(binding.root)\r\n\r\n        binding.cardView.setOnClickListener{\r\n            onFragmentChanged(ScreenItem.ITEMcareInfo)\r\n        }\r\n        // 주변에 돌봄요청 버튼 눌렀을 때\r\n        binding.writeButton2.setOnClickListener {\r\n            onFragmentChanged(ScreenItem.ITEMwrite2)\r\n        }\r\n\r\n        //하단 탭의 버튼을 눌렀을때\r\n        binding.bottomNavigationView.setOnNavigationItemSelectedListener {\r\n            when(it.itemId) {\r\n                R.id.tab1 -> {\r\n                    onFragmentChanged(ScreenItem.ITEM1)\r\n                }\r\n                R.id.tab2 -> {\r\n                    onFragmentChanged(ScreenItem.ITEM3)\r\n                }\r\n                R.id.tab3 -> {\r\n                    onFragmentChanged(ScreenItem.ITEMwrite)\r\n                }\r\n                R.id.tab4 -> {\r\n                    if(AppData.loginData?.memberId == null){\r\n                        onFragmentChanged(ScreenItem.ITEMlogin)\r\n                    }else if (AppData.loginData?.memberId != null){\r\n                        onFragmentChanged(ScreenItem.ITEMmyPage)\r\n                    }\r\n\r\n                }\r\n            }\r\n            return@setOnNavigationItemSelectedListener true\r\n        }\r\n        //화면이 보일 때 첫 화면 보여주기\r\n       // onFragmentChanged(ScreenItem.ITEM1)\r\n\r\n        binding.cardView.visibility = View.GONE\r\n        // 위험권한 요청하기\r\n        PermissionX.init(this)\r\n            .permissions(\r\n                Manifest.permission.ACCESS_FINE_LOCATION,\r\n                Manifest.permission.ACCESS_COARSE_LOCATION\r\n            )\r\n            .request { allGranted, grantedList, deniedList ->\r\n                if (allGranted) {\r\n                    showToast(\"모든 권한 부여됨.\")\r\n                } else {\r\n                    showToast(\"거부된 권한 있음.\")\r\n                }\r\n            }\r\n\r\n        // 지도 초기화하기\r\n        val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment\r\n        mapFragment.getMapAsync {\r\n            map = it\r\n\r\n            // 내 위치 요청하기\r\n            requestLocation()\r\n\r\n            // 마커 클릭 시 처리\r\n//            map.setOnMarkerClickListener {\r\n//                // showToast(\"마커 클릭됨 : ${it.tag}, ${it.title}\")\r\n//\r\n//                // 필요시 다른 화면으로 이동 (tag 정보를 이용해서 구분함)\r\n//\r\n//                binding.cardView.visibility = View.VISIBLE\r\n//\r\n//                true\r\n//            }\r\n\r\n            // 지도 클릭 시 처리\r\n            map.setOnMapClickListener {\r\n                //showToast(\"지도 클릭됨 : ${it.latitude}, ${it.longitude}\")\r\n                //카드뷰 안보이게\r\n                binding.cardView.visibility = View.GONE\r\n            }\r\n\r\n            // 보고있는 지도 영역 구분\r\n            map.setOnCameraIdleListener {\r\n                val bounds = map.projection.visibleRegion.latLngBounds\r\n                //showToast(\"좌상단 : ${bounds.northeast}, ${bounds.southwest}\")\r\n\r\n                val zoomLevel = map.cameraPosition.zoom\r\n                println(\"zoomLevel : ${zoomLevel}\")\r\n            }\r\n\r\n            // 근처 지도 마커 활성화\r\n            showNearLocationMarker(map)\r\n        }\r\n\r\n    }\r\n    fun onFragmentChanged(index:ScreenItem) {\r\n        when(index) {\r\n            ScreenItem.ITEM1 -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, FirstFragment()).commit()\r\n            }\r\n            ScreenItem.ITEM2 -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, SecondFragment()).commit()\r\n            }\r\n            ScreenItem.ITEM3 -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, CareMainFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMmyPage -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, MyPageFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMcareInfo -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, CareInfoFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMaddDog -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, AddDogFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMassess -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, AssessFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMcareMain -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, CareMainFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMcareTodolist -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, CareTodolistFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMcomplete -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, CompleteFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMpetInfo -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, PetInfoFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMeditDog -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, EditDogFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMjoin1 -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, Join1Fragment()).commit()\r\n            }\r\n            ScreenItem.ITEMjoin2 -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, Join2Fragment()).commit()\r\n            }\r\n            ScreenItem.ITEMlogin -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()\r\n            }\r\n\r\n            ScreenItem.ITEMupdate -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, MemberInfoUpdateFragment()).commit()\r\n            }\r\n\r\n            ScreenItem.ITEMpay -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMreservation -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, ReservationFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMwrite -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, WriteFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMwriteList -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, WriteListFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMend -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, EndFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMdogList -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, DogListFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMwrite2 -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, Write2Fragment()).commit()\r\n            }\r\n            ScreenItem.ITEMwriteSelect -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, SelectDogFragment()).commit()\r\n            }\r\n            ScreenItem.ITEMwriteand -> {\r\n                supportFragmentManager.beginTransaction().replace(R.id.container, WriteAndListFragment()).commit()\r\n            }\r\n\r\n        }\r\n\r\n\r\n    }\r\n    fun requestLocation() {\r\n\r\n        try {\r\n            // 가장 최근에 확인된 위치 알려주기\r\n            locationClient?.lastLocation?.addOnSuccessListener {\r\n\r\n            }\r\n\r\n\r\n            // 위치클라이언트 만들기\r\n            locationClient = LocationServices.getFusedLocationProviderClient(this)\r\n\r\n            // 내위치를 요청할 때 필요한 설정값\r\n            val locationRequest = LocationRequest.create()\r\n            locationRequest.run {\r\n                priority = LocationRequest.PRIORITY_HIGH_ACCURACY\r\n                interval = 30 * 1000\r\n            }\r\n\r\n            // 내위치를 받았을 때 자동으로 호출되는 함수\r\n            val locationCallback = object : LocationCallback() {\r\n                override fun onLocationResult(result: LocationResult) {\r\n                    super.onLocationResult(result)\r\n\r\n                    for ((index, location) in result.locations.withIndex()) {\r\n                        Log.v(\"lastkingdom\",\"${location.latitude},${location.longitude}\")\r\n                        showCurrentLocation(location)\r\n                    }\r\n                }\r\n            }\r\n\r\n            // 내 위치 요청\r\n            locationClient?.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper())\r\n\r\n        } catch(e:SecurityException) {\r\n            e.printStackTrace()\r\n        }\r\n    }\r\n\r\n    // 내 위치의 지도 보여주기\r\n    fun showCurrentLocation(location: Location) {\r\n        val curPoint = LatLng(location.latitude, location.longitude)\r\n        map.moveCamera(CameraUpdateFactory.newLatLngZoom(curPoint, 17.0f))\r\n\r\n        showMarker(curPoint)\r\n\r\n    }\r\n\r\n    // 근처 마커 표시\r\n    fun showNearLocationMarker(map: GoogleMap) {\r\n        BasicClient.api.getCareListTest(\r\n            requestCode = \"1001\"\r\n        ).enqueue(object : Callback<CareListResponse> {\r\n            override fun onResponse(call: Call<CareListResponse>, response: Response<CareListResponse>) {\r\n                Log.v(\"lastkingdom\",\"근처 마커 활성화 요청 성공\")\r\n                val jsonArray = JSONArray(response.body()?.data)\r\n                for (i in 0 until jsonArray.length()) {\r\n                    Log.v(\"lastkingdom\",\"근처 마커 for문 진입\")\r\n                    var latitude = response.body()?.data?.get(i)?.careX\r\n                    var longitude = response.body()?.data?.get(i)?.careY\r\n\r\n                    Log.v(\"lastkingdom\",\"마커 위도 ${latitude.toString()}\")\r\n                    Log.v(\"lastkingdom\",\"마커 위도 ${longitude.toString()}\")\r\n\r\n                    Log.v(\"lastkingdom\",\"2\")\r\n                    // 1. 마커 옵션 설정 (만드는 과정)\r\n                    var makerOptions = MarkerOptions()\r\n                    makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.\r\n                        .position(LatLng(latitude!!, longitude!!))\r\n                        .title(response.body()?.data?.get(i)?.careNo.toString()) // 타이틀.\r\n\r\n                    // 2. 마커 생성 (마커를 나타냄)\r\n                    map.addMarker(makerOptions)\r\n\r\n                    // 마커클릭\r\n                    map.setOnMarkerClickListener {\r\n\r\n                        binding.className.text = response.body()?.data?.get(i)?.careName.toString()\r\n                        binding.classAddress.text = response.body()?.data?.get(i)?.careAddress.toString()\r\n                        binding.classSelf.text = response.body()?.data?.get(i)?.careExperience.toString()\r\n                        WriteSaveData.savecareNo = response.body()?.data?.get(i)?.careNo.toString()\r\n                        binding.cardView.visibility = View.VISIBLE\r\n\r\n                        true\r\n                    }\r\n                }\r\n            }\r\n            override fun onFailure(call: Call<CareListResponse>, t: Throwable) {\r\n                Log.v(\"lastkingdom\",\"근처 마커 활성화 요청 실패\")\r\n            }\r\n        })\r\n    }\r\n\r\n    fun showMarker(curPoint: LatLng) {\r\n        myMarker?.remove()\r\n\r\n        MarkerOptions().also {\r\n            it.position(curPoint)\r\n            it.title(\"내위치\")\r\n            it.icon(BitmapDescriptorFactory.fromResource(R.drawable.dogicon))\r\n\r\n\r\n            myMarker = map.addMarker(it)\r\n            myMarker?.tag = \"1001\"\r\n        }\r\n\r\n    }\r\n\r\n    //게시글에서 사진 찍은거 저장하기\r\n    fun saveFile(bitmap: Bitmap) {\r\n        filename = dateFormat1.format(Date()) + \".jpg\"\r\n        bitmap?.apply {\r\n            openFileOutput(filename, Context.MODE_PRIVATE).use {\r\n                this.compress(Bitmap.CompressFormat.JPEG, 100, it)\r\n                it.close()\r\n\r\n                showToast(\"이미지를 파일로 저장함 : ${filename}\")\r\n\r\n                uploadFile(filename!!)\r\n            }\r\n        }\r\n    }\r\n    fun uploadFile(filename:String){\r\n        // 저장한 파일에 대한 정보를 filePart로 만들기\r\n        val file = File(\"${filesDir}/${filename}\")\r\n        val filePart = MultipartBody.Part.createFormData(\r\n            \"photo\",\r\n            filename,\r\n            file.asRequestBody(\"images/jpg\".toMediaTypeOrNull())\r\n        )\r\n        // 추가 파라미터가 있는 경우\r\n        val params = hashMapOf<String, String>()\r\n\r\n        //api 에 있는 리스트 조회\r\n        BasicClient.api.uploadFile(\r\n            file = filePart,\r\n            params = params\r\n        ).enqueue(object : Callback<FileUploadResponse> {\r\n            override fun onResponse(call: Call<FileUploadResponse>, response: Response<FileUploadResponse>) {\r\n                response.body()?.output?.filename?.apply{\r\n                    AppData.filepath = this\r\n                }\r\n            }\r\n            override fun onFailure(call: Call<FileUploadResponse>, t: Throwable) {\r\n            }\r\n        })\r\n    }\r\n\r\n    fun showToast(message:String) {\r\n        Toast.makeText(this, message, Toast.LENGTH_LONG).show()\r\n    }\r\n\r\n    // 데이트폼\r\n    fun nowDate():String{\r\n        val now =  System.currentTimeMillis()\r\n        val simpleDateFormat = SimpleDateFormat(\"yyyy-MM-dd HH:mm:ss\", Locale.KOREAN).format(now)\r\n        return simpleDateFormat\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/MainActivity.kt b/app/src/main/java/com/lx/project5/MainActivity.kt
+--- a/app/src/main/java/com/lx/project5/MainActivity.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/project5/MainActivity.kt	(date 1668731812775)
+@@ -72,7 +72,8 @@
+         ITEMdogList,
+         ITEMwrite2,
+         ITEMwriteSelect,
+-        ITEMwriteand
++        ITEMwriteand,
++        ITEMchat
+     }
+ 
+ 
+@@ -113,7 +114,7 @@
+                     onFragmentChanged(ScreenItem.ITEM3)
+                 }
+                 R.id.tab3 -> {
+-                    onFragmentChanged(ScreenItem.ITEMwrite)
++                    onFragmentChanged(ScreenItem.ITEMchat)
+                 }
+                 R.id.tab4 -> {
+                     if(AppData.loginData?.memberId == null){
+@@ -263,7 +264,9 @@
+             ScreenItem.ITEMwriteand -> {
+                 supportFragmentManager.beginTransaction().replace(R.id.container, WriteAndListFragment()).commit()
+             }
+-
++            ScreenItem.ITEMchat -> {
++                supportFragmentManager.beginTransaction().replace(R.id.container, ChatListFragment()).commit()
++            }
+         }
+ 
+ 
+Index: app/src/main/AndroidManifest.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<manifest xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    package=\"com.lx.project5\">\r\n\r\n    <uses-permission android:name=\"android.permission.CAMERA\" />\r\n    <uses-permission android:name=\"android.permission.INTERNET\" />\r\n    <uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />\r\n    <uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />\r\n    <uses-permission android:name=\"android.permission.ACCESS_BACKGROUND_LOCATION\" />\r\n\r\n    <application\r\n        android:allowBackup=\"true\"\r\n        android:dataExtractionRules=\"@xml/data_extraction_rules\"\r\n        android:fullBackupContent=\"@xml/backup_rules\"\r\n        android:icon=\"@mipmap/ic_launcher\"\r\n        android:label=\"펫플리즈\"\r\n        android:roundIcon=\"@mipmap/ic_launcher_round\"\r\n        android:supportsRtl=\"true\"\r\n        android:theme=\"@style/Theme.HT\"\r\n        android:usesCleartextTraffic=\"true\"\r\n        tools:targetApi=\"31\">\r\n        <activity\r\n            android:name=\".LocalActivity\"\r\n            android:exported=\"false\" />\r\n\r\n        <activity\r\n            android:name=\".SplashActivity\"\r\n            android:exported=\"true\"\r\n            android:theme=\"@style/Theme.HT\">\r\n            <intent-filter>\r\n                <action android:name=\"android.intent.action.MAIN\" />\r\n\r\n                <category android:name=\"android.intent.category.LAUNCHER\" />\r\n            </intent-filter>\r\n        </activity>\r\n        <activity\r\n            android:name=\".MainActivity\"\r\n            android:exported=\"true\">\r\n\r\n        </activity>\r\n\r\n        <meta-data\r\n            android:name=\"com.google.android.geo.API_KEY\"\r\n            android:value=\"AIzaSyB5-rWKl00ZuoPldNqFcL0RlEd_WWGMiYg\" />\r\n    </application>\r\n\r\n</manifest>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/AndroidManifest.xml b/app/src/main/AndroidManifest.xml
+--- a/app/src/main/AndroidManifest.xml	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/AndroidManifest.xml	(date 1668732777304)
+@@ -20,10 +20,17 @@
+         android:theme="@style/Theme.HT"
+         android:usesCleartextTraffic="true"
+         tools:targetApi="31">
++        <activity
++            android:name=".ChatActivity"
++            android:exported="false" />
++
++        <uses-library
++            android:name="org.apache.http.legacy"
++            android:required="false" />
++
+         <activity
+             android:name=".LocalActivity"
+             android:exported="false" />
+-
+         <activity
+             android:name=".SplashActivity"
+             android:exported="true"
+@@ -36,9 +43,7 @@
+         </activity>
+         <activity
+             android:name=".MainActivity"
+-            android:exported="true">
+-
+-        </activity>
++            android:exported="true"></activity>
+ 
+         <meta-data
+             android:name="com.google.android.geo.API_KEY"
+Index: app/src/main/java/com/lx/project5/WriteAndListFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.net.Uri\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport androidx.recyclerview.widget.LinearLayoutManager\r\nimport com.bumptech.glide.Glide\r\nimport com.lx.api.BasicClient\r\nimport com.lx.data.AwcResponse\r\nimport com.lx.data.DogListResponse\r\nimport com.lx.project5.databinding.FragmentWriteandlistBinding\r\nimport retrofit2.Call\r\nimport retrofit2.Callback\r\nimport retrofit2.Response\r\n\r\nclass WriteAndListFragment : Fragment() {\r\n    var _binding: FragmentWriteandlistBinding? = null\r\n    val binding get() = _binding!!\r\n\r\n    var awrdCommentAdapter: AwrdCommentAdapter? = null\r\n\r\n    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {\r\n        _binding = FragmentWriteandlistBinding.inflate(inflater, container, false)\r\n\r\n        initView1()\r\n        initView2()\r\n        initList()\r\n        initView()\r\n\r\n        return binding.root\r\n    }\r\n\r\n\r\n    fun initView1(){\r\n        BasicClient.api.getDogInfo(\r\n            requestCode = \"1001\",\r\n            dogNo = AppData.selectedWriteItem?.dogNo.toString()\r\n        ).enqueue(object: Callback<DogListResponse> {\r\n            override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {\r\n\r\n                AppData.dogInfo = DogData()\r\n\r\n                AppData.dogInfo?.dogImage = response.body()?.data?.get(0)?.dogImage\r\n                AppData.dogInfo?.dogName = response.body()?.data?.get(0)?.dogName\r\n                AppData.dogInfo?.apply{\r\n                    this.dogImage?.let{\r\n                        val uri = Uri.parse(\"http://192.168.0.3:8001${dogImage}\")\r\n                        Glide.with(binding.awrdImage).load(uri).into(binding.awrdImage)\r\n                    }\r\n                    binding.awrdDog.text = AppData.dogInfo?.dogName\r\n\r\n                }\r\n\r\n\r\n            }\r\n\r\n            override fun onFailure(call: Call<DogListResponse>, t: Throwable) {\r\n            }\r\n\r\n        })\r\n\r\n    }\r\n\r\n\r\n\r\n    fun initView2(){\r\n        binding.awrdTitle.text = AppData.selectedWriteItem?.assignTitle\r\n        binding.awrdContent.text = AppData.selectedWriteItem?.assignContent\r\n\r\n\r\n    }\r\n    // 리스트\r\n    fun initList() {\r\n\r\n        // 1. 리스트의 모양을 담당하는 것\r\n        // (LinearLayoutManager : 아래쪽으로 아이템들이 보이는 것, GridLayoutManager : 격자 형태로 보이는 것)\r\n        val layoutManager = LinearLayoutManager(context)\r\n        binding.awrdRV.layoutManager = layoutManager\r\n\r\n        // 2. 어댑터를 설정하는 것\r\n        // 실제 데이터를 관리하고 각 아이템의 모양을 만들어주는 것\r\n        awrdCommentAdapter = AwrdCommentAdapter()\r\n        binding.awrdRV.adapter = awrdCommentAdapter\r\n\r\n        // 4. 아이템을 클릭했을 때 동작할 코드 넣어주기\r\n        awrdCommentAdapter?.listener = object: OnAwrdItemClickListener {\r\n            override fun onItemClick(holder: AwrdCommentAdapter.ViewHolder?, view: View?, position: Int) {\r\n                awrdCommentAdapter?.apply {\r\n                    val item = items.get(position)\r\n\r\n//                    AppData.selectedItem = item\r\n\r\n//                    val petInfoIntent = Intent(context, PetInfoFragment::class.java)\r\n//                    petInfoLauncher.launch(petInfoIntent)\r\n                    //(activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMpetInfo)\r\n\r\n                }\r\n            }\r\n\r\n        }\r\n\r\n    }\r\n\r\n\r\n    fun initView() {\r\n\r\n        var awrn = AppData.selectedWriteItem?.awrn.toString()\r\n        Log.v(\"멍청\", \"${awrn}\")\r\n        BasicClient.api.getawcList(\r\n            requestCode = \"1001\",\r\n            awrn = awrn\r\n        ).enqueue(object: Callback<AwcResponse> {\r\n            override fun onResponse(call: Call<AwcResponse>, response: Response<AwcResponse>) {\r\n\r\n                addAwcList(response)\r\n            }\r\n\r\n            override fun onFailure(call: Call<AwcResponse>, t: Throwable) {\r\n            }\r\n\r\n        })\r\n\r\n    }\r\n\r\n    fun addAwcList(response: Response<AwcResponse>){\r\n\r\n        awrdCommentAdapter?.apply{\r\n            response.body()?.data?.let {\r\n                for(item in it) {\r\n                    this.items.add(AwcData(\r\n                        item.awcn,\r\n                        item.awrn,\r\n                        item.careNo,\r\n                        item.comment\r\n                    )\r\n                    )\r\n                }\r\n            }\r\n            Log.v(\"멍청\", \"${response.body()?.data}\")\r\n            this.notifyDataSetChanged()\r\n\r\n        }\r\n\r\n    }\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/WriteAndListFragment.kt b/app/src/main/java/com/lx/project5/WriteAndListFragment.kt
+--- a/app/src/main/java/com/lx/project5/WriteAndListFragment.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/project5/WriteAndListFragment.kt	(date 1668731812784)
+@@ -48,7 +48,7 @@
+                 AppData.dogInfo?.dogName = response.body()?.data?.get(0)?.dogName
+                 AppData.dogInfo?.apply{
+                     this.dogImage?.let{
+-                        val uri = Uri.parse("http://192.168.0.3:8001${dogImage}")
++                        val uri = Uri.parse("http://192.168.0.10:8001${dogImage}")
+                         Glide.with(binding.awrdImage).load(uri).into(binding.awrdImage)
+                     }
+                     binding.awrdDog.text = AppData.dogInfo?.dogName
+Index: app/src/main/java/com/lx/project5/PetAdapter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.content.Context\r\nimport android.net.Uri\r\nimport android.view.LayoutInflater\r\nimport android.view.ViewGroup\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport com.bumptech.glide.Glide\r\nimport com.lx.project5.databinding.DogItemBinding\r\n\r\nclass PetAdapter : RecyclerView.Adapter<PetAdapter.ViewHolder>(){\r\n    //각 아이템에 보여질 데이터를 담고 있는것\r\n    var items = ArrayList<PetData>()\r\n    var context: Context? = null\r\n\r\n    var listener: OnPetItemClickListener? = null\r\n    //리싸이클러뷰가 아이템 개수가 몇 개인지 물어볼때\r\n    override fun getItemCount(): Int = items.size\r\n    //각 아이템의 모양이 처음 만들어 질때\r\n    override fun onCreateViewHolder(parent : ViewGroup, viewType:Int): PetAdapter.ViewHolder{\r\n        val binding = DogItemBinding.inflate(LayoutInflater.from(parent.context),parent, false)\r\n        return ViewHolder(binding)\r\n    }\r\n    //이미 만들어진 아이템의 모양에 데이터만 설정할 때\r\n    override fun onBindViewHolder(holder: PetAdapter.ViewHolder, position: Int){\r\n        val item = items[position]\r\n        holder.setItem(item)\r\n    }\r\n    //각 아이템의 모양을 재사용하기 위해 만들어진 것\r\n    inner class ViewHolder(val binding: DogItemBinding):RecyclerView.ViewHolder(binding.root){\r\n        //데이터 설정\r\n        //하나의 아이템을 위한 데이터가 전달되었을 때 화면에 어떻게 표시할 지 설정\r\n        fun setItem(item: PetData){\r\n            //이미지 표시하기\r\n            item.dogImage?.apply{\r\n                val uri = Uri.parse(\"http://192.168.0.3:8001${this}\")\r\n                Glide.with(binding.gridPictureView).load(uri).into(binding.gridPictureView)\r\n            }\r\n\r\n            //강아지 이름\r\n            binding.dogNameOutput.text = item.dogName\r\n            //강아지 나이\r\n            binding.dogAgeOutput.text = item.dogAge.toString()\r\n            //강아지 성별\r\n            binding.dogGenderOutput.text = item.dogGender\r\n            //견종\r\n            binding.dogTypeOutput.text = item.dogBreed\r\n\r\n        }\r\n        init {\r\n            binding.root.setOnClickListener{\r\n                listener?.onItemClick(this,binding.root,adapterPosition)\r\n            }\r\n        }\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/PetAdapter.kt b/app/src/main/java/com/lx/project5/PetAdapter.kt
+--- a/app/src/main/java/com/lx/project5/PetAdapter.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/project5/PetAdapter.kt	(date 1668731812764)
+@@ -33,7 +33,7 @@
+         fun setItem(item: PetData){
+             //이미지 표시하기
+             item.dogImage?.apply{
+-                val uri = Uri.parse("http://192.168.0.3:8001${this}")
++                val uri = Uri.parse("http://192.168.0.10:8001${this}")
+                 Glide.with(binding.gridPictureView).load(uri).into(binding.gridPictureView)
+             }
+ 
+Index: app/src/main/java/com/lx/project5/Write2Fragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.app.DatePickerDialog\r\nimport android.app.TimePickerDialog\r\nimport android.content.Intent\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.DatePicker\r\nimport android.widget.TimePicker\r\nimport androidx.fragment.app.Fragment\r\nimport com.lx.api.BasicClient\r\nimport com.lx.data.AwrListResponse\r\nimport com.lx.data.AwrTodoResponse\r\nimport com.lx.data.LastInsertResponse\r\nimport com.lx.project5.databinding.FragmentWrite2Binding\r\nimport retrofit2.Call\r\nimport retrofit2.Callback\r\nimport retrofit2.Response\r\nimport java.time.LocalDateTime\r\nimport java.time.format.DateTimeFormatter\r\nimport java.util.*\r\n\r\n\r\nclass Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {\r\n    var _binding: FragmentWrite2Binding? = null\r\n    val binding get() = _binding!!\r\n\r\n    //달력\r\n    var day = 0\r\n    var month = 0\r\n    var year =0\r\n    var hour = 0\r\n    var minute = 0\r\n\r\n    var savedDay = 0\r\n    var savedMonth = 0\r\n    var savedYear =0\r\n    var savedHour = 0\r\n    private var savedMinute = 0\r\n\r\n    var cIndex = 0\r\n\r\n    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {\r\n        _binding = FragmentWrite2Binding.inflate(inflater, container, false)\r\n\r\n        writeShow()\r\n\r\n\r\n        pickDate() //달력\r\n\r\n        //지도로 가기\r\n        binding.locationButton1.setOnClickListener {\r\n            writeSave()\r\n            val locationIntent= Intent(activity,LocalActivity::class.java)\r\n            startActivity(locationIntent)\r\n        }\r\n        //등록하기 버튼\r\n        binding.editButton5.setOnClickListener {\r\n            writeSave()\r\n            awrAdd()\r\n            lastInsert()\r\n        }\r\n\r\n        //강아지 선택\r\n        binding.setDogButton.setOnClickListener {\r\n            AppData.dogListIndex = 2\r\n            writeSave()\r\n            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMwriteSelect)\r\n        }\r\n\r\n\r\n\r\n\r\n        return binding.root\r\n\r\n\r\n    }\r\n\r\n    fun writeShow() {\r\n        binding.myDog.text = Write2SaveData.savedogName\r\n        binding.locationView.text = \"${Write2SaveData.savelat.toString()}, ${Write2SaveData.savelng.toString()}\"\r\n        binding.editTextTime3.text = \"${Write2SaveData.savestartTime} 시\"\r\n        binding.editTextTime4.text = \"${Write2SaveData.saveendTime} 시\"\r\n        binding.editTextTextPersonName2.setText(Write2SaveData.saveassignTitle)\r\n        binding.detail1.setText(Write2SaveData.saveassignContent)\r\n    }\r\n    fun writeSave(){\r\n        Write2SaveData.savedogName = binding.myDog.text.toString()\r\n        Write2SaveData.saveassignTitle = binding.editTextTextPersonName2.text.toString()\r\n        Write2SaveData.saveassignContent = binding.detail1.text.toString()\r\n    }\r\n\r\n    fun awrAdd() {\r\n        val lat = Write2SaveData.savelat.toString()\r\n        val lng = Write2SaveData.savelng.toString()\r\n        val assignTitle = binding.editTextTextPersonName2.text.toString()\r\n        val assignContent = binding.detail1.text.toString()\r\n\r\n        BasicClient.api.awrAdd(\r\n            requestCode = \"1001\",\r\n            memberNo = AppData.loginData?.memberNo.toString(),\r\n            dogNo = Write2SaveData.savedogNo.toString(),\r\n            startTime = Write2SaveData.savestartTime.toString(),\r\n            endTime = Write2SaveData.saveendTime.toString(),\r\n            writeTime = (activity as MainActivity).nowDate(),\r\n            assignTitle = assignTitle,\r\n            assignContent = assignContent,\r\n            lat = lat!!,\r\n            lng = lng!!\r\n\r\n        ).enqueue(object : Callback<AwrListResponse> {\r\n            override fun onResponse(call: Call<AwrListResponse>, response: Response<AwrListResponse>) {\r\n                (activity as MainActivity).showToast(\"1\")\r\n\r\n\r\n            }\r\n            override fun onFailure(call: Call<AwrListResponse>, t: Throwable) {\r\n                (activity as MainActivity).showToast(\"2\")\r\n\r\n            }\r\n\r\n        })\r\n\r\n    }\r\n    fun lastInsert() {\r\n\r\n\r\n        BasicClient.api.lastInsert(\r\n            requestCode = \"1001\"\r\n        ).enqueue(object : Callback<LastInsertResponse> {\r\n            override fun onResponse(call: Call<LastInsertResponse>, response: Response<LastInsertResponse>) {\r\n                val lastInsertNo = response.body()?.data?.get(0)?.lASTINSERTID.toString()\r\n                awrTodoAdd(lastInsertNo)\r\n                (activity as MainActivity).showToast(\"1\")\r\n\r\n\r\n            }\r\n            override fun onFailure(call: Call<LastInsertResponse>, t: Throwable) {\r\n                (activity as MainActivity).showToast(\"2\")\r\n            }\r\n\r\n        })\r\n\r\n    }\r\n\r\n    fun awrTodoAdd(lastInsertNo: String) {\r\n        if(binding.checkBox201.isChecked){\r\n            BasicClient.api.awrTodoAdd(\r\n                requestCode = \"1001\",\r\n                awrn = lastInsertNo.toString(),\r\n                todoNo = 3\r\n            ).enqueue(object : Callback<AwrTodoResponse> {\r\n                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {\r\n                    (activity as MainActivity).showToast(\"1\")\r\n\r\n\r\n                }\r\n                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {\r\n                    (activity as MainActivity).showToast(\"2\")\r\n                }\r\n\r\n            })\r\n        }else {\r\n            Log.v(\"최고다\",\"3\")\r\n        }\r\n        if(binding.checkBox202.isChecked){\r\n            BasicClient.api.awrTodoAdd(\r\n                requestCode = \"1001\",\r\n                awrn = lastInsertNo.toString(),\r\n                todoNo = 4\r\n            ).enqueue(object : Callback<AwrTodoResponse> {\r\n                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {\r\n                    (activity as MainActivity).showToast(\"1\")\r\n\r\n\r\n                }\r\n                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {\r\n                    (activity as MainActivity).showToast(\"2\")\r\n                }\r\n\r\n            })\r\n        }else {\r\n            Log.v(\"최고다\",\"3\")\r\n        }\r\n        if(binding.checkBox203.isChecked){\r\n            BasicClient.api.awrTodoAdd(\r\n                requestCode = \"1001\",\r\n                awrn = lastInsertNo.toString(),\r\n                todoNo = 5\r\n            ).enqueue(object : Callback<AwrTodoResponse> {\r\n                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {\r\n                    (activity as MainActivity).showToast(\"1\")\r\n\r\n\r\n                }\r\n                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {\r\n                    (activity as MainActivity).showToast(\"2\")\r\n                }\r\n\r\n            })\r\n        }else {\r\n            Log.v(\"최고다\",\"3\")\r\n        }\r\n        if(binding.checkBox204.isChecked){\r\n            BasicClient.api.awrTodoAdd(\r\n                requestCode = \"1001\",\r\n                awrn = lastInsertNo.toString(),\r\n                todoNo = 6\r\n            ).enqueue(object : Callback<AwrTodoResponse> {\r\n                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {\r\n                    (activity as MainActivity).showToast(\"1\")\r\n\r\n\r\n                }\r\n                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {\r\n                    (activity as MainActivity).showToast(\"2\")\r\n                }\r\n\r\n            })\r\n        }else {\r\n            Log.v(\"최고다\",\"3\")\r\n        }\r\n        if(binding.checkBox205.isChecked){\r\n            BasicClient.api.awrTodoAdd(\r\n                requestCode = \"1001\",\r\n                awrn = lastInsertNo.toString(),\r\n                todoNo = 7\r\n            ).enqueue(object : Callback<AwrTodoResponse> {\r\n                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {\r\n                    (activity as MainActivity).showToast(\"1\")\r\n\r\n\r\n                }\r\n                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {\r\n                    (activity as MainActivity).showToast(\"2\")\r\n                }\r\n\r\n            })\r\n        }else {\r\n            Log.v(\"최고다\",\"3\")\r\n        }\r\n        if(binding.checkBox206.isChecked){\r\n            BasicClient.api.awrTodoAdd(\r\n                requestCode = \"1001\",\r\n                awrn = lastInsertNo.toString(),\r\n                todoNo = 8\r\n            ).enqueue(object : Callback<AwrTodoResponse> {\r\n                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {\r\n                    (activity as MainActivity).showToast(\"1\")\r\n\r\n\r\n                }\r\n                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {\r\n                    (activity as MainActivity).showToast(\"2\")\r\n                }\r\n\r\n            })\r\n        }else {\r\n            Log.v(\"최고다\",\"3\")\r\n        }\r\n        if(binding.checkBox207.isChecked){\r\n            BasicClient.api.awrTodoAdd(\r\n                requestCode = \"1001\",\r\n                awrn = lastInsertNo.toString(),\r\n                todoNo = 9\r\n            ).enqueue(object : Callback<AwrTodoResponse> {\r\n                override fun onResponse(call: Call<AwrTodoResponse>, response: Response<AwrTodoResponse>) {\r\n                    (activity as MainActivity).showToast(\"1\")\r\n\r\n\r\n                }\r\n                override fun onFailure(call: Call<AwrTodoResponse>, t: Throwable) {\r\n                    (activity as MainActivity).showToast(\"2\")\r\n                }\r\n\r\n            })\r\n        }else {\r\n            Log.v(\"최고다\",\"3\")\r\n        }\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n    /**\r\n     * 사용자가 입력한 데이터를 변수에 넣어주는 함수\r\n     *  *///달력\r\n    private fun getDateTimeCalendar(){\r\n        val cal: Calendar = Calendar.getInstance()\r\n        day = cal.get(Calendar.DAY_OF_MONTH)\r\n        month = cal.get(Calendar.MONTH)\r\n        year = cal.get(Calendar.YEAR)\r\n        hour = cal.get(Calendar.HOUR)\r\n        minute = cal.get(Calendar.MINUTE)\r\n        Log.v(\"you1\",\"${year},${month},${day}, 분 확인!!!!!!${hour},${minute}\")\r\n\r\n    }\r\n    //달력@@@@@@@@@@@@\r\n    private fun pickDate() {\r\n        binding.editTextTime3.setOnClickListener {\r\n            cIndex = 1\r\n            getDateTimeCalendar()\r\n\r\n            Log.v(\"you1\",\"${year},${month},${day}\")\r\n            context?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }\r\n        }\r\n        binding.editTextTime4.setOnClickListener {\r\n            cIndex = 2\r\n            getDateTimeCalendar()\r\n\r\n            Log.v(\"you2\",\"${year},${month},${day}\")\r\n            context?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }\r\n\r\n        }\r\n\r\n\r\n    }\r\n    //달력\r\n    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {\r\n        savedDay = dayOfMonth\r\n        savedMonth = month\r\n        savedYear = year\r\n\r\n        TimePickerDialog(context,this,hour,minute,true).show()\r\n        getDateTimeCalendar()\r\n    }\r\n\r\n    //달력\r\n    override fun onTimeSet(view: TimePicker?, hourOfDay: Int, Minute: Int) {\r\n\r\n        if (cIndex == 1){\r\n            savedHour = hourOfDay\r\n            savedMinute = Minute\r\n\r\n            Log.v(\"@@\",\"${hour},@@${minute}\")\r\n            binding.editTextTime3.text = \"$savedYear-$savedMonth-$savedDay $savedHour 시\"\r\n            Write2SaveData.savestartTime = \"$savedYear-$savedMonth-$savedDay $savedHour\"\r\n\r\n        } else if(cIndex == 2){\r\n            savedHour = hourOfDay\r\n            savedMinute = Minute\r\n\r\n            Log.v(\"@@\",\"${hour},@@${minute}\")\r\n            binding.editTextTime4.text = \"$savedYear-$savedMonth-$savedDay $savedHour 시\"\r\n            Write2SaveData.saveendTime = \"$savedYear-$savedMonth-$savedDay $savedHour\"\r\n        }\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/Write2Fragment.kt b/app/src/main/java/com/lx/project5/Write2Fragment.kt
+--- a/app/src/main/java/com/lx/project5/Write2Fragment.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/project5/Write2Fragment.kt	(date 1668686426101)
+@@ -84,19 +84,19 @@
+         binding.locationView.text = "${Write2SaveData.savelat.toString()}, ${Write2SaveData.savelng.toString()}"
+         binding.editTextTime3.text = "${Write2SaveData.savestartTime} 시"
+         binding.editTextTime4.text = "${Write2SaveData.saveendTime} 시"
+-        binding.editTextTextPersonName2.setText(Write2SaveData.saveassignTitle)
++        binding.editTextTextPersonName.setText(Write2SaveData.saveassignTitle)
+         binding.detail1.setText(Write2SaveData.saveassignContent)
+     }
+     fun writeSave(){
+         Write2SaveData.savedogName = binding.myDog.text.toString()
+-        Write2SaveData.saveassignTitle = binding.editTextTextPersonName2.text.toString()
++        Write2SaveData.saveassignTitle = binding.editTextTextPersonName.text.toString()
+         Write2SaveData.saveassignContent = binding.detail1.text.toString()
+     }
+ 
+     fun awrAdd() {
+         val lat = Write2SaveData.savelat.toString()
+         val lng = Write2SaveData.savelng.toString()
+-        val assignTitle = binding.editTextTextPersonName2.text.toString()
++        val assignTitle = binding.editTextTextPersonName.text.toString()
+         val assignContent = binding.detail1.text.toString()
+ 
+         BasicClient.api.awrAdd(
+@@ -114,14 +114,10 @@
+         ).enqueue(object : Callback<AwrListResponse> {
+             override fun onResponse(call: Call<AwrListResponse>, response: Response<AwrListResponse>) {
+                 (activity as MainActivity).showToast("1")
+-
+-
+             }
+             override fun onFailure(call: Call<AwrListResponse>, t: Throwable) {
+                 (activity as MainActivity).showToast("2")
+-
+             }
+-
+         })
+ 
+     }
+Index: app/src/main/java/com/lx/project5/PetInfoFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.net.Uri\r\nimport android.os.Bundle\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport com.bumptech.glide.Glide\r\nimport com.lx.project5.AppData.Companion.selectedItem\r\nimport com.lx.project5.databinding.FragmentMemberInfoUpdateBinding\r\nimport com.lx.project5.databinding.FragmentPetInfoBinding\r\n\r\nclass PetInfoFragment : Fragment() {\r\n    var _binding: FragmentPetInfoBinding? = null\r\n    val binding get() = _binding!!\r\n\r\n    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {\r\n        _binding = FragmentPetInfoBinding.inflate(inflater, container, false)\r\n\r\n        initView()\r\n\r\n        binding.editInfoButton2.setOnClickListener {\r\n            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMeditDog)\r\n        }\r\n\r\n        binding.backButton3.setOnClickListener {\r\n            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdogList)\r\n        }\r\n\r\n        return binding.root\r\n    }\r\n    fun initView(){\r\n        AppData.selectedItem?.apply{\r\n            this.dogImage .let{\r\n                val uri = Uri.parse(\"http://192.168.0.3:8001${dogImage}\")\r\n                Glide.with(binding.imageView4).load(uri).into(binding.imageView4)\r\n            }\r\n            binding.petName.text = \"${selectedItem?.dogName}\"\r\n            binding.petAge.text = \"${selectedItem?.dogAge}\"\r\n            binding.petGender.text = \"${selectedItem?.dogGender}\"\r\n            binding.petBreed?.text = \"${selectedItem?.dogBreed}\"\r\n            binding.petEducation.text = \"${selectedItem?.dogEducation}\"\r\n            binding.petCharacter.text = \"${selectedItem?.dogCharacter}\"\r\n\r\n        }\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/PetInfoFragment.kt b/app/src/main/java/com/lx/project5/PetInfoFragment.kt
+--- a/app/src/main/java/com/lx/project5/PetInfoFragment.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/project5/PetInfoFragment.kt	(date 1668731812758)
+@@ -33,7 +33,7 @@
+     fun initView(){
+         AppData.selectedItem?.apply{
+             this.dogImage .let{
+-                val uri = Uri.parse("http://192.168.0.3:8001${dogImage}")
++                val uri = Uri.parse("http://192.168.0.10:8001${dogImage}")
+                 Glide.with(binding.imageView4).load(uri).into(binding.imageView4)
+             }
+             binding.petName.text = "${selectedItem?.dogName}"
+Index: app/google-services.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"project_info\": {\r\n    \"project_number\": \"565460224132\",\r\n    \"project_id\": \"mychat-d7eb7\",\r\n    \"storage_bucket\": \"mychat-d7eb7.appspot.com\"\r\n  },\r\n  \"client\": [\r\n    {\r\n      \"client_info\": {\r\n        \"mobilesdk_app_id\": \"1:565460224132:android:24e77bd3abbea370e31ad1\",\r\n        \"android_client_info\": {\r\n          \"package_name\": \"com.lx.project5\"\r\n        }\r\n      },\r\n      \"oauth_client\": [\r\n        {\r\n          \"client_id\": \"565460224132-nqu2vifd27f05u3gojba54bih98at8v5.apps.googleusercontent.com\",\r\n          \"client_type\": 3\r\n        }\r\n      ],\r\n      \"api_key\": [\r\n        {\r\n          \"current_key\": \"AIzaSyBRqxzrvfm-wdb01Dg3AI4hVuYqDiNxi7w\"\r\n        }\r\n      ],\r\n      \"services\": {\r\n        \"appinvite_service\": {\r\n          \"other_platform_oauth_client\": [\r\n            {\r\n              \"client_id\": \"565460224132-nqu2vifd27f05u3gojba54bih98at8v5.apps.googleusercontent.com\",\r\n              \"client_type\": 3\r\n            }\r\n          ]\r\n        }\r\n      }\r\n    }\r\n  ],\r\n  \"configuration_version\": \"1\"\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/google-services.json b/app/google-services.json
+--- a/app/google-services.json	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/google-services.json	(date 1668704345364)
+@@ -1,33 +1,34 @@
+ {
+   "project_info": {
+-    "project_number": "565460224132",
+-    "project_id": "mychat-d7eb7",
+-    "storage_bucket": "mychat-d7eb7.appspot.com"
++    "project_number": "161851402432",
++    "firebase_url": "https://pet2-ac19e-default-rtdb.asia-southeast1.firebasedatabase.app",
++    "project_id": "pet2-ac19e",
++    "storage_bucket": "pet2-ac19e.appspot.com"
+   },
+   "client": [
+     {
+       "client_info": {
+-        "mobilesdk_app_id": "1:565460224132:android:24e77bd3abbea370e31ad1",
++        "mobilesdk_app_id": "1:161851402432:android:4388fcac0c1a0a7d8ba525",
+         "android_client_info": {
+           "package_name": "com.lx.project5"
+         }
+       },
+       "oauth_client": [
+         {
+-          "client_id": "565460224132-nqu2vifd27f05u3gojba54bih98at8v5.apps.googleusercontent.com",
++          "client_id": "161851402432-ol17mfk4f3obev98kl2qbpihcfrcnab8.apps.googleusercontent.com",
+           "client_type": 3
+         }
+       ],
+       "api_key": [
+         {
+-          "current_key": "AIzaSyBRqxzrvfm-wdb01Dg3AI4hVuYqDiNxi7w"
++          "current_key": "AIzaSyCzdpcUInYgvFMsMXrGjgMSVqtrV0uvXV8"
+         }
+       ],
+       "services": {
+         "appinvite_service": {
+           "other_platform_oauth_client": [
+             {
+-              "client_id": "565460224132-nqu2vifd27f05u3gojba54bih98at8v5.apps.googleusercontent.com",
++              "client_id": "161851402432-ol17mfk4f3obev98kl2qbpihcfrcnab8.apps.googleusercontent.com",
+               "client_type": 3
+             }
+           ]
+Index: app/src/main/java/com/lx/project5/CareInfoFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.content.Intent\r\nimport android.net.Uri\r\nimport android.os.Bundle\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport androidx.recyclerview.widget.LinearLayoutManager\r\nimport com.bumptech.glide.Glide\r\nimport com.lx.api.BasicClient\r\nimport com.lx.data.ReviewListResponse\r\nimport com.lx.project5.databinding.FragmentCareInfoBinding\r\nimport retrofit2.Call\r\nimport retrofit2.Callback\r\nimport retrofit2.Response\r\n\r\nclass CareInfoFragment : Fragment() {\r\n    var _binding: FragmentCareInfoBinding? = null\r\n    val binding get() = _binding!!\r\n    var reviewAdapter: ReviewAdapter? = null\r\n\r\n    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {\r\n        _binding = FragmentCareInfoBinding.inflate(inflater, container, false)\r\n        initList()\r\n        reviewView()\r\n\r\n        binding.backButton12.setOnClickListener {\r\n            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)\r\n        }\r\n        binding.button10.setOnClickListener {\r\n            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)\r\n\r\n        }\r\n\r\n        return binding.root\r\n    }\r\n\r\n    // 리스트 초기화\r\n    fun initList() {\r\n        val layoutManager = LinearLayoutManager(context)\r\n//        binding.reviewList.layoutManager = layoutManager\r\n\r\n        reviewAdapter = ReviewAdapter()\r\n//        binding.reviewList.adapter = reviewAdapter\r\n\r\n    }\r\n\r\n    fun reviewView() {\r\n        AppData.careData?.apply{\r\n            this.careImage.let{\r\n                val uri = Uri.parse(\"http://192.168.0.3:8001${careImage}\")\r\n                Glide.with(binding.imageView2).load(uri).into(binding.imageView2)\r\n            }\r\n            binding.textView7.text = \"${AppData.careData?.careName}\"\r\n            binding.textView8.text = \"${AppData.careData?.careId}\"\r\n            binding.textView9.text = \"${AppData.careData?.careAddress}\"\r\n\r\n        }\r\n    }\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/CareInfoFragment.kt b/app/src/main/java/com/lx/project5/CareInfoFragment.kt
+--- a/app/src/main/java/com/lx/project5/CareInfoFragment.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/project5/CareInfoFragment.kt	(date 1668731812779)
+@@ -50,7 +50,7 @@
+     fun reviewView() {
+         AppData.careData?.apply{
+             this.careImage.let{
+-                val uri = Uri.parse("http://192.168.0.3:8001${careImage}")
++                val uri = Uri.parse("http://192.168.0.10:8001${careImage}")
+                 Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
+             }
+             binding.textView7.text = "${AppData.careData?.careName}"
+Index: app/src/main/java/com/lx/project5/AssessFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.net.Uri\r\nimport android.os.Bundle\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport androidx.fragment.app.Fragment\r\nimport com.bumptech.glide.Glide\r\nimport com.lx.api.BasicClient\r\nimport com.lx.data.ReviewListResponse\r\nimport com.lx.project5.AppData.Companion.reviewSaveData\r\nimport com.lx.project5.WriteSaveData.Companion.savecareNo\r\nimport com.lx.project5.databinding.FragmentAssessBinding\r\nimport retrofit2.Call\r\nimport retrofit2.Callback\r\nimport retrofit2.Response\r\n\r\n\r\nclass AssessFragment : Fragment() {\r\n    var _binding: FragmentAssessBinding? = null\r\n    val binding get() = _binding!!\r\n\r\n\r\n\r\n    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {\r\n        _binding = FragmentAssessBinding.inflate(inflater, container, false)\r\n        setView()\r\n\r\n        //별점\r\n        binding.rtb.setOnRatingBarChangeListener { ratingBar, fl, b ->\r\n            binding.tvRating.text = fl.toString()\r\n        }\r\n\r\n        binding.completeButton4.setOnClickListener {\r\n            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)\r\n        }\r\n\r\n        binding.button2.setOnClickListener {\r\n            reviewSave()\r\n            reviewAdd()\r\n        }\r\n        binding.button11.setOnClickListener {\r\n            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)\r\n        }\r\n\r\n        return binding.root\r\n    }\r\n\r\n    fun reviewAdd() {\r\n\r\n        BasicClient.api.memberReview(\r\n            requestCode = \"1001\",\r\n            memberNo = AppData.loginData?.memberNo.toString(),\r\n            careNo = reviewSaveData?.saveCareNo.toString(),\r\n            reviewTitle = binding.reviewTitle.text.toString(),\r\n            reviewContent = binding.reviewContent.text.toString(),\r\n            star = reviewSaveData?.saveStar.toString()\r\n\r\n        ).enqueue(object : Callback<ReviewListResponse> {\r\n            override fun onResponse(call: Call<ReviewListResponse>, response: Response<ReviewListResponse>) {\r\n                (activity as MainActivity).showToast(\"1\")\r\n\r\n\r\n            }\r\n            override fun onFailure(call: Call<ReviewListResponse>, t: Throwable) {\r\n                (activity as MainActivity).showToast(\"2\")\r\n\r\n            }\r\n\r\n        })\r\n\r\n    }\r\n\r\n    fun reviewSave(){\r\n        reviewSaveData?.saveReviewTitle = binding.reviewTitle.text.toString()\r\n        reviewSaveData?.saveReviewContent = binding.reviewContent.text.toString()\r\n        reviewSaveData?.saveStar = binding.rtb.toString()\r\n        (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMcomplete)\r\n    }\r\n\r\n    fun setView(){\r\n        AppData?.memberdata.apply{\r\n            this?.memberImage?.let {\r\n                val uri = Uri.parse(\"http://192.168.0.3:8001${memberImage}\")\r\n                Glide.with(binding.personProfile).load(uri).into(binding.personProfile)\r\n            }\r\n            binding.personName.setText(AppData.loginData?.memberName)\r\n\r\n        }\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/AssessFragment.kt b/app/src/main/java/com/lx/project5/AssessFragment.kt
+--- a/app/src/main/java/com/lx/project5/AssessFragment.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/project5/AssessFragment.kt	(date 1668731812769)
+@@ -82,7 +82,7 @@
+     fun setView(){
+         AppData?.memberdata.apply{
+             this?.memberImage?.let {
+-                val uri = Uri.parse("http://192.168.0.3:8001${memberImage}")
++                val uri = Uri.parse("http://192.168.0.10:8001${memberImage}")
+                 Glide.with(binding.personProfile).load(uri).into(binding.personProfile)
+             }
+             binding.personName.setText(AppData.loginData?.memberName)
+Index: app/src/main/java/com/lx/api/BasicApi.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.api\r\n\r\nimport android.util.Log\r\nimport com.lx.data.*\r\nimport okhttp3.Interceptor\r\nimport okhttp3.MultipartBody\r\nimport okhttp3.OkHttpClient\r\nimport okhttp3.logging.HttpLoggingInterceptor\r\nimport retrofit2.Call\r\nimport retrofit2.Retrofit\r\nimport retrofit2.converter.gson.GsonConverterFactory\r\nimport retrofit2.http.*\r\nimport java.lang.Exception\r\nimport java.security.SecureRandom\r\nimport java.security.cert.CertificateException\r\nimport java.security.cert.X509Certificate\r\nimport java.text.SimpleDateFormat\r\nimport java.util.*\r\nimport java.util.concurrent.TimeUnit\r\nimport javax.net.ssl.*\r\nimport kotlin.collections.HashMap\r\n\r\n/**\r\n * 웹서버 요청/응답을 처리하기 위한 기본 API\r\n */\r\ninterface BasicApi {\r\n\r\n    /**\r\n     * POST 방식으로 멤버 로그인 요청 / 사용가능\r\n     */\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"care/memberLogin\")\r\n    fun postMemberLogin(\r\n        @Field(\"requestCode\") requestCode: String,\r\n        @Field(\"memberId\") memberId: String,\r\n        @Field(\"memberPw\") memberPw: String\r\n    ): Call<MemberListResponse>\r\n\r\n    /**\r\n     * POST 방식으로 멤버 회원가입 요청 / 사용가능\r\n     */\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"care/memberAdd\")\r\n    fun postMemberAdd(\r\n        @Field(\"requestCode\") requestCode: String,\r\n        @Field(\"memberId\") memberId: String,\r\n        @Field(\"memberName\") memberName: String,\r\n        @Field(\"memberPw\") memberPw: String,\r\n        @Field(\"memberAddress\") memberAddress: String,\r\n        @Field(\"memberImage\") memberImage: String\r\n    ): Call<MemberListResponse>\r\n\r\n    /**\r\n     * POST 방식으로 멤버 비밀번호찾기 요청\r\n     */\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"care/memberFindPw\")\r\n    fun postMemberFindPw(\r\n        @Field(\"requestCode\") requestCode: String,\r\n        @Field(\"memberMobile\") memberMobile: String,\r\n        @Field(\"memberName\") memberName: String\r\n    ): Call<MemberListResponse>\r\n\r\n    /**\r\n     * POST 방식으로 아이디 중복체크 요청\r\n     */\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"care/memberIdOverlap\")\r\n    fun postMemberCheckId(\r\n        @Field(\"requestCode\") requestCode: String,\r\n        @Field(\"memberId\") memberId: String\r\n    ): Call<MemberListResponse>\r\n\r\n    /**\r\n     * POST 방식으로 멤버 정보수정 요청\r\n     */\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"care/memberUpdate\")\r\n    fun postMemberUpdate(\r\n        @Field(\"requestCode\") requestCode: String,\r\n        @Field(\"memberNo\") memberNo: String,\r\n        @Field(\"memberAddress\") memberAddress: String,\r\n        @Field(\"memberImage\") memberImage: String,\r\n        @Field(\"memberName\") memberName: String\r\n    ): Call<MemberListResponse>\r\n\r\n    /**\r\n     * GET 방식으로 주변 펫시터 요청 / 사용가능\r\n     */\r\n\r\n    @GET(\"care/memberDelete\")\r\n    fun getCareList(\r\n        @Query(\"requestCode\") requestCode: String,\r\n        @Query(\"carex1\") carex1: Int,\r\n        @Query(\"carex2\") carex2: Int,\r\n        @Query(\"carey1\") carey1: Int,\r\n        @Query(\"carey2\") carey2: Int\r\n    ): Call<CareListResponse>\r\n\r\n    /**\r\n     * GET 방식으로 주변 펫시터 요청 테스트@@ / 사용가능\r\n     */\r\n\r\n    @GET(\"/care/listTest\")\r\n    fun getCareListTest(\r\n        @Query(\"requestCode\") requestCode: String\r\n    ): Call<CareListResponse>\r\n\r\n\r\n\r\n    /**\r\n     * GET 방식으로  개리스트 요청\r\n     */\r\n\r\n    @GET(\"care/petList\")\r\n    fun getPetFilter(\r\n        @Query(\"requestCode\") requestCode: String,\r\n        @Query(\"memberNo\") memberNo: String\r\n    ): Call<DogListResponse>\r\n\r\n    /**\r\n     * GET 방식으로 개목록 요청\r\n     */\r\n    @FormUrlEncoded\r\n    @POST(\"care/petAdd\")\r\n    fun petAdd(\r\n        @Field(\"requestCode\") requestCode: String,\r\n        @Field(\"memberNo\") memberNo: String,\r\n        @Field(\"dogName\") dogName: String,\r\n        @Field(\"dogGender\") dogGender: String,\r\n        @Field(\"dogAge\") dogAge: String,\r\n        @Field(\"dogCharacter\") dogCharacter: String,\r\n        @Field(\"dogImage\") dogImage: String,\r\n        @Field(\"dogEducation\") dogEducation: String,\r\n        @Field(\"dogBreed\") dogBreed: String\r\n        ): Call<DogListResponse>\r\n\r\n    /**\r\n     * POST 방식으로 시부레  개좀 맡아달라고\r\n     */\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"care/acrAdd\")\r\n    fun acrAdd(\r\n        @Field(\"requestCode\") requestCode: String,\r\n        @Field(\"memberNo\") memberNo: String,\r\n        @Field(\"careNo\") careNo: String,\r\n        @Field(\"dogNo\") dogNo: String,\r\n        @Field(\"startTime\") startTime: String,\r\n        @Field(\"endTime\") endTime: String,\r\n        @Field(\"assignTitle\") assignTitle: String,\r\n        @Field(\"assignContent\") assignContent: String\r\n    ): Call<AcrListResponse>\r\n\r\n    /**\r\n     * GET 방식으로  선택요청 할일 추가\r\n     */\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"care/lastInsert\")\r\n    fun lastInsert(\r\n        @Field(\"requestCode\") requestCode: String\r\n    ): Call<LastInsertResponse>\r\n\r\n    /**\r\n     * GET 방식으로  선택요청 할일 추가\r\n     */\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"care/awrTodoAdd\")\r\n    fun awrTodoAdd(\r\n        @Field(\"requestCode\") requestCode: String,\r\n        @Field(\"awrn\") awrn: String,\r\n        @Field(\"todoNo\") todoNo: Int\r\n    ): Call<AwrTodoResponse>\r\n    /**\r\n     * GET 방식으로  선택요청 할일 추가\r\n     */\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"care/acrTodoAdd\")\r\n    fun acrTodoAdd(\r\n        @Field(\"requestCode\") requestCode: String,\r\n        @Field(\"acrn\") acrn: String,\r\n        @Field(\"todoNo\") todoNo: Int\r\n    ): Call<AcrTodoResponse>\r\n\r\n\r\n    /**\r\n     * POST 방식으로 돌봄 주변신청 보내기\r\n     */\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"care/awrAdd\")\r\n    fun awrAdd(\r\n        @Field(\"requestCode\") requestCode: String,\r\n        @Field(\"assignContent\") assignContent: String,\r\n        @Field(\"memberNo\") memberNo: String,\r\n        @Field(\"startTime\") startTime: String,\r\n        @Field(\"endTime\") endTime: String,\r\n        @Field(\"assignTitle\") assignTitle: String,\r\n        @Field(\"writeTime\") writeTime: String,\r\n        @Field(\"lat\") lat: String,\r\n        @Field(\"lng\") lng: String,\r\n        @Field(\"dogNo\") dogNo: String\r\n    ): Call<AwrListResponse>\r\n\r\n    // 맡김이가 쓴 글 리스트트\r\n   @GET(\"care/awrList\")\r\n    fun getawrFilter(\r\n        @Query(\"requestCode\") requestCode: String,\r\n        @Query(\"memberNo\") memberNo: String\r\n    ): Call<AwrListResponse>\r\n\r\n    /**\r\n     * POST 방식으로 맡기미 리뷰작성 보내기\r\n     */\r\n\r\n    @FormUrlEncoded\r\n    @POST(\"care/memberReview\")\r\n    fun memberReview(\r\n        @Field(\"requestCode\") requestCode: String,\r\n        @Field(\"memberNo\") memberNo: String,\r\n        @Field(\"careNo\") careNo: String,\r\n        @Field(\"star\") star: String,\r\n        @Field(\"reviewTitle\") reviewTitle: String,\r\n        @Field(\"reviewContent\") reviewContent: String\r\n    ): Call<ReviewListResponse>\r\n\r\n    /**\r\n     * GET 선택신청 개 정보\r\n     */\r\n    @GET(\"care/dogInfo\")\r\n    fun getDogInfo(\r\n        @Query(\"requestCode\") requestCode: String,\r\n        @Query(\"dogNo\") dogNo: String,\r\n    ): Call<DogListResponse>\r\n\r\n    /**\r\n     * GET 주변신청글에 댓글단 아이템 리스트\r\n     */\r\n    @GET(\"care/awcList\")\r\n    fun getawcList(\r\n        @Query(\"requestCode\") requestCode: String,\r\n        @Query(\"awrn\") awrn: String,\r\n    ): Call<AwcResponse>\r\n\r\n    /**\r\n     * POST 방식으로 개수정 보내기\r\n     */\r\n    @FormUrlEncoded\r\n    @POST(\"care/dogUpdate\")\r\n    fun postDogUpdate(\r\n        @Field(\"requestCode\") requestCode: String,\r\n        @Field(\"dogAge\") dogAge: String,\r\n        @Field(\"dogCharacter\") dogCharacter: String,\r\n        @Field(\"dogEducation\") dogEducation: String,\r\n        @Field(\"dogBreed\") dogBreed: String,\r\n        @Field(\"dogGender\") dogGender: String,\r\n        @Field(\"dogImage\") dogImage: String,\r\n        @Field(\"dogName\") dogName: String,\r\n        @Field(\"dogNo\") dogNo: String,\r\n        @Field(\"memberNo\") memberNo: String\r\n    ): Call<DogListResponse>\r\n\r\n\r\n    /**\r\n     * 파일 업로드 요청 / 사용하자\r\n     */\r\n\r\n    @Multipart\r\n    @POST(\"/care/upload\")\r\n    fun uploadFile(\r\n        @Part file: MultipartBody.Part,\r\n        @Part(value=\"params\", encoding=\"UTF-8\") params: HashMap<String,String> = hashMapOf()\r\n    ): Call<FileUploadResponse>\r\n\r\n\r\n\r\n}\r\n\r\nclass BasicClient {\r\n\r\n    companion object {\r\n        const val TAG = \"BasicClient\"\r\n\r\n        private var instance : BasicApi? = null\r\n\r\n        val api: BasicApi\r\n            get() {\r\n                return getInstance()\r\n            }\r\n\r\n        @Synchronized\r\n        fun getInstance(): BasicApi {\r\n            if (instance == null)\r\n                instance = create()\r\n            return instance as BasicApi\r\n        }\r\n\r\n        // 프로토콜\r\n        private const val PROTOCOL = \"http\"\r\n\r\n        // 기본 URL\r\n        private const val BASE_URL = \"http://192.168.0.3:8001/\"\r\n\r\n        // 헤더 속성\r\n        private const val CLIENT_ID = \"\"\r\n        private const val CLIENT_SECRET = \"\"\r\n        var userId:String = \"\"\r\n\r\n        fun create(): BasicApi {\r\n            val httpLoggingInterceptor = HttpLoggingInterceptor()\r\n            httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY\r\n\r\n            val headerInterceptor = Interceptor {\r\n                val request = it.request()\r\n                    .newBuilder()\r\n                    .addHeader(\"X-Client-Id\", CLIENT_ID)\r\n                    .addHeader(\"X-Client-Secret\", CLIENT_SECRET)\r\n                    .addHeader(\"X-Client-UserId\", userId)\r\n                    .build()\r\n                return@Interceptor it.proceed(request)\r\n            }\r\n\r\n            val clientBuilder = OkHttpClient.Builder()\r\n\r\n            if (PROTOCOL == \"https\") {\r\n\r\n                val x509TrustManager: X509TrustManager = object : X509TrustManager {\r\n                    override fun getAcceptedIssuers(): Array<X509Certificate> {\r\n                        val x509Certificates = arrayOf<X509Certificate>()\r\n                        return x509Certificates\r\n                    }\r\n\r\n                    @Throws(CertificateException::class)\r\n                    override fun checkServerTrusted(chain: Array<X509Certificate>, authType: String) {\r\n                        Log.d(TAG, \": authType: $authType\")\r\n                    }\r\n\r\n                    @Throws(CertificateException::class)\r\n                    override fun checkClientTrusted(chain: Array<X509Certificate>, authType: String) {\r\n                        Log.d(TAG, \": authType: $authType\")\r\n                    }\r\n                }\r\n\r\n                try {\r\n                    val sslContext = SSLContext.getInstance(\"TLS\")\r\n                    sslContext.init(null, trustAllCerts, SecureRandom())\r\n                    val sslSocketFactory = sslContext.socketFactory\r\n                    clientBuilder.sslSocketFactory(sslSocketFactory, x509TrustManager)\r\n                } catch (e: Exception) {\r\n                    e.printStackTrace()\r\n                }\r\n\r\n                clientBuilder.hostnameVerifier(RelaxedHostNameVerifier())\r\n\r\n            }\r\n\r\n            clientBuilder.addInterceptor(headerInterceptor)\r\n            clientBuilder.addInterceptor(httpLoggingInterceptor)\r\n            clientBuilder.callTimeout(60, TimeUnit.SECONDS)       // 호출 타임아웃 시간 설정 60초\r\n            clientBuilder.connectTimeout(60, TimeUnit.SECONDS)    // 연결 타임아웃 시간 설정 60초\r\n            clientBuilder.readTimeout(60, TimeUnit.SECONDS)\r\n            clientBuilder.writeTimeout(60, TimeUnit.SECONDS)\r\n\r\n            val client = clientBuilder.build()\r\n\r\n            return Retrofit.Builder()\r\n                .baseUrl(BASE_URL)\r\n                .client(client)\r\n                .addConverterFactory(GsonConverterFactory.create())\r\n                .build()\r\n                .create(BasicApi::class.java)\r\n        }\r\n\r\n        private val trustAllCerts = arrayOf<TrustManager>(object : X509TrustManager {\r\n            override fun getAcceptedIssuers(): Array<X509Certificate> {\r\n                return arrayOf()\r\n            }\r\n\r\n            @Throws(CertificateException::class)\r\n            override fun checkClientTrusted(chain: Array<X509Certificate>, authType: String) {}\r\n\r\n            @Throws(CertificateException::class)\r\n            override fun checkServerTrusted(chain: Array<X509Certificate>, authType: String) {}\r\n        })\r\n\r\n        class RelaxedHostNameVerifier : HostnameVerifier {\r\n            override fun verify(hostname: String, session: SSLSession): Boolean {\r\n                return true\r\n            }\r\n        }\r\n\r\n        private var format = SimpleDateFormat(\"yyyyMMddHHmmssSSS\", Locale.KOREAN)\r\n        private var seqCode = 0\r\n\r\n\r\n        /**\r\n         * 요청 코드 생성\r\n         */\r\n        @Synchronized\r\n        fun generateRequestCode(): String {\r\n            seqCode += 1\r\n            if (seqCode > 999) {\r\n                seqCode = 1\r\n            }\r\n\r\n            var seqCodeStr = seqCode.toString()\r\n            if (seqCodeStr.length == 1) {\r\n                seqCodeStr = \"00$seqCodeStr\"\r\n            } else if (seqCodeStr.length == 2) {\r\n                seqCodeStr = \"0$seqCodeStr\"\r\n            }\r\n\r\n            val date = Date()\r\n            val dateStr = format.format(date)\r\n\r\n            return dateStr + seqCodeStr\r\n        }\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/api/BasicApi.kt b/app/src/main/java/com/lx/api/BasicApi.kt
+--- a/app/src/main/java/com/lx/api/BasicApi.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/api/BasicApi.kt	(date 1668731812796)
+@@ -307,7 +307,7 @@
+         private const val PROTOCOL = "http"
+ 
+         // 기본 URL
+-        private const val BASE_URL = "http://192.168.0.3:8001/"
++        private const val BASE_URL = "http://192.168.0.10:8001/"
+ 
+         // 헤더 속성
+         private const val CLIENT_ID = ""
+Index: app/src/main/java/com/lx/project5/ReviewAdapter.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.content.Context\r\nimport android.net.Uri\r\nimport android.view.LayoutInflater\r\nimport android.view.ViewGroup\r\nimport androidx.recyclerview.widget.RecyclerView\r\nimport com.bumptech.glide.Glide\r\nimport com.lx.project5.databinding.ReviewItemBinding\r\n\r\nclass ReviewAdapter : RecyclerView.Adapter<ReviewAdapter.ViewHolder>(){\r\n    //각 아이템에 보여질 데이터를 담고 있는것\r\n    var items = ArrayList<ReviewSaveData>()\r\n    var context: Context? = null\r\n\r\n    var listener: OnReviewItemClickListener? = null\r\n    //리싸이클러뷰가 아이템 개수가 몇 개인지 물어볼때\r\n    override fun getItemCount(): Int = items.size\r\n    //각 아이템의 모양이 처음 만들어 질때\r\n    override fun onCreateViewHolder(parent : ViewGroup, viewType:Int): ReviewAdapter.ViewHolder{\r\n        val binding = ReviewItemBinding.inflate(LayoutInflater.from(parent.context),parent, false)\r\n        return ViewHolder(binding)\r\n    }\r\n    //이미 만들어진 아이템의 모양에 데이터만 설정할 때\r\n    override fun onBindViewHolder(holder: ReviewAdapter.ViewHolder, position: Int){\r\n        val item = items[position]\r\n        holder.setItem(item)\r\n    }\r\n    //각 아이템의 모양을 재사용하기 위해 만들어진 것\r\n    inner class ViewHolder(val binding: ReviewItemBinding):RecyclerView.ViewHolder(binding.root){\r\n        //데이터 설정\r\n        //하나의 아이템을 위한 데이터가 전달되었을 때 화면에 어떻게 표시할 지 설정\r\n        fun setItem(item: ReviewSaveData){\r\n            //이미지 표시하기\r\n            item.saveImage?.apply{\r\n                val uri = Uri.parse(\"http://192.168.0.3:8001${this}\")\r\n                Glide.with(binding.reviewMemImageView).load(uri).into(binding.reviewMemImageView)\r\n            }\r\n\r\n            binding.reviewName.text = item.saveImage\r\n            binding.reviewTitle1.text = item.saveReviewTitle\r\n            binding.reviewContent1.text = item.saveReviewContent\r\n\r\n\r\n        }\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/ReviewAdapter.kt b/app/src/main/java/com/lx/project5/ReviewAdapter.kt
+--- a/app/src/main/java/com/lx/project5/ReviewAdapter.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/project5/ReviewAdapter.kt	(date 1668731812803)
+@@ -33,7 +33,7 @@
+         fun setItem(item: ReviewSaveData){
+             //이미지 표시하기
+             item.saveImage?.apply{
+-                val uri = Uri.parse("http://192.168.0.3:8001${this}")
++                val uri = Uri.parse("http://192.168.0.10:8001${this}")
+                 Glide.with(binding.reviewMemImageView).load(uri).into(binding.reviewMemImageView)
+             }
+ 
+Index: app/src/main/java/com/lx/project5/EditDogFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.content.Intent\r\nimport android.graphics.Bitmap\r\nimport android.net.Uri\r\nimport android.os.Bundle\r\nimport android.provider.MediaStore\r\nimport android.text.Editable\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.Toast\r\nimport androidx.activity.result.contract.ActivityResultContracts\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport com.bumptech.glide.Glide\r\nimport com.lx.api.BasicClient\r\nimport com.lx.data.DogListResponse\r\nimport com.lx.project5.databinding.FragmentEditDogBinding\r\nimport retrofit2.Call\r\nimport retrofit2.Callback\r\nimport retrofit2.Response\r\n\r\nclass EditDogFragment : Fragment() {\r\n    var _binding: FragmentEditDogBinding? = null\r\n    val binding get() = _binding!!\r\n    var bitmap: Bitmap? = null\r\n\r\n    //사진찍기 런처\r\n    val captureLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {\r\n        showToast(\"사진찍고 돌아옴\")\r\n\r\n        when(it.resultCode) {\r\n            AppCompatActivity.RESULT_OK -> {\r\n                bitmap = it.data?.extras?.get(\"data\") as Bitmap\r\n                binding.imageView30.setImageBitmap(bitmap)\r\n                val saveCapture = activity as MainActivity\r\n                saveCapture.saveFile(bitmap!!)\r\n\r\n\r\n            }\r\n            AppCompatActivity.RESULT_CANCELED -> {\r\n                showToast(\"취소함\")\r\n            }\r\n        }\r\n    }\r\n\r\n    //앨범에서 가져오기위한 런처\r\n    val albumLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {\r\n        showToast(\"앨범에서 돌아옴\")\r\n\r\n        when(it.resultCode) {\r\n            AppCompatActivity.RESULT_OK -> {\r\n                it.data?.apply {\r\n                    val imageUri = this.data\r\n                    imageUri?.let {\r\n                        val cr = requireActivity().contentResolver\r\n                        bitmap = MediaStore.Images.Media.getBitmap(cr, it)\r\n                        binding.imageView30.setImageBitmap(bitmap)\r\n                        val saveCapture = activity as MainActivity\r\n                        saveCapture.saveFile(bitmap!!)\r\n                    }\r\n                }\r\n            }\r\n            AppCompatActivity.RESULT_CANCELED -> {\r\n                showToast(\"앨범 선택 취소\")\r\n            }\r\n        }\r\n    }\r\n\r\n    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {\r\n        _binding = FragmentEditDogBinding.inflate(inflater, container, false)\r\n\r\n        initView()\r\n\r\n        binding.editButton.setOnClickListener {\r\n            editDog()\r\n        }\r\n        //앨범에서 가져오기 버튼 눌렀을 때\r\n        binding.photoButton2.setOnClickListener {\r\n            val albumIntent = Intent(Intent.ACTION_GET_CONTENT)\r\n            albumIntent.type = \"image/*\"\r\n            albumLauncher.launch(albumIntent)\r\n        }\r\n\r\n\r\n        return binding.root\r\n    }\r\n    fun editDog(){\r\n        val dogAge = binding.ageOutput2.getText().toString()\r\n        val dogCharacter = binding.characterInput2.getText().toString()\r\n        val dogEducation = binding.educationInput2.getText().toString()\r\n        val dogBreed = binding.typeOutput2.getText().toString()\r\n        val dogGender = binding.genderOutput2.getText().toString()\r\n        val dogImage = AppData.filepath\r\n        val dogName= binding.nameOutput2.getText().toString()\r\n        val dogNo = AppData.selectedItem?.dogNo.toString()\r\n        val memberNo= AppData.selectedItem?.memberNo.toString()\r\n\r\n\r\n\r\n\r\n        BasicClient.api.postDogUpdate(\r\n            requestCode = \"1001\",\r\n            dogAge = dogAge,\r\n            dogCharacter = dogCharacter,\r\n            dogEducation = dogEducation,\r\n            dogBreed = dogBreed,\r\n            dogGender = dogGender,\r\n            dogImage = dogImage!!,\r\n            dogName = dogName,\r\n            dogNo = dogNo,\r\n            memberNo = memberNo\r\n        ).enqueue(object : Callback<DogListResponse> {\r\n            override fun onResponse(call: Call<DogListResponse>, response: Response<DogListResponse>) {\r\n\r\n            }\r\n            override fun onFailure(call: Call<DogListResponse>, t: Throwable) {\r\n                (activity as MainActivity).filename = null\r\n                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmyPage)\r\n            }\r\n        })\r\n    }\r\n    fun showToast(message: String) {\r\n        Toast.makeText(activity, message, Toast.LENGTH_LONG).show()\r\n    }\r\n    fun initView(){\r\n        AppData.selectedItem?.apply{\r\n            this.dogImage?.let{\r\n                val uri = Uri.parse(\"http://192.168.0.3:8001${this.dogImage}\")\r\n                Glide.with(binding.imageView30).load(uri).into(binding.imageView30)\r\n            }\r\n            binding.nameOutput2.text = Editable.Factory.getInstance().newEditable(\"${AppData.selectedItem?.dogName}\")\r\n            binding.ageOutput2.text = Editable.Factory.getInstance().newEditable(\"${AppData.selectedItem?.dogAge}\")\r\n            binding.genderOutput2.text = Editable.Factory.getInstance().newEditable(\"${AppData.selectedItem?.dogGender}\")\r\n            binding.typeOutput2.text = Editable.Factory.getInstance().newEditable(\"${AppData.selectedItem?.dogBreed}\")\r\n            binding.educationInput2.text = Editable.Factory.getInstance().newEditable(\"${AppData.selectedItem?.dogEducation}\")\r\n            binding.characterInput2.text = Editable.Factory.getInstance().newEditable(\"${AppData.selectedItem?.dogCharacter}\")\r\n\r\n\r\n        }\r\n    }\r\n\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/EditDogFragment.kt b/app/src/main/java/com/lx/project5/EditDogFragment.kt
+--- a/app/src/main/java/com/lx/project5/EditDogFragment.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/project5/EditDogFragment.kt	(date 1668731812753)
+@@ -127,7 +127,7 @@
+     fun initView(){
+         AppData.selectedItem?.apply{
+             this.dogImage?.let{
+-                val uri = Uri.parse("http://192.168.0.3:8001${this.dogImage}")
++                val uri = Uri.parse("http://192.168.0.10:8001${this.dogImage}")
+                 Glide.with(binding.imageView30).load(uri).into(binding.imageView30)
+             }
+             binding.nameOutput2.text = Editable.Factory.getInstance().newEditable("${AppData.selectedItem?.dogName}")
+Index: app/src/main/java/com/lx/project5/Join2Fragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.lx.project5\r\n\r\nimport android.app.AlertDialog\r\nimport android.content.DialogInterface\r\nimport android.content.Intent\r\nimport android.graphics.Bitmap\r\nimport android.net.Uri\r\nimport android.os.Bundle\r\nimport android.provider.MediaStore\r\nimport androidx.fragment.app.Fragment\r\nimport android.view.LayoutInflater\r\nimport android.view.View\r\nimport android.view.ViewGroup\r\nimport android.widget.Toast\r\nimport androidx.activity.result.contract.ActivityResultContracts\r\nimport androidx.appcompat.app.AppCompatActivity\r\nimport com.bumptech.glide.Glide\r\nimport com.lx.api.BasicClient\r\nimport com.lx.data.MemberListResponse\r\nimport com.lx.project5.AppData.Companion.filepath\r\nimport com.lx.project5.databinding.FragmentJoin1Binding\r\nimport com.lx.project5.databinding.FragmentJoin2Binding\r\nimport retrofit2.Call\r\nimport retrofit2.Callback\r\nimport retrofit2.Response\r\n\r\nclass Join2Fragment : Fragment() {\r\n    var _binding: FragmentJoin2Binding? = null\r\n    val binding get() = _binding!!\r\n\r\n    var bitmap: Bitmap? = null\r\n    var saveBitmap: Bitmap? = null\r\n\r\n    //앨범에서 가져오기위한 런처\r\n    val albumLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {\r\n        toast(\"앨범에서 돌아옴\")\r\n\r\n        when(it.resultCode) {\r\n            AppCompatActivity.RESULT_OK -> {\r\n                it.data?.apply {\r\n                    val imageUri = this.data\r\n                    imageUri?.let {\r\n                        val cr = requireActivity().contentResolver\r\n                        bitmap = MediaStore.Images.Media.getBitmap(cr, it)\r\n                        saveBitmap = bitmap\r\n                        binding.profileImageView.setImageBitmap(bitmap)\r\n                        val saveCapture = activity as MainActivity\r\n                        saveCapture.saveFile(bitmap!!)\r\n                    }\r\n                }\r\n            }\r\n            AppCompatActivity.RESULT_CANCELED -> {\r\n                toast(\"앨범 선택 취소\")\r\n            }\r\n        }\r\n    }\r\n\r\n    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {\r\n        _binding = FragmentJoin2Binding.inflate(inflater, container, false)\r\n        initView()\r\n\r\n        binding.nextButton2.setOnClickListener {\r\n            checkPw()\r\n\r\n        }\r\n\r\n        binding.idCheckButton.setOnClickListener {\r\n            checkId()\r\n        }\r\n\r\n        return binding.root\r\n    }\r\n\r\n    //뷰 초기화\r\n    fun initView() {\r\n        //앨범에서 가져오기 버튼 눌렀을 때\r\n        binding.addProfileButton2.setOnClickListener {\r\n            val albumIntent = Intent(Intent.ACTION_GET_CONTENT)\r\n            albumIntent.type = \"image/*\"\r\n            albumLauncher.launch(albumIntent)\r\n        }\r\n\r\n    }\r\n\r\n    //비밀번호 확인 맞을때만 회원가입 가능하게 하기\r\n    fun checkPw() {\r\n        var registerPw = binding.registerPw.text.toString()\r\n        var pwCheck = binding.pwCheck.text.toString()\r\n\r\n        if(registerPw.equals(pwCheck)) {\r\n            postMemberAdd()\r\n        } else {\r\n            val builder = AlertDialog.Builder(activity)\r\n            builder.setTitle(\"회원가입\")\r\n            builder.setMessage(\"비밀번호를 다시 입력해주세요.\")\r\n            builder.setPositiveButton(\"확인\") { dialogInterface: DialogInterface, i: Int ->\r\n                toast(\"Positive\")\r\n            }\r\n            builder.show()\r\n        }\r\n    }\r\n\r\n    //중복체크\r\n    fun checkId() {\r\n        var registerId = binding.registerId.text.toString()\r\n\r\n        BasicClient.api.postMemberCheckId(\r\n            requestCode = \"1001\",\r\n            memberId = registerId\r\n        ).enqueue(object: Callback<MemberListResponse> {\r\n            override fun onResponse(call: Call<MemberListResponse>, response: Response<MemberListResponse>){\r\n                val checkId = response.body()?.header?.total.toString()\r\n\r\n                if(checkId == \"1\"){\r\n                    val builder = AlertDialog.Builder(activity)\r\n                    builder.setTitle(\"중복체크\")\r\n                    builder.setMessage(\"이미 있는 아이디입니다.\")\r\n                    builder.setPositiveButton(\"확인\") { dialogInterface: DialogInterface, i: Int ->\r\n                        toast(\"Positive\")\r\n                    }\r\n                    builder.show()\r\n                    binding.registerId.setText(\"\")\r\n                }\r\n                if(checkId == \"0\") {\r\n                    val builder = AlertDialog.Builder(activity)\r\n                    builder.setTitle(\"중복체크\")\r\n                    builder.setMessage(\"사용 가능한 아이디입니다.\")\r\n                    builder.setPositiveButton(\"확인\") { dialogInterface: DialogInterface, i: Int ->\r\n                        toast(\"Positive\")\r\n                    }\r\n                    builder.show()\r\n                }\r\n            }\r\n\r\n            override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {\r\n\r\n            }\r\n\r\n        })\r\n    }\r\n\r\n    //멤버리스트 추가 [파라미터]\r\n    fun postMemberAdd(){\r\n\r\n        var registerId = binding.registerId.text.toString()\r\n        var registerName = binding.registerName.text.toString()\r\n        var registerPw = binding.registerPw.text.toString()\r\n        var registerAddress = binding.registerAddress.text.toString()\r\n\r\n        BasicClient.api.postMemberAdd(\r\n            requestCode = \"1001\",\r\n            memberId = registerId,\r\n            memberPw =registerPw,\r\n            memberName =registerName,\r\n            memberAddress =registerAddress,\r\n            memberImage = AppData.filepath!!\r\n\r\n        ).enqueue(object:Callback<MemberListResponse>{\r\n            override fun onResponse(call: Call<MemberListResponse>,response: Response<MemberListResponse>){\r\n                (activity as MainActivity).showToast(\"1\")\r\n                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMlogin)\r\n            }\r\n\r\n            override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {\r\n                (activity as MainActivity).showToast(\"2\")\r\n                (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMlogin)\r\n            }\r\n\r\n        })\r\n    }\r\n\r\n    fun toast(message: String) {\r\n        Toast.makeText(activity, message, Toast.LENGTH_LONG).show()\r\n    }\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/lx/project5/Join2Fragment.kt b/app/src/main/java/com/lx/project5/Join2Fragment.kt
+--- a/app/src/main/java/com/lx/project5/Join2Fragment.kt	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/app/src/main/java/com/lx/project5/Join2Fragment.kt	(date 1668730987489)
+@@ -4,9 +4,9 @@
+ import android.content.DialogInterface
+ import android.content.Intent
+ import android.graphics.Bitmap
+-import android.net.Uri
+ import android.os.Bundle
+ import android.provider.MediaStore
++import android.util.Log
+ import androidx.fragment.app.Fragment
+ import android.view.LayoutInflater
+ import android.view.View
+@@ -14,11 +14,14 @@
+ import android.widget.Toast
+ import androidx.activity.result.contract.ActivityResultContracts
+ import androidx.appcompat.app.AppCompatActivity
+-import com.bumptech.glide.Glide
++import com.google.firebase.auth.FirebaseAuth
++import com.google.firebase.auth.ktx.auth
++import com.google.firebase.database.DatabaseReference
++import com.google.firebase.database.ktx.database
++import com.google.firebase.firestore.auth.User
++import com.google.firebase.ktx.Firebase
+ import com.lx.api.BasicClient
+ import com.lx.data.MemberListResponse
+-import com.lx.project5.AppData.Companion.filepath
+-import com.lx.project5.databinding.FragmentJoin1Binding
+ import com.lx.project5.databinding.FragmentJoin2Binding
+ import retrofit2.Call
+ import retrofit2.Callback
+@@ -31,6 +34,10 @@
+     var bitmap: Bitmap? = null
+     var saveBitmap: Bitmap? = null
+ 
++    //####
++    lateinit var mAuth: FirebaseAuth
++    private lateinit var mDbRef: DatabaseReference
++
+     //앨범에서 가져오기위한 런처
+     val albumLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+         toast("앨범에서 돌아옴")
+@@ -59,9 +66,12 @@
+         _binding = FragmentJoin2Binding.inflate(inflater, container, false)
+         initView()
+ 
++        // ##### 인증 초기화, db 초기화
++        mAuth = Firebase.auth
++        mDbRef = Firebase.database.reference
++
+         binding.nextButton2.setOnClickListener {
+             checkPw()
+-
+         }
+ 
+         binding.idCheckButton.setOnClickListener {
+@@ -146,6 +156,7 @@
+         var registerName = binding.registerName.text.toString()
+         var registerPw = binding.registerPw.text.toString()
+         var registerAddress = binding.registerAddress.text.toString()
++        Log.v("시발","${registerPw}")
+ 
+         BasicClient.api.postMemberAdd(
+             requestCode = "1001",
+@@ -157,17 +168,44 @@
+ 
+         ).enqueue(object:Callback<MemberListResponse>{
+             override fun onResponse(call: Call<MemberListResponse>,response: Response<MemberListResponse>){
++                Log.v("시발","postMemberAdd onResponse")
++                signUp(registerId,registerPw,registerName)
+                 (activity as MainActivity).showToast("1")
+                 (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMlogin)
+             }
+ 
+             override fun onFailure(call: Call<MemberListResponse>, t: Throwable) {
++                signUp(registerId,registerPw,registerName)
++                Log.v("시발","postMemberAdd onFailure")
+                 (activity as MainActivity).showToast("2")
+                 (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMlogin)
+             }
+ 
+         })
+     }
++    //### Firebase signUp회원가입
++    private fun signUp(registerId: String, registerPw: String, registerName:String) {
++        Log.v("시발", "진입")
++        mAuth.createUserWithEmailAndPassword(registerId, registerPw)
++            .addOnCompleteListener(activity as MainActivity) { task ->
++                if (task.isSuccessful) {
++                    // 성공시
++                    Log.v("시발", "@@@createUserWithEmail:success")
++                    //#### Firebase 회원가입
++                    addUserToDatabase(registerName,registerId,mAuth.currentUser?.uid!!)
++                } else {
++                    // 실패시
++                    Log.v("시발", "@@@@createUserWithEmail:failure", task.exception)
++                    Toast.makeText(activity as MainActivity, "Authentication failed.",
++                        Toast.LENGTH_SHORT).show()
++                }
++            }
++    }
++
++    //#### Firebase 회원가입
++    private fun addUserToDatabase(registerName: String, email: String, uId:String) {
++        mDbRef.child("member").child(uId).setValue(Member(registerName,email,uId))
++    }
+ 
+     fun toast(message: String) {
+         Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/drawable/bold2.xml\" value=\"0.1825\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/drawable/pink_round_button.xml\" value=\"0.1465\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/drawable/round_button.xml\" value=\"0.1465\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_local.xml\" value=\"0.4\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_main.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_splash.xml\" value=\"0.25443786982248523\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/care_item.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/dog_item.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_add_dog.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_assess.xml\" value=\"0.2\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_info.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_item.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_main.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_todolist.xml\" value=\"0.2\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_complete.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_dog_list.xml\" value=\"0.19114583333333332\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_edit_dog.xml\" value=\"0.19114583333333332\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_end.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_first.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_join1.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_join2.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_login.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_member_info_update.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_my_page.xml\" value=\"0.32083333333333336\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_pay.xml\" value=\"0.4\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_pet_info.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_reservation.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_second.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_third.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_view_pager1.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_view_pager2.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_view_pager3.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_write.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_write2.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_write_list.xml\" value=\"0.4\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_writeandlist.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/layout/write_item.xml\" value=\"0.20833333333333334\" />\r\n        <entry key=\"..\\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_assess.xml\" value=\"0.3619791666666667\" />\r\n        <entry key=\"..\\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_info.xml\" value=\"0.36614583333333334\" />\r\n        <entry key=\"..\\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_main.xml\" value=\"0.36614583333333334\" />\r\n        <entry key=\"..\\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_todolist.xml\" value=\"0.36614583333333334\" />\r\n        <entry key=\"..\\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_complete.xml\" value=\"0.3619791666666667\" />\r\n        <entry key=\"..\\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_dog_location.xml\" value=\"0.36614583333333334\" />\r\n        <entry key=\"..\\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_edit_dog.xml\" value=\"0.36614583333333334\" />\r\n        <entry key=\"..\\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_pay.xml\" value=\"0.3619791666666667\" />\r\n        <entry key=\"..\\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_reservation.xml\" value=\"0.3619791666666667\" />\r\n        <entry key=\"..\\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_write.xml\" value=\"0.36614583333333334\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_local.xml\" value=\"0.2994791666666667\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_main.xml\" value=\"0.26875\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_splash.xml\" value=\"0.26875\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/dog_item.xml\" value=\"0.5\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_add_dog.xml\" value=\"0.26875\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_assess.xml\" value=\"0.26875\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_info.xml\" value=\"0.26875\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_main.xml\" value=\"0.335\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_todolist.xml\" value=\"0.165\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_dog_info.xml\" value=\"0.20555555555555555\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_dog_list.xml\" value=\"0.1787037037037037\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_edit_dog.xml\" value=\"0.26875\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_join2.xml\" value=\"0.3509259259259259\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_member_info_update.xml\" value=\"0.22\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_my_page.xml\" value=\"0.26875\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_pet_info.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_select_dog.xml\" value=\"0.1787037037037037\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_write.xml\" value=\"0.25\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_write2.xml\" value=\"0.335\" />\r\n        <entry key=\"..\\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/write_item.xml\" value=\"0.26875\" />\r\n        <entry key=\"..\\:/Users/khm24/FinalProject/app/src/main/res/layout/activity_main.xml\" value=\"0.26875\" />\r\n        <entry key=\"..\\:/Users/khm24/FinalProject/app/src/main/res/layout/fragment_view_pager1.xml\" value=\"0.12239583333333333\" />\r\n        <entry key=\"..\\:/Users/khm24/FinalProject/app/src/main/res/layout/fragment_view_pager2.xml\" value=\"0.12239583333333333\" />\r\n        <entry key=\"..\\:/Users/khm24/FinalProject/app/src/main/res/layout/fragment_view_pager3.xml\" value=\"0.45\" />\r\n        <entry key=\"..\\:/Users/kom59/AndroidStudioProjects/Pet/app/src/main/res/layout/activity_main.xml\" value=\"0.25364583333333335\" />\r\n        <entry key=\"..\\:/Users/kom59/AndroidStudioProjects/Pet/app/src/main/res/layout/activity_splash.xml\" value=\"0.25364583333333335\" />\r\n        <entry key=\"..\\:/Users/kom59/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_main.xml\" value=\"0.25364583333333335\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/drawable-v24/ic_launcher_foreground.xml\" value=\"0.1035\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/drawable/bold.xml\" value=\"0.1035\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/drawable/bold1.xml\" value=\"0.1035\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/drawable/bold3.xml\" value=\"0.1835\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/drawable/ic_launcher_background.xml\" value=\"0.1035\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/drawable/pinkbutton.xml\" value=\"0.1835\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/activity_main.xml\" value=\"0.4\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/activity_splash.xml\" value=\"0.176\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/fragment_first.xml\" value=\"0.24947916666666667\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/fragment_info.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/fragment_my_page.xml\" value=\"0.2\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/fragment_question.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/fragment_review.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/fragment_view_pager1.xml\" value=\"0.264\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/fragment_view_pager11.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/fragment_view_pager12.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/fragment_view_pager2.xml\" value=\"0.24947916666666667\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/fragment_view_pager3.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/layout/review_item.xml\" value=\"0.1\" />\r\n        <entry key=\"..\\:/Users/zxxz0/AndroidStudioProjects/Pet/app/src/main/res/menu/menu_tab.xml\" value=\"0.24947916666666667\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"Android Studio default JDK\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n  <component name=\"SvnBranchConfigurationManager\">\r\n    <option name=\"myConfigurationMap\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\">\r\n          <value>\r\n            <SvnBranchConfiguration>\r\n              <option name=\"trunkUrl\" value=\"https://14.55.65.162/svn/myweb/Pet\" />\r\n            </SvnBranchConfiguration>\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision 37606ac595fff53c5fa8f64a56684f7781768589)
++++ b/.idea/misc.xml	(date 1668736676955)
+@@ -3,6 +3,14 @@
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+       <map>
++        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/Pet2/app/src/main/res/layout/activity_chat.xml" value="0.20555555555555555" />
++        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/Pet2/app/src/main/res/layout/chat_receive.xml" value="0.2526041666666667" />
++        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/Pet2/app/src/main/res/layout/chat_send.xml" value="0.2526041666666667" />
++        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/Pet2/app/src/main/res/layout/fragment_assess.xml" value="0.12864583333333332" />
++        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/Pet2/app/src/main/res/layout/fragment_chat_list.xml" value="0.2526041666666667" />
++        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/Pet2/app/src/main/res/layout/fragment_join2.xml" value="0.264" />
++        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/Pet2/app/src/main/res/layout/fragment_write2.xml" value="0.264" />
++        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/Pet2/app/src/main/res/layout/member_layout.xml" value="0.2515625" />
+         <entry key="..\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/drawable/bold2.xml" value="0.1825" />
+         <entry key="..\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/drawable/pink_round_button.xml" value="0.1465" />
+         <entry key="..\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/drawable/round_button.xml" value="0.1465" />
+@@ -50,12 +58,10 @@
+         <entry key="..\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_pay.xml" value="0.3619791666666667" />
+         <entry key="..\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_reservation.xml" value="0.3619791666666667" />
+         <entry key="..\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_write.xml" value="0.36614583333333334" />
+-        <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_local.xml" value="0.2994791666666667" />
+         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_main.xml" value="0.26875" />
+         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_splash.xml" value="0.26875" />
+         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/dog_item.xml" value="0.5" />
+         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_add_dog.xml" value="0.26875" />
+-        <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_assess.xml" value="0.26875" />
+         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_info.xml" value="0.26875" />
+         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_main.xml" value="0.335" />
+         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_care_todolist.xml" value="0.165" />
+@@ -69,7 +75,6 @@
+         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_select_dog.xml" value="0.1787037037037037" />
+         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_write.xml" value="0.25" />
+         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_write2.xml" value="0.335" />
+-        <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/write_item.xml" value="0.26875" />
+         <entry key="..\:/Users/khm24/FinalProject/app/src/main/res/layout/activity_main.xml" value="0.26875" />
+         <entry key="..\:/Users/khm24/FinalProject/app/src/main/res/layout/fragment_view_pager1.xml" value="0.12239583333333333" />
+         <entry key="..\:/Users/khm24/FinalProject/app/src/main/res/layout/fragment_view_pager2.xml" value="0.12239583333333333" />

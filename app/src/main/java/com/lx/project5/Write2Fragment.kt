@@ -84,19 +84,19 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
         binding.locationView.text = "${Write2SaveData.savelat.toString()}, ${Write2SaveData.savelng.toString()}"
         binding.editTextTime3.text = "${Write2SaveData.savestartTime} 시"
         binding.editTextTime4.text = "${Write2SaveData.saveendTime} 시"
-        binding.editTextTextPersonName2.setText(Write2SaveData.saveassignTitle)
+        binding.editTextTextPersonName.setText(Write2SaveData.saveassignTitle)
         binding.detail1.setText(Write2SaveData.saveassignContent)
     }
     fun writeSave(){
         Write2SaveData.savedogName = binding.myDog.text.toString()
-        Write2SaveData.saveassignTitle = binding.editTextTextPersonName2.text.toString()
+        Write2SaveData.saveassignTitle = binding.editTextTextPersonName.text.toString()
         Write2SaveData.saveassignContent = binding.detail1.text.toString()
     }
 
     fun awrAdd() {
         val lat = Write2SaveData.savelat.toString()
         val lng = Write2SaveData.savelng.toString()
-        val assignTitle = binding.editTextTextPersonName2.text.toString()
+        val assignTitle = binding.editTextTextPersonName.text.toString()
         val assignContent = binding.detail1.text.toString()
 
         BasicClient.api.awrAdd(
@@ -114,14 +114,10 @@ class Write2Fragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePicker
         ).enqueue(object : Callback<AwrListResponse> {
             override fun onResponse(call: Call<AwrListResponse>, response: Response<AwrListResponse>) {
                 (activity as MainActivity).showToast("1")
-
-
             }
             override fun onFailure(call: Call<AwrListResponse>, t: Throwable) {
                 (activity as MainActivity).showToast("2")
-
             }
-
         })
 
     }
