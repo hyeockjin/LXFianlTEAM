@@ -48,7 +48,7 @@ class WriteAndListFragment : Fragment() {
                 AppData.dogInfo?.dogName = response.body()?.data?.get(0)?.dogName
                 AppData.dogInfo?.apply{
                     this.dogImage?.let{
-                        val uri = Uri.parse("http://192.168.0.12:8001${dogImage}")
+                        val uri = Uri.parse("http://172.168.10.3:8001${dogImage}")
                         Glide.with(binding.awrdImage).load(uri).into(binding.awrdImage)
                     }
                     binding.awrdDog.text = AppData.dogInfo?.dogName

@@ -82,7 +82,7 @@ class AssessFragment : Fragment() {
     fun setView(){
         AppData?.memberdata.apply{
             this?.memberImage?.let {
-                val uri = Uri.parse("http://192.168.0.12:8001${memberImage}")
+                val uri = Uri.parse("http://172.168.10.3:8001${memberImage}")
                 Glide.with(binding.personProfile).load(uri).into(binding.personProfile)
             }
             binding.personName.setText(AppData.loginData?.memberName)

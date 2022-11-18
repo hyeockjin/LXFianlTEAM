@@ -25,8 +25,6 @@ class CareInfoFragment : Fragment() {
         _binding = FragmentCareInfoBinding.inflate(inflater, container, false)
 
         initView1()
-
-
         initList()
         reviewView()
 
@@ -44,7 +42,7 @@ class CareInfoFragment : Fragment() {
     fun initView1(){
         AppData.selectedCardItem.apply{
             this?.careImage.let{
-                val uri = Uri.parse("http://192.168.0.12:8001${this?.careImage}")
+                val uri = Uri.parse("http://172.168.10.3:8001${this?.careImage}")
                 Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
             }
             binding.textView7.text = "${AppData.selectedCardItem?.careName}"
