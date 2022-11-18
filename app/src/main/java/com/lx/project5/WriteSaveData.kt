@@ -11,5 +11,6 @@ class WriteSaveData {
         var savedogName: String? = null
         var savedogNo: String?= null
         var savecareNo: String?= null
+        var savecareImage: String?= null
     }
 }

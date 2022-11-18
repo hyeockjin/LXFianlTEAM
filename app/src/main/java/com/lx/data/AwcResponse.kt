@@ -18,9 +18,13 @@ data class AwcResponse(
         val awcn: Int,
         @SerializedName("awrn")
         val awrn: Int,
+        @SerializedName("careImage")
+        val careImage: String,
+        @SerializedName("careName")
+        val careName: String,
         @SerializedName("careNo")
         val careNo: Int,
-        @SerializedName("coment")
+        @SerializedName("comment")
         val comment: String
     )
 

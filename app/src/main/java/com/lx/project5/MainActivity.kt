@@ -72,7 +72,8 @@ class MainActivity : AppCompatActivity() {
         ITEMdogList,
         ITEMwrite2,
         ITEMwriteSelect,
-        ITEMwriteand
+        ITEMwriteand,
+        ITEMcommentCareInfo
     }
 
 
@@ -263,6 +264,9 @@ class MainActivity : AppCompatActivity() {
             ScreenItem.ITEMwriteand -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, WriteAndListFragment()).commit()
             }
+            ScreenItem.ITEMcommentCareInfo -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, CommentCareInfoFragment()).commit()
+            }
 
         }
 
@@ -322,7 +326,7 @@ class MainActivity : AppCompatActivity() {
             requestCode = "1001"
         ).enqueue(object : Callback<CareListResponse> {
             override fun onResponse(call: Call<CareListResponse>, response: Response<CareListResponse>) {
-                Log.v("lastkingdom","근처 마커 활성화 요청 성공")
+                Log.v("lastkingdom1","${response.body()?.data}")
                 val jsonArray = JSONArray(response.body()?.data)
                 for (i in 0 until jsonArray.length()) {
                     Log.v("lastkingdom","근처 마커 for문 진입")
@@ -344,11 +348,24 @@ class MainActivity : AppCompatActivity() {
 
                     // 마커클릭
                     map.setOnMarkerClickListener {
+                        Log.v("갤럭시1", "${response.body()?.data?.get(i)}")
+                        AppData.selectedCardItem = CardData()
 
                         binding.className.text = response.body()?.data?.get(i)?.careName.toString()
                         binding.classAddress.text = response.body()?.data?.get(i)?.careAddress.toString()
                         binding.classSelf.text = response.body()?.data?.get(i)?.careExperience.toString()
                         WriteSaveData.savecareNo = response.body()?.data?.get(i)?.careNo.toString()
+                        AppData.selectedCardItem?.careAddress = response.body()?.data?.get(i)?.careAddress.toString()
+                        AppData.selectedCardItem?.careApproval = response.body()?.data?.get(i)?.careApproval
+                        AppData.selectedCardItem?.careEducation = response.body()?.data?.get(i)?.careEducation.toString()
+                        AppData.selectedCardItem?.careExperience = response.body()?.data?.get(i)?.careExperience.toString()
+                        AppData.selectedCardItem?.careId = response.body()?.data?.get(i)?.careId.toString()
+                        AppData.selectedCardItem?.careImage = response.body()?.data?.get(i)?.careImage.toString()
+                        AppData.selectedCardItem?.careName = response.body()?.data?.get(i)?.careName.toString()
+                        AppData.selectedCardItem?.careNo = response.body()?.data?.get(i)?.careNo.toString()
+                        AppData.selectedCardItem?.carePw = response.body()?.data?.get(i)?.carePw.toString()
+                        Log.v("갤럭시", "${AppData.selectedCardItem}")
+
                         binding.cardView.visibility = View.VISIBLE
 
                         true

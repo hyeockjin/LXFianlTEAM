@@ -16,6 +16,9 @@ class AppData {
         var careData: CareData? = null
         var reviewSaveData: ReviewSaveData? = null
         var dogInfo: DogData? = null
+        var selectedCommentItem: AwcData? = null
+        var selectedCardItem: CardData? = null
+        var goIndex: Int? = null
     }
     //유진바보
 }
