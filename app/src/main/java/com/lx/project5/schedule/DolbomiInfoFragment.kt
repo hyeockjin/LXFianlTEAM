@@ -10,7 +10,7 @@ import com.lx.project5.databinding.FragmentFirstBinding
 import com.lx.project5.databinding.FragmentPetSitterInfoBinding
 
 
-class PetSitterInfoFragment : Fragment() {
+class DolbomiInfoFragment : Fragment() {
     var _binding: FragmentPetSitterInfoBinding? = null
     val binding get() = _binding!!
 

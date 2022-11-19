@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.lx.project5.MainActivity
 import com.lx.project5.databinding.FragmentDbScheduleBinding
 import com.lx.project5.databinding.FragmentFirstBinding
 import com.lx.project5.databinding.FragmentMkScheduleBinding
@@ -18,7 +19,7 @@ class DBScheduleFragment : Fragment() {
         _binding = FragmentDbScheduleBinding.inflate(inflater, container, false)
 
         binding.dbSchduleToDolbomIngButton1.setOnClickListener {
-
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolboming)
         }
 
 
