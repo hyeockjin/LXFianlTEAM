@@ -88,6 +88,7 @@ class MainActivity : AppCompatActivity() {
             onFragmentChanged(ScreenItem.ITEM1)
         }
 
+
         //하단 탭의 버튼을 눌렀을때
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId) {
