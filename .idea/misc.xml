@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/activity_main.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_join1.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_join2.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_login.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/drawable/bold2.xml" value="0.1825" />
         <entry key="..\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/drawable/pink_round_button.xml" value="0.1465" />
         <entry key="..\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/drawable/round_button.xml" value="0.1465" />
@@ -55,10 +59,6 @@
         <entry key="..\:/Users/khm24/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/chat_receive.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/chat_send.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_chat_list.xml" value="0.26875" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_join1.xml" value="0.26875" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_join2.xml" value="0.26875" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_login.xml" value="0.26875" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/member_layout.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_main.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_splash.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/dog_item.xml" value="0.5" />
