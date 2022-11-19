@@ -30,6 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
             android:text="해주세요" />
 
         <Button
@@ -37,6 +39,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="#FBECEC"
+            android:backgroundTint="#FBECEC"
             android:text="해줄게요" />
     </LinearLayout>
 
