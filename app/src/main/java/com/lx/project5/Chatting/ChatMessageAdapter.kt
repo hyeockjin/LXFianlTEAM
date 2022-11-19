@@ -1,4 +1,4 @@
-package com.lx.project5
+package com.lx.project5.Chatting
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
-import org.w3c.dom.Text
+import com.lx.project5.AppData.MessageData
+import com.lx.project5.R
 
-class ChatMessageAdapter(private val context: Context, private val messageList:ArrayList<Message>):
+class
+ChatMessageAdapter(private val context: Context, private val messageDataList:ArrayList<MessageData>):
     // 보내는 쪽과 받는 쪽2개의 리사이클 뷰를 전달 받기 위해 RecyclerView로 정의
     RecyclerView.Adapter<RecyclerView.ViewHolder>(){
 
@@ -37,7 +39,7 @@ class ChatMessageAdapter(private val context: Context, private val messageList:A
     }
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         // 현재 메시지
-        val currentMessage = messageList[position]
+        val currentMessage = messageDataList[position]
 
         // 보내는  데이터
         if(holder.javaClass == SendViewHolder::class.java){
@@ -50,7 +52,7 @@ class ChatMessageAdapter(private val context: Context, private val messageList:A
     }
     override fun getItemViewType(position: Int): Int {
         // 메시지 값
-        val currentMessage = messageList[position]
+        val currentMessage = messageDataList[position]
 
         return if(FirebaseAuth.getInstance().currentUser?.uid.equals(currentMessage.sendId)){
              send
@@ -60,6 +62,6 @@ class ChatMessageAdapter(private val context: Context, private val messageList:A
     }
 
     override fun getItemCount(): Int {
-        return messageList.size
+        return messageDataList.size
     }
 }

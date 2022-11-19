@@ -1,10 +1,11 @@
-package com.lx.project5
+package com.lx.project5.Chatting
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.lx.project5.AppData.MessageData
 import com.lx.project5.databinding.ActivityChatBinding
 
 class ChatActivity : AppCompatActivity() {
@@ -24,7 +25,7 @@ class ChatActivity : AppCompatActivity() {
     private lateinit var senderRoom:String
 
     // 메세지 타입의 데이터가 들어가는 메시지 목록List
-    private lateinit var messageList: ArrayList<Message>
+    private lateinit var messageDataList: ArrayList<MessageData>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +35,8 @@ class ChatActivity : AppCompatActivity() {
         //Firebase 인증,db ,메시지 목록 초기화
         mAuth = FirebaseAuth.getInstance()
         mDbRef = FirebaseDatabase.getInstance().reference
-        messageList = ArrayList()
-        val messageAdapter:ChatMessageAdapter = ChatMessageAdapter(this,messageList)
+        messageDataList = ArrayList()
+        val messageAdapter: ChatMessageAdapter = ChatMessageAdapter(this,messageDataList)
 
         //  채팅 RecyclerView 적용
         binding.chatRecyclerView.layoutManager = LinearLayoutManager(this)
@@ -59,14 +60,14 @@ class ChatActivity : AppCompatActivity() {
         binding.sendButton.setOnClickListener{
 
             val message = binding.messageEdit.text.toString()
-            val messageObject = Message(message,senderUid)
+            val messageDataObject = MessageData(message,senderUid)
 
             // 데이터 저장 // 보낸쪽 채팅방과 받는쪽 채팅방 동시에 저장하게 하는 것
             mDbRef.child("chats").child(senderRoom).child("messages").push()
-                .setValue(messageObject).addOnSuccessListener {
+                .setValue(messageDataObject).addOnSuccessListener {
                     //저장성공하면
                     mDbRef.child("chat").child(receiverRoom).child("messages").push()
-                        .setValue(messageObject)
+                        .setValue(messageDataObject)
                 }
             // 메시지를 전송하고 입력부분을 초기화하는 부분
             binding.messageEdit.setText("")
@@ -76,10 +77,10 @@ class ChatActivity : AppCompatActivity() {
         mDbRef.child("chats").child(senderRoom).child("messages")
             .addValueEventListener(object:ValueEventListener{
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    messageList.clear()
+                    messageDataList.clear()
                     for (postSnapshot in snapshot.children){
-                        val message = postSnapshot.getValue(Message::class.java)
-                        messageList.add(message!!)
+                        val messageData = postSnapshot.getValue(MessageData::class.java)
+                        messageDataList.add(messageData!!)
                     }
 
                     // 적용하는 부분

@@ -1,4 +1,4 @@
-package com.lx.project5
+package com.lx.project5.Chatting
 
 import android.os.Bundle
 import android.util.Log
@@ -15,6 +15,8 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
+import com.lx.project5.MainActivity
+import com.lx.project5.AppData.ChatData
 import com.lx.project5.databinding.FragmentChatListBinding
 // 채팅방 리스트 Firebase
 class ChatListFragment : Fragment() {
@@ -26,7 +28,7 @@ class ChatListFragment : Fragment() {
     lateinit var mAuth:FirebaseAuth
     lateinit var mDbRef:DatabaseReference
 
-    lateinit var memberList:ArrayList<Member>
+    lateinit var chatDataList:ArrayList<ChatData>
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentChatListBinding.inflate(inflater, container, false)
@@ -36,10 +38,10 @@ class ChatListFragment : Fragment() {
         //### firebase 인증 초기화, db 초기화, 리스트 초기화
         mAuth = Firebase.auth
         mDbRef = Firebase.database.reference
-        memberList = ArrayList()
+        chatDataList = ArrayList()
 
         //#### 어뎁터 생성자에 Context와 memberList 리스트 전달, 채팅방 리스트에 데이터 전달용
-        adapter = MemberAdapter(activity as MainActivity, memberList)
+        adapter = MemberAdapter(activity as MainActivity, chatDataList)
 
         // #### RealDatabase에서 사용자 정보가져오기
         mDbRef.child("member").addValueEventListener(object:ValueEventListener{
@@ -47,11 +49,11 @@ class ChatListFragment : Fragment() {
                 // snapshot에 있는 데이터를 변수에 할당
                 for(postSnapshot in snapshot.children){
                     //유저정보 / 데이터 클래스에 있는 사용자 정보 constructor
-                    val currentUser = postSnapshot.getValue(Member::class.java)
+                    val currentUser = postSnapshot.getValue(ChatData::class.java)
 
                     // 로그인한 아이디와 db에 등록된 uid가 다를때만 내정보는 안나오고 나를 제외한 채팅방리스트가 나오게
                     if(mAuth.currentUser?.uid != currentUser?.uId ){
-                        memberList.add(currentUser!!)
+                        chatDataList.add(currentUser!!)
                     }
                 }
                 // 변경한 데이터가 화면에 적용이 되도록

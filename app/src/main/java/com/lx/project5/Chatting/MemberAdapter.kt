@@ -1,4 +1,4 @@
-package com.lx.project5
+package com.lx.project5.Chatting
 
 import android.content.Context
 import android.content.Intent
@@ -7,9 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.lx.project5.AppData.ChatData
+import com.lx.project5.R
 
 // 채팅창 채팅 목록 Firebase
-class MemberAdapter(private val context: Context, val memberList:ArrayList<Member>): RecyclerView.Adapter<MemberAdapter.MemberViewHolder>(){
+class MemberAdapter(private val context: Context, val chatDataList:ArrayList<ChatData>): RecyclerView.Adapter<MemberAdapter.MemberViewHolder>(){
 
     /**
      * 화면 설정
@@ -25,12 +27,12 @@ class MemberAdapter(private val context: Context, val memberList:ArrayList<Membe
      */
     override fun onBindViewHolder(holder: MemberViewHolder, position: Int) {
         // 데이터 담기, 화면에 데이터 보여주기
-        val currentMember = memberList[position]
+        val currentMember = chatDataList[position]
         holder.nameText.text = currentMember.name
 
         holder.itemView.setOnClickListener{
 
-            val intent = Intent(context,ChatActivity::class.java)
+            val intent = Intent(context, ChatActivity::class.java)
 
             // 채팅액티비티로 넘길 데이터담기
             intent.putExtra("name",currentMember.name)
@@ -41,7 +43,7 @@ class MemberAdapter(private val context: Context, val memberList:ArrayList<Membe
     }
 
     override fun getItemCount(): Int {
-        return memberList.size
+        return chatDataList.size
     }
 
     class MemberViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){

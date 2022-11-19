@@ -1,9 +1,7 @@
 package com.lx.project5
 
 import android.Manifest
-import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
 import android.graphics.Bitmap
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +21,11 @@ import com.google.android.gms.maps.model.*
 import com.lx.api.BasicClient
 import com.lx.data.CareListResponse
 import com.lx.data.FileUploadResponse
+import com.lx.project5.AppData.AppData
+import com.lx.project5.Chatting.ChatListFragment
+import com.lx.project5.MyPage.Join1Fragment
+import com.lx.project5.MyPage.Join2Fragment
+import com.lx.project5.MyPage.LoginFragment
 import com.lx.project5.databinding.ActivityMainBinding
 import com.permissionx.guolindev.PermissionX
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -49,7 +52,10 @@ class MainActivity : AppCompatActivity() {
 
     enum class ScreenItem {
         ITEM1,
-        ITEMchat
+        ITEMchat,
+        ITEMjoin1,
+        ITEMjoin2,
+        ITEMlogin
     }
 
 
@@ -154,6 +160,15 @@ class MainActivity : AppCompatActivity() {
             }
             MainActivity.ScreenItem.ITEMchat -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, ChatListFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMjoin1 -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, Join1Fragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMjoin2 -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, Join2Fragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMlogin -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
             }
         }
 

@@ -1,6 +1,6 @@
-package com.lx.project5
+package com.lx.project5.AppData
 
-data class Message(
+data class MessageData(
     var message: String?,
     var sendId: String?
 ){

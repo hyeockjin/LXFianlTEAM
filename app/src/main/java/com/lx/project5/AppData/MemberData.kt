@@ -1,4 +1,4 @@
-package com.lx.project5
+package com.lx.project5.AppData
 
 class MemberData {
     var memberId:String? = null
