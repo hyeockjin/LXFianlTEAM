@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
             onFragmentChanged(ScreenItem.ITEM1)
         }
         // 주변에 돌봄요청 버튼 눌렀을 때
-        binding.writeButton2.setOnClickListener {
+        binding.mainWriteButton.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEM1)
         }
 
@@ -246,9 +246,9 @@ class MainActivity : AppCompatActivity() {
                     // 마커클릭
                     map.setOnMarkerClickListener {
 
-                        binding.className.text = response.body()?.data?.get(i)?.careName.toString()
-                        binding.classAddress.text = response.body()?.data?.get(i)?.careAddress.toString()
-                        binding.classSelf.text = response.body()?.data?.get(i)?.careExperience.toString()
+//                        binding.className.text = response.body()?.data?.get(i)?.careName.toString()
+//                        binding.classAddress.text = response.body()?.data?.get(i)?.careAddress.toString()
+//                        binding.classSelf.text = response.body()?.data?.get(i)?.careExperience.toString()
                         binding.cardView.visibility = View.VISIBLE
 
                         true
