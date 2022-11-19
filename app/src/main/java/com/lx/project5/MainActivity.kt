@@ -29,6 +29,10 @@ import com.lx.project5.mypage.Join1Fragment
 import com.lx.project5.mypage.Join2Fragment
 import com.lx.project5.mypage.LoginFragment
 import com.lx.project5.databinding.ActivityMainBinding
+import com.lx.project5.schedule.DBScheduleFragment
+import com.lx.project5.schedule.DolbomiInfoFragment
+import com.lx.project5.schedule.MKScheduleFragment
+import com.lx.project5.schedule.MatkimiInfoFragment
 import com.permissionx.guolindev.PermissionX
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -52,12 +56,21 @@ class MainActivity : AppCompatActivity() {
 
     var myMarker: Marker? = null
 
+
+
     enum class ScreenItem {
         ITEM1,
         ITEMchat,
         ITEMjoin1,
         ITEMjoin2,
-        ITEMlogin
+        ITEMlogin,
+        // 하단 내비 두번째 버튼눌렀을때 돌봄맡김 스케쥴 버튼
+        ITEMdbschedule,
+        ITEMmkschedule,
+        // 돌봄 맡김 스케쥴에서 돌봄 맡김 중 화면
+        ITEMdolboming,
+        ITEMmatkiming
+
     }
 
 
@@ -67,6 +80,10 @@ class MainActivity : AppCompatActivity() {
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+
+        // 맡김 돌봄 구분자 미리 넣어 놓기 / 1일때 맡김이모드
+        AppData.navIndex = 1
+
 
         if(currentFocus is EditText) {
             currentFocus!!.clearFocus()
@@ -87,6 +104,8 @@ class MainActivity : AppCompatActivity() {
         binding.mainWriteButton.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEM1)
         }
+        // 위에 맡김 돌봄 인덱스 전환할때 버튼모음
+        changModeMKDB()
 
 
         //하단 탭의 버튼을 눌렀을때
@@ -96,6 +115,13 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM1)
                 }
                 R.id.tab2 -> {
+                    if (AppData.navIndex == 1){
+                        onFragmentChanged(ScreenItem.ITEMmkschedule)
+                    } else if (AppData.navIndex == 2){
+                        onFragmentChanged(ScreenItem.ITEMdbschedule)
+                    } else{
+                        showToast("AppData.navIndex 잘못 설정했나?")
+                    }
                     onFragmentChanged(ScreenItem.ITEM1)
                 }
                 R.id.tab3 -> {
@@ -172,6 +198,18 @@ class MainActivity : AppCompatActivity() {
             }
             MainActivity.ScreenItem.ITEMlogin -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMdbschedule -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, DBScheduleFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMmkschedule -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, MKScheduleFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMdolboming -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, DolbomiInfoFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMmatkiming -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, MatkimiInfoFragment()).commit()
             }
         }
 
@@ -328,5 +366,15 @@ class MainActivity : AppCompatActivity() {
         val now =  System.currentTimeMillis()
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREAN).format(now)
         return simpleDateFormat
+    }
+
+    // 상단 맡김돌봄 전환
+    fun changModeMKDB(){
+        binding.mainMKButton.setOnClickListener {
+            AppData.navIndex = 1
+        }
+        binding.mainDBButton.setOnClickListener {
+            AppData.navIndex = 2
+        }
     }
 }
