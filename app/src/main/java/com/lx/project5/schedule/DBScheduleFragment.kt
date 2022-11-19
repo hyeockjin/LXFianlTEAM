@@ -22,9 +22,6 @@ class DBScheduleFragment : Fragment() {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolboming)
         }
 
-
-
-
         return binding.root
     }
 

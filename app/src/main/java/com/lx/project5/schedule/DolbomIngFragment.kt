@@ -32,7 +32,6 @@ class DolbomIngFragment : Fragment() {
         binding.finishWalkButton.setOnClickListener {
 
         }
-
         return binding.root
     }
 
