@@ -16,7 +16,7 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.lx.project5.MainActivity
-import com.lx.project5.appData.ChatData
+import com.lx.project5.appdata.ChatData
 import com.lx.project5.databinding.FragmentChatListBinding
 // 채팅방 리스트 Firebase
 class ChatListFragment : Fragment() {

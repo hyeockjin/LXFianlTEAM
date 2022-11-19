@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
-import com.lx.project5.appData.MessageData
+import com.lx.project5.appdata.MessageData
 import com.lx.project5.R
 
 class

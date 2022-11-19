@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.lx.project5.appData.ChatData
+import com.lx.project5.appdata.ChatData
 import com.lx.project5.R
 
 // 채팅창 채팅 목록 Firebase

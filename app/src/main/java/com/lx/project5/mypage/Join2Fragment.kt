@@ -1,4 +1,4 @@
-package com.lx.project5.myPage
+package com.lx.project5.mypage
 
 import android.app.AlertDialog
 import android.content.DialogInterface
@@ -21,8 +21,8 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.lx.api.BasicClient
 import com.lx.data.MemberListResponse
-import com.lx.project5.appData.AppData
-import com.lx.project5.appData.ChatData
+import com.lx.project5.appdata.AppData
+import com.lx.project5.appdata.ChatData
 import com.lx.project5.MainActivity
 import com.lx.project5.databinding.FragmentJoin2Binding
 import retrofit2.Call

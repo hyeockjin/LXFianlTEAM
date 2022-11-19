@@ -1,4 +1,4 @@
-package com.lx.project5.myPage
+package com.lx.project5.mypage
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

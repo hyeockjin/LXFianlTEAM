@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:background="#FFFFFF"
     android:clickable="true"
-    tools:context=".myPage.LoginFragment">
+    tools:context=".mypage.LoginFragment">
 
 
     <FrameLayout

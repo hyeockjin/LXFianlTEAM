@@ -1,4 +1,4 @@
-package com.lx.project5.appData
+package com.lx.project5.appdata
 
 data class MessageData(
     var message: String?,
