@@ -21,11 +21,11 @@ import com.google.android.gms.maps.model.*
 import com.lx.api.BasicClient
 import com.lx.data.CareListResponse
 import com.lx.data.FileUploadResponse
-import com.lx.project5.AppData.AppData
-import com.lx.project5.Chatting.ChatListFragment
-import com.lx.project5.MyPage.Join1Fragment
-import com.lx.project5.MyPage.Join2Fragment
-import com.lx.project5.MyPage.LoginFragment
+import com.lx.project5.appData.AppData
+import com.lx.project5.chatting.ChatListFragment
+import com.lx.project5.myPage.Join1Fragment
+import com.lx.project5.myPage.Join2Fragment
+import com.lx.project5.myPage.LoginFragment
 import com.lx.project5.databinding.ActivityMainBinding
 import com.permissionx.guolindev.PermissionX
 import okhttp3.MediaType.Companion.toMediaTypeOrNull

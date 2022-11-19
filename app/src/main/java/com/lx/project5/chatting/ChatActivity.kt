@@ -1,11 +1,11 @@
-package com.lx.project5.Chatting
+package com.lx.project5.chatting
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.lx.project5.AppData.MessageData
+import com.lx.project5.appData.MessageData
 import com.lx.project5.databinding.ActivityChatBinding
 
 class ChatActivity : AppCompatActivity() {

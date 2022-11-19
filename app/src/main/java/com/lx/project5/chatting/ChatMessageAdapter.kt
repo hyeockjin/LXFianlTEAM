@@ -1,4 +1,4 @@
-package com.lx.project5.Chatting
+package com.lx.project5.chatting
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
-import com.lx.project5.AppData.MessageData
+import com.lx.project5.appData.MessageData
 import com.lx.project5.R
 
 class

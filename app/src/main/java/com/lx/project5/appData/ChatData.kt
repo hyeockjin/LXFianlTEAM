@@ -1,4 +1,4 @@
-package com.lx.project5.AppData
+package com.lx.project5.appData
 
 //##### Firebase 채팅 기능 구현 test 파일
 data class ChatData(

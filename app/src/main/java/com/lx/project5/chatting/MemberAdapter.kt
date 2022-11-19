@@ -1,4 +1,4 @@
-package com.lx.project5.Chatting
+package com.lx.project5.chatting
 
 import android.content.Context
 import android.content.Intent
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.lx.project5.AppData.ChatData
+import com.lx.project5.appData.ChatData
 import com.lx.project5.R
 
 // 채팅창 채팅 목록 Firebase
