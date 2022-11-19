@@ -49,30 +49,6 @@ class MainActivity : AppCompatActivity() {
 
     enum class ScreenItem {
         ITEM1,
-        ITEM2,
-        ITEM3,
-        ITEMmyPage,
-        ITEMcareInfo,
-        ITEMaddDog,
-        ITEMassess,
-        ITEMcareMain,
-        ITEMcareTodolist,
-        ITEMcomplete,
-        ITEMeditDog,
-        ITEMjoin1,
-        ITEMjoin2,
-        ITEMlogin,
-        ITEMupdate,
-        ITEMpetInfo,
-        ITEMpay,
-        ITEMreservation,
-        ITEMwrite,
-        ITEMwriteList,
-        ITEMend,
-        ITEMdogList,
-        ITEMwrite2,
-        ITEMwriteSelect,
-        ITEMwriteand,
         ITEMchat
     }
 
@@ -97,11 +73,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.cardView.setOnClickListener{
-            onFragmentChanged(ScreenItem.ITEMcareInfo)
+            onFragmentChanged(ScreenItem.ITEM1)
         }
         // 주변에 돌봄요청 버튼 눌렀을 때
         binding.writeButton2.setOnClickListener {
-            onFragmentChanged(ScreenItem.ITEMwrite2)
+            onFragmentChanged(ScreenItem.ITEM1)
         }
 
         //하단 탭의 버튼을 눌렀을때
@@ -111,17 +87,14 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM1)
                 }
                 R.id.tab2 -> {
-                    onFragmentChanged(ScreenItem.ITEM3)
+                    onFragmentChanged(ScreenItem.ITEM1)
                 }
                 R.id.tab3 -> {
                     onFragmentChanged(ScreenItem.ITEMchat)
                 }
                 R.id.tab4 -> {
-                    if(AppData.loginData?.memberId == null){
-                        onFragmentChanged(ScreenItem.ITEMlogin)
-                    }else if (AppData.loginData?.memberId != null){
-                        onFragmentChanged(ScreenItem.ITEMmyPage)
-                    }
+                    onFragmentChanged(ScreenItem.ITEM1)
+
 
                 }
             }
@@ -174,86 +147,12 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    fun onFragmentChanged(index:ScreenItem) {
+    fun onFragmentChanged(index: MainActivity.ScreenItem) {
         when(index) {
-            ScreenItem.ITEM1 -> {
+            MainActivity.ScreenItem.ITEM1 -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, FirstFragment()).commit()
             }
-            ScreenItem.ITEM2 -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, SecondFragment()).commit()
-            }
-            ScreenItem.ITEM3 -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, CareMainFragment()).commit()
-            }
-            ScreenItem.ITEMmyPage -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, MyPageFragment()).commit()
-            }
-            ScreenItem.ITEMcareInfo -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, CareInfoFragment()).commit()
-            }
-            ScreenItem.ITEMaddDog -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, AddDogFragment()).commit()
-            }
-            ScreenItem.ITEMassess -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, AssessFragment()).commit()
-            }
-            ScreenItem.ITEMcareMain -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, CareMainFragment()).commit()
-            }
-            ScreenItem.ITEMcareTodolist -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, CareTodolistFragment()).commit()
-            }
-            ScreenItem.ITEMcomplete -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, CompleteFragment()).commit()
-            }
-            ScreenItem.ITEMpetInfo -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, PetInfoFragment()).commit()
-            }
-            ScreenItem.ITEMeditDog -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, EditDogFragment()).commit()
-            }
-            ScreenItem.ITEMjoin1 -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, Join1Fragment()).commit()
-            }
-            ScreenItem.ITEMjoin2 -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, Join2Fragment()).commit()
-            }
-            ScreenItem.ITEMlogin -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
-            }
-
-            ScreenItem.ITEMupdate -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, MemberInfoUpdateFragment()).commit()
-            }
-
-            ScreenItem.ITEMpay -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
-            }
-            ScreenItem.ITEMreservation -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, ReservationFragment()).commit()
-            }
-            ScreenItem.ITEMwrite -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, WriteFragment()).commit()
-            }
-            ScreenItem.ITEMwriteList -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, WriteListFragment()).commit()
-            }
-            ScreenItem.ITEMend -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, EndFragment()).commit()
-            }
-            ScreenItem.ITEMdogList -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, DogListFragment()).commit()
-            }
-            ScreenItem.ITEMwrite2 -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, Write2Fragment()).commit()
-            }
-            ScreenItem.ITEMwriteSelect -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, SelectDogFragment()).commit()
-            }
-            ScreenItem.ITEMwriteand -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, WriteAndListFragment()).commit()
-            }
-            ScreenItem.ITEMchat -> {
+            MainActivity.ScreenItem.ITEMchat -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, ChatListFragment()).commit()
             }
         }
@@ -335,7 +234,6 @@ class MainActivity : AppCompatActivity() {
                         binding.className.text = response.body()?.data?.get(i)?.careName.toString()
                         binding.classAddress.text = response.body()?.data?.get(i)?.careAddress.toString()
                         binding.classSelf.text = response.body()?.data?.get(i)?.careExperience.toString()
-                        WriteSaveData.savecareNo = response.body()?.data?.get(i)?.careNo.toString()
                         binding.cardView.visibility = View.VISIBLE
 
                         true
