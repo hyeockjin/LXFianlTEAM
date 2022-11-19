@@ -12,7 +12,7 @@
         >
 
         <TextView
-            android:id="@+id/button11"
+            android:id="@+id/requesttomypage"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
@@ -34,6 +34,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/rokaf_bold_medium"
+                android:background="#FFC7C7"
                 android:text="내가 보낸 요청" />
 
             <Button
@@ -41,9 +43,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/rokaf_bold_medium"
+                android:background="#5DA7F8"
                 android:text="내가 받은 요청" />
 
         </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/backButton8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#faf7f4"
+        android:src="@drawable/arrow" />
 
 </FrameLayout>

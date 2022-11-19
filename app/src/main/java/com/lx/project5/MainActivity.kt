@@ -102,7 +102,7 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEMchat)
                 }
                 R.id.tab4 -> {
-                    onFragmentChanged(ScreenItem.ITEM1)
+                    onFragmentChanged(ScreenItem.ITEMlogin)
 
 
                 }

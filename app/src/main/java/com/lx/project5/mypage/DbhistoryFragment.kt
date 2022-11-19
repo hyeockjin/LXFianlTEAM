@@ -15,6 +15,8 @@ class DbhistoryFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentDbhistoryBinding.inflate(inflater, container, false)
 
+
+
         return binding.root
     }
 
