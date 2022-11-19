@@ -3,10 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/activity_main.xml" value="0.2526041666666667" />
-        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_join1.xml" value="0.2526041666666667" />
-        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_join2.xml" value="0.2526041666666667" />
-        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_login.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_blank.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_dbhistory'.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_dbhistory.xml" value="0.264" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_dbrequestlist.xml" value="0.264" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_first.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_history.xml" value="0.2583826429980276" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mkhistory.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mkrequestlist.xml" value="0.264" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mypage.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_request.xml" value="0.264" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_requestlist.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_reservation.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_updateuser.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/review_item.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/write_item.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/drawable/bold2.xml" value="0.1825" />
         <entry key="..\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/drawable/pink_round_button.xml" value="0.1465" />
         <entry key="..\:/Users/black/AndroidStudioProjects/Pet1/app/src/main/res/drawable/round_button.xml" value="0.1465" />
@@ -54,11 +65,6 @@
         <entry key="..\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_pay.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_reservation.xml" value="0.3619791666666667" />
         <entry key="..\:/Users/choyd/AndroidStudioProjects/Pet1/app/src/main/res/layout/fragment_write.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/activity_local.xml" value="0.26875" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/activity_main.xml" value="0.26875" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/chat_receive.xml" value="0.26875" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/chat_send.xml" value="0.26875" />
-        <entry key="..\:/Users/khm24/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_chat_list.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_main.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/activity_splash.xml" value="0.26875" />
         <entry key="..\:/Users/khm24/AndroidStudioProjects/Pet1/app/src/main/res/layout/dog_item.xml" value="0.5" />
