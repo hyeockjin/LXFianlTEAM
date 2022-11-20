@@ -23,7 +23,7 @@ class MypageFragment : Fragment() {
 
 
         binding.updateButton.setOnClickListener {
-
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmatkimiInfo)
         }
 
         binding.requestButton.setOnClickListener {
