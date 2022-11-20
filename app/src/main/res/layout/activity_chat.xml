@@ -92,7 +92,7 @@
 
     <FrameLayout
         android:id="@+id/frameLayout"
-        android:layout_width="414dp"
+        android:layout_width="0dp"
         android:layout_height="85dp"
         android:background="@drawable/shadow2"
         app:layout_constraintBottom_toBottomOf="parent"
