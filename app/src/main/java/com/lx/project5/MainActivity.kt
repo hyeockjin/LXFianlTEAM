@@ -222,19 +222,19 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MatkimiInfoFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMdbhistory -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, DbhistoryFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, DBhistoryFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMdbrequestlist -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, DbrequestlistFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, DBrequestlistFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMhistory -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, HistoryFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMmkhistory -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, MkhistoryFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, MKhistoryFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMmkrequestlist -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, MkrequestlistFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, MKrequestlistFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMmypage -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MypageFragment()).commit()

@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.lx.project5.MainActivity
-import com.lx.project5.databinding.FragmentRequestBinding
+import com.lx.project5.databinding.FragmentRequestListBinding
 
 
 class RequestListFragment : Fragment() {
-    var _binding: FragmentRequestBinding? = null
+    var _binding: FragmentRequestListBinding? = null
     val binding get() = _binding!!
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentRequestBinding.inflate(inflater, container, false)
+        _binding = FragmentRequestListBinding.inflate(inflater, container, false)
 
         binding.requesttomypage.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypage)
