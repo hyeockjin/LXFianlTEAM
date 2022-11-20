@@ -34,7 +34,7 @@
                 android:textColor="#FFFFFF" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/imageView5"
                 android:layout_width="39dp"
                 android:layout_height="38dp"
                 android:layout_gravity="center_vertical|end"
