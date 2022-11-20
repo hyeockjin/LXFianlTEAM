@@ -2,6 +2,7 @@ package com.lx.project5
 
 import android.Manifest
 import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.location.Location
 import androidx.appcompat.app.AppCompatActivity
@@ -41,14 +42,12 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
-
-    var locationClient: FusedLocationProviderClient? = null;
-
+    var locationClient: FusedLocationProviderClient? = null
     lateinit var map: GoogleMap
+    lateinit var pref:SharedPreferences
+    lateinit var editor:SharedPreferences.Editor // 간단한 데이터 저장용 생명주기 관리 할 필요없이 데이터가 저장된다
 
     var myMarker: Marker? = null
-
-
 
     enum class ScreenItem {
         ITEM1,
@@ -75,9 +74,7 @@ class MainActivity : AppCompatActivity() {
         ITEMupdate,
         ITEMchatlist
 
-
     }
-
 
     val dateFormat1 = SimpleDateFormat("yyyyMMddHHmmss")
     var filename: String? = null
@@ -88,7 +85,6 @@ class MainActivity : AppCompatActivity() {
 
         // 맡김 돌봄 구분자 미리 넣어 놓기 / 1일때 맡김이모드
         AppData.navIndex = 1
-
 
         if(currentFocus is EditText) {
             currentFocus!!.clearFocus()
@@ -112,7 +108,6 @@ class MainActivity : AppCompatActivity() {
         // 위에 맡김 돌봄 인덱스 전환할때 버튼모음
         changModeMKDB()
 
-
         //하단 탭의 버튼을 눌렀을때
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId) {
@@ -133,15 +128,16 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEMchat)
                 }
                 R.id.tab4 -> {
-                    onFragmentChanged(ScreenItem.ITEMlogin)
-
-
+                    // 로그인 상태에 따라 마이페이지를 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
+                    if(AppData.memberData?.memberId == null ){
+                        onFragmentChanged(ScreenItem.ITEMlogin)
+                    }else if(AppData.memberData?.memberId != null) {
+                        onFragmentChanged(ScreenItem.ITEMmypage)
+                    }
                 }
             }
             return@setOnNavigationItemSelectedListener true
         }
-        //화면이 보일 때 첫 화면 보여주기
-        // onFragmentChanged(ScreenItem.ITEM1)
 
         binding.cardView.visibility = View.GONE
         // 위험권한 요청하기

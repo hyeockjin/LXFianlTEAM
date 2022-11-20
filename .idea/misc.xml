@@ -3,6 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_login.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mypage.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/KIMHYEOKJIN/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_update.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_blank.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_dbhistory'.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_dbhistory.xml" value="0.264" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_dbrequestlist.xml" value="0.264" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_first.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_history.xml" value="0.2583826429980276" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mkhistory.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mkrequestlist.xml" value="0.264" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mypage.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_request.xml" value="0.264" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_requestlist.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_reservation.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_updateuser.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/review_item.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/write_item.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/drawable/dolbutton.xml" value="0.2185" />
         <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/drawable/pinkbutton.xml" value="0.2195" />
         <entry key="..\:/Users/black/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/drawable/pinkround.xml" value="0.2195" />

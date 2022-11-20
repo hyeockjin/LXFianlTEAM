@@ -18,7 +18,7 @@ class MypageFragment : Fragment() {
 
         // 여기 수정해야함
         binding.mypagetomain.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypage)
+            //(activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypage)
         }
 
 
@@ -33,10 +33,6 @@ class MypageFragment : Fragment() {
         binding.listhistoryListButton.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMhistory)
         }
-
-
-
-
         return binding.root
     }
 
