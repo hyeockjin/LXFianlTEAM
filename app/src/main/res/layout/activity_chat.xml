@@ -30,16 +30,17 @@
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/backwardarrow" />
 
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="58dp"
+            <ImageView
+                android:id="@+id/profileImage"
+                android:layout_width="45dp"
                 android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
                 android:backgroundTint="#FFFFFF"
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/person2" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/id"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -67,11 +68,23 @@
             android:backgroundTint="#E3E3E3" />
 
 
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Today"
+            android:textColor="#A3A2A2"
+            android:textStyle="bold" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/chat_recyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FFFFFF">
+            android:background="#FFFFFF"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
 
         </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
@@ -96,7 +109,7 @@
                 android:id="@+id/messageEdit"
                 android:layout_width="355dp"
                 android:layout_height="44dp"
-                android:layout_marginStart="10dp"
+                android:layout_marginStart="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
