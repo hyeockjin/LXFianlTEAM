@@ -22,9 +22,13 @@
             android:layout_weight="1"
             android:background="@drawable/graybutton"
             android:backgroundTint="#FAF8F8"
+            android:drawableLeft="@drawable/search"
+            android:drawablePadding="10dp"
             android:ems="10"
+            android:hint="아이디를 입력해주세요"
             android:inputType="textPersonName"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

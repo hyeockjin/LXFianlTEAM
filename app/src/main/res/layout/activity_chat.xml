@@ -5,61 +5,115 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".chatting.ChatActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/chat_recyclerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="#E3F2FD"
-        app:layout_constraintBottom_toTopOf="@+id/sendButton"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp">
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#FFFFFF"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/backwardarrow" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="58dp"
+                android:layout_height="match_parent"
+                android:backgroundTint="#FFFFFF"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/person2" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="TextView"
+                android:textSize="16sp" />
+
+            <ImageButton
+                android:id="@+id/imageButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:backgroundTint="#FFFFFF"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/compose" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/name_text"
+            android:background="@android:color/black"
+            android:backgroundTint="#E3E3E3" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/chat_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
 
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="414dp"
-        android:layout_height="91dp"
-        android:background="@drawable/graybutton"
-        android:backgroundTint="#FFFFFF"
+        android:layout_height="85dp"
+        android:background="@drawable/shadow2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            ></LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/messageEdit"
+                android:layout_width="355dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/bold4"
+                android:backgroundTint="#F2E0F3"
+                android:hint="메세지를 입력하세요"
+                android:paddingStart="10dp"
+                android:textSize="14sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sendButton"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/send" />
+        </LinearLayout>
     </FrameLayout>
-
-    <EditText
-        android:id="@+id/messageEdit"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/bold4"
-        android:backgroundTint="#F2E0F3"
-        android:hint="메세지를 입력하세요"
-        android:paddingStart="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/sendButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chat_recyclerView" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sendButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="9dp"
-        android:hint="전송"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
