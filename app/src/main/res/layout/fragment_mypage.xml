@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00E8F5E9"
     tools:context=".mypage.MypageFragment">
 
     <LinearLayout
@@ -11,41 +11,55 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/mypagetomain"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="46dp"
-            android:layout_gravity="center_horizontal|center_vertical"
-            android:background="#faf7f4"
-            android:fontFamily="@font/rokaf_bold_medium"
-            android:gravity="center_horizontal|center_vertical"
-            android:text="마이페이지"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            android:layout_height="65dp">
+
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/saemaul"
+                android:gravity="center|center_vertical"
+                android:letterSpacing="0.2"
+                android:text="마이페이지"
+                android:textColor="#2C335C"
+                android:textSize="24sp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/name_text"
+            android:background="@android:color/black"
+            android:backgroundTint="#E3E3E3" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:background="#faf7f4"
-            android:orientation="horizontal"
-            android:paddingLeft="30dp"
-            android:paddingTop="20dp"
-            android:paddingRight="30dp"
-            android:paddingBottom="20dp">
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
+                android:layout_width="62dp"
+                android:layout_height="66dp"
+                android:layout_gravity="center"
                 android:src="@drawable/person2" />
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:layout_weight="1"
                 android:orientation="vertical"
                 android:padding="10dp">
 
@@ -55,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="이기현"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -65,7 +79,7 @@
                     android:layout_marginTop="5dp"
                     android:text="강아지 : 용혁문"
                     android:textColor="#C18686"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -74,14 +88,21 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:text="010-3417-8251"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/updateButton"
+                android:layout_width="40dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center"
+                android:src="@drawable/edit" />
+
         </LinearLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/bold3">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -100,25 +121,6 @@
 
 
                     <Button
-                        android:id="@+id/updateButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center"
-                        android:layout_marginStart="10dp"
-
-
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bold1"
-                        android:backgroundTint="#D3D3D3"
-                        android:gravity="center"
-                        android:text="회원정보수정"
-                        android:textColor="#4E4E4E"
-                        android:textStyle="bold"
-                        tools:ignore="TouchTargetSizeCheck" />
-
-                    <Button
                         android:id="@+id/requestButton"
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
@@ -126,7 +128,6 @@
 
                         android:layout_weight="1"
                         android:background="@drawable/bold1"
-                        android:backgroundTint="#D3D3D3"
                         android:gravity="center"
                         android:text="요청현황"
                         android:textColor="#4E4E4E"
@@ -141,7 +142,6 @@
                         android:layout_marginEnd="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/bold1"
-                        android:backgroundTint="#D3D3D3"
                         android:text="이용기록"
                         android:textColor="#4E4E4E"
                         android:textStyle="bold"
@@ -174,10 +174,12 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/backButton8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#faf7f4"
-        android:src="@drawable/arrow" />
+        android:id="@+id/mypagetomain"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="13dp"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/backwardarrow" />
 
 </FrameLayout>

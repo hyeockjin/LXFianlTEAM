@@ -245,7 +245,7 @@
                 android:layout_marginTop="65dp"
                 android:layout_marginEnd="33dp"
                 android:clickable="true"
-                app:backgroundTint="#B6CF9B"
+                app:backgroundTint="#9b89ff"
                 app:srcCompat="@drawable/pencil" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -258,7 +258,7 @@
                 android:layout_marginTop="65dp"
                 android:clickable="true"
                 app:backgroundTint="#FFFFFF"
-                app:srcCompat="@drawable/tdolist" />
+                app:srcCompat="@drawable/menu" />
 
         </RelativeLayout>
 
@@ -272,9 +272,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
-                android:text="해주세요" />
+                android:background="#e7faf7"
+                android:backgroundTint="#e7faf7"
+                android:text="펫시터찾기"
+                android:textColor="#4FB390"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/mainDBButton"
@@ -282,8 +285,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
-                android:text="해줄게요" />
+                android:backgroundTint="#fef0e3"
+                android:text="강아지찾기"
+                android:textColor="#f8ba86"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </FrameLayout>

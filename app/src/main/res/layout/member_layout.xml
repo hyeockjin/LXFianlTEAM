@@ -5,7 +5,6 @@
     android:layout_height="90dp"
     android:layout_marginBottom="20dp"
     android:background="@drawable/shadow3"
-    android:backgroundTint="#FFFBFB"
     android:orientation="vertical">
 
     <LinearLayout

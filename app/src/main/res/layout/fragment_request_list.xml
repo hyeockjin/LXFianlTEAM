@@ -48,7 +48,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/backButton8"
+        android:id="@+id/mypagetomain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#faf7f4"

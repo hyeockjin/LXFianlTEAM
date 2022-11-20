@@ -35,6 +35,7 @@ class ChatListFragment : Fragment() {
 
 
 
+
         Log.v("시발","채팅화면 시작")
 
         //### firebase 인증 초기화, db 초기화, 리스트 초기화

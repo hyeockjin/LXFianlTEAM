@@ -38,9 +38,14 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="아이디"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:text="김혁진"
+                android:fontFamily="@font/saemaul"
+                android:letterSpacing="0.2"
+                android:textColor="#6559A6"
+                android:textSize="23sp"
+                android:textStyle="normal"
+
+                 />
 
             <ImageButton
                 android:id="@+id/askButton"
