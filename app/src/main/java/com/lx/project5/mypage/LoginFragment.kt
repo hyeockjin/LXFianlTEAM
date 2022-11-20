@@ -59,7 +59,7 @@ class LoginFragment : Fragment() {
                     AppData.memberData?.memberId = memberId
                     (activity as MainActivity)?.onFragmentChanged(MainActivity.ScreenItem.ITEMmypage)
                 } else {
-                    Toast.makeText(activity as MainActivity, "로그인 실패!", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(activity as MainActivity, "로그인 실패!${task}", Toast.LENGTH_SHORT).show()
                 }
         }
     }

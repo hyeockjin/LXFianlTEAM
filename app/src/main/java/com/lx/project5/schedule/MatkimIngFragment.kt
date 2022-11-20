@@ -21,7 +21,7 @@ class MatkimIngFragment : Fragment() {
         }
 
         binding.petSitterInfoButton.setOnClickListener {
-
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
         }
 
         return binding.root

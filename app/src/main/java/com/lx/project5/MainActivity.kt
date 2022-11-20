@@ -115,9 +115,9 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM1)
                 }
                 R.id.tab2 -> {
-                    if (AppData.navIndex == 1){
+                    if (AppData.navIndex == 1) {
                         onFragmentChanged(ScreenItem.ITEMmkschedule)
-                    } else if (AppData.navIndex == 2){
+                    } else if (AppData.navIndex == 2) {
                         onFragmentChanged(ScreenItem.ITEMdbschedule)
                     } else{
                         showToast("AppData.navIndex 잘못 설정했나?")
@@ -129,7 +129,7 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.tab4 -> {
                     // 로그인 상태에 따라 마이페이지를 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
-                    if(AppData.memberData?.memberId == null ){
+                    if(AppData.memberData?.memberId == null ) {
                         onFragmentChanged(ScreenItem.ITEMlogin)
                     }else if(AppData.memberData?.memberId != null) {
                         onFragmentChanged(ScreenItem.ITEMmypage)
