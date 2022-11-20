@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
     var locationClient: FusedLocationProviderClient? = null
     lateinit var map: GoogleMap
-    lateinit var pref:SharedPreferences
-    lateinit var editor:SharedPreferences.Editor // 간단한 데이터 저장용 생명주기 관리 할 필요없이 데이터가 저장된다
+    lateinit var pref: SharedPreferences
+    lateinit var editor: SharedPreferences.Editor // 간단한 데이터 저장용 생명주기 관리 할 필요없이 데이터가 저장된다
 
     var myMarker: Marker? = null
 
@@ -55,14 +55,18 @@ class MainActivity : AppCompatActivity() {
         ITEMjoin1,
         ITEMjoin2,
         ITEMlogin,
+
         // 하단 내비 두번째 버튼눌렀을때 돌봄맡김 스케쥴 버튼
         ITEMdbschedule,
         ITEMmkschedule,
+        ITEMmkschedule1,
+
         // 돌봄 맡김 스케쥴에서 돌봄 맡김 중 화면
         ITEMdolboming,
         ITEMmatkiming,
         ITEMdolbomiInfo,
         ITEMmatkimiInfo,
+
         // 마이페이지
         ITEMdbhistory,
         ITEMdbrequestlist,
@@ -80,13 +84,14 @@ class MainActivity : AppCompatActivity() {
     var filename: String? = null
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
-        val imm: InputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val imm: InputMethodManager =
+            getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
 
         // 맡김 돌봄 구분자 미리 넣어 놓기 / 1일때 맡김이모드
         AppData.navIndex = 1
 
-        if(currentFocus is EditText) {
+        if (currentFocus is EditText) {
             currentFocus!!.clearFocus()
         }
 
@@ -98,7 +103,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.cardView.setOnClickListener{
+        binding.cardView.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEM1)
         }
         // 주변에 돌봄요청 버튼 눌렀을 때
@@ -110,7 +115,7 @@ class MainActivity : AppCompatActivity() {
 
         //하단 탭의 버튼을 눌렀을때
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
-            when(it.itemId) {
+            when (it.itemId) {
                 R.id.tab1 -> {
                     onFragmentChanged(ScreenItem.ITEM1)
                 }
@@ -119,19 +124,19 @@ class MainActivity : AppCompatActivity() {
                         onFragmentChanged(ScreenItem.ITEMmkschedule)
                     } else if (AppData.navIndex == 2) {
                         onFragmentChanged(ScreenItem.ITEMdbschedule)
-                    } else{
+                    } else {
                         showToast("AppData.navIndex 잘못 설정했나?")
                     }
-                    onFragmentChanged(ScreenItem.ITEM1)
+                    onFragmentChanged(ScreenItem.ITEMmkschedule)
                 }
                 R.id.tab3 -> {
                     onFragmentChanged(ScreenItem.ITEMchat)
                 }
                 R.id.tab4 -> {
                     // 로그인 상태에 따라 마이페이지를 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
-                    if(AppData.memberData?.memberId == null ) {
+                    if (AppData.memberData?.memberId == null) {
                         onFragmentChanged(ScreenItem.ITEMlogin)
-                    }else if(AppData.memberData?.memberId != null) {
+                    } else if (AppData.memberData?.memberId != null) {
                         onFragmentChanged(ScreenItem.ITEMmypage)
                     }
                 }
@@ -183,73 +188,99 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
     fun onFragmentChanged(index: MainActivity.ScreenItem) {
-        when(index) {
+        when (index) {
             MainActivity.ScreenItem.ITEM1 -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, FirstFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, FirstFragment())
+                    .commit()
             }
             MainActivity.ScreenItem.ITEMchat -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, ChatListFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, ChatListFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMjoin1 -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, Join1Fragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, Join1Fragment())
+                    .commit()
             }
             MainActivity.ScreenItem.ITEMjoin2 -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, Join2Fragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, Join2Fragment())
+                    .commit()
             }
             MainActivity.ScreenItem.ITEMlogin -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, LoginFragment())
+                    .commit()
             }
             MainActivity.ScreenItem.ITEMdbschedule -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, DBScheduleFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, DBScheduleFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMmkschedule -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, MKScheduleFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, MKScheduleFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMmkschedule1 -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, MKSchedule1Fragment()).commit()
             }
             MainActivity.ScreenItem.ITEMdolboming -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, DolbomIngFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, DolbomIngFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMmatkiming -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, MatkimIngFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, MatkimIngFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMdolbomiInfo -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, DolbomiInfoFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, DolbomiInfoFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMmatkimiInfo -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, MatkimiInfoFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, MatkimiInfoFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMdbhistory -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, DBhistoryFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, DBhistoryFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMdbrequestlist -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, DBrequestlistFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, DBrequestlistFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMhistory -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, HistoryFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, HistoryFragment())
+                    .commit()
             }
             MainActivity.ScreenItem.ITEMmkhistory -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, MKhistoryFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, MKhistoryFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMmkrequestlist -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, MKrequestlistFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, MKrequestlistFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMmypage -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, MypageFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, MypageFragment())
+                    .commit()
             }
             MainActivity.ScreenItem.ITEMrequestlist -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, RequestListFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, RequestListFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMupdate -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, UpdateFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, UpdateFragment())
+                    .commit()
             }
             MainActivity.ScreenItem.ITEMchatlist -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, ChatListFragment()).commit()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, ChatListFragment()).commit()
             }
             else -> {}
         }
 
 
     }
+
     fun requestLocation() {
         try {
             // 가장 최근에 확인된 위치 알려주기
@@ -271,15 +302,19 @@ class MainActivity : AppCompatActivity() {
                     super.onLocationResult(result)
 
                     for ((index, location) in result.locations.withIndex()) {
-                        Log.v("lastkingdom","${location.latitude},${location.longitude}")
+                        Log.v("lastkingdom", "${location.latitude},${location.longitude}")
                         showCurrentLocation(location)
                     }
                 }
             }
             // 내 위치 요청
-            locationClient?.requestLocationUpdates(locationRequest, locationCallback, Looper.myLooper())
+            locationClient?.requestLocationUpdates(
+                locationRequest,
+                locationCallback,
+                Looper.myLooper()
+            )
 
-        } catch(e:SecurityException) {
+        } catch (e: SecurityException) {
             e.printStackTrace()
         }
     }
@@ -298,18 +333,21 @@ class MainActivity : AppCompatActivity() {
         BasicClient.api.getCareListTest(
             requestCode = "1001"
         ).enqueue(object : Callback<CareListResponse> {
-            override fun onResponse(call: Call<CareListResponse>, response: Response<CareListResponse>) {
-                Log.v("lastkingdom","근처 마커 활성화 요청 성공")
+            override fun onResponse(
+                call: Call<CareListResponse>,
+                response: Response<CareListResponse>
+            ) {
+                Log.v("lastkingdom", "근처 마커 활성화 요청 성공")
                 val jsonArray = JSONArray(response.body()?.data)
                 for (i in 0 until jsonArray.length()) {
-                    Log.v("lastkingdom","근처 마커 for문 진입")
+                    Log.v("lastkingdom", "근처 마커 for문 진입")
                     var latitude = response.body()?.data?.get(i)?.careX
                     var longitude = response.body()?.data?.get(i)?.careY
 
-                    Log.v("lastkingdom","마커 위도 ${latitude.toString()}")
-                    Log.v("lastkingdom","마커 위도 ${longitude.toString()}")
+                    Log.v("lastkingdom", "마커 위도 ${latitude.toString()}")
+                    Log.v("lastkingdom", "마커 위도 ${longitude.toString()}")
 
-                    Log.v("lastkingdom","2")
+                    Log.v("lastkingdom", "2")
                     // 1. 마커 옵션 설정 (만드는 과정)
                     var makerOptions = MarkerOptions()
                     makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
@@ -331,8 +369,9 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
+
             override fun onFailure(call: Call<CareListResponse>, t: Throwable) {
-                Log.v("lastkingdom","근처 마커 활성화 요청 실패")
+                Log.v("lastkingdom", "근처 마커 활성화 요청 실패")
             }
         })
     }
@@ -366,7 +405,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    fun uploadFile(filename:String){
+
+    fun uploadFile(filename: String) {
         // 저장한 파일에 대한 정보를 filePart로 만들기
         val file = File("${filesDir}/${filename}")
         val filePart = MultipartBody.Part.createFormData(
@@ -382,29 +422,33 @@ class MainActivity : AppCompatActivity() {
             file = filePart,
             params = params
         ).enqueue(object : Callback<FileUploadResponse> {
-            override fun onResponse(call: Call<FileUploadResponse>, response: Response<FileUploadResponse>) {
-                response.body()?.output?.filename?.apply{
+            override fun onResponse(
+                call: Call<FileUploadResponse>,
+                response: Response<FileUploadResponse>
+            ) {
+                response.body()?.output?.filename?.apply {
                     AppData.filepath = this
                 }
             }
+
             override fun onFailure(call: Call<FileUploadResponse>, t: Throwable) {
             }
         })
     }
 
-    fun showToast(message:String) {
+    fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
     // 데이트폼
-    fun nowDate():String{
-        val now =  System.currentTimeMillis()
+    fun nowDate(): String {
+        val now = System.currentTimeMillis()
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREAN).format(now)
         return simpleDateFormat
     }
 
     // 상단 맡김돌봄 전환
-    fun changModeMKDB(){
+    fun changModeMKDB() {
         binding.mainMKButton.setOnClickListener {
             AppData.navIndex = 1
         }
@@ -412,4 +456,6 @@ class MainActivity : AppCompatActivity() {
             AppData.navIndex = 2
         }
     }
+
+
 }

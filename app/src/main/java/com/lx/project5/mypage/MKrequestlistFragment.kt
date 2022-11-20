@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.lx.project5.MainActivity
 import com.lx.project5.databinding.FragmentMkrequestlistBinding
@@ -26,12 +27,20 @@ class MKrequestlistFragment : Fragment() {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
         }
 
+        binding.request4.setOnClickListener {
+            toast("수락이 완료되었습니다.")
+        }
+
         return binding.root
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun toast(message: String) {
+        Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
     }
 
 }
