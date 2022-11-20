@@ -5,6 +5,7 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
+import android.os.Handler
 import android.provider.MediaStore
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -74,10 +75,15 @@ class Join2Fragment : Fragment() {
 
         binding.nextButton2.setOnClickListener {
             checkPw()
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMlogin)
         }
 
         binding.idCheckButton.setOnClickListener {
             checkId()
+            Handler().postDelayed({
+                //method
+                toast("중복된 아이디가 아닙니다.")
+            }, 1000)
         }
 
         return binding.root

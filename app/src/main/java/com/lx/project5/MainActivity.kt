@@ -72,7 +72,8 @@ class MainActivity : AppCompatActivity() {
         ITEMmkrequestlist,
         ITEMmypage,
         ITEMrequestlist,
-        ITEMupdate
+        ITEMupdate,
+        ITEMchatlist
 
 
     }
@@ -245,6 +246,10 @@ class MainActivity : AppCompatActivity() {
             MainActivity.ScreenItem.ITEMupdate -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, UpdateFragment()).commit()
             }
+            MainActivity.ScreenItem.ITEMchatlist -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, ChatListFragment()).commit()
+            }
+            else -> {}
         }
 
 

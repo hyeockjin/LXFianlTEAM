@@ -2,9 +2,11 @@ package com.lx.project5.chatting
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.lx.project5.MainActivity
 import com.lx.project5.appdata.MessageData
 import com.lx.project5.databinding.ActivityChatBinding
 
@@ -31,6 +33,10 @@ class ChatActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityChatBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.chatTochatlist.setOnClickListener {
+            finish()
+        }
 
         //Firebase 인증,db ,메시지 목록 초기화
         mAuth = FirebaseAuth.getInstance()

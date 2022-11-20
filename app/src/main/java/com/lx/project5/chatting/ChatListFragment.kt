@@ -33,6 +33,8 @@ class ChatListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentChatListBinding.inflate(inflater, container, false)
 
+
+
         Log.v("시발","채팅화면 시작")
 
         //### firebase 인증 초기화, db 초기화, 리스트 초기화

@@ -22,11 +22,11 @@ class HistoryFragment : Fragment() {
         }
 
         binding.reqshowhis1.setOnClickListener {
-
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmkhistory)
         }
 
         binding.reqshowhis2.setOnClickListener {
-
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdbhistory)
         }
 
         return binding.root

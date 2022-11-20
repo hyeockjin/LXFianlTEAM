@@ -27,11 +27,11 @@ class MypageFragment : Fragment() {
         }
 
         binding.requestButton.setOnClickListener {
-
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMrequestlist)
         }
 
         binding.listhistoryListButton.setOnClickListener {
-
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMhistory)
         }
 
 
