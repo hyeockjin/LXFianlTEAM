@@ -19,11 +19,11 @@ class MKhistoryFragment : Fragment() {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
         }
 
-        binding.petSitterInfoButton1.setOnClickListener {
+        binding.petSitterInfoButton2.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
         }
 
-        binding.petSitterInfoButton1.setOnClickListener {
+        binding.petSitterInfoButton3.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
         }
 

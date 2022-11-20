@@ -72,7 +72,7 @@
 
 
             <Button
-                android:id="@+id/matkimiInfo4"
+                android:id="@+id/PetSitterInfo4"
                 android:layout_width="89dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="45dp"
@@ -116,7 +116,7 @@
 
 
             <Button
-                android:id="@+id/matkimiInfo5"
+                android:id="@+id/PetSitterInfo5"
                 android:layout_width="89dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="45dp"
@@ -160,7 +160,7 @@
 
 
             <Button
-                android:id="@+id/matkimiInfo6"
+                android:id="@+id/PetSitterInfo6"
                 android:layout_width="89dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="45dp"
