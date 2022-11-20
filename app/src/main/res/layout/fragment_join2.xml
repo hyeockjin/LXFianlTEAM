@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#faf7f4"
+        android:background="@drawable/backgroundcolor"
         android:orientation="vertical">
 
         <TextView
@@ -18,10 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:background="#faf7f4"
             android:gravity="center"
             android:text="회원가입(2/2)"
-            android:fontFamily="@font/rokaf_bold_medium"
             android:textAlignment="center"
             android:textSize="16sp"
             android:textStyle="normal" />
@@ -30,8 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="#faf7f4">
+            android:layout_marginBottom="10dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/profileImageView"
@@ -58,7 +55,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FFFFFF"
+            android:background="@drawable/shadow2"
             android:orientation="vertical"
             android:padding="10dp">
 
@@ -92,12 +89,14 @@
                     <Button
                         android:id="@+id/idCheckButton"
                         android:layout_width="75dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
                         android:layout_marginLeft="7dp"
-                        android:backgroundTint="#CDDABD"
+                        android:background="@drawable/pinkbutton"
+                        android:backgroundTint="#fef3ea"
                         android:gravity="center_horizontal|center_vertical"
                         android:text="중복확인"
+                        android:textColor="#f6b176"
                         android:textSize="12sp" />
                 </LinearLayout>
 
@@ -196,7 +195,7 @@
         android:id="@+id/backButton10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#faf7f4"
+        android:backgroundTint="#00ff0000"
         android:src="@drawable/arrow" />
 
     <LinearLayout
@@ -213,8 +212,10 @@
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
             android:background="@drawable/pinkbutton"
+            android:backgroundTint="#f8f0fd"
             android:text="가입하기"
-            android:textColor="#FFFFFF" />
+            android:textColor="#c990f1"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </FrameLayout>

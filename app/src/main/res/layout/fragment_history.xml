@@ -18,7 +18,6 @@
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
             android:background="#FFFFFF"
-            android:fontFamily="@font/rokaf_bold_medium"
             android:gravity="center_horizontal|center_vertical"
             android:text="이용기록페이지"
             android:textSize="16sp"
@@ -37,7 +36,6 @@
                 android:layout_weight="1"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
-                android:fontFamily="@font/rokaf_bold_medium"
                 android:text="내가 보낸 요청"
                 android:textColor="#fea5c1" />
 
@@ -48,7 +46,6 @@
                 android:layout_weight="1"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
-                android:fontFamily="@font/rokaf_bold_medium"
                 android:text="내가 받은 요청"
                 android:textColor="#9a88fe" />
 
