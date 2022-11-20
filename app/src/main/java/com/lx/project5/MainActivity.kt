@@ -62,8 +62,8 @@ class MainActivity : AppCompatActivity() {
         // 돌봄 맡김 스케쥴에서 돌봄 맡김 중 화면
         ITEMdolboming,
         ITEMmatkiming,
-        ITEMdolbomInfo,
-        ITEMmakimInfo,
+        ITEMdolbomiInfo,
+        ITEMmatkimiInfo,
         // 마이페이지
         ITEMdbhistory,
         ITEMdbrequestlist,
@@ -216,10 +216,10 @@ class MainActivity : AppCompatActivity() {
             MainActivity.ScreenItem.ITEMmatkiming -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MatkimIngFragment()).commit()
             }
-            MainActivity.ScreenItem.ITEMdolbomInfo -> {
+            MainActivity.ScreenItem.ITEMdolbomiInfo -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, DolbomiInfoFragment()).commit()
             }
-            MainActivity.ScreenItem.ITEMmakimInfo -> {
+            MainActivity.ScreenItem.ITEMmatkimiInfo -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MatkimiInfoFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMdbhistory -> {
