@@ -22,7 +22,7 @@
             android:layout_height="65dp">
 
             <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/chatTochatlist"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
@@ -41,14 +41,15 @@
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:text="TextView"
+                android:gravity="center_vertical"
+                android:text="아이디"
                 android:textSize="16sp" />
 
             <ImageButton
-                android:id="@+id/imageButton5"
+                android:id="@+id/askButton"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
