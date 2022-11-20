@@ -18,7 +18,7 @@ class MKhistoryFragment : Fragment() {
         binding.petSitterInfoButton1.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
         }
-
+2
         binding.petSitterInfoButton2.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
         }
