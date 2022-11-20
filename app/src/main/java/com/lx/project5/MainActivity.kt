@@ -8,10 +8,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
-import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
@@ -25,14 +23,9 @@ import com.lx.data.CareListResponse
 import com.lx.data.FileUploadResponse
 import com.lx.project5.appdata.AppData
 import com.lx.project5.chatting.ChatListFragment
-import com.lx.project5.mypage.Join1Fragment
-import com.lx.project5.mypage.Join2Fragment
-import com.lx.project5.mypage.LoginFragment
 import com.lx.project5.databinding.ActivityMainBinding
-import com.lx.project5.schedule.DBScheduleFragment
-import com.lx.project5.schedule.DolbomiInfoFragment
-import com.lx.project5.schedule.MKScheduleFragment
-import com.lx.project5.schedule.MatkimiInfoFragment
+import com.lx.project5.mypage.*
+import com.lx.project5.schedule.*
 import com.permissionx.guolindev.PermissionX
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -47,7 +40,6 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    // 주소 바꿔야 하는곳 / BasicApi, myPage
     lateinit var binding: ActivityMainBinding
 
     var locationClient: FusedLocationProviderClient? = null;
@@ -69,7 +61,19 @@ class MainActivity : AppCompatActivity() {
         ITEMmkschedule,
         // 돌봄 맡김 스케쥴에서 돌봄 맡김 중 화면
         ITEMdolboming,
-        ITEMmatkiming
+        ITEMmatkiming,
+        ITEMdolbomInfo,
+        ITEMmakimInfo,
+        // 마이페이지
+        ITEMdbhistory,
+        ITEMdbrequestlist,
+        ITEMhistory,
+        ITEMmkhistory,
+        ITEMmkrequestlist,
+        ITEMmypage,
+        ITEMrequestlist,
+        ITEMupdate
+
 
     }
 
@@ -136,7 +140,7 @@ class MainActivity : AppCompatActivity() {
             return@setOnNavigationItemSelectedListener true
         }
         //화면이 보일 때 첫 화면 보여주기
-       // onFragmentChanged(ScreenItem.ITEM1)
+        // onFragmentChanged(ScreenItem.ITEM1)
 
         binding.cardView.visibility = View.GONE
         // 위험권한 요청하기
@@ -206,10 +210,40 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MKScheduleFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMdolboming -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, DolbomiInfoFragment()).commit()
+                supportFragmentManager.beginTransaction().replace(R.id.container, DolbomIngFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMmatkiming -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, MatkimIngFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMdolbomInfo -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, DolbomiInfoFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMmakimInfo -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MatkimiInfoFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMdbhistory -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, DbhistoryFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMdbrequestlist -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, DbrequestlistFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMhistory -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, HistoryFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMmkhistory -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, MkhistoryFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMmkrequestlist -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, MkrequestlistFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMmypage -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, MypageFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMrequestlist -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, RequestListFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMupdate -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, UpdateFragment()).commit()
             }
         }
 

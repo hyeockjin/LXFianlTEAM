@@ -9,7 +9,7 @@ import com.lx.project5.MainActivity
 import com.lx.project5.databinding.FragmentRequestBinding
 
 
-class RequestFragment : Fragment() {
+class RequestListFragment : Fragment() {
     var _binding: FragmentRequestBinding? = null
     val binding get() = _binding!!
 
