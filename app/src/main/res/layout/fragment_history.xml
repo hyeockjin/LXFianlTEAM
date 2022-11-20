@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -16,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:background="#faf7f4"
+            android:background="#FFFFFF"
             android:fontFamily="@font/rokaf_bold_medium"
             android:gravity="center_horizontal|center_vertical"
             android:text="이용기록페이지"
@@ -34,18 +35,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
                 android:fontFamily="@font/rokaf_bold_medium"
-                android:background="#FFC7C7"
-                android:text="내가 보낸 요청" />
+                android:text="내가 보낸 요청"
+                android:textColor="#fea5c1" />
 
             <Button
                 android:id="@+id/reqshowhis2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
                 android:fontFamily="@font/rokaf_bold_medium"
-                android:background="#5DA7F8"
-                android:text="내가 받은 요청" />
+                android:text="내가 받은 요청"
+                android:textColor="#9a88fe" />
 
         </LinearLayout>
 
@@ -56,10 +61,11 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/backButton8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#faf7f4"
-        android:src="@drawable/arrow" />
+        android:id="@+id/chatTochatlist2"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:backgroundTint="#FFFFFF"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/backwardarrow" />
 
 </FrameLayout>
