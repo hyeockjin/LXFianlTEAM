@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".mypage.MypageFragment">
 
+    <View
+        android:id="@+id/view9"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/name_text"
+        android:background="#D8D8D8" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,32 +28,20 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:fontFamily="@font/saemaul"
                 android:gravity="center|center_vertical"
-                android:letterSpacing="0.2"
                 android:text="마이페이지"
                 android:textColor="#2C335C"
-                android:textSize="24sp"
+                android:textSize="20sp"
                 android:textStyle="normal" />
 
         </LinearLayout>
 
-        <View
-            android:id="@+id/view2"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/name_text"
-            android:background="@android:color/black"
-            android:backgroundTint="#E3E3E3" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView2"
@@ -102,80 +97,172 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="68dp"
-            android:background="#E0DAFE">
-
-        </FrameLayout>
-
-        <FrameLayout
-            android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
                 android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:orientation="horizontal"
-                    android:padding="10dp">
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-
-                    <Button
-                        android:id="@+id/requestButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:layout_gravity="center"
-
+                    <View
+                        android:id="@+id/view10"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_below="@+id/name_text"
                         android:layout_weight="1"
-                        android:background="@drawable/bold1"
-                        android:gravity="center"
-                        android:text="요청현황"
-                        android:textColor="#4E4E4E"
-                        android:textStyle="bold"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        android:background="#D8D8D8" />
 
-                    <Button
-                        android:id="@+id/listhistoryListButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:background="@drawable/bold1"
-                        android:text="이용기록"
-                        android:textColor="#4E4E4E"
-                        android:textStyle="bold"
-                        tools:ignore="TouchTargetSizeCheck" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="등급" />
+
+                        <TextView
+                            android:id="@+id/textView12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="쿠폰" />
+
+                        <TextView
+                            android:id="@+id/textView13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="연결계좌" />
+                    </LinearLayout>
 
                 </LinearLayout>
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="13dp"
+                    android:layout_below="@+id/name_text"
+                    android:layout_weight="1"
+                    android:background="#f8f0fd" />
+
+                <TextView
+                    android:id="@+id/updateButton1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableEnd="@drawable/arrowsmall"
+                    android:padding="15dp"
+                    android:text="회원정보수정"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/name_text"
+                    android:layout_weight="1"
+                    android:background="#D8D8D8" />
+
+                <TextView
+                    android:id="@+id/requestButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableEnd="@drawable/arrowsmall"
+                    android:padding="15dp"
+                    android:text="요청현황"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/name_text"
+                    android:layout_weight="1"
+                    android:background="#D8D8D8" />
+
+                <TextView
+                    android:id="@+id/listhistoryListButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableEnd="@drawable/arrowsmall"
+                    android:padding="15dp"
+                    android:text="이용기록"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/view5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/name_text"
+                    android:layout_weight="1"
+                    android:background="#D8D8D8" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableEnd="@drawable/arrowsmall"
+                    android:padding="15dp"
+                    android:text="최근이용내역"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/view6"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/name_text"
+                    android:layout_weight="1"
+                    android:background="#D8D8D8" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableEnd="@drawable/arrowsmall"
+                    android:padding="15dp"
+                    android:text="설정"
+                    android:textSize="16sp" />
+
+                <View
+                    android:id="@+id/view7"
+                    android:layout_width="match_parent"
+                    android:layout_height="13dp"
+                    android:layout_below="@+id/name_text"
+                    android:layout_weight="1"
+                    android:background="#f8f0fd" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="horizontal"
+                    android:padding="10dp"/>
 
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal|center_vertical"
-                        android:gravity="center_horizontal|center_vertical"
-                        android:paddingStart="15dp"
-
-                        android:paddingTop="30dp"
-                        android:text="최근 이용 내역" />
-
-
-                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
 
             </LinearLayout>
+
         </FrameLayout>
 
     </LinearLayout>
