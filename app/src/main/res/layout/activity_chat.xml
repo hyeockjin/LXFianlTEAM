@@ -30,24 +30,17 @@
                 android:scaleType="centerInside"
                 app:srcCompat="@drawable/backwardarrow" />
 
-            <ImageView
-                android:id="@+id/profileImage"
-                android:layout_width="45dp"
-                android:layout_height="match_parent"
-                android:layout_marginRight="10dp"
-                android:backgroundTint="#FFFFFF"
-                android:scaleType="centerInside"
-                app:srcCompat="@drawable/person2" />
-
             <TextView
                 android:id="@+id/id"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:text="아이디"
-                android:textSize="16sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <ImageButton
                 android:id="@+id/askButton"
