@@ -20,10 +20,10 @@ class MKrequestlistFragment : Fragment() {
         binding.PetSitterInfo4.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
         }
-        binding.PetSitterInfo4.setOnClickListener {
+        binding.PetSitterInfo5.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
         }
-        binding.PetSitterInfo4.setOnClickListener {
+        binding.PetSitterInfo6.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
         }
 
