@@ -88,7 +88,7 @@
             </LinearLayout>
 
             <ImageView
-                android:id="@+id/updateButton"
+                android:id="@+id/updateButton1"
                 android:layout_width="40dp"
                 android:layout_height="51dp"
                 android:layout_gravity="center"
@@ -135,8 +135,8 @@
 
                             <ImageButton
                                 android:id="@+id/imageButton2"
-                                android:layout_width="62dp"
-                                android:layout_height="58dp"
+                                android:layout_width="61dp"
+                                android:layout_height="53dp"
                                 android:layout_gravity="center"
                                 android:backgroundTint="#FFFFFF"
                                 android:scaleType="fitXY"
@@ -221,36 +221,61 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp">
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/profile1" />
 
                     <TextView
-                        android:id="@+id/updateButton1"
+                        android:id="@+id/updateButton"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:drawableEnd="@drawable/arrowsmall"
-                        android:padding="15dp"
+                        android:padding="20dp"
                         android:text="회원정보수정"
                         android:textSize="16sp" />
                 </LinearLayout>
 
                 <View
-                    android:id="@+id/view3"
+                    android:id="@+id/view2"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/name_text"
                     android:layout_weight="1"
                     android:background="#D8D8D8" />
 
-                <TextView
-                    android:id="@+id/requestButton"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableEnd="@drawable/arrowsmall"
-                    android:padding="15dp"
-                    android:text="요청현황"
-                    android:textSize="16sp" />
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp">
+
+                    <ImageView
+                        android:id="@+id/imageView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/cal1" />
+
+                    <TextView
+                        android:id="@+id/requestButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/arrowsmall"
+                        android:padding="20dp"
+                        android:text="요청현황"
+                        android:textSize="16sp" />
+                </LinearLayout>
 
                 <View
                     android:id="@+id/view4"
@@ -260,15 +285,65 @@
                     android:layout_weight="1"
                     android:background="#D8D8D8" />
 
-                <TextView
-                    android:id="@+id/listhistoryListButton"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableEnd="@drawable/arrowsmall"
-                    android:padding="15dp"
-                    android:text="이용기록"
-                    android:textSize="16sp" />
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp">
+
+                    <ImageView
+                        android:id="@+id/icon3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/bookmark" />
+
+                    <TextView
+                        android:id="@+id/mypagetext3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/arrowsmall"
+                        android:padding="20dp"
+                        android:text="즐겨찾기"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/view4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/name_text"
+                    android:layout_weight="1"
+                    android:background="#D8D8D8" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp">
+
+                    <ImageView
+                        android:id="@+id/imageView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/chart1" />
+
+                    <TextView
+                        android:id="@+id/listhistoryListButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/arrowsmall"
+                        android:padding="20dp"
+                        android:text="이용기록"
+                        android:textSize="16sp" />
+                </LinearLayout>
 
                 <View
                     android:id="@+id/view5"
@@ -278,15 +353,31 @@
                     android:layout_weight="1"
                     android:background="#D8D8D8" />
 
-                <TextView
-                    android:id="@+id/textView8"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableEnd="@drawable/arrowsmall"
-                    android:padding="15dp"
-                    android:text="최근이용내역"
-                    android:textSize="16sp" />
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp">
+
+                    <ImageView
+                        android:id="@+id/imageView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/section1" />
+
+                    <TextView
+                        android:id="@+id/mypagetext4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/arrowsmall"
+                        android:padding="20dp"
+                        android:text="최근이용내역"
+                        android:textSize="16sp" />
+                </LinearLayout>
 
                 <View
                     android:id="@+id/view7"
@@ -296,16 +387,31 @@
                     android:layout_weight="1"
                     android:background="#f8f0fd" />
 
-                <TextView
-                    android:id="@+id/textView10"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:drawableEnd="@drawable/arrowsmall"
-                    android:padding="15dp"
-                    android:text="설정"
-                    android:textSize="16sp" />
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp">
 
+                    <ImageView
+                        android:id="@+id/icon5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/setting1" />
+
+                    <TextView
+                        android:id="@+id/mypagetext5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/arrowsmall"
+                        android:padding="20dp"
+                        android:text="설정"
+                        android:textSize="16sp" />
+                </LinearLayout>
                 <View
                     android:id="@+id/view6"
                     android:layout_width="match_parent"
@@ -316,14 +422,64 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:orientation="horizontal"
-                    android:padding="10dp" />
+                    android:paddingLeft="20dp">
+
+                    <ImageView
+                        android:id="@+id/icon6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/setting1" />
+
+                    <TextView
+                        android:id="@+id/mypagetext6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/arrowsmall"
+                        android:padding="20dp"
+                        android:text="문의하기"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+                <View
+                    android:id="@+id/view8"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/name_text"
+                    android:layout_weight="1"
+                    android:background="#D8D8D8" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" />
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp">
+
+                    <ImageView
+                        android:id="@+id/icon7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/setting1" />
+
+                    <TextView
+                        android:id="@+id/mypagetext7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/arrowsmall"
+                        android:padding="20dp"
+                        android:text="고객센터"
+                        android:textSize="16sp" />
+                </LinearLayout>
 
             </LinearLayout>
 
