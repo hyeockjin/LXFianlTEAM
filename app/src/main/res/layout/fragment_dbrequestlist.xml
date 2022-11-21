@@ -45,6 +45,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
                     android:text="2022.9.15"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -53,7 +54,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
-                    android:text="이기현" />
+                    android:text="이기현"
+                    android:textSize="16sp" />
 
 
                 <Button
@@ -66,7 +68,7 @@
                     android:backgroundTint="#feefe4"
                     android:text="자세히보기"
                     android:textColor="#f6b278"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                 <LinearLayout
@@ -84,7 +86,7 @@
                         android:background="#FFFFFF"
                         android:backgroundTint="#FFFFFF"
                         android:text="수락"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                     <Button
@@ -95,7 +97,7 @@
                         android:background="#FFFFFF"
                         android:backgroundTint="#FFFFFF"
                         android:text="거절"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
                 </LinearLayout>
 
@@ -127,6 +129,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
                     android:text="2022.10.19"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -135,7 +138,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
-                    android:text="정유진" />
+                    android:text="정유진"
+                    android:textSize="16sp" />
 
 
                 <Button
@@ -148,7 +152,7 @@
                     android:backgroundTint="#feefe4"
                     android:text="자세히보기"
                     android:textColor="#f6b278"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                 <LinearLayout
@@ -165,7 +169,7 @@
                         android:background="#FFFFFF"
                         android:backgroundTint="#FFFFFF"
                         android:text="수락"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                     <Button
@@ -177,7 +181,7 @@
                         android:background="#FFFFFF"
                         android:backgroundTint="#FFFFFF"
                         android:text="거절"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
                 </LinearLayout>
 
@@ -216,6 +220,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
                     android:text="2022.11.21"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -224,7 +229,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
-                    android:text="정세종" />
+                    android:text="정세종"
+                    android:textSize="16sp" />
 
 
                 <Button
@@ -237,7 +243,7 @@
                     android:backgroundTint="#feefe4"
                     android:text="자세히보기"
                     android:textColor="#f6b278"
-                    android:textSize="12sp"
+                    android:textSize="16sp"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                 <LinearLayout
@@ -254,7 +260,7 @@
                         android:background="#FFFFFF"
                         android:backgroundTint="#FFFFFF"
                         android:text="수락"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                     <Button
@@ -266,7 +272,7 @@
                         android:background="#FFFFFF"
                         android:backgroundTint="#FFFFFF"
                         android:text="거절"
-                        android:textSize="12sp"
+                        android:textSize="16sp"
                         tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
                 </LinearLayout>
 
