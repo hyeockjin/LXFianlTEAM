@@ -12,5 +12,5 @@
         android:layout_width="wrap_content"
         android:layout_height="203dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/gompang" />
+        app:srcCompat="@drawable/gompang2" />
 </FrameLayout>

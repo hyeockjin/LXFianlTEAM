@@ -30,7 +30,7 @@
                 android:layout_height="154dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="170dp"
-                android:src="@drawable/gompang" />
+                android:src="@drawable/gompang2" />
 
             <EditText
                 android:id="@+id/login_id"
@@ -94,7 +94,7 @@
                 android:layout_marginTop="12dp"
                 android:background="@drawable/pinkbutton"
                 android:text="로그인"
-                android:textColor="#3D433D"
+                android:textColor="#c990f1"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 tools:ignore="TouchTargetSizeCheck" />
