@@ -64,7 +64,7 @@
                     android:background="@drawable/pinkbutton"
                     android:backgroundTint="#f8f0fd"
                     android:text="자세히보기"
-                    android:textColor="#9a88fe"
+                    android:textColor="#c990f1"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
             </LinearLayout>
@@ -114,7 +114,7 @@
                     android:background="@drawable/pinkbutton"
                     android:backgroundTint="#f8f0fd"
                     android:text="자세히보기"
-                    android:textColor="#9a88fe"
+                    android:textColor="#c990f1"
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
@@ -165,7 +165,7 @@
                 android:background="@drawable/pinkbutton"
                 android:backgroundTint="#f8f0fd"
                 android:text="자세히보기"
-                android:textColor="#9a88fe"
+                android:textColor="#c990f1"
                 android:textStyle="bold"
                 tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
