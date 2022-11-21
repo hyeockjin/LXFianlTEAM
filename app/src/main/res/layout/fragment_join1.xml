@@ -37,15 +37,10 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="30dp"
                 android:text="아래 항목에 전체 동의합니다."
-                android:textSize="16sp"
+                android:textColor="#736F6F"
+                android:textSize="14sp"
+                android:textStyle="normal"
                 tools:ignore="TouchTargetSizeCheck" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_below="@+id/checkBox"
-                android:layout_marginTop="5dp"
-                android:background="@android:color/black" />
 
             <CheckBox
                 android:id="@+id/checkBox2"
@@ -54,7 +49,9 @@
                 android:layout_marginTop="20dp"
                 android:minHeight="48dp"
                 android:text="본인은 만 19세 이상입니다.(필수)"
-                android:textSize="16sp" />
+                android:textColor="#736F6F"
+                android:textSize="14sp"
+                android:textStyle="normal" />
 
             <CheckBox
                 android:id="@+id/checkBox3"
@@ -62,7 +59,9 @@
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:text="서비스 이용약관 동의 (필수)"
-                android:textSize="16sp" />
+                android:textColor="#736F6F"
+                android:textSize="14sp"
+                android:textStyle="normal" />
 
             <CheckBox
                 android:id="@+id/checkBox4"
@@ -70,7 +69,9 @@
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:text="개인정보 수집 이용 동의 (필수)"
-                android:textSize="16sp" />
+                android:textColor="#736F6F"
+                android:textSize="14sp"
+                android:textStyle="normal" />
 
             <CheckBox
                 android:id="@+id/checkBox6"
@@ -78,7 +79,9 @@
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:text="위치기반서비스 이용약관 동의 (필수)"
-                android:textSize="16sp" />
+                android:textColor="#736F6F"
+                android:textSize="14sp"
+                android:textStyle="normal" />
 
             <CheckBox
                 android:id="@+id/checkBox5"
@@ -86,7 +89,9 @@
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:text="안전보상지원 프로그램약관 동의 (필수)"
-                android:textSize="16sp" />
+                android:textColor="#736F6F"
+                android:textSize="14sp"
+                android:textStyle="normal" />
 
             <CheckBox
                 android:id="@+id/checkBox8"
@@ -94,7 +99,9 @@
                 android:layout_height="wrap_content"
                 android:minHeight="48dp"
                 android:text="이벤트 및 마케팅 정보 수신 동의 (선택)"
-                android:textSize="16sp" />
+                android:textColor="#736F6F"
+                android:textSize="14sp"
+                android:textStyle="normal" />
 
         </LinearLayout>
 
