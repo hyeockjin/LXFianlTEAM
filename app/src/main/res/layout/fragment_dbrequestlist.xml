@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#f8f0fd"
         android:orientation="vertical">
 
         <LinearLayout
@@ -57,7 +58,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:background="@drawable/shadow"
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/dbday1"
@@ -76,9 +79,12 @@
             <Button
                 android:id="@+id/matkimiInfo1"
                 android:layout_width="89dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="45dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/pinkbutton"
+                android:backgroundTint="#feefe4"
                 android:text="자세히보기"
+                android:textColor="#f6b278"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <Button
@@ -100,8 +106,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shadow"
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/dbday2"
@@ -120,9 +128,12 @@
             <Button
                 android:id="@+id/matkimiInfo2"
                 android:layout_width="89dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="45dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/pinkbutton"
+                android:backgroundTint="#feefe4"
                 android:text="자세히보기"
+                android:textColor="#f6b278"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <Button
@@ -143,9 +154,11 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shadow"
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/dbday3"
@@ -164,9 +177,12 @@
             <Button
                 android:id="@+id/matkimiInfo3"
                 android:layout_width="89dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="45dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="30dp"
+                android:background="@drawable/pinkbutton"
+                android:backgroundTint="#feefe4"
                 android:text="자세히보기"
+                android:textColor="#f6b278"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <Button

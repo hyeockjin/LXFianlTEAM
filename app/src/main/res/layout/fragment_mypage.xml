@@ -32,10 +32,11 @@
                 android:background="#f8f0fd"
                 android:gravity="center|center_vertical"
                 android:text="마이페이지"
+                android:fontFamily="@font/saemaul"
+                android:letterSpacing="0.3"
                 android:textColor="#2C335C"
                 android:textSize="20sp"
                 android:textStyle="normal" />
-
         </LinearLayout>
 
         <LinearLayout

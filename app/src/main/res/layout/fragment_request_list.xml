@@ -16,10 +16,11 @@
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:background="#faf7f4"
-            android:gravity="center_horizontal|center_vertical"
+            android:fontFamily="@font/saemaul"
+            android:gravity="center|center_vertical"
+            android:letterSpacing="0.3"
             android:text="요청현황"
-            android:textSize="16sp"
+            android:textSize="20sp"
             android:textStyle="normal" />
 
         <LinearLayout
@@ -31,16 +32,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FFC7C7"
-                android:text="내가 보낸 요청" />
+                android:background="#FFFFFF"
+                android:text="내가 보낸 요청"
+
+                android:fontFamily="@font/saemaul"
+                android:letterSpacing="0.1"
+                android:gravity="center|center_vertical"
+                android:textColor="#c990f1"
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/requestshowlist2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#5DA7F8"
-                android:text="내가 받은 요청" />
+                android:background="#FFFFFF"
+                android:fontFamily="@font/saemaul"
+                android:gravity="center|center_vertical"
+                android:letterSpacing="0.1"
+                android:text="내가 받은 요청"
+                android:textColor="#f6b278"
+                android:textStyle="bold" />
         </LinearLayout>
 
     </LinearLayout>
@@ -49,7 +61,7 @@
         android:id="@+id/mypagetomain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#faf7f4"
+        android:backgroundTint="#FFFFFF"
         android:src="@drawable/arrow" />
 
 </FrameLayout>

@@ -20,7 +20,10 @@
             android:background="#FFFFFF"
             android:gravity="center_horizontal|center_vertical"
             android:text="이용기록페이지"
-            android:textSize="16sp"
+            android:fontFamily="@font/saemaul"
+            android:letterSpacing="0.3"
+            android:textSize="20sp"
+            android:textAlignment="center"
             android:textStyle="normal" />
 
         <LinearLayout
@@ -36,8 +39,13 @@
                 android:layout_weight="1"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/saemaul"
+                android:gravity="center|center_vertical"
+                android:letterSpacing="0.1"
                 android:text="내가 보낸 요청"
-                android:textColor="#fea5c1" />
+                android:textAlignment="center"
+                android:textColor="#c990f1 "
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/reqshowhis2"
@@ -46,8 +54,13 @@
                 android:layout_weight="1"
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/saemaul"
+                android:gravity="center|center_vertical"
+                android:letterSpacing="0.1"
                 android:text="내가 받은 요청"
-                android:textColor="#9a88fe" />
+                android:textAlignment="center"
+                android:textColor="#f6b278"
+                android:textStyle="bold" />
 
         </LinearLayout>
 
