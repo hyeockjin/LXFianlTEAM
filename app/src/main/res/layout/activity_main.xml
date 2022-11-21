@@ -275,7 +275,7 @@
                 android:background="#FFFFFF"
                 android:backgroundTint="#FFFFFF"
                 android:text="펫시터찾기"
-                android:textColor="#4FB390"
+                android:textColor="#9b89ff"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 

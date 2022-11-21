@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#f8f0fd"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -23,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="18dp"
                 android:text="날짜"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -32,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="60dp"
                 android:text="견주"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -41,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="70dp"
                 android:text="정보"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -50,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="75dp"
                 android:text="현황"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -60,19 +61,24 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/shadow"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
 
             <TextView
                 android:id="@+id/dbday1"
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:text="2022.9.15" />
+                android:layout_marginRight="10dp"
+                android:text="2022.9.15"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/matkimi1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="53dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
                 android:text="이기현" />
 
 
@@ -80,26 +86,33 @@
                 android:id="@+id/matkimiInfo1"
                 android:layout_width="89dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:background="@drawable/pinkbutton"
                 android:backgroundTint="#feefe4"
                 android:text="자세히보기"
                 android:textColor="#f6b278"
+                android:textSize="12sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/request1"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
                 android:text="수락"
+                android:textSize="12sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/refuse1"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
                 android:text="거절"
+                android:textSize="12sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </LinearLayout>
 
@@ -109,19 +122,24 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/shadow"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
 
             <TextView
                 android:id="@+id/dbday2"
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:text="2022.10.19" />
+                android:layout_marginRight="10dp"
+                android:text="2022.10.19"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/matkimi2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="44dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
                 android:text="정유진" />
 
 
@@ -129,26 +147,33 @@
                 android:id="@+id/matkimiInfo2"
                 android:layout_width="89dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:background="@drawable/pinkbutton"
                 android:backgroundTint="#feefe4"
                 android:text="자세히보기"
                 android:textColor="#f6b278"
+                android:textSize="12sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/request2"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
                 android:text="수락"
+                android:textSize="12sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/refuse2"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
                 android:text="거절"
+                android:textSize="12sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </LinearLayout>
 
@@ -158,19 +183,24 @@
             android:layout_marginTop="10dp"
             android:background="@drawable/shadow"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="10dp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp">
 
             <TextView
                 android:id="@+id/dbday3"
-                android:layout_width="wrap_content"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
-                android:text="2022.11.21" />
+                android:layout_marginRight="10dp"
+                android:text="2022.11.21"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/matkimi3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="44dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
                 android:text="정세종" />
 
 
@@ -178,26 +208,33 @@
                 android:id="@+id/matkimiInfo3"
                 android:layout_width="89dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:background="@drawable/pinkbutton"
                 android:backgroundTint="#feefe4"
                 android:text="자세히보기"
                 android:textColor="#f6b278"
+                android:textSize="12sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/request3"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
                 android:text="수락"
+                android:textSize="12sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             <Button
                 android:id="@+id/refuse3"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
                 android:text="거절"
+                android:textSize="12sp"
                 tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
         </LinearLayout>
     </LinearLayout>
