@@ -61,9 +61,10 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/bold5"
+                    android:background="@drawable/pinkbutton"
+                    android:backgroundTint="#feefe4"
                     android:text="자세히보기"
-                    android:textColor="#9b89ff"
+                    android:textColor="#f6b278"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
             </LinearLayout>
 
@@ -109,9 +110,10 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:background="@drawable/bold5"
+                    android:background="@drawable/pinkbutton"
+                    android:backgroundTint="#feefe4"
                     android:text="자세히보기"
-                    android:textColor="#9b89ff"
+                    android:textColor="#f6b278"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
@@ -158,9 +160,10 @@
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:background="@drawable/bold5"
+                android:background="@drawable/pinkbutton"
+                android:backgroundTint="#feefe4"
                 android:text="자세히보기"
-                android:textColor="#9b89ff"
+                android:textColor="#f6b278"
                 tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
     </LinearLayout>
