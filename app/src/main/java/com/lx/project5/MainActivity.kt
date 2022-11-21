@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.location.Location
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
@@ -14,17 +13,20 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.lx.api.BasicClient
-import com.lx.data.CareListResponse
 import com.lx.data.FileUploadResponse
 import com.lx.data.careMarkerResponse
 import com.lx.data.mkMarkerResponse
 import com.lx.project5.appdata.AppData
+import com.lx.project5.appdata.CardData
 import com.lx.project5.chatting.ChatListFragment
 import com.lx.project5.databinding.ActivityMainBinding
 import com.lx.project5.mypage.*
@@ -39,9 +41,8 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.io.File
 import java.text.SimpleDateFormat
-
 import java.util.*
-import kotlin.collections.ArrayList
+
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -176,12 +177,14 @@ class MainActivity : AppCompatActivity() {
             // 내 위치 요청하기
             requestLocation()
 
-            // 지도 클릭 시 처리
-            map.setOnMapClickListener {
-                //showToast("지도 클릭됨 : ${it.latitude}, ${it.longitude}")
-                //카드뷰 안보이게
-                binding.cardView.visibility = View.GONE
-            }
+            // 지도 클릭시 카드 뷰 없애기
+            map.setOnMapClickListener(object : GoogleMap.OnMapClickListener {
+                override fun onMapClick(latLng: LatLng) {
+                    Log.v("시발","onMapClick")
+                    binding.cardView.visibility = View.GONE
+                }
+            })
+
             // 보고있는 지도 영역 구분
             map.setOnCameraIdleListener {
                 val bounds = map.projection.visibleRegion.latLngBounds
@@ -200,8 +203,19 @@ class MainActivity : AppCompatActivity() {
             }
 
             // 마커클릭
-            map.setOnMarkerClickListener {
+            map.setOnMarkerClickListener { it ->
                 binding.cardView.visibility = View.VISIBLE
+                Log.v("시발", "setOnMarkerClickListener")
+
+                var cardData = CardData()
+                cardData.cardName = it.title
+                cardData.doCard(cardData)
+                binding.cardName.text = cardData.cardName
+                binding.classScope.text = cardData.cardScope
+                binding.cardAddress.text = cardData.cardAddress
+                binding.cardDitail.text = cardData.cardDitail
+                binding.cardTag.text = cardData.cardTag
+                binding.cardImage.setImageURI(cardData.cardImage?.toUri())
                 true
             }
         }
@@ -230,6 +244,8 @@ class MainActivity : AppCompatActivity() {
                         .position(LatLng(latitude!!, longitude!!))
                         .title(response.body()?.data?.get(i)?.careId.toString())
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_person))
+
+                    Log.v("시발","${makerOptions.title}")
 
                     // 2. 마커 생성 (마커를 나타냄)
                     crMarker = map.addMarker(makerOptions)
@@ -267,7 +283,6 @@ class MainActivity : AppCompatActivity() {
 
                     // 2. 마커 생성 (마커를 나타냄)
                     mkMarker = map.addMarker(makerOptions)
-
                 }
             }
             override fun onFailure(call: Call<mkMarkerResponse>, t: Throwable) {

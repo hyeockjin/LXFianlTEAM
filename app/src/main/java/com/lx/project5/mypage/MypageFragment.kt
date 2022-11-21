@@ -25,15 +25,12 @@ class MypageFragment : Fragment() {
         binding.mypagetomain.setOnClickListener {
             //(activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypage)
         }
-
         binding.updateButton.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmatkimiInfo)
         }
-
         binding.requestButton.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMrequestlist)
         }
-
         binding.listhistoryListButton.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMhistory)
         }
@@ -48,7 +45,6 @@ class MypageFragment : Fragment() {
             }
             binding.memberName.text = AppData.memberData?.memberId
             binding.memberTel.text = AppData.memberData?.memberAddress
-
         }
     }
 
