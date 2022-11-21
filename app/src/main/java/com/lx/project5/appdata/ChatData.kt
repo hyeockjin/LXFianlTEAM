@@ -4,7 +4,8 @@ package com.lx.project5.appdata
 data class ChatData(
     var name: String,
     var email: String,
-    var uId:String
+    var uId:String,
+    var memberImage:String
 ){
-    constructor():this("","","")
+    constructor():this("","","","")
 }

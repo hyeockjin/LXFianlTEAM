@@ -22,6 +22,8 @@ import com.google.android.gms.maps.model.*
 import com.lx.api.BasicClient
 import com.lx.data.CareListResponse
 import com.lx.data.FileUploadResponse
+import com.lx.data.careMarkerResponse
+import com.lx.data.mkMarkerResponse
 import com.lx.project5.appdata.AppData
 import com.lx.project5.chatting.ChatListFragment
 import com.lx.project5.databinding.ActivityMainBinding
@@ -39,6 +41,7 @@ import java.io.File
 import java.text.SimpleDateFormat
 
 import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -48,6 +51,8 @@ class MainActivity : AppCompatActivity() {
     lateinit var editor: SharedPreferences.Editor // 간단한 데이터 저장용 생명주기 관리 할 필요없이 데이터가 저장된다
 
     var myMarker: Marker? = null
+    var crMarker: Marker? = null
+    var mkMarker: Marker? = null
 
     enum class ScreenItem {
         ITEM1,
@@ -110,8 +115,6 @@ class MainActivity : AppCompatActivity() {
         binding.mainWriteButton.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEM1)
         }
-        // 위에 맡김 돌봄 인덱스 전환할때 버튼모음
-        changModeMKDB()
 
         //하단 탭의 버튼을 눌렀을때
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
@@ -130,7 +133,13 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEMmkschedule)
                 }
                 R.id.tab3 -> {
-                    onFragmentChanged(ScreenItem.ITEMchat)
+                    showToast("로그인 먼저 해주세요!")
+                    // 로그인 상태에 따라 마이페이지를 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
+                    if(AppData.memberData?.memberId == null ){
+                        onFragmentChanged(ScreenItem.ITEMlogin)
+                    }else if(AppData.memberData?.memberId != null) {
+                        onFragmentChanged(ScreenItem.ITEMchat)
+                    }
                 }
                 R.id.tab4 -> {
                     // 로그인 상태에 따라 마이페이지를 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
@@ -173,7 +182,6 @@ class MainActivity : AppCompatActivity() {
                 //카드뷰 안보이게
                 binding.cardView.visibility = View.GONE
             }
-
             // 보고있는 지도 영역 구분
             map.setOnCameraIdleListener {
                 val bounds = map.projection.visibleRegion.latLngBounds
@@ -183,10 +191,89 @@ class MainActivity : AppCompatActivity() {
                 println("zoomLevel : ${zoomLevel}")
             }
 
-            // 근처 지도 마커 활성화
-            showNearLocationMarker(map)
-        }
+            showNearCRLocationMarker(map)
+            binding.mainDBButton.setOnClickListener{
+                showNearCRLocationMarker(map)
+            }
+            binding.mainMKButton.setOnClickListener{
+                showNearMKLocationMarker(map)
+            }
 
+            // 마커클릭
+            map.setOnMarkerClickListener {
+                binding.cardView.visibility = View.VISIBLE
+                true
+            }
+        }
+    } //@@@@@
+
+    // 근처 맡김이 마커 표시
+    fun showNearCRLocationMarker(map: GoogleMap) { // 기존 마커 제거하고 생성
+        map.clear()
+        requestLocation()
+        Log.v("lastkingdom", "showNearCRLocationMarker")
+        BasicClient.api.careMarker(
+            requestCode = "1001"
+        ).enqueue(object : Callback<careMarkerResponse> {
+            override fun onResponse(
+                call: Call<careMarkerResponse>,
+                response: Response<careMarkerResponse>
+            ) {
+                val jsonArray = JSONArray(response.body()?.data)
+                for (i in 0 until jsonArray.length()) {
+                    var latitude = response.body()?.data?.get(i)?.careX
+                    var longitude = response.body()?.data?.get(i)?.careY
+
+                    // 1. 마커 옵션 설정 (만드는 과정)
+                    var makerOptions = MarkerOptions()
+                    makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
+                        .position(LatLng(latitude!!, longitude!!))
+                        .title(response.body()?.data?.get(i)?.careId.toString())
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_person))
+
+                    // 2. 마커 생성 (마커를 나타냄)
+                    crMarker = map.addMarker(makerOptions)
+                }
+            }
+            override fun onFailure(call: Call<careMarkerResponse>, t: Throwable) {
+                Log.v("lastkingdom", "근처 마커 활성화 요청 실패")
+            }
+        })
+    }
+
+    // 근처 돌봄이 마커 표시
+    fun showNearMKLocationMarker(map: GoogleMap) {
+        map.clear()
+        requestLocation()
+        BasicClient.api.mkMarker(
+        requestCode = "1001"
+        ).enqueue(object : Callback<mkMarkerResponse> {
+            override fun onResponse(
+                call: Call<mkMarkerResponse>,
+                response: Response<mkMarkerResponse>
+            ) {
+                val jsonArray = JSONArray(response.body()?.data)
+                for (i in 0 until jsonArray.length()) {
+                    var latitude = response.body()?.data?.get(i)?.mkX
+                    var longitude = response.body()?.data?.get(i)?.mkY
+                    Log.v("lastkingdom", "showNearMKLocationMarker")
+
+                    // 1. 마커 옵션 설정 (만드는 과정)
+                    var makerOptions = MarkerOptions()
+                    makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
+                        .position(LatLng(latitude!!, longitude!!))
+                        .title(response.body()?.data?.get(i)?.mkId.toString()) // 타이틀.
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_dog))
+
+                    // 2. 마커 생성 (마커를 나타냄)
+                    mkMarker = map.addMarker(makerOptions)
+
+                }
+            }
+            override fun onFailure(call: Call<mkMarkerResponse>, t: Throwable) {
+                Log.v("lastkingdom", "근처 마커 활성화 요청 실패")
+            }
+        })
     }
 
     fun onFragmentChanged(index: MainActivity.ScreenItem) {
@@ -302,7 +389,6 @@ class MainActivity : AppCompatActivity() {
                     super.onLocationResult(result)
 
                     for ((index, location) in result.locations.withIndex()) {
-                        Log.v("lastkingdom", "${location.latitude},${location.longitude}")
                         showCurrentLocation(location)
                     }
                 }
@@ -313,7 +399,6 @@ class MainActivity : AppCompatActivity() {
                 locationCallback,
                 Looper.myLooper()
             )
-
         } catch (e: SecurityException) {
             e.printStackTrace()
         }
@@ -323,74 +408,21 @@ class MainActivity : AppCompatActivity() {
     fun showCurrentLocation(location: Location) {
         val curPoint = LatLng(location.latitude, location.longitude)
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(curPoint, 17.0f))
-
+        Log.v("lastkingdom","showCurrentLocation")
         showMarker(curPoint)
-
-    }
-
-    // 근처 마커 표시
-    fun showNearLocationMarker(map: GoogleMap) {
-        BasicClient.api.getCareListTest(
-            requestCode = "1001"
-        ).enqueue(object : Callback<CareListResponse> {
-            override fun onResponse(
-                call: Call<CareListResponse>,
-                response: Response<CareListResponse>
-            ) {
-                Log.v("lastkingdom", "근처 마커 활성화 요청 성공")
-                val jsonArray = JSONArray(response.body()?.data)
-                for (i in 0 until jsonArray.length()) {
-                    Log.v("lastkingdom", "근처 마커 for문 진입")
-                    var latitude = response.body()?.data?.get(i)?.careX
-                    var longitude = response.body()?.data?.get(i)?.careY
-
-                    Log.v("lastkingdom", "마커 위도 ${latitude.toString()}")
-                    Log.v("lastkingdom", "마커 위도 ${longitude.toString()}")
-
-                    Log.v("lastkingdom", "2")
-                    // 1. 마커 옵션 설정 (만드는 과정)
-                    var makerOptions = MarkerOptions()
-                    makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
-                        .position(LatLng(latitude!!, longitude!!))
-                        .title(response.body()?.data?.get(i)?.careNo.toString()) // 타이틀.
-
-                    // 2. 마커 생성 (마커를 나타냄)
-                    map.addMarker(makerOptions)
-
-                    // 마커클릭
-                    map.setOnMarkerClickListener {
-
-//                        binding.className.text = response.body()?.data?.get(i)?.careName.toString()
-//                        binding.classAddress.text = response.body()?.data?.get(i)?.careAddress.toString()
-//                        binding.classSelf.text = response.body()?.data?.get(i)?.careExperience.toString()
-                        binding.cardView.visibility = View.VISIBLE
-
-                        true
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<CareListResponse>, t: Throwable) {
-                Log.v("lastkingdom", "근처 마커 활성화 요청 실패")
-            }
-        })
     }
 
     fun showMarker(curPoint: LatLng) {
         myMarker?.remove()
-
         MarkerOptions().also {
             it.position(curPoint)
             it.title("내위치")
             it.icon(BitmapDescriptorFactory.fromResource(R.drawable.dogicon))
 
-
             myMarker = map.addMarker(it)
             myMarker?.tag = "1001"
         }
-
     }
-
     //게시글에서 사진 찍은거 저장하기
     fun saveFile(bitmap: Bitmap) {
         filename = dateFormat1.format(Date()) + ".jpg"
@@ -398,14 +430,11 @@ class MainActivity : AppCompatActivity() {
             openFileOutput(filename, Context.MODE_PRIVATE).use {
                 this.compress(Bitmap.CompressFormat.JPEG, 100, it)
                 it.close()
-
                 showToast("이미지를 파일로 저장함 : ${filename}")
-
                 uploadFile(filename!!)
             }
         }
     }
-
     fun uploadFile(filename: String) {
         // 저장한 파일에 대한 정보를 filePart로 만들기
         val file = File("${filesDir}/${filename}")
@@ -435,27 +464,13 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
     fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
-
     // 데이트폼
     fun nowDate(): String {
         val now = System.currentTimeMillis()
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREAN).format(now)
         return simpleDateFormat
     }
-
-    // 상단 맡김돌봄 전환
-    fun changModeMKDB() {
-        binding.mainMKButton.setOnClickListener {
-            AppData.navIndex = 1
-        }
-        binding.mainDBButton.setOnClickListener {
-            AppData.navIndex = 2
-        }
-    }
-
-
 }

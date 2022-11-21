@@ -89,6 +89,22 @@ interface BasicApi {
         @Field("memberName") memberName: String
     ): Call<MemberListResponse>
 
+    /** @@@@@@@@@@@@
+     * GET 방식으로 주변 펫시터 마커 / 사용가능
+     */
+    @GET("care/careMarker")
+    fun careMarker(
+        @Query("requestCode") requestCode: String
+    ): Call<careMarkerResponse>
+
+    /** @@@@@@@@@@@@@@
+     * GET 방식으로 주변 주인 마커 / 사용가능
+     */
+    @GET("care/mkMarker")
+    fun mkMarker(
+        @Query("requestCode") requestCode: String
+    ): Call<mkMarkerResponse>
+
     /**
      * GET 방식으로 주변 펫시터 요청 / 사용가능
      */
@@ -317,7 +333,7 @@ class BasicClient {
         private const val PROTOCOL = "http"
 
         // 기본 URL
-        private const val BASE_URL = "http://172.30.1.12:8001/"
+        private const val BASE_URL = "http://192.168.0.10:8001/"
 
         // 헤더 속성
         private const val CLIENT_ID = ""
