@@ -44,7 +44,8 @@
             android:background="#f8f0fd"
             android:orientation="horizontal"
             android:paddingStart="20dp"
-            android:paddingEnd="20dp">
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView2"
@@ -209,7 +210,7 @@
                 </LinearLayout>
 
                 <View
-                    android:id="@+id/view2"
+                    android:id="@+id/view1"
                     android:layout_width="match_parent"
                     android:layout_height="13dp"
                     android:layout_below="@+id/name_text"
@@ -244,7 +245,7 @@
                 </LinearLayout>
 
                 <View
-                    android:id="@+id/view2"
+                    android:id="@+id/view22"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/name_text"
@@ -279,7 +280,7 @@
                 </LinearLayout>
 
                 <View
-                    android:id="@+id/view4"
+                    android:id="@+id/view2"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/name_text"
