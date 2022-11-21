@@ -65,6 +65,7 @@
                     android:backgroundTint="#f8f0fd"
                     android:text="자세히보기"
                     android:textColor="#9a88fe"
+                    android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
             </LinearLayout>
 
@@ -114,6 +115,7 @@
                     android:backgroundTint="#f8f0fd"
                     android:text="자세히보기"
                     android:textColor="#9a88fe"
+                    android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
@@ -164,6 +166,7 @@
                 android:backgroundTint="#f8f0fd"
                 android:text="자세히보기"
                 android:textColor="#9a88fe"
+                android:textStyle="bold"
                 tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
     </LinearLayout>

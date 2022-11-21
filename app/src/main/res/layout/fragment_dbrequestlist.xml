@@ -61,7 +61,7 @@
                 <Button
                     android:id="@+id/matkimiInfo1"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/pinkbutton"
@@ -69,6 +69,7 @@
                     android:text="자세히보기"
                     android:textColor="#f6b278"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                 <LinearLayout
@@ -145,7 +146,7 @@
                 <Button
                     android:id="@+id/matkimiInfo2"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/pinkbutton"
@@ -153,6 +154,7 @@
                     android:text="자세히보기"
                     android:textColor="#f6b278"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                 <LinearLayout
@@ -236,7 +238,7 @@
                 <Button
                     android:id="@+id/matkimiInfo3"
                     android:layout_width="wrap_content"
-                    android:layout_height="20dp"
+                    android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/pinkbutton"
@@ -244,6 +246,7 @@
                     android:text="자세히보기"
                     android:textColor="#f6b278"
                     android:textSize="16sp"
+                    android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
                 <LinearLayout
