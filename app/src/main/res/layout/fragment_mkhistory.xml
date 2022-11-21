@@ -17,31 +17,20 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="160dp"
-                android:layout_height="210dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_gravity="right"
-                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
                 android:layout_weight="1"
-                android:background="@drawable/shadow4"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <ImageView
-                    android:id="@+id/profile1"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:src="@drawable/person2" />
+                android:background="@drawable/shadow"
+                android:padding="15dp">
 
                 <TextView
                     android:id="@+id/dbday1"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="2022.9.15"
@@ -59,7 +48,7 @@
 
                 <TextView
                     android:id="@+id/history4"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
@@ -79,28 +68,17 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="160dp"
-                android:layout_height="210dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
                 android:layout_weight="1"
-                android:background="@drawable/shadow4"
-                android:orientation="vertical"
-                android:padding="10dp">
-
-                <ImageView
-                    android:id="@+id/profile2"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="10dp"
-                    android:src="@drawable/person3" />
+                android:background="@drawable/shadow"
+                android:padding="15dp">
 
                 <TextView
                     android:id="@+id/dbday2"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="2022.10.19"
@@ -118,7 +96,7 @@
 
                 <TextView
                     android:id="@+id/history5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
@@ -140,26 +118,16 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="160dp"
-            android:layout_height="210dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:background="@drawable/shadow4"
-            android:orientation="vertical"
-            android:padding="10dp">
-
-            <ImageView
-                android:id="@+id/profile3"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="bottom|center"
-                android:layout_marginBottom="10dp"
-                android:src="@drawable/person4" />
+            android:background="@drawable/shadow"
+            android:padding="15dp">
 
             <TextView
                 android:id="@+id/dbday3"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="2022.11.21"
@@ -177,7 +145,7 @@
 
             <TextView
                 android:id="@+id/history6"
-                android:layout_width="wrap_content"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
