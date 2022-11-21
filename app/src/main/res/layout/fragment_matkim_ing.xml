@@ -17,14 +17,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#FAF7F4"
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/matkimIngToMKSchedule"
+                android:id="@+id/matkimingToMKSchedule"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#faf7f4"
+                android:backgroundTint="#FFFFFF"
                 android:src="@drawable/arrow"
                 tools:ignore="SpeakableTextPresentCheck" />
 
@@ -34,9 +33,11 @@
                 android:layout_height="46dp"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginLeft="128dp"
+                android:fontFamily="@font/saemaul"
                 android:gravity="center_vertical"
+                android:letterSpacing="0.3"
                 android:text="진행현황"
-                android:textSize="16sp" />
+                android:textSize="20sp" />
         </LinearLayout>
 
         <View
@@ -72,9 +73,10 @@
 
                     <EditText
                         android:id="@+id/petSitterName4"
-                        android:layout_width="160dp"
+                        android:layout_width="230dp"
                         android:layout_height="40dp"
                         android:background="@drawable/bold1"
+                        android:backgroundTint="#C8C7C7"
                         android:gravity="center_vertical"
                         android:padding="10dp"
                         android:text="조애리"
@@ -143,14 +145,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
-
-                    <TextView
-                        android:layout_width="110dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="16dp"
-                        android:text="진행률"
-                        android:textStyle="bold" />
 
                     <ProgressBar
                         android:id="@+id/matkimProgressBar2"

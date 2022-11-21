@@ -42,7 +42,7 @@
                 android:fontFamily="@font/saemaul"
                 android:gravity="center|center_vertical"
                 android:letterSpacing="0.1"
-                android:text="내가 보낸 요청"
+                android:text="맡김기록"
                 android:textAlignment="center"
                 android:textColor="#c990f1 "
                 android:textStyle="bold" />
@@ -57,7 +57,7 @@
                 android:fontFamily="@font/saemaul"
                 android:gravity="center|center_vertical"
                 android:letterSpacing="0.1"
-                android:text="내가 받은 요청"
+                android:text="돌봄기록"
                 android:textAlignment="center"
                 android:textColor="#f6b278"
                 android:textStyle="bold" />
