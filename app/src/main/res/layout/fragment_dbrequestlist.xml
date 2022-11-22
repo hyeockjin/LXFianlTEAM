@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="160dp"
-        android:layout_height="wrap_content"
+        android:layout_height="235dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/shadow4"
@@ -74,8 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
+                android:background="@drawable/pinkbutton"
                 android:text="수락" />
 
             <Button
@@ -83,8 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
+                android:background="@drawable/bold5"
                 android:text="거절" />
         </LinearLayout>
     </LinearLayout>
@@ -92,7 +90,7 @@
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="160dp"
-        android:layout_height="wrap_content"
+        android:layout_height="235dp"
         android:layout_gravity="center"
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
@@ -106,13 +104,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/person2" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/matkimiInfo1"
+                android:layout_width="wrap_content"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:src="@drawable/person2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/imageView100"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="top|end"
+                android:layout_marginBottom="4dp"
+                android:background="@android:drawable/ic_dialog_info"
+                android:backgroundTint="#DCEDC8"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/matkimiInfo1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.765"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/dbday1"
@@ -121,54 +144,47 @@
             android:layout_gravity="center"
             android:layout_marginBottom="5dp"
             android:text="2022.9.15"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/matkimi1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:text="이기현"
-            android:textSize="16sp" />
-
-
-        <Button
-            android:id="@+id/matkimiInfo1"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/pinkbutton"
-            android:backgroundTint="#feefe4"
-            android:text="자세히보기"
-            android:textColor="#f4a25d"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/matkimi1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="이기현"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/request1"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="30dp"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
+                android:background="@drawable/pinkbutton"
                 android:text="수락" />
 
             <Button
                 android:id="@+id/refuse1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
+                android:background="@drawable/bold5"
                 android:text="거절" />
         </LinearLayout>
 
@@ -177,7 +193,7 @@
     <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="160dp"
-        android:layout_height="wrap_content"
+        android:layout_height="235dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="28dp"
@@ -244,8 +260,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
+                android:background="@drawable/pinkbutton"
                 android:text="수락" />
 
             <Button
@@ -253,8 +268,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="#FFFFFF"
-                android:backgroundTint="#FFFFFF"
+                android:background="@drawable/bold5"
                 android:text="거절" />
         </LinearLayout>
     </LinearLayout>

@@ -17,7 +17,7 @@ import com.lx.project5.databinding.FragmentSincheongGeulBinding
 import java.util.*
 
 
-class SincheongGeulFragment : Fragment() {
+class SincheongGeulFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     var _binding: FragmentSincheongGeulBinding? = null
     val binding get() = _binding!!
 
