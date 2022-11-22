@@ -210,50 +210,25 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent" />
 
-                            <FrameLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="100dp"
-                                android:layout_gravity="bottom"
-                                android:background="@drawable/bold4">
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/finishWalkButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|center"
+                                android:layout_marginBottom="20dp"
+                                android:clickable="true"
+                                android:src="@drawable/pause"
+                                app:backgroundTint="#efecff" />
 
-                                <ImageView
-                                    android:id="@+id/imageView13"
-                                    android:layout_width="20dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginTop="5dp"
-                                    android:layout_marginRight="100dp"
-                                    android:src="@drawable/previous" />
-
-                                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                                    android:id="@+id/finishWalkButton"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="bottom|center"
-                                    android:layout_marginBottom="20dp"
-                                    android:clickable="true"
-                                    android:src="@drawable/pause"
-                                    app:backgroundTint="#efecff" />
-
-                                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                                    android:id="@+id/startWalkButton"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="bottom|center"
-                                    android:layout_marginBottom="20dp"
-                                    android:clickable="true"
-                                    android:src="@drawable/play"
-                                    app:backgroundTint="#efecff" />
-
-                                <ImageView
-                                    android:id="@+id/imageView14"
-                                    android:layout_width="20dp"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginLeft="100dp"
-                                    android:layout_marginTop="5dp"
-                                    android:src="@drawable/next" />
-                            </FrameLayout>
+                            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                android:id="@+id/startWalkButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="bottom|center"
+                                android:layout_marginBottom="20dp"
+                                android:clickable="true"
+                                android:src="@drawable/play"
+                                app:backgroundTint="#efecff" />
 
 
                         </FrameLayout>
