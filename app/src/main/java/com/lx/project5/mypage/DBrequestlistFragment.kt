@@ -17,7 +17,7 @@ class DBrequestlistFragment : Fragment() {
         _binding = FragmentDbrequestlistBinding.inflate(inflater, container, false)
 
         binding.matkimiInfo1.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmatkimiInfo)
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypageMKInfo)
         }
 
         return binding.root

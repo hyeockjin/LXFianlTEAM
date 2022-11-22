@@ -82,7 +82,9 @@ class MainActivity : AppCompatActivity() {
         ITEMmypage,
         ITEMrequestlist,
         ITEMupdate,
-        ITEMchatlist
+        ITEMchatlist,
+        ITEMmypageMKInfo,
+        ITEMmypageDBInfo
 
     }
 
@@ -376,6 +378,14 @@ class MainActivity : AppCompatActivity() {
             MainActivity.ScreenItem.ITEMchatlist -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.container, ChatListFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMmypageMKInfo -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, MypageMKInfoFragment()).commit()
+            }
+            MainActivity.ScreenItem.ITEMmypageDBInfo -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, MypageDBInfoFragment()).commit()
             }
             else -> {}
         }

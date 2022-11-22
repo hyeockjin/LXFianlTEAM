@@ -18,13 +18,13 @@ class MKrequestlistFragment : Fragment() {
         _binding = FragmentMkrequestlistBinding.inflate(inflater, container, false)
 
         binding.PetSitterInfo4.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypageDBInfo)
         }
         binding.PetSitterInfo5.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypageDBInfo)
         }
         binding.PetSitterInfo6.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypageDBInfo)
         }
 
 
