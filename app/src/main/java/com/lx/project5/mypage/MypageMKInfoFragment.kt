@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.lx.project5.MainActivity
 import com.lx.project5.R
 import com.lx.project5.databinding.FragmentFirstBinding
 import com.lx.project5.databinding.FragmentMypageMkInfoBinding
@@ -15,6 +16,11 @@ class MypageMKInfoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentMypageMkInfoBinding.inflate(inflater, container, false)
+
+
+        binding.MyPetSitterInfoToMatkimIng.setOnClickListener{
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdbrequestlist)
+        }
 
         return binding.root
     }
