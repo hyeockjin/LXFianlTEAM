@@ -247,11 +247,11 @@
                 android:background="@android:drawable/ic_dialog_info"
                 android:backgroundTint="#DCEDC8"
                 android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/matkimiInfo2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.84"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
-                tools:layout_editor_absoluteY="55dp" />
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
