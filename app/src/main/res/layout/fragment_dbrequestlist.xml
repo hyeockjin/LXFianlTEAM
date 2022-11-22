@@ -175,16 +175,6 @@
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        tools:layout_editor_absoluteX="20dp"
-        tools:layout_editor_absoluteY="20dp">
-
-    </LinearLayout>
-
-    <LinearLayout
         android:id="@+id/linearLayout5"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
