@@ -28,6 +28,7 @@ import com.lx.data.mkMarkerResponse
 import com.lx.project5.appdata.AppData
 import com.lx.project5.appdata.CardData
 import com.lx.project5.chatting.ChatListFragment
+import com.lx.project5.chatting.SincheongGeulFragment
 import com.lx.project5.databinding.ActivityMainBinding
 import com.lx.project5.mypage.*
 import com.lx.project5.schedule.*
@@ -61,6 +62,8 @@ class MainActivity : AppCompatActivity() {
         ITEMjoin1,
         ITEMjoin2,
         ITEMlogin,
+        ITEMmatkimguel,
+        ITEMsincheonggeul,
 
         // 하단 내비 두번째 버튼눌렀을때 돌봄맡김 스케쥴 버튼
         ITEMdbschedule,
@@ -110,6 +113,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.mainWriteButton.setOnClickListener {
+            onFragmentChanged(ScreenItem.ITEMmatkimguel)
+        }
+
+        binding.button2.setOnClickListener {
+            onFragmentChanged(ScreenItem.ITEMchat)
+        }
 
         binding.cardView.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEM1)
@@ -353,6 +364,14 @@ class MainActivity : AppCompatActivity() {
             }
             MainActivity.ScreenItem.ITEMhistory -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, HistoryFragment())
+                    .commit()
+            }
+            MainActivity.ScreenItem.ITEMmatkimguel -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, MatkimGeulFragment())
+                    .commit()
+            }
+            MainActivity.ScreenItem.ITEMsincheonggeul -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, SincheongGeulFragment())
                     .commit()
             }
             MainActivity.ScreenItem.ITEMmkhistory -> {

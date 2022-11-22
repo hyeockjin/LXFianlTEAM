@@ -25,7 +25,7 @@ class DolbomIngFragment : Fragment() {
         }
 
         binding.matkimiInfoButton.setOnClickListener {
-
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmatkimiInfo)
         }
 
         binding.startWalkButton.setOnClickListener {
