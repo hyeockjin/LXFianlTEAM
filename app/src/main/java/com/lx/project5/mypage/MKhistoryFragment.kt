@@ -15,17 +15,7 @@ class MKhistoryFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentMkhistoryBinding.inflate(inflater, container, false)
 
-        binding.petSitterInfoButton1.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
-        }
-2
-        binding.petSitterInfoButton2.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
-        }
 
-        binding.petSitterInfoButton3.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
-        }
 
         return binding.root
     }
