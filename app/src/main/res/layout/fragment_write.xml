@@ -27,15 +27,17 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/button11"
+                    android:id="@+id/scheduleTo2"
                     android:layout_width="match_parent"
-                    android:layout_height="46dp"
+                    android:layout_height="68dp"
                     android:layout_gravity="center_horizontal|center_vertical"
-                    android:background="#faf7f4"
+                    android:background="#FFFFFF"
+                    android:fontFamily="@font/saemaul"
                     android:gravity="center_horizontal|center_vertical"
+                    android:letterSpacing="0.3"
                     android:text="맡김글 작성"
-                    android:fontFamily="@font/rokaf_bold_medium"
-                    android:textSize="16sp"
+                    android:textAlignment="center"
+                    android:textSize="25sp"
                     android:textStyle="normal" />
             </LinearLayout>
 
@@ -156,7 +158,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/graybutton"
-                            android:drawableEnd="@drawable/calendar"
+                            android:drawableEnd="@drawable/calendar2"
                             android:gravity="center_vertical"
                             android:hint="YYYY-MM-DD HH"
                             android:padding="7dp"
@@ -188,7 +190,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:background="@drawable/graybutton"
-                            android:drawableEnd="@drawable/calendar"
+                            android:drawableEnd="@drawable/calendar2"
                             android:gravity="center_vertical"
                             android:hint="YYYY-MM-DD HH"
                             android:padding="7dp"
@@ -258,7 +260,7 @@
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/pinkbutton"
                             android:text="작성하기"
-                            android:textColor="#FFFFFF" />
+                            android:textColor="#c990f1" />
                     </LinearLayout>
 
                 </LinearLayout>
@@ -279,7 +281,7 @@
         android:id="@+id/backButton6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#faf7f4"
+        android:backgroundTint="#FFFFFF"
         android:src="@drawable/arrow" />
 
 </FrameLayout>
