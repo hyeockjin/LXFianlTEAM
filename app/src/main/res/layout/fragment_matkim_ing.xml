@@ -40,137 +40,137 @@
                 android:textSize="25sp" />
         </LinearLayout>
 
-        <View
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_below="@+id/name_text"
-            android:background="#D8D8D8" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="10dp">
+                android:orientation="vertical" >
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal">
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-                    <TextView
-                        android:layout_width="110dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="16dp"
-                        android:text="펫시터"
-                        android:textStyle="bold" />
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
 
-                    <EditText
-                        android:id="@+id/petSitterName4"
-                        android:layout_width="230dp"
-                        android:layout_height="40dp"
-                        android:background="@drawable/bold1"
-                        android:backgroundTint="#C8C7C7"
-                        android:gravity="center_vertical"
-                        android:padding="10dp"
-                        android:text="조애리"
-                        android:textSize="14sp"
-                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                        <TextView
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="16dp"
+                            android:text="펫시터"
+                            android:textStyle="bold" />
 
-                    <Button
-                        android:id="@+id/petSitterInfoButton"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginLeft="10dp"
-                        android:background="@android:drawable/ic_dialog_info"
-                        android:backgroundTint="#DCEDC8"
-                        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                        <EditText
+                            android:id="@+id/petSitterName4"
+                            android:layout_width="230dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bold1"
+                            android:backgroundTint="#C8C7C7"
+                            android:gravity="center_vertical"
+                            android:padding="10dp"
+                            android:text="조애리"
+                            android:textSize="14sp"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-                </LinearLayout>
+                        <Button
+                            android:id="@+id/petSitterInfoButton"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="10dp"
+                            android:background="@android:drawable/ic_dialog_info"
+                            android:backgroundTint="#DCEDC8"
+                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    </LinearLayout>
 
-                    <TextView
-                        android:layout_width="110dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="16dp"
-                        android:text="맡김시간"
-                        android:textStyle="bold" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="110dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="16dp"
+                            android:text="맡김시간"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/matkimTime1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:background="#FFFFFF"
+                                android:gravity="center_vertical"
+                                android:padding="10dp"
+                                android:text="12:00 ~ 14:00"
+                                android:textSize="14sp"
+                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+                            <TextView
+                                android:id="@+id/matkimTime2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginRight="20dp"
+                                android:layout_weight="1"
+                                android:background="#FFFFFF"
+                                android:gravity="center_vertical"
+                                android:hint="1시간 남음"
+                                android:padding="10dp"
+                                android:textSize="14sp"
+                                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                        </LinearLayout>
+
+                    </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="horizontal">
 
-                        <EditText
-                            android:id="@+id/matkimTime1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:background="#FFFFFF"
-                            android:gravity="center_vertical"
-                            android:padding="10dp"
-                            android:text="12:00 ~ 14:00"
-                            android:textSize="14sp"
-                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-                        <TextView
-                            android:id="@+id/matkimTime2"
+                        <ProgressBar
+                            android:id="@+id/matkimProgressBar2"
+                            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="15dp"
                             android:layout_marginRight="20dp"
+                            android:layout_marginBottom="15dp"
                             android:layout_weight="1"
-                            android:background="#FFFFFF"
-                            android:gravity="center_vertical"
-                            android:hint="1시간 남음"
-                            android:padding="10dp"
-                            android:textSize="14sp"
-                            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+                            android:max="100"
+                            android:progress="50"
+                            android:progressBackgroundTint="#737270"
+                            android:progressTint="#FF9800" />
+
                     </LinearLayout>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <ProgressBar
-                        android:id="@+id/matkimProgressBar2"
-                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="15dp"
-                        android:layout_weight="1"
-                        android:max="100"
-                        android:progress="50"
-                        android:progressBackgroundTint="#737270"
-                        android:progressTint="#FF9800" />
+                    android:layout_height="448dp"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
                 </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="448dp"
-                android:layout_gravity="bottom"
-                android:orientation="vertical"
-                android:padding="10dp">
 
                 <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/matkimMap"
@@ -178,8 +178,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
             </LinearLayout>
-
-        </LinearLayout>
+        </ScrollView>
 
     </LinearLayout>
 

@@ -17,7 +17,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/chattitle"
+                android:id="@+id/ingtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="68dp"
                 android:layout_gravity="center"
@@ -31,20 +31,6 @@
                 android:textStyle="normal" />
 
         </LinearLayout>
-
-        <TextView
-            android:id="@+id/chattitle2"
-            android:layout_width="match_parent"
-            android:layout_height="68dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            android:fontFamily="@font/saemaul"
-            android:gravity="center|center_vertical"
-            android:letterSpacing="0.3"
-            android:text="채팅"
-            android:textColor="#575656"
-            android:textSize="25sp"
-            android:textStyle="normal" />
 
         <ScrollView
             android:layout_width="match_parent"
