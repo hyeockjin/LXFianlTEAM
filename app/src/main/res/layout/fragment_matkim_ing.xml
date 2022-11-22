@@ -16,7 +16,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="68dp"
             android:orientation="horizontal">
 
             <ImageButton
@@ -37,7 +37,7 @@
                 android:gravity="center_vertical"
                 android:letterSpacing="0.3"
                 android:text="진행현황"
-                android:textSize="20sp" />
+                android:textSize="25sp" />
         </LinearLayout>
 
         <View
