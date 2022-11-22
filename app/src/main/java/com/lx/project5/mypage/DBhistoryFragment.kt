@@ -18,8 +18,6 @@ class DBhistoryFragment : Fragment() {
 
 
 
-
-
         return binding.root
     }
 

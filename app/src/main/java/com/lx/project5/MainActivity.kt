@@ -126,19 +126,19 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM1)
                 }
                 R.id.tab2 -> {
-                    showToast("로그인 먼저 해주세요!")
                     // 로그인 상태에 따라 스케줄을 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
                     if(AppData.memberData?.memberId == null ){
                         onFragmentChanged(ScreenItem.ITEMlogin)
+                        showToast("로그인 먼저 해주세요!")
                     }else if(AppData.memberData?.memberId != null) {
                         onFragmentChanged(ScreenItem.ITEMschedule)
                     }
                 }
                 R.id.tab3 -> {
-                    showToast("로그인 먼저 해주세요!")
                     // 로그인 상태에 따라 채팅을 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
                     if(AppData.memberData?.memberId == null ){
                         onFragmentChanged(ScreenItem.ITEMlogin)
+                        showToast("로그인 먼저 해주세요!")
                     }else if(AppData.memberData?.memberId != null) {
                         onFragmentChanged(ScreenItem.ITEMchat)
                     }

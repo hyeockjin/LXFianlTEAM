@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.lx.project5.MainActivity
-import com.lx.project5.databinding.FragmentFirstBinding
 import com.lx.project5.databinding.FragmentMkScheduleBinding
 
 
