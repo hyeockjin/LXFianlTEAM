@@ -61,6 +61,7 @@
                             android:id="@+id/mkSchedule_dbImageView1"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_marginLeft="10dp"
                             app:srcCompat="@drawable/footicon1png" />
 
                         <LinearLayout
@@ -114,6 +115,7 @@
                             android:id="@+id/mkSchedule_dbImageView2"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_marginLeft="10dp"
                             app:srcCompat="@drawable/footicon1png" />
 
                         <LinearLayout
@@ -167,6 +169,7 @@
                             android:id="@+id/mkSchedule_dbImageView3"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
+                            android:layout_marginLeft="10dp"
                             app:srcCompat="@drawable/footicon1png" />
 
                         <LinearLayout
