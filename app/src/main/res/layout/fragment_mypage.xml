@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/backgroundcolor"
     tools:context=".mypage.MypageFragment">
 
     <View
@@ -29,20 +29,19 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:background="#f8f0fd"
-                android:gravity="center|center_vertical"
-                android:text="마이페이지"
+                android:backgroundTint="#00ff0000"
                 android:fontFamily="@font/saemaul"
+                android:gravity="center|center_vertical"
                 android:letterSpacing="0.3"
+                android:text="마이페이지"
                 android:textColor="#2C335C"
-                android:textSize="20sp"
+                android:textSize="25sp"
                 android:textStyle="normal" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#f8f0fd"
             android:orientation="horizontal"
             android:paddingStart="20dp"
             android:paddingEnd="20dp"
@@ -215,8 +214,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="13dp"
                     android:layout_below="@+id/name_text"
-                    android:layout_weight="1"
-                    android:background="#f8f0fd" />
+                    android:layout_weight="1" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -390,8 +388,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="13dp"
                     android:layout_below="@+id/name_text"
-                    android:layout_weight="1"
-                    android:background="#f8f0fd" />
+                    android:layout_weight="1" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -502,7 +499,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="13dp"
-        android:backgroundTint="#f8f0fd"
+        android:backgroundTint="#00ff0000"
         android:scaleType="centerInside"
         app:srcCompat="@drawable/backwardarrow" />
 

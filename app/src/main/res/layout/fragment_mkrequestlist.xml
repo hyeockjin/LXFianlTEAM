@@ -72,35 +72,17 @@
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-                <LinearLayout
+                <Button
+                    android:id="@+id/refuse4"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="30dp"
                     android:layout_gravity="center"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/request4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:background="#FFFFFF"
-                        android:backgroundTint="#FFFFFF"
-                        android:text="수락"
-                        android:textSize="16sp"
-                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                    <Button
-                        android:id="@+id/refuse4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:layout_weight="1"
-                        android:background="#FFFFFF"
-                        android:backgroundTint="#FFFFFF"
-                        android:text="거절"
-                        android:textSize="16sp"
-                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-                </LinearLayout>
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="취소"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             </LinearLayout>
 
@@ -157,35 +139,16 @@
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-                <LinearLayout
+                <Button
+                    android:id="@+id/refuse5"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/request5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:background="#FFFFFF"
-                        android:backgroundTint="#FFFFFF"
-                        android:text="수락"
-                        android:textSize="16sp"
-                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                    <Button
-                        android:id="@+id/refuse5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:background="#FFFFFF"
-                        android:backgroundTint="#FFFFFF"
-                        android:text="거절"
-                        android:textSize="16sp"
-                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-                </LinearLayout>
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="#FFFFFF"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="취소"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             </LinearLayout>
 
@@ -249,35 +212,16 @@
                     android:textStyle="bold"
                     tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-                <LinearLayout
+                <Button
+                    android:id="@+id/refuse6"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/request6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:background="#FFFFFF"
-                        android:backgroundTint="#FFFFFF"
-                        android:text="수락"
-                        android:textSize="16sp"
-                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                    <Button
-                        android:id="@+id/refuse6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:background="#FFFFFF"
-                        android:backgroundTint="#FFFFFF"
-                        android:text="거절"
-                        android:textSize="16sp"
-                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-                </LinearLayout>
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="#FFFFFF"
+                    android:backgroundTint="#FFFFFF"
+                    android:text="취소"
+                    android:textSize="16sp"
+                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
             </LinearLayout>
         </LinearLayout>
