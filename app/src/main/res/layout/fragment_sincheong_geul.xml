@@ -19,24 +19,18 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
+
+            <TextView
+                android:id="@+id/requestToMypage2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#faf8f4"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="46dp"
-                    android:layout_gravity="center_horizontal|center_vertical"
-                    android:background="#faf7f4"
-                    android:fontFamily="@font/rokaf_bold_medium"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:text="신청글 작성"
-                    android:textSize="16sp"
-                    android:textStyle="normal" />
-            </LinearLayout>
-
+                android:layout_height="68dp"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:fontFamily="@font/saemaul"
+                android:gravity="center|center_vertical"
+                android:letterSpacing="0.3"
+                android:text="신청글작성"
+                android:textSize="25sp"
+                android:textStyle="normal" />
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -262,7 +256,7 @@
         android:id="@+id/sincheonggeulToChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#faf7f4"
+        android:backgroundTint="#FFFFFF"
         android:src="@drawable/arrow" />
 
 </FrameLayout>
