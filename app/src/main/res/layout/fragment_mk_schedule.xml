@@ -10,7 +10,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/chattitle3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:fontFamily="@font/saemaul"
+            android:gravity="center|center_vertical"
+            android:letterSpacing="0.3"
+            android:text="채팅"
+            android:textColor="#575656"
+            android:textSize="25sp"
+            android:textStyle="normal" />
 
         <ScrollView
             android:layout_width="match_parent"
@@ -19,182 +40,167 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
 
-                <LinearLayout
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="20dp"
-                    android:paddingRight="20dp">
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:cardCornerRadius="15dp"
-                        app:cardElevation="0dp">
+                        android:background="@drawable/shadow">
+
+
+                        <ImageView
+                            android:id="@+id/mkSchedule_dbImageView1"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/footicon1png" />
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="#F3F3F3">
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
 
-
-                            <ImageView
-                                android:id="@+id/mkSchedule_dbImageView1"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="20dp"
-                                app:srcCompat="@drawable/dogicon" />
-
-                            <LinearLayout
+                            <TextView
+                                android:id="@+id/petSitterName1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
+                                android:layout_marginLeft="20dp"
                                 android:gravity="center_vertical"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/petSitterName1"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center_vertical"
-                                    android:text="펫시터 :   조애리"
-                                    android:textColor="#AA7E7E"
-                                    android:textSize="14sp" />
-
-                            </LinearLayout>
-
-                            <Button
-                                android:id="@+id/mkSchduleToMatkimIngButton1"
-                                android:layout_width="72dp"
-                                android:layout_height="37dp"
-                                android:layout_marginLeft="103dp"
-                                android:layout_marginTop="26dp"
-                                android:text="진행중"
-                                tools:ignore="TouchTargetSizeCheck" />
+                                android:text="조애리"
+                                android:textColor="#AA7E7E"
+                                android:textSize="14sp" />
 
                         </LinearLayout>
-                    </androidx.cardview.widget.CardView>
 
-                </LinearLayout>
+                        <Button
+                            android:id="@+id/mkSchduleToMatkimIngButton1"
+                            android:layout_width="72dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="103dp"
+                            android:background="@drawable/pinkbutton"
+                            android:backgroundTint="#f8f0fd"
+                            android:text="진행중"
+                            android:textColor="#c990f1"
+                            tools:ignore="TouchTargetSizeCheck" />
 
-                <LinearLayout
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp"
-                    android:orientation="horizontal">
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:cardCornerRadius="15dp"
-                        app:cardElevation="0dp">
+                        android:background="@drawable/shadow">
+
+
+                        <ImageView
+                            android:id="@+id/mkSchedule_dbImageView2"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/footicon1png" />
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="#F3F3F3">
+                            android:id="@+id/LinearLayout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
 
-
-                            <ImageView
-                                android:id="@+id/mkSchedule_dbImageView2"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="20dp"
-                                app:srcCompat="@drawable/dogicon" />
-
-                            <LinearLayout
-                                android:id="@+id/LinearLayout"
+                            <TextView
+                                android:id="@+id/petSitterName2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
+                                android:layout_marginLeft="20dp"
                                 android:gravity="center_vertical"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/petSitterName2"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center_vertical"
-                                    android:text="펫시터 :   김현문"
-                                    android:textColor="#AA7E7E"
-                                    android:textSize="14sp" />
-
-                            </LinearLayout>
-
-                            <Button
-                                android:id="@+id/mkSchduleToMatkimIngButton2"
-                                android:layout_width="78dp"
-                                android:layout_height="37dp"
-                                android:layout_marginLeft="100dp"
-                                android:layout_marginTop="26dp"
-                                android:text="진행예정"
-                                tools:ignore="TouchTargetSizeCheck" />
+                                android:text="김현문"
+                                android:textColor="#AA7E7E"
+                                android:textSize="14sp" />
 
                         </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-                </LinearLayout>
 
-                <LinearLayout
+                        <Button
+                            android:id="@+id/mkSchduleToMatkimIngButton2"
+                            android:layout_width="78dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="100dp"
+                            android:background="@drawable/pinkbutton"
+                            android:backgroundTint="#EDEDED"
+                            android:text="진행예정"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
 
-                    <androidx.cardview.widget.CardView
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:cardCornerRadius="15dp"
-                        app:cardElevation="0dp">
+                        android:background="@drawable/shadow">
+
+
+                        <ImageView
+                            android:id="@+id/mkSchedule_dbImageView3"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            app:srcCompat="@drawable/footicon1png" />
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="20dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_marginRight="20dp"
-                            android:background="#F3F3F3">
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
 
-
-                            <ImageView
-                                android:id="@+id/mkSchedule_dbImageView3"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_margin="20dp"
-                                app:srcCompat="@drawable/dogicon" />
-
-                            <LinearLayout
+                            <TextView
+                                android:id="@+id/petSitterName3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_gravity="center"
+                                android:layout_marginLeft="20dp"
                                 android:gravity="center_vertical"
-                                android:orientation="vertical">
-
-                                <TextView
-                                    android:id="@+id/petSitterName3"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center_vertical"
-                                    android:text="펫시터 :   김용현"
-                                    android:textColor="#AA7E7E"
-                                    android:textSize="14sp" />
-
-                            </LinearLayout>
-
-                            <Button
-                                android:id="@+id/mkSchduleToMatkimIngButton3"
-                                android:layout_width="78dp"
-                                android:layout_height="37dp"
-                                android:layout_marginLeft="100dp"
-                                android:layout_marginTop="26dp"
-                                android:text="진행예정"
-                                tools:ignore="TouchTargetSizeCheck" />
+                                android:text="김용현"
+                                android:textColor="#AA7E7E"
+                                android:textSize="14sp" />
 
                         </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-                </LinearLayout>
+
+                        <Button
+                            android:id="@+id/mkSchduleToMatkimIngButton3"
+                            android:layout_width="78dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="100dp"
+                            android:background="@drawable/pinkbutton"
+                            android:backgroundTint="#EDEDED"
+                            android:text="진행예정"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
 
             </LinearLayout>
