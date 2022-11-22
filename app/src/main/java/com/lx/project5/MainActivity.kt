@@ -114,9 +114,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.mainWriteButton.setOnClickListener {
-            onFragmentChanged(ScreenItem.ITEMmatkimguel)
-        }
 
         binding.button2.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEMchat)
@@ -127,7 +124,7 @@ class MainActivity : AppCompatActivity() {
         }
         // 주변에 돌봄요청 버튼 눌렀을 때
         binding.mainWriteButton.setOnClickListener {
-            onFragmentChanged(ScreenItem.ITEM1)
+            onFragmentChanged(ScreenItem.ITEMmatkimguel)
         }
 
         //하단 탭의 버튼을 눌렀을때
