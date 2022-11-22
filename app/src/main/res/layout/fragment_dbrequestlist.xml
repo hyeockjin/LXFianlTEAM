@@ -1,327 +1,272 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#feefe4"
     tools:context=".mypage.DBrequestlistFragment">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shadow4"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/person4" />
 
         <TextView
-            android:id="@+id/requesttitle"
+            android:id="@+id/dbday3"
             android:layout_width="wrap_content"
-            android:layout_height="68dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_weight="1"
-            android:fontFamily="@font/saemaul"
-            android:gravity="center|center_vertical"
-            android:letterSpacing="0.3"
-            android:text="요청리스트"
-            android:textColor="#575656"
-            android:textSize="25sp"
-            android:textStyle="normal" />
+            android:layout_marginBottom="5dp"
+            android:text="2022.11.21"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/matkimi3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="정세종"
+            android:textSize="16sp" />
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="20dp">
+
+        <Button
+            android:id="@+id/matkimiInfo3"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/pinkbutton"
+            android:backgroundTint="#feefe4"
+            android:text="자세히보기"
+            android:textColor="#f4a25d"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <androidx.cardview.widget.CardView
+            <Button
+                android:id="@+id/request3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:text="수락" />
+
+            <Button
+                android:id="@+id/refuse3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                app:cardCornerRadius="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="344dp"
-                    android:layout_gravity="center"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:id="@+id/dbday1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="10dp"
-                        android:drawableRight="@drawable/settings"
-                        android:gravity="center"
-                        android:text="2022.9.15"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:id="@+id/imageView9"
-                        android:layout_width="114dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="10dp"
-                        android:src="@drawable/person2" />
-
-                    <TextView
-                        android:id="@+id/matkimi1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="5dp"
-                        android:text="이기현"
-                        android:textSize="16sp" />
-
-
-                    <Button
-                        android:id="@+id/matkimiInfo1"
-                        android:layout_width="180dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="5dp"
-                        android:background="@drawable/pinkbutton"
-                        android:backgroundTint="#feefe4"
-                        android:text="자세히보기"
-                        android:textColor="#f6b278"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/request1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="5dp"
-                            android:background="#FFFFFF"
-                            android:backgroundTint="#FFFFFF"
-                            android:text="수락"
-                            android:textSize="14sp"
-                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                        <Button
-                            android:id="@+id/refuse1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="5dp"
-                            android:background="#FFFFFF"
-                            android:backgroundTint="#FFFFFF"
-                            android:text="거절"
-                            android:textSize="14sp"
-                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                app:cardCornerRadius="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="344dp"
-                    android:layout_gravity="center"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:id="@+id/dbday2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="10dp"
-                        android:drawableRight="@drawable/settings"
-                        android:gravity="center"
-                        android:text="2022.10.19"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:id="@+id/imageView10"
-                        android:layout_width="114dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="10dp"
-                        android:src="@drawable/person3" />
-
-                    <TextView
-                        android:id="@+id/matkimi2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="5dp"
-                        android:text="정유진"
-                        android:textSize="16sp" />
-
-
-                    <Button
-                        android:id="@+id/matkimiInfo2"
-                        android:layout_width="180dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="5dp"
-                        android:background="@drawable/pinkbutton"
-                        android:backgroundTint="#feefe4"
-                        android:text="자세히보기"
-                        android:textColor="#f6b278"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/request2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="5dp"
-                            android:background="#FFFFFF"
-                            android:backgroundTint="#FFFFFF"
-                            android:text="수락"
-                            android:textSize="14sp"
-                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                        <Button
-                            android:id="@+id/refuse2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="5dp"
-                            android:background="#FFFFFF"
-                            android:backgroundTint="#FFFFFF"
-                            android:text="거절"
-                            android:textSize="14sp"
-                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="20dp"
-                app:cardCornerRadius="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="344dp"
-                    android:layout_gravity="center"
-                    android:orientation="vertical"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:id="@+id/dbday3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="10dp"
-                        android:drawableRight="@drawable/settings"
-                        android:gravity="center"
-                        android:text="2022.11.21"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
-
-                    <ImageView
-                        android:id="@+id/imageView11"
-                        android:layout_width="114dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="10dp"
-                        android:src="@drawable/person4" />
-
-                    <TextView
-                        android:id="@+id/matkimi3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="5dp"
-                        android:text="정세종"
-                        android:textSize="16sp" />
-
-
-                    <Button
-                        android:id="@+id/matkimiInfo3"
-                        android:layout_width="180dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="5dp"
-                        android:background="@drawable/pinkbutton"
-                        android:backgroundTint="#feefe4"
-                        android:text="자세히보기"
-                        android:textColor="#f6b278"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/request3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="5dp"
-                            android:background="#FFFFFF"
-                            android:backgroundTint="#FFFFFF"
-                            android:text="수락"
-                            android:textSize="14sp"
-                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                        <Button
-                            android:id="@+id/refuse3"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="5dp"
-                            android:background="#FFFFFF"
-                            android:backgroundTint="#FFFFFF"
-                            android:text="거절"
-                            android:textSize="14sp"
-                            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-                    </LinearLayout>
-
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:text="거절" />
         </LinearLayout>
-    </HorizontalScrollView>
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="238dp"
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_marginBottom="100dp"
-        android:background="@drawable/pinkbutton"
-        android:backgroundTint="#ffa2bf"
-        android:text="Button"
-        android:textColor="#fff5f8" />
+        android:layout_gravity="center"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/shadow4"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/person2" />
+
+        <TextView
+            android:id="@+id/dbday1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="2022.9.15"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/matkimi1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="이기현"
+            android:textSize="16sp" />
+
+
+        <Button
+            android:id="@+id/matkimiInfo1"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/pinkbutton"
+            android:backgroundTint="#feefe4"
+            android:text="자세히보기"
+            android:textColor="#f4a25d"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/request1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:text="수락" />
+
+            <Button
+                android:id="@+id/refuse1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:text="거절" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="20dp">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
+        android:layout_weight="1"
+        android:background="@drawable/shadow4"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/person3" />
+
+        <TextView
+            android:id="@+id/dbday2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="2022.10.19"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/matkimi2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="정유진"
+            android:textSize="16sp" />
+
+
+        <Button
+            android:id="@+id/matkimiInfo2"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/pinkbutton"
+            android:backgroundTint="#feefe4"
+            android:text="자세히보기"
+            android:textColor="#f4a25d"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/request2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:text="수락" />
+
+            <Button
+                android:id="@+id/refuse2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:backgroundTint="#FFFFFF"
+                android:text="거절" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

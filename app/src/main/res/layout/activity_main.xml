@@ -298,7 +298,7 @@
                     android:text="펫시터찾기"
                     android:fontFamily="@font/lineseedkr"
                     android:gravity="center|center_vertical"
-                    android:textColor="#9b89ff"
+                    android:textColor="#c990f1"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 

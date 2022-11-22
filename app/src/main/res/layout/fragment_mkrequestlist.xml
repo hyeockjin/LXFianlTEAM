@@ -1,231 +1,226 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#f8f0fd"
     tools:context=".mypage.DBrequestlistFragment">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#f8f0fd"
+        android:id="@+id/linearLayout3"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
+        android:layout_weight="1"
+        android:background="@drawable/shadow4"
         android:orientation="vertical"
-        android:padding="20dp">
+        android:padding="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/person3" />
+
+        <TextView
+            android:id="@+id/dbday2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="2022.10.19"
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginRight="20dp"
-                android:layout_weight="1"
-                android:background="@drawable/shadow4"
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:paddingBottom="15dp">
-
-                <ImageView
-                    android:id="@+id/imageView9"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/person2" />
-
-                <TextView
-                    android:id="@+id/dbday1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="2022.9.15"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/petSitter4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="이기현"
-                    android:textSize="16sp" />
+        <TextView
+            android:id="@+id/petSitter5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="정유진"
+            android:textSize="16sp" />
 
 
-                <Button
-                    android:id="@+id/PetSitterInfo4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/pinkbutton"
-                    android:backgroundTint="#f8f0fd"
-                    android:text="자세히보기"
-                    android:textColor="#c990f1"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+        <Button
+            android:id="@+id/PetSitterInfo5"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/pinkbutton"
+            android:backgroundTint="#f8f0fd"
+            android:text="자세히보기"
+            android:textColor="#c990f1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
-                <Button
-                    android:id="@+id/refuse4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="#FFFFFF"
-                    android:backgroundTint="#FFFFFF"
-                    android:text="취소"
-                    android:textSize="16sp"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="160dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:background="@drawable/shadow4"
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp">
-
-                <ImageView
-                    android:id="@+id/imageView11"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/person3" />
-
-                <TextView
-                    android:id="@+id/dbday2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="2022.10.19"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/petSitter5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="정유진"
-                    android:textSize="16sp" />
-
-
-                <Button
-                    android:id="@+id/PetSitterInfo5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/pinkbutton"
-                    android:backgroundTint="#f8f0fd"
-                    android:text="자세히보기"
-                    android:textColor="#c990f1"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/refuse5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:background="#FFFFFF"
-                    android:backgroundTint="#FFFFFF"
-                    android:text="취소"
-                    android:textSize="16sp"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="165dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:background="@drawable/shadow4"
-                android:orientation="vertical"
-                android:padding="20dp"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp">
-
-                <ImageView
-                    android:id="@+id/imageView12"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:src="@drawable/person4" />
-
-                <TextView
-                    android:id="@+id/dbday3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="2022.11.21"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/petSitter6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:text="정세종"
-                    android:textSize="16sp" />
-
-
-                <Button
-                    android:id="@+id/PetSitterInfo6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="25dp"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/pinkbutton"
-                    android:backgroundTint="#f8f0fd"
-                    android:text="자세히보기"
-                    android:textColor="#c990f1"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-                <Button
-                    android:id="@+id/refuse6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:background="#FFFFFF"
-                    android:backgroundTint="#FFFFFF"
-                    android:text="취소"
-                    android:textSize="16sp"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-            </LinearLayout>
-        </LinearLayout>
+        <Button
+            android:id="@+id/refuse5"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:text="취소"
+            android:textSize="16sp"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
     </LinearLayout>
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shadow4"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/person4" />
+
+        <TextView
+            android:id="@+id/dbday3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="2022.11.21"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/petSitter6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="정세종"
+            android:textSize="16sp" />
+
+
+        <Button
+            android:id="@+id/PetSitterInfo6"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/pinkbutton"
+            android:backgroundTint="#f8f0fd"
+            android:text="자세히보기"
+            android:textColor="#c990f1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/refuse6"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:text="취소"
+            android:textSize="16sp"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/shadow4"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/person2" />
+
+        <TextView
+            android:id="@+id/dbday1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="2022.9.15"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/petSitter4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="이기현"
+            android:textSize="16sp" />
+
+
+        <Button
+            android:id="@+id/PetSitterInfo4"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/pinkbutton"
+            android:backgroundTint="#f8f0fd"
+            android:text="자세히보기"
+            android:textColor="#c990f1"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/refuse4"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:backgroundTint="#FFFFFF"
+            android:text="취소"
+            android:textSize="16sp"
+            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
