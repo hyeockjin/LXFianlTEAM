@@ -15,7 +15,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="28dp"
         android:layout_weight="1"
-        android:background="@drawable/shadow4"
+        android:background="@drawable/shadow"
         android:orientation="vertical"
         android:padding="20dp"
         android:paddingTop="15dp"
@@ -25,13 +25,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/person3" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/person3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/imageView200"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="top|end"
+                android:background="@android:drawable/ic_dialog_info"
+                android:backgroundTint="#DCEDC8"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.84"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/dbday2"
@@ -54,20 +77,6 @@
 
 
         <Button
-            android:id="@+id/PetSitterInfo5"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/pinkbutton"
-            android:backgroundTint="#f8f0fd"
-            android:text="자세히보기"
-            android:textColor="#c990f1"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-        <Button
             android:id="@+id/refuse5"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
@@ -85,7 +94,7 @@
         android:layout_height="235dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/shadow4"
+        android:background="@drawable/shadow"
         android:orientation="vertical"
         android:padding="20dp"
         android:paddingTop="15dp"
@@ -95,13 +104,36 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
         app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/imageView12"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/person4" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView12"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/person4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/imageView15"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="top|end"
+                android:background="@android:drawable/ic_dialog_info"
+                android:backgroundTint="#DCEDC8"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.84"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/dbday3"
@@ -124,20 +156,6 @@
 
 
         <Button
-            android:id="@+id/PetSitterInfo6"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/pinkbutton"
-            android:backgroundTint="#f8f0fd"
-            android:text="자세히보기"
-            android:textColor="#c990f1"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
-        <Button
             android:id="@+id/refuse6"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
@@ -158,7 +176,7 @@
         android:layout_marginStart="28dp"
         android:layout_marginTop="20dp"
         android:layout_weight="1"
-        android:background="@drawable/shadow4"
+        android:background="@drawable/shadow"
         android:orientation="vertical"
         android:padding="20dp"
         android:paddingBottom="15dp"
@@ -167,13 +185,38 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView9"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:src="@drawable/person2" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/PetSitterInfo4"
+                android:layout_width="match_parent"
+                android:layout_height="75dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/person2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/imageView201"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="top|end"
+                android:background="@android:drawable/ic_dialog_info"
+                android:backgroundTint="#DCEDC8"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.84"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/dbday1"
@@ -194,20 +237,6 @@
             android:text="이기현"
             android:textSize="16sp" />
 
-
-        <Button
-            android:id="@+id/PetSitterInfo4"
-            android:layout_width="wrap_content"
-            android:layout_height="25dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/pinkbutton"
-            android:backgroundTint="#f8f0fd"
-            android:text="자세히보기"
-            android:textColor="#c990f1"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
         <Button
             android:id="@+id/refuse4"
