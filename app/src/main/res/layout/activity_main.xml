@@ -296,8 +296,10 @@
                     android:background="#FFFFFF"
                     android:backgroundTint="#FFFFFF"
                     android:text="펫시터찾기"
+                    android:fontFamily="@font/lineseedkr"
+                    android:gravity="center|center_vertical"
                     android:textColor="#9b89ff"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <Button
@@ -308,8 +310,10 @@
                     android:background="#FFFFFF"
                     android:backgroundTint="#FFFFFF"
                     android:text="강아지찾기"
+                    android:fontFamily="@font/lineseedkr"
+                    android:gravity="center|center_vertical"
                     android:textColor="#f8ba86"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
