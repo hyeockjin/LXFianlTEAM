@@ -30,7 +30,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView11"
+                android:id="@+id/PetSitterInfo5"
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 android:layout_gravity="center"
@@ -108,8 +108,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <Button
+                android:id="@+id/imageView6"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="top|end"
+                android:background="@android:drawable/ic_dialog_info"
+                android:backgroundTint="#DCEDC8"
+                android:gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.84"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
             <ImageView
-                android:id="@+id/imageView12"
+                android:id="@+id/PetSitterInfo6"
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 android:layout_gravity="center"
@@ -120,19 +134,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/imageView15"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="top|end"
-                android:background="@android:drawable/ic_dialog_info"
-                android:backgroundTint="#DCEDC8"
-                android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView12"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.84"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
