@@ -23,7 +23,6 @@ class MKScheduleFragment : Fragment() {
 
 
 
-
         return binding.root
     }
 

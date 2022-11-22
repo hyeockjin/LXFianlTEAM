@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
         // 하단 내비 두번째 버튼눌렀을때 돌봄맡김 스케쥴 버튼
         ITEMdbschedule,
         ITEMmkschedule,
-        ITEMmkschedule1,
+        ITEMschedule,
 
         // 돌봄 맡김 스케쥴에서 돌봄 맡김 중 화면
         ITEMdolboming,
@@ -124,18 +124,17 @@ class MainActivity : AppCompatActivity() {
                     onFragmentChanged(ScreenItem.ITEM1)
                 }
                 R.id.tab2 -> {
-                    if (AppData.navIndex == 1) {
-                        onFragmentChanged(ScreenItem.ITEMmkschedule)
-                    } else if (AppData.navIndex == 2) {
-                        onFragmentChanged(ScreenItem.ITEMdbschedule)
-                    } else {
-                        showToast("AppData.navIndex 잘못 설정했나?")
+                    showToast("로그인 먼저 해주세요!")
+                    // 로그인 상태에 따라 스케줄을 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
+                    if(AppData.memberData?.memberId == null ){
+                        onFragmentChanged(ScreenItem.ITEMlogin)
+                    }else if(AppData.memberData?.memberId != null) {
+                        onFragmentChanged(ScreenItem.ITEMschedule)
                     }
-                    onFragmentChanged(ScreenItem.ITEMmkschedule)
                 }
                 R.id.tab3 -> {
                     showToast("로그인 먼저 해주세요!")
-                    // 로그인 상태에 따라 마이페이지를 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
+                    // 로그인 상태에 따라 채팅을 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
                     if(AppData.memberData?.memberId == null ){
                         onFragmentChanged(ScreenItem.ITEMlogin)
                     }else if(AppData.memberData?.memberId != null) {
@@ -317,14 +316,15 @@ class MainActivity : AppCompatActivity() {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.container, DBScheduleFragment()).commit()
             }
+            MainActivity.ScreenItem.ITEMschedule -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, ScheduleFragment()).commit()
+            }
             MainActivity.ScreenItem.ITEMmkschedule -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.container, MKScheduleFragment()).commit()
             }
-            MainActivity.ScreenItem.ITEMmkschedule1 -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, MKSchedule1Fragment()).commit()
-            }
+
             MainActivity.ScreenItem.ITEMdolboming -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.container, DolbomIngFragment()).commit()

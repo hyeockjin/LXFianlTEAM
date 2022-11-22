@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".mypage.HistoryFragment">
+    tools:context=".schedule.ScheduleFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,13 +13,13 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/requesttomypage"
+            android:id="@+id/scheduleTo"
             android:layout_width="match_parent"
             android:layout_height="46dp"
             android:layout_gravity="center_horizontal|center_vertical"
             android:background="#FFFFFF"
             android:gravity="center_horizontal|center_vertical"
-            android:text="이용기록페이지"
+            android:text="일정"
             android:fontFamily="@font/saemaul"
             android:letterSpacing="0.3"
             android:textSize="20sp"
@@ -33,7 +33,7 @@
 
 
             <Button
-                android:id="@+id/reqshowhis1"
+                android:id="@+id/matkimiSchedule1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -42,13 +42,13 @@
                 android:fontFamily="@font/saemaul"
                 android:gravity="center|center_vertical"
                 android:letterSpacing="0.1"
-                android:text="맡김기록"
+                android:text="견주"
                 android:textAlignment="center"
                 android:textColor="#c990f1 "
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/reqshowhis2"
+                android:id="@+id/matkimiSchedule2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -57,7 +57,7 @@
                 android:fontFamily="@font/saemaul"
                 android:gravity="center|center_vertical"
                 android:letterSpacing="0.1"
-                android:text="돌봄기록"
+                android:text="펫시터"
                 android:textAlignment="center"
                 android:textColor="#f6b278"
                 android:textStyle="bold" />
@@ -65,19 +65,11 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/container1"
+            android:id="@+id/container3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"></LinearLayout>
 
     </LinearLayout>
-
-    <ImageButton
-        android:id="@+id/historyTomypage"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:backgroundTint="#FFFFFF"
-        android:scaleType="centerInside"
-        app:srcCompat="@drawable/backwardarrow" />
 
 </FrameLayout>

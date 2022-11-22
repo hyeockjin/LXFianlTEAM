@@ -27,9 +27,6 @@ class MKrequestlistFragment : Fragment() {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolbomiInfo)
         }
 
-        binding.request4.setOnClickListener {
-            toast("수락이 완료되었습니다.")
-        }
 
         return binding.root
     }

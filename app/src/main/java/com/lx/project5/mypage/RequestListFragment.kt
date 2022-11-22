@@ -17,20 +17,21 @@ class RequestListFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentRequestListBinding.inflate(inflater, container, false)
 
-        binding.requesttomypage.setOnClickListener {
+        binding.requestlistToMypage.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypage)
         }
 
         binding.requestshowlist.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmkrequestlist)
+            (activity as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.container2, MKrequestlistFragment()).commit()
         }
 
         binding.requestshowlist2.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdbrequestlist)
+            (activity as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.container2, DBrequestlistFragment()).commit()
         }
 
         return binding.root
     }
+
 
 
 }

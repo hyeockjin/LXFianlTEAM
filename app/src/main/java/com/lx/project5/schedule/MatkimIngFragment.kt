@@ -16,8 +16,8 @@ class MatkimIngFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentMatkimIngBinding.inflate(inflater, container, false)
 
-        binding.matkimIngToMKSchedule.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmkschedule)
+        binding.matkimingToMKSchedule.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMschedule)
         }
 
         binding.petSitterInfoButton.setOnClickListener {

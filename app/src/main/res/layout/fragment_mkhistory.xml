@@ -54,19 +54,6 @@
                     android:gravity="center"
                     android:text="맡김완료" />
 
-                <Button
-                    android:id="@+id/petSitterInfoButton1"
-                    android:layout_width="89dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/pinkbutton"
-                    android:backgroundTint="#f8f0fd"
-                    android:text="자세히보기"
-                    android:textColor="#c990f1"
-                    android:textStyle="bold"
-                    tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
             </LinearLayout>
 
             <LinearLayout
@@ -104,19 +91,6 @@
                     android:gravity="center"
                     android:text="맡김중" />
 
-                <Button
-                    android:id="@+id/petSitterInfoButton2"
-                    android:layout_width="89dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/pinkbutton"
-                    android:backgroundTint="#f8f0fd"
-                    android:text="자세히보기"
-                    android:textColor="#c990f1"
-                    android:textStyle="bold"
-                    tools:ignore="TouchTargetSizeCheck" />
             </LinearLayout>
 
         </LinearLayout>
@@ -155,19 +129,6 @@
                 android:gravity="center"
                 android:text="맡김예정" />
 
-            <Button
-                android:id="@+id/petSitterInfoButton3"
-                android:layout_width="89dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:background="@drawable/pinkbutton"
-                android:backgroundTint="#f8f0fd"
-                android:text="자세히보기"
-                android:textColor="#c990f1"
-                android:textStyle="bold"
-                tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
     </LinearLayout>
 

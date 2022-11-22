@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.lx.project5.MainActivity
+import com.lx.project5.R
 import com.lx.project5.databinding.FragmentHistoryBinding
 
 
@@ -16,20 +17,21 @@ class HistoryFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentHistoryBinding.inflate(inflater, container, false)
 
-
-        binding.requesttomypage.setOnClickListener {
+        binding.historyTomypage.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypage)
         }
 
         binding.reqshowhis1.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmkhistory)
+            (activity as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.container1, MKhistoryFragment()).commit()
         }
 
         binding.reqshowhis2.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdbhistory)
+            (activity as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.container1, DBhistoryFragment()).commit()
         }
+
 
         return binding.root
     }
+
 
 }
