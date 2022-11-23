@@ -25,6 +25,10 @@
             android:exported="false" />
 
         <activity
+            android:name=".chatting.SincheongGeulActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".LocalActivity"
             android:exported="false" />
 

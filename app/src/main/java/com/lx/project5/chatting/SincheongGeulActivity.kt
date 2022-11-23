@@ -1,13 +1,14 @@
 package com.lx.project5.chatting
 
 import android.app.DatePickerDialog
-import android.app.Dialog
 import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
@@ -18,6 +19,7 @@ import java.util.*
 
 class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
     TimePickerDialog.OnTimeSetListener {
+
     lateinit var binding: ActivitySincheongGeulBinding
 
     //달력
