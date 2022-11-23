@@ -80,10 +80,10 @@
 
     <ImageButton
         android:id="@+id/historyTomypage"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:backgroundTint="#FFFFFF"
-        android:scaleType="centerInside"
-        app:srcCompat="@drawable/backwardarrow" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:backgroundTint="#00ff0000"
+        android:src="@drawable/arrow" />
 
 </FrameLayout>

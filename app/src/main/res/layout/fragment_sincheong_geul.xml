@@ -256,6 +256,7 @@
         android:id="@+id/sincheonggeulToChat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
         android:backgroundTint="#FFFFFF"
         android:src="@drawable/arrow" />
 

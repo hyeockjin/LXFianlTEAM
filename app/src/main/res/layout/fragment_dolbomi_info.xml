@@ -40,7 +40,7 @@ tools:context=".schedule.DolbomiInfoFragment">
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="415dp"
+                android:layout_width="match_parent"
                 android:layout_height="306dp"
                 android:background="#FFF6F6F6"
                 android:scaleType="center"
@@ -164,6 +164,7 @@ tools:context=".schedule.DolbomiInfoFragment">
         android:id="@+id/petSitterInfoToMatkimIng"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
         android:backgroundTint="#FFF6F6F6"
         android:src="@drawable/arrow"
         tools:ignore="SpeakableTextPresentCheck" />
