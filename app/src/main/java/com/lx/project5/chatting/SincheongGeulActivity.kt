@@ -12,20 +12,13 @@ import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
-import com.lx.project5.MainActivity
 import com.lx.project5.appdata.GeulSaveData
-import com.lx.project5.appdata.MessageData
-import com.lx.project5.databinding.ActivityChatBinding
-import com.lx.project5.databinding.FragmentSincheongGeulBinding
+import com.lx.project5.databinding.ActivitySincheongGeulBinding
 import java.util.*
 
 class SincheongGeulActivity : AppCompatActivity() {
 
-    var _binding: FragmentSincheongGeulBinding? = null
+    var _binding: ActivitySincheongGeulBinding? = null
     val binding get() = _binding!!
 
     //달력
@@ -44,7 +37,7 @@ class SincheongGeulActivity : AppCompatActivity() {
     var cIndex = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = FragmentSincheongGeulBinding.inflate(inflater, container, false)
+        _binding = ActivitySincheongGeulBinding.inflate(inflater, container, false)
 
         writeShow()
         pickDate()

@@ -299,7 +299,7 @@ class MainActivity : AppCompatActivity() {
             }
             MainActivity.ScreenItem.ITEMchat -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.container4, ChatListFragment()).commit()
+                    .replace(R.id.container, ChatListFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMjoin1 -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, Join1Fragment())
@@ -356,10 +356,6 @@ class MainActivity : AppCompatActivity() {
             }
             MainActivity.ScreenItem.ITEMmatkimguel -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MatkimGeulFragment())
-                    .commit()
-            }
-            MainActivity.ScreenItem.ITEMsincheonggeul -> {
-                supportFragmentManager.beginTransaction().replace(R.id.container, SincheongGeulFragment())
                     .commit()
             }
             MainActivity.ScreenItem.ITEMmkhistory -> {
