@@ -25,6 +25,22 @@ import kotlin.collections.HashMap
  */
 interface BasicApi {
 
+    @FormUrlEncoded
+    @POST("care/insertRouteTracking")
+    fun insertRouteTracking(
+        @Field("requestCode") requestCode: String,
+        @Field("x") x: Double,
+        @Field("y") y: Double,
+        @Field("routeNo") routeNo: Int
+    ): Call<SearchRouteTrackingResponse>
+    /** @@@@@@@@@@@@
+     * / 사용가능
+     */
+    @GET("care/searchRouteTracking")
+    fun searchRouteTracking(
+        @Query("requestCode") requestCode: String,
+        @Query("routeNo") routeNo: Int
+    ): Call<SearchRouteTrackingResponse>
     /**
      * POST 방식으로 멤버 로그인 요청 / 사용가능
      */

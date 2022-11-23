@@ -14,11 +14,9 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.net.toUri
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.lx.api.BasicClient
@@ -139,16 +137,14 @@ class MainActivity : AppCompatActivity() {
                 R.id.tab2 -> {
                     // 로그인 상태에 따라 스케줄을 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
                     if(AppData.memberData?.memberId == null ){
-                        onFragmentChanged(ScreenItem.ITEMlogin)
                         showToast("로그인 먼저 해주세요!")
                     }else if(AppData.memberData?.memberId != null) {
                         onFragmentChanged(ScreenItem.ITEMmkschedule)
                     }
                 }
                 R.id.tab3 -> {
-                    // 로그인 상태에 따라 채팅을 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
+                    // 로그인 상태에 따라 마이페이지를 보여줄 것인지, 로그인 페이지로 이동할 것인지 선택 (default 로그인)
                     if(AppData.memberData?.memberId == null ){
-                        onFragmentChanged(ScreenItem.ITEMlogin)
                         showToast("로그인 먼저 해주세요!")
                     }else if(AppData.memberData?.memberId != null) {
                         onFragmentChanged(ScreenItem.ITEMchat)
@@ -169,17 +165,8 @@ class MainActivity : AppCompatActivity() {
         binding.cardView.visibility = View.GONE
         // 위험권한 요청하기
         PermissionX.init(this)
-            .permissions(
-                Manifest.permission.ACCESS_FINE_LOCATION,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            )
-            .request { allGranted, grantedList, deniedList ->
-                if (allGranted) {
-                    showToast("모든 권한 부여됨.")
-                } else {
-                    showToast("거부된 권한 있음.")
-                }
-            }
+            .permissions(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION
+            ).request { allGranted, grantedList, deniedList ->if (allGranted) {showToast("모든 권한 부여됨.")} else {showToast("거부된 권한 있음.")}}
 
         // 지도 초기화하기
         val mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
@@ -220,14 +207,16 @@ class MainActivity : AppCompatActivity() {
                 Log.v("시발", "setOnMarkerClickListener")
 
                 var cardData = CardData()
-                cardData.cardName = it.title
+                cardData.cardEmail = it.title
                 cardData.doCard(cardData)
                 binding.cardName.text = cardData.cardName
                 binding.classScope.text = cardData.cardScope
                 binding.cardAddress.text = cardData.cardAddress
                 binding.cardDitail.text = cardData.cardDitail
                 binding.cardTag.text = cardData.cardTag
-                binding.cardImage.setImageURI(cardData.cardImage?.toUri())
+                cardData.cardImage?.apply {
+                    binding.cardImage.setImageResource(cardData.cardImage!!)
+                }
                 true
             }
         }

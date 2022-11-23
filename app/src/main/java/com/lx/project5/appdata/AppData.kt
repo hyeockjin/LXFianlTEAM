@@ -8,8 +8,7 @@ class AppData {
         var memberData: MemberData?=null
         // navIndex : 메인엑티비티에서 맡길때인지 돌볼때인지 구분자
         var navIndex: Int? = null
-        // 메인에서 마커 선택시 생기는 펫시터, 돌보미 정보
-        var cardData :CardData? =null
+        // 경로 하나의 번호
+        var routeNo: Int = 5
     }
-    //유진바보
 }
