@@ -23,13 +23,13 @@
                 android:layout_gravity="center"
                 android:layout_weight="1"
                 android:backgroundTint="#00ff0000"
-                android:fontFamily="@font/saemaul"
+                android:fontFamily="@font/rokaf_bold_medium"
+                android:letterSpacing="0.2"
                 android:gravity="center|center_vertical"
-                android:letterSpacing="0.3"
                 android:text="마이페이지"
                 android:textColor="#2C335C"
-                android:textSize="25sp"
-                android:textStyle="normal" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout

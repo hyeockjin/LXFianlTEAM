@@ -365,7 +365,7 @@
                         android:backgroundTint="#FAF9F9"
                         android:drawableLeft="@drawable/mapp"
                         android:paddingLeft="10dp"
-                        android:text="산책경로추천"
+                        android:text="산책경로"
                         android:textSize="12sp" />
 
                 </LinearLayout>

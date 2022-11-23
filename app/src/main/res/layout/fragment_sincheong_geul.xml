@@ -25,12 +25,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="68dp"
                 android:layout_gravity="center_horizontal|center_vertical"
-                android:fontFamily="@font/saemaul"
+                android:fontFamily="@font/rokaf_bold_medium"
+                android:letterSpacing="0.2"
                 android:gravity="center|center_vertical"
-                android:letterSpacing="0.3"
                 android:text="신청글작성"
-                android:textSize="25sp"
-                android:textStyle="normal" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -242,7 +242,8 @@
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/pinkbutton"
                             android:text="신청하기"
-                            android:textColor="#000000" />
+                            android:textColor="#c990f1 "
+                            android:textStyle="bold" />
                     </LinearLayout>
 
                 </LinearLayout>
