@@ -244,7 +244,7 @@ class MainActivity : AppCompatActivity() {
                     makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
                         .position(LatLng(latitude!!, longitude!!))
                         .title(response.body()?.data?.get(i)?.careId.toString())
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_person))
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_dog))
 
                     Log.v("시발","${makerOptions.title}")
 
@@ -280,7 +280,7 @@ class MainActivity : AppCompatActivity() {
                     makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
                         .position(LatLng(latitude!!, longitude!!))
                         .title(response.body()?.data?.get(i)?.mkId.toString()) // 타이틀.
-                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_dog))
+                        .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_person))
 
                     // 2. 마커 생성 (마커를 나타냄)
                     mkMarker = map.addMarker(makerOptions)
