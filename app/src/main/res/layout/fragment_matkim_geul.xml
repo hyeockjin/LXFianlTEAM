@@ -64,11 +64,13 @@
 
                         <LinearLayout
                             android:id="@+id/linearLayout2"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="48dp"
-                            android:layout_marginStart="4dp"
                             android:orientation="horizontal"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
                             app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
@@ -85,23 +87,18 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="15dp"
+                                android:layout_weight="1"
                                 android:text="위치정보를 등록하세요"
                                 android:textSize="16sp" />
 
-                        </LinearLayout>
+                            <Button
+                                android:id="@+id/button"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center|end"
+                                android:background="@drawable/location" />
 
-                        <com.google.android.material.floatingactionbutton.FloatingActionButton
-                            android:id="@+id/locationButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom|end"
-                            android:layout_marginStart="64dp"
-                            android:clickable="true"
-                            android:src="@drawable/gps2"
-                            app:backgroundTint="#BAB2B2"
-                            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                        </LinearLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -168,7 +165,8 @@
                             android:layout_marginBottom="5dp"
                             android:background="@drawable/pinkbutton"
                             android:text="작성하기"
-                            android:textColor="#000000"
+                            android:textColor="#c990f1"
+                            android:textStyle="bold"
                             tools:ignore="TouchTargetSizeCheck" />
                     </LinearLayout>
 

@@ -259,23 +259,11 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginTop="65dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="33dp"
                 android:clickable="true"
-                app:backgroundTint="#9b89ff"
+                app:backgroundTint="#c990f1"
                 app:srcCompat="@drawable/pencil" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/mainShowListButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="33dp"
-                android:layout_marginTop="65dp"
-                android:clickable="true"
-                app:backgroundTint="#FFFFFF"
-                app:srcCompat="@drawable/menu" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -286,35 +274,102 @@
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 android:layout_marginEnd="0dp"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/mainMKButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:background="#FFFFFF"
-                    android:backgroundTint="#FFFFFF"
-                    android:fontFamily="@font/lineseedkr"
-                    android:gravity="center|center_vertical"
-                    android:text="펫시터찾기"
-                    android:textColor="#c990f1"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/mainDBButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    <Button
+                        android:id="@+id/mainMKButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#FFFFFF"
+                        android:backgroundTint="#FFFFFF"
+                        android:fontFamily="@font/lineseedkr"
+                        android:gravity="center|center_vertical"
+                        android:text="펫시터찾기"
+                        android:textColor="#c990f1"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/mainDBButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="#FFFFFF"
+                        android:backgroundTint="#FFFFFF"
+                        android:fontFamily="@font/lineseedkr"
+                        android:gravity="center|center_vertical"
+                        android:text="강아지찾기"
+                        android:textColor="#f8ba86"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
-                    android:background="#FFFFFF"
-                    android:backgroundTint="#FFFFFF"
-                    android:fontFamily="@font/lineseedkr"
-                    android:gravity="center|center_vertical"
-                    android:text="강아지찾기"
-                    android:textColor="#f8ba86"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/bold5"
+                        android:backgroundTint="#FAF9F9"
+                        android:drawableLeft="@drawable/hospital"
+                        android:paddingLeft="10dp"
+                        android:text="병원"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/button5"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/bold5"
+                        android:backgroundTint="#FAF9F9"
+                        android:drawableLeft="@drawable/restauran"
+                        android:paddingLeft="10dp"
+                        android:text="맛집"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/bold5"
+                        android:backgroundTint="#FAF9F9"
+                        android:drawableLeft="@drawable/haircut"
+                        android:paddingLeft="10dp"
+                        android:text="미용실"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/button7"
+                        android:layout_width="80dp"
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bold5"
+                        android:backgroundTint="#FAF9F9"
+                        android:drawableLeft="@drawable/mapp"
+                        android:paddingLeft="10dp"
+                        android:text="산책경로추천"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
             </LinearLayout>
 
         </RelativeLayout>

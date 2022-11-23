@@ -93,6 +93,7 @@
                             android:backgroundTint="#f8f0fd"
                             android:text="진행중"
                             android:textColor="#c990f1"
+                            android:textStyle="bold"
                             tools:ignore="TouchTargetSizeCheck" />
 
                     </LinearLayout>
