@@ -49,6 +49,7 @@ class DolbomIngFragment : Fragment(),OnMapReadyCallback {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMschedule)
         }
         binding.matkimiInfoButton.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmatkimiInfo)
         }
 
         // 종료버튼은 화면 시작시 비활성화

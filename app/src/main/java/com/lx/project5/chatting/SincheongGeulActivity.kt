@@ -37,7 +37,7 @@ class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
 
     var cIndex = 0
 
-    override fun onCreateView(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySincheongGeulBinding.inflate(layoutInflater)
         setContentView(binding.root)
