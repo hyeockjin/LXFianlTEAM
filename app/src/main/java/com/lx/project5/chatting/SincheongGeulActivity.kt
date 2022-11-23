@@ -13,6 +13,7 @@ import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
 import com.lx.project5.appdata.GeulSaveData
+import com.lx.project5.databinding.ActivityChatBinding
 import com.lx.project5.databinding.ActivityMainBinding
 import com.lx.project5.databinding.ActivitySincheongGeulBinding
 import java.util.*

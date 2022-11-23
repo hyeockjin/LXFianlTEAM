@@ -225,27 +225,6 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_marginTop="20dp"
-                        android:orientation="vertical"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp">
-
-                        <Button
-                            android:id="@+id/sincheonghagi"
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:layout_gravity="center"
-                            android:layout_marginBottom="5dp"
-                            android:background="@drawable/pinkbutton"
-                            android:text="신청하기"
-                            android:textColor="#c990f1 "
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
                 </LinearLayout>
             </ScrollView>
 
@@ -260,5 +239,16 @@
         android:layout_marginTop="13dp"
         android:backgroundTint="#FFFFFF"
         android:src="@drawable/arrow" />
+
+    <Button
+        android:id="@+id/sincheonghagi"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="20dp"
+        android:background="@drawable/pinkbutton"
+        android:text="신청하기"
+        android:textColor="#c990f1 "
+        android:textStyle="bold" />
 
 </FrameLayout>
