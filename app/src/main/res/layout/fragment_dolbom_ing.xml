@@ -65,7 +65,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginTop="10dp"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                android:paddingRight="20dp">
 
                                 <TextView
                                     android:layout_width="110dp"
@@ -79,6 +80,7 @@
                                     android:id="@+id/matkimiName"
                                     android:layout_width="230dp"
                                     android:layout_height="40dp"
+                                    android:layout_weight="1"
                                     android:background="@drawable/bold1"
                                     android:backgroundTint="#C8C7C7"
                                     android:gravity="center_vertical"
@@ -101,7 +103,8 @@
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:orientation="horizontal">
+                                android:orientation="horizontal"
+                                android:paddingRight="20dp">
 
                                 <TextView
                                     android:layout_width="110dp"
@@ -113,7 +116,7 @@
 
                                 <EditText
                                     android:id="@+id/petSitterName5"
-                                    android:layout_width="230dp"
+                                    android:layout_width="match_parent"
                                     android:layout_height="40dp"
                                     android:background="@drawable/bold1"
                                     android:backgroundTint="#C8C7C7"
