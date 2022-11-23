@@ -127,7 +127,8 @@
             android:layout_marginBottom="5dp"
             android:background="@drawable/pinkbutton"
             android:text="다음"
-            android:textColor="#c990f1" />
+            android:textColor="#c990f1"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <ImageButton
