@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
-                android:text="조애리"
+                android:text="이기현"
                 android:textColor="#8C7655"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -107,7 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:text="경기도 안양시 동안구"
+                android:text="인천광역시 서구"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -155,7 +155,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
-                android:text="진돗개 2마리"
+                android:text="말티즈 1마리"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 

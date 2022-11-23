@@ -68,7 +68,7 @@
                             android:backgroundTint="#C8C7C7"
                             android:gravity="center_vertical"
                             android:padding="10dp"
-                            android:text="조애리"
+                            android:text="이기현"
                             android:textSize="14sp"
                             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
