@@ -2,12 +2,14 @@ package com.lx.project5.schedule
 
 import android.graphics.Color
 import android.location.Location
+import android.os.Build
 import android.os.Bundle
 import android.os.Looper
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.*
@@ -23,6 +25,8 @@ import org.json.JSONArray
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class DolbomIngFragment : Fragment(),OnMapReadyCallback {
@@ -39,11 +43,13 @@ class DolbomIngFragment : Fragment(),OnMapReadyCallback {
     var latLng = LatLng(latitude,longitude)
     var routeTrack = mutableListOf(latLng)
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentDolbomIngBinding.inflate(inflater, container, false)
 
         val mapFragment = childFragmentManager.findFragmentById(com.lx.project5.R.id.dolbomMap) as SupportMapFragment?
         mapFragment?.getMapAsync(this)
+        nowTime()
 
         binding.dolbomIngToDBSchedule.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMschedule)
@@ -223,6 +229,13 @@ class DolbomIngFragment : Fragment(),OnMapReadyCallback {
         } catch (e: SecurityException) {
             e.printStackTrace()
         }
+    }
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun nowTime(){
+        val nownow = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH"))
+        val now1 = nownow.toInt() -2
+        val now2 = nownow.toInt() + 2
+        binding.dolbomTime1.text = "${now1} 시 ~ ${now2} 시"
     }
 
 }

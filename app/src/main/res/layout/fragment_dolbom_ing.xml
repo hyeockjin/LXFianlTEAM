@@ -143,7 +143,7 @@
                                     android:layout_height="match_parent"
                                     android:orientation="horizontal">
 
-                                    <EditText
+                                    <TextView
                                         android:id="@+id/dolbomTime1"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
                                         android:layout_weight="1"
                                         android:background="#FFFFFF"
                                         android:gravity="center_vertical"
-                                        android:hint="1시간 남음"
+                                        android:hint="2시간 남음"
                                         android:padding="10dp"
                                         android:textSize="14sp"
                                         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />

@@ -15,6 +15,8 @@ import android.widget.Toast
 import com.lx.project5.appdata.GeulSaveData
 import com.lx.project5.databinding.ActivityMainBinding
 import com.lx.project5.databinding.ActivitySincheongGeulBinding
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
@@ -83,14 +85,15 @@ class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
             getDateTimeCalendar()
 
             Log.v("you1","${year},${month},${day}")
-            this?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
+            DatePickerDialog(this, this, year, month,day).show()
         }
         binding.endTime.setOnClickListener {
             cIndex = 2
             getDateTimeCalendar()
 
             Log.v("you2","${year},${month},${day}")
-            this?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
+
+            DatePickerDialog(this, this, year, month,day).show()
 
         }
 
@@ -102,8 +105,9 @@ class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
         savedMonth = month
         savedYear = year
 
-        TimePickerDialog(this,this,hour,minute,true).show()
         getDateTimeCalendar()
+        TimePickerDialog(this,this,hour,minute,true).show()
+
     }
 
     //달력
@@ -133,6 +137,8 @@ class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
     fun toast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
+
+
 
 
 }
