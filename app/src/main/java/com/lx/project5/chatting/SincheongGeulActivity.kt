@@ -1,25 +1,24 @@
 package com.lx.project5.chatting
 
 import android.app.DatePickerDialog
+import android.app.Dialog
 import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
 import com.lx.project5.appdata.GeulSaveData
+import com.lx.project5.databinding.ActivityMainBinding
 import com.lx.project5.databinding.ActivitySincheongGeulBinding
 import java.util.*
 
-class SincheongGeulActivity : AppCompatActivity() {
-
-    var _binding: ActivitySincheongGeulBinding? = null
-    val binding get() = _binding!!
+class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener,
+    TimePickerDialog.OnTimeSetListener {
+    lateinit var binding: ActivitySincheongGeulBinding
 
     //달력
     var day = 0
@@ -36,8 +35,10 @@ class SincheongGeulActivity : AppCompatActivity() {
 
     var cIndex = 0
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        _binding = ActivitySincheongGeulBinding.inflate(inflater, container, false)
+    override fun onCreateView(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivitySincheongGeulBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         writeShow()
         pickDate()
@@ -52,7 +53,6 @@ class SincheongGeulActivity : AppCompatActivity() {
             startActivity(chatIntent)
         }
 
-        return binding.root
     }
 
     fun writeShow() {
