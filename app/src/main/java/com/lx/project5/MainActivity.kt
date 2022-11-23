@@ -87,7 +87,10 @@ class MainActivity : AppCompatActivity() {
         ITEMupdate,
         ITEMchatlist,
         ITEMmypageMKInfo,
-        ITEMmypageDBInfo
+        ITEMmypageDBInfo,
+        ITEMadddog,
+        ITEMdoglist,
+        ITEMdoglist1
 
     }
 
@@ -139,7 +142,7 @@ class MainActivity : AppCompatActivity() {
                         onFragmentChanged(ScreenItem.ITEMlogin)
                         showToast("로그인 먼저 해주세요!")
                     }else if(AppData.memberData?.memberId != null) {
-                        onFragmentChanged(ScreenItem.ITEMschedule)
+                        onFragmentChanged(ScreenItem.ITEMmkschedule)
                     }
                 }
                 R.id.tab3 -> {
@@ -381,6 +384,18 @@ class MainActivity : AppCompatActivity() {
             }
             MainActivity.ScreenItem.ITEMmypage -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, MypageFragment())
+                    .commit()
+            }
+            MainActivity.ScreenItem.ITEMadddog -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, AddDogFragment())
+                    .commit()
+            }
+            MainActivity.ScreenItem.ITEMdoglist -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, DogListFragment())
+                    .commit()
+            }
+            MainActivity.ScreenItem.ITEMdoglist1 -> {
+                supportFragmentManager.beginTransaction().replace(R.id.container, DogList1Fragment())
                     .commit()
             }
             MainActivity.ScreenItem.ITEMrequestlist -> {

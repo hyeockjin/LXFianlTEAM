@@ -24,6 +24,10 @@
             android:name=".chatting.ChatActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".LocalActivity"
+            android:exported="false" />
+
         <uses-library
             android:name="org.apache.http.legacy"
             android:required="false" />

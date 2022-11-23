@@ -89,7 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
-                    android:text="010-3417-8251"
+                    android:text="인천광역시 서구"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -253,6 +253,33 @@
                     android:paddingLeft="20dp">
 
                     <ImageView
+                        android:id="@+id/icon3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/bookmark" />
+
+                    <TextView
+                        android:id="@+id/dogListButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableEnd="@drawable/arrowsmall"
+                        android:padding="20dp"
+                        android:text="강아지 등록"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#FFFFFF"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp">
+
+                    <ImageView
                         android:id="@+id/imageView10"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -278,33 +305,6 @@
                     android:layout_below="@+id/name_text"
                     android:layout_weight="1"
                     android:background="#D8D8D8" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="#FFFFFF"
-                    android:orientation="horizontal"
-                    android:paddingLeft="20dp">
-
-                    <ImageView
-                        android:id="@+id/icon3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:src="@drawable/bookmark" />
-
-                    <TextView
-                        android:id="@+id/mypagetext3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawableEnd="@drawable/arrowsmall"
-                        android:padding="20dp"
-                        android:text="즐겨찾기"
-                        android:textSize="16sp" />
-                </LinearLayout>
 
                 <View
                     android:id="@+id/view4"
@@ -348,33 +348,6 @@
                     android:layout_below="@+id/name_text"
                     android:layout_weight="1"
                     android:background="#D8D8D8" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="#FFFFFF"
-                    android:orientation="horizontal"
-                    android:paddingLeft="20dp">
-
-                    <ImageView
-                        android:id="@+id/imageView8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:src="@drawable/section1" />
-
-                    <TextView
-                        android:id="@+id/mypagetext4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawableEnd="@drawable/arrowsmall"
-                        android:padding="20dp"
-                        android:text="최근이용내역"
-                        android:textSize="16sp" />
-                </LinearLayout>
 
                 <View
                     android:id="@+id/view7"
@@ -477,7 +450,7 @@
                         android:layout_weight="1"
                         android:drawableEnd="@drawable/arrowsmall"
                         android:padding="20dp"
-                        android:text="고객센터"
+                        android:text="신고하기"
                         android:textSize="16sp" />
                 </LinearLayout>
 

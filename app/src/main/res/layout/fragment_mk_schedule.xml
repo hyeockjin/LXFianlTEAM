@@ -77,7 +77,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="20dp"
                                 android:gravity="center_vertical"
-                                android:text="조애리"
+                                android:text="이기현"
                                 android:textColor="#AA7E7E"
                                 android:textSize="14sp" />
 

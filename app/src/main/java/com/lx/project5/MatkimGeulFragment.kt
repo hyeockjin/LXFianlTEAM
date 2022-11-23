@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.lx.api.BasicClient
 import com.lx.data.AwrListResponse
@@ -22,8 +23,6 @@ class MatkimGeulFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentMatkimGeulBinding.inflate(inflater, container, false)
 
-
-
         //지도로 가기
         binding.locationButton.setOnClickListener {
             val locationIntent= Intent(activity,LocalActivity::class.java)
@@ -33,6 +32,7 @@ class MatkimGeulFragment : Fragment() {
 
         binding.jakseonghagi.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)
+            showToast("맡김글이 작성되었습니다.")
         }
 
         binding.matkimgeulToMain.setOnClickListener {
@@ -44,7 +44,10 @@ class MatkimGeulFragment : Fragment() {
 
     fun locationAdd() {
         binding.locationView.text = "${GeulSaveData.savelat.toString()}, ${GeulSaveData.savelng.toString()}"
-//        binding.locationView.text = "37.514320  127.030685"
+    }
+
+    fun showToast(message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
 
 }
