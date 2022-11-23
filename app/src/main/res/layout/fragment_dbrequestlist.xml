@@ -100,7 +100,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="이기현"
+                        android:text="정세종"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -127,7 +127,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="복돌이"
+                        android:text="용혁문"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -153,7 +153,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="애교가 많아요"
+                        android:text="얌전해요"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -391,7 +391,7 @@
                         android:layout_weight="1"
                         android:gravity="left"
                         android:padding="5dp"
-                        android:text="2022.11.21"
+                        android:text="2022.11.24"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -448,7 +448,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="정세종"
+                        android:text="이기현"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -475,7 +475,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="햇님"
+                        android:text="용혁문"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -501,7 +501,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="얌전해요"
+                        android:text="애교가 많아요"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>

@@ -51,6 +51,7 @@ class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
 
         binding.sincheonghagi.setOnClickListener {
             toast("신청이 완료되었습니다.")
+            finish()
         }
 
         binding.sincheonggeulToChat.setOnClickListener {
@@ -61,9 +62,10 @@ class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
     }
 
     fun writeShow() {
-        binding.myDog.text = GeulSaveData.saveDog
         binding.startTime.text = "${GeulSaveData.saveStartTime} 시"
         binding.endTime.text = "${GeulSaveData.saveEndTime} 시"
+        binding.makimiName.setText("이기현")
+        binding.myDog.setText("용혁문")
     }
 
     /**
