@@ -69,7 +69,6 @@
                         android:layout_width="0dp"
                         android:layout_height="75dp"
                         android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
                         android:src="@drawable/person2"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -185,7 +184,8 @@
                         android:background="@drawable/bold"
                         android:backgroundTint="#f6b278"
                         android:text="수락"
-                        android:textColor="#feefe4" />
+                        android:textColor="#feefe4"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
 
@@ -360,7 +360,8 @@
                         android:backgroundTint="#f6b278"
                         android:text="수락"
                         android:textColor="#feefe4"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -532,7 +533,8 @@
                         android:backgroundTint="#f6b278"
                         android:text="수락"
                         android:textColor="#feefe4"
-                        android:textSize="14sp" />
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </LinearLayout>

@@ -27,7 +27,6 @@
         <activity
             android:name=".chatting.SincheongGeulActivity"
             android:exported="false" />
-
         <activity
             android:name=".LocalActivity"
             android:exported="false" />
@@ -48,7 +47,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
