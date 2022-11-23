@@ -40,7 +40,12 @@ class LoginFragment : Fragment() {
         binding.loginButton.setOnClickListener {
             val loginID=binding.loginId.text.toString()
             var loginPW=binding.loginPassword.text.toString()
-            firebaseLogin(loginID,loginPW)
+
+            loginID?.apply {
+                loginPW?.apply {
+                    firebaseLogin(loginID,loginPW)
+                }
+            }
         }
 
         return binding.root
@@ -57,9 +62,9 @@ class LoginFragment : Fragment() {
 
                     AppData.memberData = MemberData()
                     AppData.memberData?.memberId = memberId
-                    (activity as MainActivity)?.onFragmentChanged(MainActivity.ScreenItem.ITEMmypage)
+                    (activity as MainActivity?)?.onFragmentChanged(MainActivity.ScreenItem.ITEMmypage)
                 } else {
-                    Toast.makeText(activity as MainActivity, "로그인 실패!${task}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText((activity as MainActivity), "로그인 실패!${task}", Toast.LENGTH_SHORT).show()
                 }
         }
     }
