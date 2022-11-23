@@ -1,5 +1,6 @@
 package com.lx.project5.chatting
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
@@ -36,6 +37,11 @@ class ChatActivity : AppCompatActivity() {
 
         binding.chatTochatlist.setOnClickListener {
             finish()
+        }
+
+        binding.askButton.setOnClickListener {
+            val sincheongGeulIntent = Intent(applicationContext, SincheongGeulActivity::class.java)
+            startActivity(sincheongGeulIntent)
         }
 
         //Firebase 인증,db ,메시지 목록 초기화

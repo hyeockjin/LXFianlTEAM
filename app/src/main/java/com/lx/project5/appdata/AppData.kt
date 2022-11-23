@@ -9,6 +9,6 @@ class AppData {
         // navIndex : 메인엑티비티에서 맡길때인지 돌볼때인지 구분자
         var navIndex: Int? = null
         // 경로 하나의 번호
-        var routeNo: Int = 5
+        var routeNo: Int = 6
     }
 }

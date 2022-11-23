@@ -17,13 +17,13 @@ class MKrequestlistFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentMkrequestlistBinding.inflate(inflater, container, false)
 
-        binding.PetSitterInfo4.setOnClickListener {
+        binding.detail1.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypageDBInfo)
         }
-        binding.PetSitterInfo5.setOnClickListener {
+        binding.detail2.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypageDBInfo)
         }
-        binding.PetSitterInfo6.setOnClickListener {
+        binding.detail3.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypageDBInfo)
         }
 

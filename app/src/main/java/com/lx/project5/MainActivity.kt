@@ -26,7 +26,6 @@ import com.lx.data.mkMarkerResponse
 import com.lx.project5.appdata.AppData
 import com.lx.project5.appdata.CardData
 import com.lx.project5.chatting.ChatListFragment
-import com.lx.project5.chatting.SincheongGeulFragment
 import com.lx.project5.databinding.ActivityMainBinding
 import com.lx.project5.mypage.*
 import com.lx.project5.schedule.*
@@ -139,7 +138,7 @@ class MainActivity : AppCompatActivity() {
                     if(AppData.memberData?.memberId == null ){
                         showToast("로그인 먼저 해주세요!")
                     }else if(AppData.memberData?.memberId != null) {
-                        onFragmentChanged(ScreenItem.ITEMmkschedule)
+                        onFragmentChanged(ScreenItem.ITEMschedule)
                     }
                 }
                 R.id.tab3 -> {
@@ -300,7 +299,7 @@ class MainActivity : AppCompatActivity() {
             }
             MainActivity.ScreenItem.ITEMchat -> {
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, ChatListFragment()).commit()
+                    .replace(R.id.container4, ChatListFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMjoin1 -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, Join1Fragment())

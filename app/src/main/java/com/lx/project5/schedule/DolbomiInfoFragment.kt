@@ -18,7 +18,7 @@ class DolbomiInfoFragment : Fragment() {
         _binding = FragmentDolbomiInfoBinding.inflate(inflater, container, false)
 
         binding.petSitterInfoToMatkimIng.setOnClickListener {
-
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmatkiming)
         }
 
         return binding.root

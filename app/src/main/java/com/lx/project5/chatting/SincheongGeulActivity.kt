@@ -2,6 +2,8 @@ package com.lx.project5.chatting
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,14 +12,19 @@ import android.view.ViewGroup
 import android.widget.DatePicker
 import android.widget.TimePicker
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.activity.OnBackPressedCallback
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import com.lx.project5.MainActivity
 import com.lx.project5.appdata.GeulSaveData
+import com.lx.project5.appdata.MessageData
+import com.lx.project5.databinding.ActivityChatBinding
 import com.lx.project5.databinding.FragmentSincheongGeulBinding
 import java.util.*
 
+class SincheongGeulActivity : AppCompatActivity() {
 
-class SincheongGeulFragment : Fragment(),DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
     var _binding: FragmentSincheongGeulBinding? = null
     val binding get() = _binding!!
 
@@ -48,7 +55,8 @@ class SincheongGeulFragment : Fragment(),DatePickerDialog.OnDateSetListener, Tim
         }
 
         binding.sincheonggeulToChat.setOnClickListener {
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEM1)
+            val chatIntent = Intent(applicationContext, ChatActivity::class.java)
+            startActivity(chatIntent)
         }
 
         return binding.root
@@ -80,14 +88,14 @@ class SincheongGeulFragment : Fragment(),DatePickerDialog.OnDateSetListener, Tim
             getDateTimeCalendar()
 
             Log.v("you1","${year},${month},${day}")
-            context?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
+            this?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
         }
         binding.endTime.setOnClickListener {
             cIndex = 2
             getDateTimeCalendar()
 
             Log.v("you2","${year},${month},${day}")
-            context?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
+            this?.let { it1 -> DatePickerDialog(it1,this, year, month, day).show() }
 
         }
 
@@ -99,7 +107,7 @@ class SincheongGeulFragment : Fragment(),DatePickerDialog.OnDateSetListener, Tim
         savedMonth = month
         savedYear = year
 
-        TimePickerDialog(context,this,hour,minute,true).show()
+        TimePickerDialog(this,this,hour,minute,true).show()
         getDateTimeCalendar()
     }
 
@@ -128,7 +136,7 @@ class SincheongGeulFragment : Fragment(),DatePickerDialog.OnDateSetListener, Tim
     }
 
     fun toast(message: String) {
-        Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
     }
 
 
