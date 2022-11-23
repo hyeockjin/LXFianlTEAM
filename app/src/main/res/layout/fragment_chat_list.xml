@@ -23,13 +23,13 @@
                 android:layout_height="68dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:fontFamily="@font/saemaul"
                 android:gravity="center|center_vertical"
-                android:letterSpacing="0.3"
+                android:fontFamily="@font/rokaf_bold_medium"
+                android:letterSpacing="0.2"
                 android:text="채팅"
                 android:textColor="#575656"
-                android:textSize="25sp"
-                android:textStyle="normal" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
 

@@ -33,13 +33,13 @@
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:background="#FFFFFF"
                     android:backgroundTint="#FFFFFF"
-                    android:fontFamily="@font/saemaul"
                     android:gravity="center_horizontal|center_vertical"
-                    android:letterSpacing="0.3"
-                    android:text="맡김글 작성"
+                    android:fontFamily="@font/rokaf_bold_medium"
+                    android:letterSpacing="0.2"
+                    android:text="맡김글작성"
                     android:textAlignment="center"
-                    android:textSize="25sp"
-                    android:textStyle="normal" />
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -64,11 +64,13 @@
 
                         <LinearLayout
                             android:id="@+id/linearLayout2"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="48dp"
-                            android:layout_marginStart="4dp"
                             android:orientation="horizontal"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
                             app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
@@ -81,27 +83,22 @@
 
                             <TextView
                                 android:id="@+id/locationView"
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_marginLeft="15dp"
+                                android:layout_weight="1"
                                 android:text="위치정보를 등록하세요"
                                 android:textSize="16sp" />
 
-                        </LinearLayout>
+                            <Button
+                                android:id="@+id/button"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:background="@drawable/location" />
 
-                        <com.google.android.material.floatingactionbutton.FloatingActionButton
-                            android:id="@+id/locationButton"
-                            android:layout_width="56dp"
-                            android:layout_height="70dp"
-                            android:layout_gravity="bottom|end"
-                            android:layout_marginStart="64dp"
-                            android:clickable="true"
-                            android:src="@drawable/gps2"
-                            app:backgroundTint="#BAB2B2"
-                            app:layout_constraintStart_toEndOf="@+id/linearLayout2"
-                            app:layout_constraintTop_toTopOf="parent"
-                            tools:ignore="SpeakableTextPresentCheck" />
+                        </LinearLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

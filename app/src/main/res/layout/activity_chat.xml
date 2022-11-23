@@ -42,7 +42,8 @@
                 android:textColor="#6559A6"
                 android:textSize="16sp"
                 android:textStyle="normal"
-                android:fontFamily="@font/lineseedkr"
+                android:fontFamily="@font/rokaf_bold_medium"
+                android:letterSpacing="0.2"
 
 
                  />
