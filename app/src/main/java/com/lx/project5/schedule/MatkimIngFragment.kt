@@ -1,11 +1,13 @@
 package com.lx.project5.schedule
 
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -23,6 +25,8 @@ import org.json.JSONArray
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class MatkimIngFragment : Fragment(), OnMapReadyCallback {
@@ -40,6 +44,7 @@ class MatkimIngFragment : Fragment(), OnMapReadyCallback {
     var latLng = LatLng(latitude,longitude)
     var routeTrack = mutableListOf(latLng)
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentMatkimIngBinding.inflate(inflater, container, false)
 
@@ -48,6 +53,7 @@ class MatkimIngFragment : Fragment(), OnMapReadyCallback {
 
         // 배열 초기화
         routeTrack = mutableListOf(latLng)
+        nowTime()
 
         binding.matkimingToMKSchedule.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMschedule)
@@ -130,6 +136,13 @@ class MatkimIngFragment : Fragment(), OnMapReadyCallback {
             myMarker = map.addMarker(it)
             myMarker?.tag = "1001"
         }
+    }
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun nowTime(){
+        val nownow = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH"))
+        val now1 = nownow.toInt() -2
+        val now2 = nownow.toInt() + 2
+        binding.matkimTime1.text = "${now1} 시 ~ ${now2} 시"
     }
 
 }
