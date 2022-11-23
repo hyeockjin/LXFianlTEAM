@@ -34,6 +34,11 @@ class MypageFragment : Fragment() {
         binding.listhistoryListButton.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMhistory)
         }
+
+        binding.dogListButton.setOnClickListener {
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdoglist)
+        }
+
         return binding.root
     }
 
