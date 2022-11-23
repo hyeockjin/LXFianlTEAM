@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#FFFFFF"
+    android:background="@drawable/backgroundcolor"
     android:clickable="true"
     tools:context=".mypage.LoginFragment">
 
@@ -36,7 +36,7 @@
                 android:layout_width="260dp"
                 android:layout_height="35dp"
                 android:layout_gravity="center"
-                android:background="@drawable/bold"
+                android:background="@drawable/bold4"
                 android:ems="10"
                 android:gravity="center"
                 android:hint="아이디"
@@ -51,7 +51,7 @@
                 android:layout_height="35dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="12dp"
-                android:background="@drawable/bold"
+                android:background="@drawable/bold4"
                 android:ems="10"
                 android:gravity="center"
                 android:hint="비밀번호"
