@@ -17,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.location.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.lx.api.BasicClient
@@ -43,7 +44,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     lateinit var binding: ActivityMainBinding
     var locationClient: FusedLocationProviderClient? = null
     lateinit var map: GoogleMap
@@ -53,6 +54,7 @@ class MainActivity : AppCompatActivity() {
     var myMarker: Marker? = null
     var crMarker: Marker? = null
     var mkMarker: Marker? = null
+    var simpleMarker :Marker? = null
 
     enum class ScreenItem {
         ITEM1,
@@ -109,7 +111,7 @@ class MainActivity : AppCompatActivity() {
 
         return super.dispatchTouchEvent(ev)
     }
-
+    //화면시작시
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -201,7 +203,7 @@ class MainActivity : AppCompatActivity() {
                 showHospitalMarker()
             }
             binding.buttonDining.setOnClickListener {
-                showDiningMarker()
+                showDiningMarker(map)
             }
             binding.buttonHair.setOnClickListener {
                 showHairMarker()
@@ -254,7 +256,8 @@ class MainActivity : AppCompatActivity() {
                         Log.v("시발", " 마커 생성 ${makerOptions.title}")
 
                         // 2. 마커 생성 (마커를 나타냄)
-                        myMarker = map.addMarker(makerOptions)
+                        simpleMarker = map.addMarker(makerOptions)
+                        Log.v("시발", " 마커 생성 ${simpleMarker}")
                     }
                 }
             }
@@ -288,7 +291,7 @@ class MainActivity : AppCompatActivity() {
                         Log.v("team", "${makerOptions.title}")
 
                         // 2. 마커 생성 (마커를 나타냄)
-                        myMarker = map.addMarker(makerOptions)
+                        simpleMarker = map.addMarker(makerOptions)
                     }
                 }
             }
@@ -297,33 +300,26 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-    private fun showDiningMarker() {
+    private fun showDiningMarker(map: GoogleMap) {
         map.clear()
         requestLocation()
         Log.v("lastkingdom", "showDiningMarker")
         BasicClient.api.diningMarker(
             requestCode = "1001"
         ).enqueue(object : Callback<simpleMarkerResponse> {
-            override fun onResponse(
-                call: Call<simpleMarkerResponse>,
-                response: Response<simpleMarkerResponse>
-            ) {
+            override fun onResponse(call: Call<simpleMarkerResponse>, response: Response<simpleMarkerResponse>) {
                 val jsonArray = JSONArray(response.body()?.data)
                 for (i in 0 until jsonArray.length()) {
-                        response.body()?.data?.get(i)?.apply {
-                        var latitude = this.x
-                        var longitude = this.y
+                        var latitude = response.body()?.data?.get(i)?.x
+                        var longitude = response.body()?.data?.get(i)?.y
                         // 1. 마커 옵션 설정 (만드는 과정)
                         var makerOptions = MarkerOptions()
 
                         makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
-                            .position(LatLng(latitude, longitude))
-                            .title("상점위치")
-                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_dining))
-
+                            .position(LatLng(latitude!!, longitude!!)).title("상점위치").icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_dining))
+                        Log.v("tlqkf","$latitude,$longitude")
                         // 2. 마커 생성 (마커를 나타냄)
-                        myMarker = map.addMarker(makerOptions)
-                    }
+                        simpleMarker = map.addMarker(makerOptions)
                 }
             }
             override fun onFailure(call: Call<simpleMarkerResponse>, t: Throwable) {
@@ -332,18 +328,14 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-    // 근처 맡김이 마커 표시
+    // 근처 돌보미, 맡김이 마커 표시
     fun showNearCRLocationMarker(map: GoogleMap) { // 기존 마커 제거하고 생성
         map.clear()
         requestLocation()
         Log.v("lastkingdom", "showNearCRLocationMarker")
         BasicClient.api.careMarker(
             requestCode = "1001"
-        ).enqueue(object : Callback<careMarkerResponse> {
-            override fun onResponse(
-                call: Call<careMarkerResponse>,
-                response: Response<careMarkerResponse>
-            ) {
+        ).enqueue(object : Callback<careMarkerResponse> { override fun onResponse(call: Call<careMarkerResponse>, response: Response<careMarkerResponse>) {
                 val jsonArray = JSONArray(response.body()?.data)
                 for (i in 0 until jsonArray.length()) {
                     var latitude = response.body()?.data?.get(i)?.careX
@@ -367,8 +359,6 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
-
-    // 근처 돌봄이 마커 표시
     fun showNearMKLocationMarker(map: GoogleMap) {
         map.clear()
         requestLocation()
@@ -402,6 +392,7 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
+    //화면전환
     fun onFragmentChanged(index: MainActivity.ScreenItem) {
         when (index) {
             MainActivity.ScreenItem.ITEM1 -> {
@@ -519,6 +510,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    // 위치 요청
     fun requestLocation() {
         try {
             // 가장 최근에 확인된 위치 알려주기
@@ -546,15 +538,12 @@ class MainActivity : AppCompatActivity() {
             }
             // 내 위치 요청
             locationClient?.requestLocationUpdates(
-                locationRequest,
-                locationCallback,
-                Looper.myLooper()
+                locationRequest, locationCallback, Looper.myLooper()
             )
         } catch (e: SecurityException) {
             e.printStackTrace()
         }
     }
-
     // 내 위치의 지도 보여주기
     fun showCurrentLocation(location: Location) {
         val curPoint = LatLng(location.latitude, location.longitude)
@@ -562,7 +551,7 @@ class MainActivity : AppCompatActivity() {
         Log.v("lastkingdom","showCurrentLocation")
         showMarker(curPoint)
     }
-
+    // 마커 띄우기
     fun showMarker(curPoint: LatLng) {
         myMarker?.remove()
         MarkerOptions().also {
@@ -623,5 +612,8 @@ class MainActivity : AppCompatActivity() {
         val now = System.currentTimeMillis()
         val simpleDateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.KOREAN).format(now)
         return simpleDateFormat
+    }
+
+    override fun onMapReady(p0: GoogleMap) {
     }
 }
