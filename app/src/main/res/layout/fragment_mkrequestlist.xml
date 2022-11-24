@@ -100,7 +100,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="이기현"
+                        android:text="정세종"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -143,7 +143,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:text="반려유무"
+                        android:text="반려사항"
                         android:textSize="16sp" />
 
                     <TextView
@@ -153,7 +153,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="유"
+                        android:text="비숑 1마리"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -309,7 +309,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:text="반려유무"
+                        android:text="반려사항"
                         android:textSize="16sp" />
 
                     <TextView
@@ -319,7 +319,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="유"
+                        android:text="포메라니안 1마리"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>
@@ -429,7 +429,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="정세종"
+                        android:text="이기현"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -472,7 +472,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_weight="1"
-                        android:text="반려유무"
+                        android:text="반려사항"
                         android:textSize="16sp" />
 
                     <TextView
@@ -482,7 +482,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="유"
+                        android:text="말티즈 1마리"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>

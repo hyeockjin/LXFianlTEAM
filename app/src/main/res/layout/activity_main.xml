@@ -324,6 +324,7 @@
                         android:id="@+id/buttonHospital"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginRight="5dp"
                         android:background="@drawable/shadow4"
                         android:backgroundTint="#FAF9F9"
@@ -336,18 +337,20 @@
                         android:id="@+id/buttonDining"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
+                        android:layout_marginLeft="15dp"
                         android:layout_marginRight="5dp"
                         android:background="@drawable/shadow4"
                         android:backgroundTint="#FAF9F9"
                         android:drawableLeft="@drawable/restauran"
                         android:paddingLeft="10dp"
-                        android:text="맛집"
+                        android:text="식당"
                         android:textSize="12sp" />
 
                     <Button
                         android:id="@+id/buttonHair"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
+                        android:layout_marginLeft="15dp"
                         android:layout_marginRight="5dp"
                         android:background="@drawable/shadow4"
                         android:backgroundTint="#FAF9F9"
@@ -360,12 +363,12 @@
                         android:id="@+id/buttonTracking"
                         android:layout_width="80dp"
                         android:layout_height="35dp"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="15dp"
                         android:background="@drawable/shadow4"
                         android:backgroundTint="#FAF9F9"
                         android:drawableLeft="@drawable/mapp"
                         android:paddingLeft="10dp"
-                        android:text="산책경로"
+                        android:text="공원"
                         android:textSize="12sp" />
 
                 </LinearLayout>

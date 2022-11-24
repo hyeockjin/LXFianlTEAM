@@ -81,7 +81,7 @@
                             android:layout_width="72dp"
                             android:layout_height="35dp"
                             android:layout_gravity="center"
-                            android:layout_marginLeft="103dp"
+                            android:layout_marginLeft="400dp"
                             android:background="@drawable/pinkbutton"
                             android:backgroundTint="#feefe4"
                             android:text="진행중"
@@ -129,7 +129,7 @@
                             android:layout_width="78dp"
                             android:layout_height="35dp"
                             android:layout_gravity="center"
-                            android:layout_marginLeft="100dp"
+                            android:layout_marginLeft="395dp"
                             android:background="@drawable/pinkbutton"
                             android:backgroundTint="#EDEDED"
                             android:text="진행예정"
@@ -175,7 +175,53 @@
                             android:layout_width="78dp"
                             android:layout_height="35dp"
                             android:layout_gravity="center"
-                            android:layout_marginLeft="100dp"
+                            android:layout_marginLeft="395dp"
+                            android:background="@drawable/pinkbutton"
+                            android:backgroundTint="#EDEDED"
+                            android:text="진행예정"
+                            tools:ignore="TouchTargetSizeCheck" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="20dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/shadow">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/petName4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:gravity="center_vertical"
+                                android:text="용혁문"
+                                android:textColor="#AA7E7E"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/dbSchduleToDolbomIngButton4"
+                            android:layout_width="78dp"
+                            android:layout_height="35dp"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="395dp"
                             android:background="@drawable/pinkbutton"
                             android:backgroundTint="#EDEDED"
                             android:text="진행예정"

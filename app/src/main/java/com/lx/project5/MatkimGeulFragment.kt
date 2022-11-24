@@ -2,6 +2,8 @@ package com.lx.project5
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,11 +25,15 @@ class MatkimGeulFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentMatkimGeulBinding.inflate(inflater, container, false)
 
+
         //지도로 가기
         binding.locationButton.setOnClickListener {
             val locationIntent= Intent(activity,LocalActivity::class.java)
             startActivity(locationIntent)
-            locationAdd()
+            Handler(Looper.getMainLooper()).postDelayed({
+                binding.locationView.text = "위치정보 등록완료"
+            }, 1000)
+
         }
 
         binding.jakseonghagi.setOnClickListener {
@@ -42,9 +48,7 @@ class MatkimGeulFragment : Fragment() {
         return binding.root
     }
 
-    fun locationAdd() {
-        binding.locationView.text = "${GeulSaveData.savelat.toString()}, ${GeulSaveData.savelng.toString()}"
-    }
+
 
     fun showToast(message: String) {
         Toast.makeText(context, message, Toast.LENGTH_LONG).show()

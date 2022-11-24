@@ -48,8 +48,8 @@ class MypageFragment : Fragment() {
                 val uri = Uri.parse("http://192.168.0.10:8001${memberImage}")
                 Glide.with(binding.imageView2).load(uri).into(binding.imageView2)
             }
-            binding.memberName.text = AppData.memberData?.memberId
-            binding.memberTel.text = AppData.memberData?.memberAddress
+            binding.memberId.text = AppData.memberData?.memberId
+            binding.memberName.text = AppData.memberData?.memberName
         }
     }
 

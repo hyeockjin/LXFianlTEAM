@@ -148,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:padding="10dp"
-                android:text="반려유무" />
+                android:text="반려사항" />
 
             <TextView
                 android:id="@+id/MyPetsitterPet"

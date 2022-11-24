@@ -2,6 +2,8 @@ package com.lx.project5.mypage
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -33,6 +35,10 @@ class DogList1Fragment : Fragment() {
         binding.addDogToMyPage.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypage)
         }
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.container7
+        }, 1000)
 
 
         return binding.root

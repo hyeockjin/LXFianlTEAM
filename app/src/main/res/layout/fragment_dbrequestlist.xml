@@ -501,7 +501,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="애교가 많아요"
+                        android:text="낯 가려요"
                         android:textSize="16sp"
                         android:textStyle="bold" />
                 </LinearLayout>

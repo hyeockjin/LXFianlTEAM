@@ -79,7 +79,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="35dp"
                     android:layout_marginTop="10dp"
-                    android:text="맡기미"
+                    android:text="견주"
                     android:textColor="#8C7655"
                     android:textSize="16sp" />
 
@@ -181,22 +181,12 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/MyPetCharacterInfo1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:text="낯가림"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
                         android:id="@+id/MyPetCharacterInfo2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="15dp"
-                        android:layout_marginTop="5dp"
-                        android:text="다리 만지는 거 싫어함"
+                        android:layout_marginTop="20dp"
+                        android:text="낯 가려요"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
