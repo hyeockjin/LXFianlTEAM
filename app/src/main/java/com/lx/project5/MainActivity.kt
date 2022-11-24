@@ -210,7 +210,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             }
             // 마커클릭
             map.setOnMarkerClickListener { it ->
-                binding.cardView.visibility = View.VISIBLE
+                binding.cardView1.visibility = View.VISIBLE
                 Log.v("시발", "setOnMarkerClickListener")
 
                 var cardData = CardData()
@@ -219,10 +219,28 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 binding.cardName.text = cardData.cardName
                 binding.classScope.text = cardData.cardScope
                 binding.cardAddress.text = cardData.cardAddress
-                binding.cardDitail.text = cardData.cardDitail
+                binding.cardDetail.text = cardData.cardDetail
                 binding.cardTag.text = cardData.cardTag
                 cardData.cardImage?.apply {
                     binding.cardImage.setImageResource(cardData.cardImage!!)
+                }
+                true
+            }
+
+            // 마커클릭
+            map.setOnMarkerClickListener { it ->
+                binding.cardView2.visibility = View.GONE
+                Log.v("시발", "setOnMarkerClickListener")
+
+                var cardData = CardData()
+                cardData.cardEmail = it.title
+                cardData.doCard(cardData)
+                binding.cardName1.text = cardData.cardName1
+                binding.cardTitle.text = cardData.cardTitle
+                binding.cardContent.text = cardData.cardContent
+                binding.cardDog1.text = cardData.cardDog
+                cardData.cardImage1?.apply {
+                    binding.cardImage1.setImageResource(cardData.cardImage1!!)
                 }
                 true
             }
@@ -381,6 +399,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                         .position(LatLng(latitude!!, longitude!!))
                         .title(response.body()?.data?.get(i)?.mkId.toString()) // 타이틀.
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_person))
+
+                    var mkId = response.body()?.data?.get(i)?.mkId.toString()
+                    Log.v("tlqkf","${mkId}")
 
                     // 2. 마커 생성 (마커를 나타냄)
                     mkMarker = map.addMarker(makerOptions)
