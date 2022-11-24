@@ -57,13 +57,6 @@
                         android:background="@drawable/shadow">
 
 
-                        <ImageView
-                            android:id="@+id/mkSchedule_dbImageView1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="10dp"
-                            app:srcCompat="@drawable/footicon1png" />
-
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -87,7 +80,7 @@
                             android:id="@+id/mkSchduleToMatkimIngButton1"
                             android:layout_width="72dp"
                             android:layout_height="35dp"
-                            android:layout_gravity="center"
+                            android:layout_gravity="end"
                             android:layout_marginLeft="103dp"
                             android:background="@drawable/pinkbutton"
                             android:backgroundTint="#f8f0fd"
@@ -111,13 +104,6 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/shadow">
 
-
-                        <ImageView
-                            android:id="@+id/mkSchedule_dbImageView2"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="10dp"
-                            app:srcCompat="@drawable/footicon1png" />
 
                         <LinearLayout
                             android:id="@+id/LinearLayout"
@@ -143,7 +129,7 @@
                             android:id="@+id/mkSchduleToMatkimIngButton2"
                             android:layout_width="78dp"
                             android:layout_height="35dp"
-                            android:layout_gravity="center"
+                            android:layout_gravity="end"
                             android:layout_marginLeft="100dp"
                             android:background="@drawable/pinkbutton"
                             android:backgroundTint="#EDEDED"
@@ -165,13 +151,6 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/shadow">
 
-
-                        <ImageView
-                            android:id="@+id/mkSchedule_dbImageView3"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="10dp"
-                            app:srcCompat="@drawable/footicon1png" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -196,7 +175,7 @@
                             android:id="@+id/mkSchduleToMatkimIngButton3"
                             android:layout_width="78dp"
                             android:layout_height="35dp"
-                            android:layout_gravity="center"
+                            android:layout_gravity="end"
                             android:layout_marginLeft="100dp"
                             android:background="@drawable/pinkbutton"
                             android:backgroundTint="#EDEDED"

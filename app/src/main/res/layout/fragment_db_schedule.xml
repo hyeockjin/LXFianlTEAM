@@ -57,13 +57,6 @@
                         android:background="@drawable/shadow">
 
 
-                        <ImageView
-                            android:id="@+id/dbSchedule_dbImageView1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="10dp"
-                            app:srcCompat="@drawable/footicon2" />
-
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -111,13 +104,6 @@
                         android:background="@drawable/shadow">
 
 
-                        <ImageView
-                            android:id="@+id/dbSchedule_dbImageView2"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="10dp"
-                            app:srcCompat="@drawable/footicon2" />
-
                         <LinearLayout
                             android:id="@+id/LinearLayout"
                             android:layout_width="wrap_content"
@@ -164,13 +150,6 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/shadow">
 
-
-                        <ImageView
-                            android:id="@+id/dbSchedule_dbImageView3"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="10dp"
-                            app:srcCompat="@drawable/footicon2" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"

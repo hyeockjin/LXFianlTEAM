@@ -83,7 +83,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
                                 android:gravity="center_vertical"
-                                android:text="5살"
+                                android:text="2살"
                                 android:textSize="12sp" />
 
                         </LinearLayout>
@@ -106,7 +106,7 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:gravity="center_vertical"
-                            android:text="여"
+                            android:text="남"
                             android:textColor="#0B0B0B"
                             android:textSize="14sp"
                             android:textStyle="normal" />
