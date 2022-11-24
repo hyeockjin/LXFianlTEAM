@@ -117,16 +117,17 @@
                         android:layout_marginTop="3dp"
                         android:orientation="horizontal">
 
-                        <EditText
-                            android:id="@+id/genderInput"
+                        <Spinner
+                            android:id="@+id/spinner"
                             android:layout_width="match_parent"
+                            android:layout_centerHorizontal="true"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="25dp"
                             android:layout_weight="1"
                             android:background="@drawable/bold1"
                             android:backgroundTint="#BABABA"
+                            android:entries="@array/spinner"
                             android:gravity="center_vertical"
-                            android:hint="성별을 입력하세요."
                             android:padding="10dp"
                             android:textSize="14sp"
                             tools:ignore="TouchTargetSizeCheck" />

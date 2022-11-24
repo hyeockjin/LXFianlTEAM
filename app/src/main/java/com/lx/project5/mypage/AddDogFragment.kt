@@ -8,12 +8,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.lx.api.BasicClient
 import com.lx.data.DogListResponse
 import com.lx.project5.MainActivity
+import com.lx.project5.R
 import com.lx.project5.appdata.AppData
 import com.lx.project5.databinding.FragmentAddDogBinding
 import retrofit2.Call
@@ -69,6 +72,7 @@ class AddDogFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentAddDogBinding.inflate(inflater, container, false)
+
 
         binding.backButton1.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdoglist)
