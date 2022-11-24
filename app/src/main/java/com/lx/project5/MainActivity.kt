@@ -23,6 +23,7 @@ import com.lx.api.BasicClient
 import com.lx.data.FileUploadResponse
 import com.lx.data.careMarkerResponse
 import com.lx.data.mkMarkerResponse
+import com.lx.data.simpleMarkerResponse
 import com.lx.project5.appdata.AppData
 import com.lx.project5.appdata.CardData
 import com.lx.project5.chatting.ChatListFragment
@@ -114,11 +115,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         binding.button2.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEMchat)
         }
-
         binding.cardView.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEM1)
         }
@@ -126,7 +125,6 @@ class MainActivity : AppCompatActivity() {
         binding.mainWriteButton.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEMmatkimguel)
         }
-
         //하단 탭의 버튼을 눌렀을때
         binding.bottomNavigationView.setOnNavigationItemSelectedListener {
             when (it.itemId) {
@@ -160,7 +158,6 @@ class MainActivity : AppCompatActivity() {
             }
             return@setOnNavigationItemSelectedListener true
         }
-
         binding.cardView.visibility = View.GONE
         // 위험권한 요청하기
         PermissionX.init(this)
@@ -199,7 +196,16 @@ class MainActivity : AppCompatActivity() {
             binding.mainMKButton.setOnClickListener{
                 showNearMKLocationMarker(map)
             }
-
+            //상단 애견삽,맛집, 산책경로 버튼
+            binding.buttonHospital.setOnClickListener {
+                showHospitalMarker()
+            }
+            binding.buttonDining.setOnClickListener {
+                showDiningMarker()
+            }
+            binding.buttonHair.setOnClickListener {
+                showHairMarker()
+            }
             // 마커클릭
             map.setOnMarkerClickListener { it ->
                 binding.cardView.visibility = View.VISIBLE
@@ -220,6 +226,111 @@ class MainActivity : AppCompatActivity() {
             }
         }
     } //@@@@@
+
+    //심플 마커 전부 줄여주세요
+    private fun showHospitalMarker() {
+        map.clear()
+        requestLocation()
+        Log.v("lastkingdom", "showHospitalMarker")
+        BasicClient.api.hospitalMarker(
+            requestCode = "1001"
+        ).enqueue(object : Callback<simpleMarkerResponse> {
+            override fun onResponse(
+                call: Call<simpleMarkerResponse>,
+                response: Response<simpleMarkerResponse>
+            ) {
+                val jsonArray = JSONArray(response.body()?.data)
+                for (i in 0 until jsonArray.length()) {
+                    response.body()?.data?.get(i)?.apply {
+                        var latitude = this.x
+                        var longitude = this.y
+
+                        // 1. 마커 옵션 설정 (만드는 과정)
+                        var makerOptions = MarkerOptions()
+                        makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
+                            .position(LatLng(latitude, longitude))
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_hospital))
+
+                        Log.v("시발", " 마커 생성 ${makerOptions.title}")
+
+                        // 2. 마커 생성 (마커를 나타냄)
+                        myMarker = map.addMarker(makerOptions)
+                    }
+                }
+            }
+            override fun onFailure(call: Call<simpleMarkerResponse>, t: Throwable) {
+                Log.v("lastkingdom", "근처 마커 활성화 요청 실패")
+            }
+        })
+    }
+    private fun showHairMarker() {
+        map.clear()
+        requestLocation()
+        Log.v("lastkingdom", "showHairMarker")
+        BasicClient.api.hairMarker(
+            requestCode = "1001"
+        ).enqueue(object : Callback<simpleMarkerResponse> {
+            override fun onResponse(
+                call: Call<simpleMarkerResponse>,
+                response: Response<simpleMarkerResponse>
+            ) {
+                val jsonArray = JSONArray(response.body()?.data)
+                for (i in 0 until jsonArray.length()) {
+                    response.body()?.data?.get(i)?.apply {
+                        var latitude = this.x
+                        var longitude = this.y
+                        // 1. 마커 옵션 설정 (만드는 과정)
+                        var makerOptions = MarkerOptions()
+                        makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
+                            .position(LatLng(latitude, longitude))
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_hair))
+
+                        Log.v("team", "${makerOptions.title}")
+
+                        // 2. 마커 생성 (마커를 나타냄)
+                        myMarker = map.addMarker(makerOptions)
+                    }
+                }
+            }
+            override fun onFailure(call: Call<simpleMarkerResponse>, t: Throwable) {
+                Log.v("lastkingdom", "근처 마커 활성화 요청 실패")
+            }
+        })
+    }
+    private fun showDiningMarker() {
+        map.clear()
+        requestLocation()
+        Log.v("lastkingdom", "showDiningMarker")
+        BasicClient.api.diningMarker(
+            requestCode = "1001"
+        ).enqueue(object : Callback<simpleMarkerResponse> {
+            override fun onResponse(
+                call: Call<simpleMarkerResponse>,
+                response: Response<simpleMarkerResponse>
+            ) {
+                val jsonArray = JSONArray(response.body()?.data)
+                for (i in 0 until jsonArray.length()) {
+                        response.body()?.data?.get(i)?.apply {
+                        var latitude = this.x
+                        var longitude = this.y
+                        // 1. 마커 옵션 설정 (만드는 과정)
+                        var makerOptions = MarkerOptions()
+
+                        makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
+                            .position(LatLng(latitude, longitude))
+                            .title("상점위치")
+                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_dining))
+
+                        // 2. 마커 생성 (마커를 나타냄)
+                        myMarker = map.addMarker(makerOptions)
+                    }
+                }
+            }
+            override fun onFailure(call: Call<simpleMarkerResponse>, t: Throwable) {
+                Log.v("lastkingdom", "근처 마커 활성화 요청 실패")
+            }
+        })
+    }
 
     // 근처 맡김이 마커 표시
     fun showNearCRLocationMarker(map: GoogleMap) { // 기존 마커 제거하고 생성

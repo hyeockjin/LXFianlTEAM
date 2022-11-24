@@ -41,6 +41,22 @@ interface BasicApi {
         @Query("requestCode") requestCode: String,
         @Query("routeNo") routeNo: Int
     ): Call<SearchRouteTrackingResponse>
+    /** @@@@@@@@@ 심플 마커
+     * / 사용가능
+     */
+    @GET("care/diningMarker")
+    fun diningMarker(
+        @Query("requestCode") requestCode: String
+    ): Call<simpleMarkerResponse>
+    @GET("care/hospitalMarker")
+    fun hospitalMarker(
+        @Query("requestCode") requestCode: String
+    ): Call<simpleMarkerResponse>
+    @GET("care/hairMarker")
+    fun hairMarker(
+        @Query("requestCode") requestCode: String
+    ): Call<simpleMarkerResponse>
+
     /**
      * POST 방식으로 멤버 로그인 요청 / 사용가능
      */
