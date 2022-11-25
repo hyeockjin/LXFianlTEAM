@@ -48,7 +48,6 @@ class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
         writeShow()
         pickDate()
 
-
         binding.sincheonghagi.setOnClickListener {
             toast("신청이 완료되었습니다.")
             finish()
@@ -58,7 +57,6 @@ class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
             val chatIntent = Intent(applicationContext, ChatActivity::class.java)
             startActivity(chatIntent)
         }
-
     }
 
     fun writeShow() {
@@ -97,10 +95,7 @@ class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
             Log.v("you2","${year},${month},${day}")
 
             DatePickerDialog(this, this, year, month,day).show()
-
         }
-
-
     }
     //달력
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
@@ -132,9 +127,6 @@ class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
             binding.endTime.text = "$savedYear-$savedMonth-$savedDay $savedHour 시"
             GeulSaveData.saveEndTime = "$savedYear-$savedMonth-$savedDay $savedHour"
         }
-
-
-
     }
 
     fun toast(message: String) {
