@@ -19,6 +19,7 @@ class ScheduleFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentScheduleBinding.inflate(inflater, container, false)
+        (activity as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.container3, MKScheduleFragment()).commit()
 
 
         binding.matkimiSchedule1.setOnClickListener {

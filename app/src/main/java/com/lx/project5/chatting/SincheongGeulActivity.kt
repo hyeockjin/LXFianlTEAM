@@ -60,10 +60,19 @@ class SincheongGeulActivity : AppCompatActivity(), DatePickerDialog.OnDateSetLis
     }
 
     fun writeShow() {
-        binding.startTime.text = "${GeulSaveData.saveStartTime} 시"
-        binding.endTime.text = "${GeulSaveData.saveEndTime} 시"
-        binding.makimiName.setText("이기현")
-        binding.myDog.setText("용혁문")
+        if (GeulSaveData.saveStartTime == null){
+            binding.startTime.text = "시작시간을 입력해 주세요"
+            binding.endTime.text = "종료시간을 입력해 주세요"
+            binding.makimiName.setText("이기현")
+            binding.myDog.setText("용혁문")
+
+        } else{
+            binding.startTime.text = "${GeulSaveData.saveStartTime} 시"
+            binding.endTime.text = "${GeulSaveData.saveEndTime} 시"
+            binding.makimiName.setText("이기현")
+            binding.myDog.setText("용혁문")
+        }
+
     }
 
     /**
