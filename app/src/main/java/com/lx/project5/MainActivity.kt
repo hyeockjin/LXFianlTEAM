@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Context
 import android.content.SharedPreferences
 import android.graphics.Bitmap
+import android.graphics.Paint
 import android.location.Location
 import android.os.Bundle
 import android.os.Looper
@@ -104,6 +105,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // 맡김 돌봄 구분자 미리 넣어 놓기 / 1일때 맡김이모드
         AppData.navIndex = 1
+
 
         if (currentFocus is EditText) {
             currentFocus!!.clearFocus()
