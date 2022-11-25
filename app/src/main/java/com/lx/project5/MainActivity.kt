@@ -44,7 +44,6 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     lateinit var binding: ActivityMainBinding
     var locationClient: FusedLocationProviderClient? = null
@@ -58,7 +57,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     var simpleMarker :Marker? = null
 
     // 김현문 작성
-    var indexShowMarker : Int? = 1
+    var indexShowMarker : Int? = 2
 
     enum class ScreenItem {
         ITEM1,

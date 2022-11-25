@@ -1,5 +1,6 @@
 package com.lx.project5.mypage
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -22,10 +23,14 @@ class HistoryFragment : Fragment() {
         }
 
         binding.reqshowhis1.setOnClickListener {
+            binding.reqshowhis1.setTextColor(Color.parseColor("#c990f1"))
+            binding.reqshowhis2.setTextColor(Color.parseColor("#A3A3A3"))
             (activity as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.container1, MKhistoryFragment()).commit()
         }
 
         binding.reqshowhis2.setOnClickListener {
+            binding.reqshowhis2.setTextColor(Color.parseColor("#f6b278"))
+            binding.reqshowhis1.setTextColor(Color.parseColor("#A3A3A3"))
             (activity as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.container1, DBhistoryFragment()).commit()
         }
 

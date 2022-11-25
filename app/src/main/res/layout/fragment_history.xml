@@ -50,7 +50,7 @@
                 android:letterSpacing="0.1"
                 android:text="맡김기록"
                 android:textAlignment="center"
-                android:textColor="#c990f1 "
+                android:textColor="#A3A3A3 "
                 android:textStyle="bold" />
 
             <Button
@@ -65,7 +65,7 @@
                 android:letterSpacing="0.1"
                 android:text="돌봄기록"
                 android:textAlignment="center"
-                android:textColor="#f6b278"
+                android:textColor="#A3A3A3"
                 android:textStyle="bold" />
 
         </LinearLayout>
