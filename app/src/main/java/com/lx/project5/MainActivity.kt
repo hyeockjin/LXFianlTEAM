@@ -232,24 +232,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
                 true
             }
-
-            // 마커클릭
-            map.setOnMarkerClickListener { it ->
-                binding.cardView2.visibility = View.GONE
-                Log.v("시발", "setOnMarkerClickListener")
-
-                var cardData = CardData()
-                cardData.cardEmail = it.title
-                cardData.doCard(cardData)
-                binding.cardName1.text = cardData.cardName1
-                binding.cardTitle.text = cardData.cardTitle
-                binding.cardContent.text = cardData.cardContent
-                binding.cardDog1.text = cardData.cardDog
-                cardData.cardImage1?.apply {
-                    binding.cardImage1.setImageResource(cardData.cardImage1!!)
-                }
-                true
-            }
         }
     } //@@@@@
 
@@ -454,7 +436,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.container, MKScheduleFragment()).commit()
             }
-
             MainActivity.ScreenItem.ITEMdolboming -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.container, DolbomIngFragment()).commit()
