@@ -27,7 +27,7 @@
                 android:fontFamily="@font/rokaf_bold_medium"
                 android:gravity="center"
                 android:letterSpacing="0.2"
-                android:text="맡김글작성"
+                android:text="진행현황"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>

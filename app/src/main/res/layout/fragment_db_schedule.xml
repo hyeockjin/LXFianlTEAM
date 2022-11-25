@@ -57,30 +57,21 @@
                         android:background="@drawable/shadow">
 
 
-                        <LinearLayout
+                        <TextView
+                            android:id="@+id/petName1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
                             android:gravity="center_vertical"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/petName1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:gravity="center_vertical"
-                                android:text="용혁문"
-                                android:textColor="#AA7E7E"
-                                android:textSize="14sp" />
-
-                        </LinearLayout>
+                            android:text="용혁문"
+                            android:textColor="#AA7E7E"
+                            android:textSize="14sp" />
 
                         <Button
                             android:id="@+id/dbSchduleToDolbomIngButton1"
                             android:layout_width="72dp"
                             android:layout_height="35dp"
-                            android:layout_gravity="center"
+                            android:layout_gravity="bottom"
                             android:layout_marginLeft="400dp"
                             android:background="@drawable/pinkbutton"
                             android:backgroundTint="#feefe4"

@@ -445,7 +445,7 @@
                     android:backgroundTint="#FFFFFF"
                     android:fontFamily="@font/lineseedkr"
                     android:gravity="center|center_vertical"
-                    android:text="펫시터찾기"
+                    android:text="견주"
                     android:textColor="#9927E8"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -459,7 +459,7 @@
                     android:backgroundTint="#FFFFFF"
                     android:fontFamily="@font/lineseedkr"
                     android:gravity="center|center_vertical"
-                    android:text="강아지찾기"
+                    android:text="펫시터"
                     android:textColor="#F68424"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -493,7 +493,7 @@
                         android:backgroundTint="#FFFFFF"
                         android:fontFamily="@font/lineseedkr"
                         android:gravity="center|center_vertical"
-                        android:text="펫시터찾기"
+                        android:text="견주"
                         android:textAllCaps="false"
                         android:textColor="#c990f1"
                         android:textSize="18sp"
@@ -508,7 +508,7 @@
                         android:backgroundTint="#FFFFFF"
                         android:fontFamily="@font/lineseedkr"
                         android:gravity="center|center_vertical"
-                        android:text="강아지찾기"
+                        android:text="펫시터"
                         android:textColor="#f8ba86"
                         android:textSize="18sp"
                         android:textStyle="bold" />
