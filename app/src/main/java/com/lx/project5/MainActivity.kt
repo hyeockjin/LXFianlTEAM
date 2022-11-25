@@ -122,7 +122,10 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         binding.button2.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEMchat)
         }
-        binding.cardView.setOnClickListener {
+        binding.cardView1.setOnClickListener {
+            onFragmentChanged(ScreenItem.ITEM1)
+        }
+        binding.cardView2.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEM1)
         }
         // 주변에 돌봄요청 버튼 눌렀을 때
@@ -162,7 +165,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             }
             return@setOnNavigationItemSelectedListener true
         }
-        binding.cardView.visibility = View.GONE
+        binding.cardView1.visibility = View.GONE
+        binding.cardView2.visibility = View.GONE
         // 위험권한 요청하기
         PermissionX.init(this)
             .permissions(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION
@@ -180,7 +184,8 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             map.setOnMapClickListener(object : GoogleMap.OnMapClickListener {
                 override fun onMapClick(latLng: LatLng) {
                     Log.v("시발","onMapClick")
-                    binding.cardView.visibility = View.GONE
+                    binding.cardView1.visibility = View.GONE
+                    binding.cardView2.visibility = View.GONE
                 }
             })
 
@@ -198,13 +203,11 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 showNearCRLocationMarker(map)
                 binding.mainMKButton.setVisibility(View.VISIBLE);
                 binding.mainDBButton.setVisibility(View.INVISIBLE);
-                binding.mainShowCardDBInfoText.setVisibility(View.GONE)
             }
             binding.mainMKButton.setOnClickListener{
                 showNearMKLocationMarker(map)
                 binding.mainMKButton.setVisibility(View.INVISIBLE);
                 binding.mainDBButton.setVisibility(View.VISIBLE);
-                binding.mainShowCardMKInfoText.setVisibility(View.GONE)
             }
             //상단 애견삽,맛집, 산책경로 버튼
             binding.buttonHospital.setOnClickListener {
@@ -216,21 +219,43 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             binding.buttonHair.setOnClickListener {
                 showHairMarker()
             }
+
+
             // 마커클릭
             map.setOnMarkerClickListener { it ->
-                binding.cardView1.visibility = View.VISIBLE
-                Log.v("시발", "setOnMarkerClickListener")
 
-                var cardData = CardData()
-                cardData.cardEmail = it.title
-                cardData.doCard(cardData)
-                binding.cardName.text = cardData.cardName
-                binding.classScope.text = cardData.cardScope
-                binding.cardAddress.text = cardData.cardAddress
-                binding.cardDetail.text = cardData.cardDetail
-                binding.cardTag.text = cardData.cardTag
-                cardData.cardImage?.apply {
-                    binding.cardImage.setImageResource(cardData.cardImage!!)
+                if(it.title == "dogOwner"){
+                    binding.cardView1.visibility = View.VISIBLE
+                    binding.cardView2.visibility = View.GONE
+                    Log.v("시발", "setOnMarkerClickListener")
+
+                    var cardData = CardData()
+                    cardData.cardEmail = it.title
+                    cardData.doCard(cardData)
+                    binding.cardName.text = "이기현"
+                    binding.classScope.text = "★★★★"
+                    binding.cardAddress.text = "서울특별시 강남구 언주로 7"
+                    binding.cardDetail.text = ""
+                    binding.cardTag.text = ""
+                    cardData.cardImage?.apply {
+                        binding.cardImage.setImageResource(R.drawable.profile_1!!)
+                    }
+
+                } else  {
+                    binding.cardView1.visibility = View.GONE
+                    binding.cardView2.visibility = View.VISIBLE
+                    Log.v("시발", "setOnMarkerClickListener")
+
+                    var cardData = CardData()
+                    cardData.cardEmail = it.title
+                    cardData.doCard(cardData)
+                    binding.cardName1.text = "이기현"
+                    binding.cardTitle.text = "강아지"
+                    binding.cardContent.text = "멍멍"
+                    binding.cardDog1.text = "용혁문"
+                    cardData.cardImage1?.apply {
+                        binding.cardImage1.setImageResource(R.drawable.profile_1!!)
+                    }
                 }
                 true
             }
@@ -353,7 +378,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                     var makerOptions = MarkerOptions()
                     makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
                         .position(LatLng(latitude!!, longitude!!))
-                        .title(response.body()?.data?.get(i)?.careId.toString())
+                        .title(response.body()?.data?.get(i).toString())
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_dog))
 
                     Log.v("시발","${makerOptions.title}")
@@ -387,7 +412,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                     var makerOptions = MarkerOptions()
                     makerOptions // LatLng에 대한 어레이를 만들어서 이용할 수도 있다.
                         .position(LatLng(latitude!!, longitude!!))
-                        .title(response.body()?.data?.get(i)?.mkId.toString()) // 타이틀.
+                        .title("dogOwner") // 타이틀.
                         .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_person))
 
                     var mkId = response.body()?.data?.get(i)?.mkId.toString()
