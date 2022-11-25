@@ -57,6 +57,9 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
     var mkMarker: Marker? = null
     var simpleMarker :Marker? = null
 
+    // 김현문 작성
+    var indexShowMarker : Int? = 1
+
     enum class ScreenItem {
         ITEM1,
         ITEMchat,
@@ -203,11 +206,14 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 showNearCRLocationMarker(map)
                 binding.mainMKButton.setVisibility(View.VISIBLE);
                 binding.mainDBButton.setVisibility(View.INVISIBLE);
+                indexShowMarker = 1
+
             }
             binding.mainMKButton.setOnClickListener{
                 showNearMKLocationMarker(map)
                 binding.mainMKButton.setVisibility(View.INVISIBLE);
                 binding.mainDBButton.setVisibility(View.VISIBLE);
+                indexShowMarker = 2
             }
             //상단 애견삽,맛집, 산책경로 버튼
             binding.buttonHospital.setOnClickListener {
@@ -592,7 +598,12 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         MarkerOptions().also {
             it.position(curPoint)
             it.title("내위치")
-            it.icon(BitmapDescriptorFactory.fromResource(R.drawable.dogicon))
+            if( indexShowMarker == 1 ){
+                it.icon(BitmapDescriptorFactory.fromResource(R.drawable.marker_petsitter3))
+            } else{
+                it.icon(BitmapDescriptorFactory.fromResource(R.drawable.dogicon))
+            }
+
 
             myMarker = map.addMarker(it)
             myMarker?.tag = "1001"
