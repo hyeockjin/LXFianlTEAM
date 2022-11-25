@@ -90,7 +90,7 @@
                             android:text="강아지"
                             android:textSize="16sp" />
 
-                        <TextView
+                        <EditText
                             android:id="@+id/myDog"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"

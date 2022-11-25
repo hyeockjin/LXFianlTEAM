@@ -198,11 +198,13 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                 showNearCRLocationMarker(map)
                 binding.mainMKButton.setVisibility(View.VISIBLE);
                 binding.mainDBButton.setVisibility(View.INVISIBLE);
+                binding.mainShowCardDBInfoText.setVisibility(View.GONE)
             }
             binding.mainMKButton.setOnClickListener{
                 showNearMKLocationMarker(map)
                 binding.mainMKButton.setVisibility(View.INVISIBLE);
                 binding.mainDBButton.setVisibility(View.VISIBLE);
+                binding.mainShowCardMKInfoText.setVisibility(View.GONE)
             }
             //상단 애견삽,맛집, 산책경로 버튼
             binding.buttonHospital.setOnClickListener {
