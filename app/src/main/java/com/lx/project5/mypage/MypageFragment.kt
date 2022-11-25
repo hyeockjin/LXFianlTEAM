@@ -25,6 +25,9 @@ class MypageFragment : Fragment() {
         binding.mypagetomain.setOnClickListener {
             //(activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmypage)
         }
+
+        binding.memberName.text = "이기현"
+
         binding.updateButton.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMmatkimiInfo)
         }

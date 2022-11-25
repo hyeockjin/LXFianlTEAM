@@ -107,7 +107,7 @@
                             android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:gravity="center_vertical"
-                            android:text="여"
+                            android:text="암컷"
                             android:textColor="#0B0B0B"
                             android:textSize="14sp"
                             android:textStyle="normal" />
