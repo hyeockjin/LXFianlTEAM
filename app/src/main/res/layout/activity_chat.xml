@@ -48,13 +48,15 @@
 
                  />
 
-            <ImageButton
+            <Button
                 android:id="@+id/askButton"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
-                android:backgroundTint="#FFFFFF"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/bold5"
                 android:scaleType="centerInside"
+                android:text="신청하기"
                 app:srcCompat="@drawable/compose" />
 
         </LinearLayout>
