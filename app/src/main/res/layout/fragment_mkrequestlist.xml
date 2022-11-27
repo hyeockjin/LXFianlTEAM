@@ -64,12 +64,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/matkimiInfo1"
                         android:layout_width="0dp"
                         android:layout_height="75dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/person2"
+                        android:src="@drawable/profile_4"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -229,12 +229,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/matkimiInfo2"
                         android:layout_width="0dp"
                         android:layout_height="75dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/person3"
+                        android:src="@drawable/profile_2"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.497"
@@ -266,7 +266,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="최선웅"
+                        android:text="김현문"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -372,7 +372,7 @@
                         android:layout_weight="1"
                         android:gravity="left"
                         android:padding="5dp"
-                        android:text="2022.11.21"
+                        android:text="2022.11.28"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -391,12 +391,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/matkimiInfo3"
                         android:layout_width="match_parent"
                         android:layout_height="75dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/person4"
+                        android:src="@drawable/profile_3"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"

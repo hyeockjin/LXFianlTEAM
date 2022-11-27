@@ -28,7 +28,7 @@
                 android:fontFamily="@font/rokaf_bold_medium"
                 android:gravity="center|center_vertical"
                 android:letterSpacing="0.2"
-                android:text="맡김등록"
+                android:text="맡김신청"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 

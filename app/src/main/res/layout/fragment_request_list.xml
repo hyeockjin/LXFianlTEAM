@@ -20,7 +20,7 @@
             android:fontFamily="@font/rokaf_bold_medium"
             android:gravity="center|center_vertical"
             android:letterSpacing="0.2"
-            android:text="요청현황"
+            android:text="신청현황"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -34,11 +34,11 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="#FFFFFF"
-                android:text="내가 보낸 요청"
-
                 android:fontFamily="@font/saemaul"
-                android:letterSpacing="0.1"
+
                 android:gravity="center|center_vertical"
+                android:letterSpacing="0.1"
+                android:text="내가 보낸 신청"
                 android:textColor="#A3A3A3"
                 android:textStyle="bold" />
 
@@ -51,7 +51,7 @@
                 android:fontFamily="@font/saemaul"
                 android:gravity="center|center_vertical"
                 android:letterSpacing="0.1"
-                android:text="내가 받은 요청"
+                android:text="내가 받은 신청"
                 android:textColor="#A3A3A3"
                 android:textStyle="bold" />
         </LinearLayout>

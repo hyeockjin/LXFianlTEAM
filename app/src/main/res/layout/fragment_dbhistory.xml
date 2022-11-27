@@ -159,7 +159,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="2022.11.21"
+                    android:text="2022.11.28"
                     android:textStyle="bold" />
 
                 <TextView
