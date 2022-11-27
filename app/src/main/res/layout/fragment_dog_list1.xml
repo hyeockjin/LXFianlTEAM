@@ -14,7 +14,7 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="46dp"
+            android:layout_height="68dp"
             android:layout_gravity="center_horizontal|center_vertical"
             android:background="#FFFFFF"
             android:fontFamily="@font/rokaf_bold_medium"
@@ -30,9 +30,9 @@
             android:layout_height="wrap_content"
             android:background="#FFFFFF"
             android:orientation="horizontal"
-            android:paddingLeft="20dp"
-            android:paddingTop="20dp"
-            android:paddingRight="20dp">
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -44,15 +44,21 @@
                     android:id="@+id/container7"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#F3F3F3">
+                    android:background="@drawable/shadow4"
+                    android:padding="10dp">
 
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/gridPictureView"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_margin="20dp"
-                        app:srcCompat="@drawable/bokdori" />
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="20dp"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/bokdori"
+                        app:civ_border_color="#cccccc"
+                        app:civ_border_overlay="true"
+                        app:civ_border_width="3dp" />
 
                     <LinearLayout
                         android:id="@+id/LinearLayout"
@@ -124,6 +130,7 @@
         android:id="@+id/addDogToMyPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
         android:backgroundTint="#FFFFFF"
         android:src="@drawable/arrow" />
 
@@ -136,6 +143,6 @@
         android:layout_marginBottom="65dp"
         android:clickable="true"
         android:src="@drawable/plus2"
-        app:backgroundTint="#B6CF9B" />
+        app:backgroundTint="#c990f1" />
 
 </FrameLayout>

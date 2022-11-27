@@ -34,11 +34,11 @@
                 android:textColor="#FFFFFF" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/send_profile"
                 android:layout_width="39dp"
                 android:layout_height="38dp"
                 android:layout_gravity="center_vertical|end"
-                app:srcCompat="@drawable/person1" />
+                app:srcCompat="@drawable/cardimage2" />
         </LinearLayout>
 
     </LinearLayout>

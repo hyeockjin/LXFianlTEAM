@@ -15,12 +15,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/receive_profile"
             android:layout_width="39dp"
             android:layout_height="38dp"
-            android:layout_gravity="center_vertical"
-            app:srcCompat="@drawable/person2" />
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/profile_1"
+            app:civ_border_overlay="true" />
 
         <TextView
             android:id="@+id/receive_message_text"

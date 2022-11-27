@@ -38,12 +38,8 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="40dp"
-                    android:paddingEnd="20dp"
-                    android:paddingRight="20dp">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -170,7 +166,7 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="20dp"
                         android:layout_marginRight="15dp"
-                        android:layout_marginBottom="3dp"
+                        android:layout_marginBottom="290dp"
                         android:orientation="horizontal">
 
                         <TextView
@@ -191,6 +187,23 @@
 
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/sincheonghagi"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="bottom"
+                            android:layout_margin="20dp"
+                            android:background="@drawable/pinkbutton"
+                            android:text="신청하기"
+                            android:textColor="#c990f1 "
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
                 </LinearLayout>
             </ScrollView>
 
@@ -205,16 +218,5 @@
         android:layout_marginTop="13dp"
         android:backgroundTint="#FFFFFF"
         android:src="@drawable/arrow" />
-
-    <Button
-        android:id="@+id/sincheonghagi"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_gravity="bottom"
-        android:layout_margin="20dp"
-        android:background="@drawable/pinkbutton"
-        android:text="신청하기"
-        android:textColor="#c990f1 "
-        android:textStyle="bold" />
 
 </FrameLayout>
