@@ -149,9 +149,10 @@
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/drawable/shadow2.xml" value="0.255" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/drawable/shadow3.xml" value="0.255" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/drawable/shadow4.xml" value="0.2335" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/drawable/shadow5.xml" value="0.1505" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/activity_chat.xml" value="0.2" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/activity_local.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/activity_main1.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/activity_sincheong_geul.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/activity_splash.xml" value="0.2453125" />
@@ -180,8 +181,8 @@
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mkhistory.xml" value="0.264" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mkrequestlist.xml" value="0.264" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mypage.xml" value="0.264" />
-        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mypage_db_info.xml" value="0.24947916666666667" />
-        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mypage_mk_info.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mypage_db_info.xml" value="0.264" />
+        <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_mypage_mk_info.xml" value="0.264" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_request.xml" value="0.2453125" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_request_list.xml" value="0.264" />
         <entry key="..\:/Users/zxxz0/AndroidStudioProjects/LXFianlTEAM/app/src/main/res/layout/fragment_schedule.xml" value="0.24947916666666667" />
