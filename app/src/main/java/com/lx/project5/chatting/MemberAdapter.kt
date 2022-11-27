@@ -59,6 +59,6 @@ class MemberAdapter(private val context: Context, val chatDataList:ArrayList<Cha
 
     class MemberViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
         val nameText: TextView = itemView.findViewById(R.id.name_text)
-        val memberImage: ImageView = itemView.findViewById(R.id.imageButton)
+        val memberImage: ImageView = itemView.findViewById(R.id.chat_profile)
     }
 }
