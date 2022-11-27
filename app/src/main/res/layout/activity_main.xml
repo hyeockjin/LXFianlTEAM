@@ -309,6 +309,7 @@
                                 android:layout_marginBottom="10dp"
                                 android:background="@android:color/transparent"
                                 android:src="@drawable/profile_1"
+                                app:civ_border_color="#cccccc"
                                 app:civ_border_overlay="true" />
 
                             <LinearLayout
