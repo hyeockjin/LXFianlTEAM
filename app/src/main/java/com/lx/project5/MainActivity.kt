@@ -619,7 +619,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             openFileOutput(filename, Context.MODE_PRIVATE).use {
                 this.compress(Bitmap.CompressFormat.JPEG, 100, it)
                 it.close()
-                showToast("이미지를 파일로 저장함 : ${filename}")
+                //showToast("이미지를 파일로 저장함 : ${filename}")
                 uploadFile(filename!!)
             }
         }
