@@ -10,7 +10,6 @@ import com.lx.project5.MainActivity
 import com.lx.project5.R
 import com.lx.project5.databinding.FragmentHistoryBinding
 
-
 class HistoryFragment : Fragment() {
     var _binding: FragmentHistoryBinding? = null
     val binding get() = _binding!!
