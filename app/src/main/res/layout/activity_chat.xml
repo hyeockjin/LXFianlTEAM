@@ -38,7 +38,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:gravity="center_vertical"
-                android:text="김혁진"
+                android:text="이기현"
                 android:textColor="#6559A6"
                 android:textSize="16sp"
                 android:textStyle="normal"

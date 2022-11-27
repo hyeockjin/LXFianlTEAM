@@ -140,7 +140,7 @@ class MatkimIngFragment : Fragment(), OnMapReadyCallback {
     @RequiresApi(Build.VERSION_CODES.O)
     fun nowTime(){
         val nownow = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH"))
-        val now1 = nownow.toInt() -2
+        val now1 = nownow.toInt() - 2
         val now2 = nownow.toInt() + 2
         binding.matkimTime1.text = "${now1} 시 ~ ${now2} 시"
     }

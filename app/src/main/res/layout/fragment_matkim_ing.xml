@@ -27,7 +27,7 @@
                 android:fontFamily="@font/rokaf_bold_medium"
                 android:gravity="center"
                 android:letterSpacing="0.2"
-                android:text="진행현황"
+                android:text="돌봄 진행현황"
                 android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -125,7 +125,7 @@
                                 android:layout_weight="1"
                                 android:background="#FFFFFF"
                                 android:gravity="center_vertical"
-                                android:hint="1시간 남음"
+                                android:hint="2시간 남음"
                                 android:padding="10dp"
                                 android:textSize="14sp"
                                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />

@@ -62,6 +62,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="20dp"
+                            android:layout_marginTop="9dp"
                             android:gravity="center_vertical"
                             android:text="용혁문"
                             android:textColor="#AA7E7E"

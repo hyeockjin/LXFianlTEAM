@@ -18,8 +18,8 @@ class MypageMKInfoFragment : Fragment() {
         _binding = FragmentMypageMkInfoBinding.inflate(inflater, container, false)
 
 
-        binding.MyPetSitterInfoToMatkimIng.setOnClickListener{
-            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdbrequestlist)
+        binding.petSitterInfoToMatkimIng.setOnClickListener{
+            (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMrequestlist)
         }
 
         return binding.root

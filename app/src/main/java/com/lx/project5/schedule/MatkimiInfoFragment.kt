@@ -16,7 +16,7 @@ class MatkimiInfoFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentMatkimiInfoBinding.inflate(inflater, container, false)
 
-        binding.petSitterInfoToMatkimIng.setOnClickListener {
+        binding.petSitterMyInfoToMkrequestlist.setOnClickListener {
             (activity as MainActivity).onFragmentChanged(MainActivity.ScreenItem.ITEMdolboming)
         }
 

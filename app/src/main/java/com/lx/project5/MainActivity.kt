@@ -2,6 +2,7 @@ package com.lx.project5
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.graphics.Bitmap
 import android.graphics.Paint
@@ -28,6 +29,7 @@ import com.lx.data.mkMarkerResponse
 import com.lx.data.simpleMarkerResponse
 import com.lx.project5.appdata.AppData
 import com.lx.project5.appdata.CardData
+import com.lx.project5.chatting.ChatActivity
 import com.lx.project5.chatting.ChatListFragment
 import com.lx.project5.databinding.ActivityMainBinding
 import com.lx.project5.mypage.*
@@ -122,7 +124,12 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(binding.root)
 
         binding.button2.setOnClickListener {
-            onFragmentChanged(ScreenItem.ITEMchat)
+            val chatIntent = Intent(applicationContext, ChatActivity::class.java)
+            startActivity(chatIntent)
+        }
+        binding.button3.setOnClickListener {
+            val chatIntent = Intent(applicationContext, ChatActivity::class.java)
+            startActivity(chatIntent)
         }
         binding.cardView1.setOnClickListener {
             onFragmentChanged(ScreenItem.ITEM1)
@@ -153,7 +160,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
                     if(AppData.memberData?.memberId == null ){
                         showToast("로그인 먼저 해주세요!")
                     }else if(AppData.memberData?.memberId != null) {
-                        onFragmentChanged(ScreenItem.ITEMchat)
+                        onFragmentChanged(ScreenItem.ITEMchatlist)
                     }
                 }
                 R.id.tab4 -> {
@@ -224,6 +231,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             binding.buttonHair.setOnClickListener {
                 showHairMarker()
             }
+
 
 
             // 마커클릭
@@ -439,10 +447,6 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
             MainActivity.ScreenItem.ITEM1 -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, FirstFragment())
                     .commit()
-            }
-            MainActivity.ScreenItem.ITEMchat -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, ChatListFragment()).commit()
             }
             MainActivity.ScreenItem.ITEMjoin1 -> {
                 supportFragmentManager.beginTransaction().replace(R.id.container, Join1Fragment())
