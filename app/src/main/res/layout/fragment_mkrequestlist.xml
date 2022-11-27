@@ -69,7 +69,7 @@
                         android:layout_width="0dp"
                         android:layout_height="75dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/profile_4"
+                        android:src="@drawable/cardimage1"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +100,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="정세종"
+                        android:text="정유진"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -234,7 +234,7 @@
                         android:layout_width="0dp"
                         android:layout_height="75dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/profile_2"
+                        android:src="@drawable/profile_5"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.497"
@@ -266,7 +266,7 @@
                         android:layout_marginRight="20dp"
                         android:layout_weight="1"
                         android:gravity="end"
-                        android:text="김현문"
+                        android:text="노민찬"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 

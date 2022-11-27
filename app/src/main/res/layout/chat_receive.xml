@@ -23,7 +23,7 @@
             android:layout_margin="5dp"
             android:layout_marginLeft="10dp"
             android:background="@android:color/transparent"
-            android:src="@drawable/profile_1"
+            android:src="@drawable/profile_3"
             app:civ_border_overlay="true" />
 
         <TextView

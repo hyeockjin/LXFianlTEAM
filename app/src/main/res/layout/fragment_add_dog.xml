@@ -11,7 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFF6F6F6"
+        android:background="#FFFFFF"
         android:orientation="vertical">
 
         <TextView
@@ -120,8 +120,8 @@
                         <Spinner
                             android:id="@+id/spinner"
                             android:layout_width="match_parent"
-                            android:layout_centerHorizontal="true"
                             android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
                             android:layout_marginBottom="25dp"
                             android:layout_weight="1"
                             android:background="@drawable/bold1"
@@ -177,21 +177,22 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="bottom"
-                    android:background="#FFFFFF"
-                    android:orientation="vertical"
-                    android:paddingLeft="20dp"
-                    android:paddingTop="10dp"
-                    android:paddingRight="20dp"
-                    android:paddingBottom="10dp">
-
-                </LinearLayout>
-
             </LinearLayout>
         </ScrollView>
+
+        <Button
+            android:id="@+id/addButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/pinkbutton"
+            android:text="등록하기"
+            android:textColor="#c990f1 "
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -201,18 +202,5 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#F8F8F8"
         android:src="@drawable/arrow" />
-
-    <Button
-        android:id="@+id/addButton"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_gravity="bottom|center"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/pinkbutton"
-        android:text="등록하기"
-        android:textColor="#c990f1 "
-        android:textStyle="bold" />
 
 </FrameLayout>
